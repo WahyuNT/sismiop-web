@@ -1,0 +1,11 @@
+.card-form{
+    border: none;
+    padding : 20px;
+    border-radius: 15px;
+}
+
+.hr-desktop{
+    @media screen and (min-width: 768px){
+        display: block;
+    }
+}
