@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('spop', function (Blueprint $table) {
             $table->id();
-            $table->integer('1_jenis_transaksi')->nullable();
+            $table->string('1_jenis_transaksi')->nullable();
             $table->string('2_nop_provinsi')->nullable();
             $table->string('2_nop_kabupaten')->nullable();
             $table->string('2_nop_kecamatan')->nullable();
