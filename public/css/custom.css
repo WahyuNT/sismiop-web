@@ -9,3 +9,8 @@
         display: block;
     }
 }
+
+.card-sidebar-active{
+    background-color: #f9f9f9;
+ color: #365CF5 !important; 
+}
