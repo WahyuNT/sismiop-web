@@ -50,7 +50,7 @@
           </a>
         </li>
         <li class="nav-item d-flex align-items-center">
-          <a href="invoice.html">
+          <a href="invoice.html" class="card-sidebar-active">
             <i class="fa-solid fa-book me-2"></i>
             <p class="text m-0">LSPOP</p>
           </a>
@@ -118,26 +118,29 @@
                 </h6>
                 <div class="d-flex justify-content-start gap-2">
                   <div class="form-check radio-style mb-20">
-                    <input class="form-check-input" type="radio" value="1" id="radio-transaksi-1" name="1_jenis_transaksi"
-                      required />
+                    <input class="form-check-input" type="radio" value="1" id="radio-transaksi-1"
+                      name="1_jenis_transaksi" required />
                     <label class="form-check-label" for="radio-transaksi-1">
                       1. Perekaman Data
                     </label>
                   </div>
                   <div class="form-check radio-style mb-20">
-                    <input class="form-check-input" type="radio" value="2" id="radio-transaksi-2" name="1_jenis_transaksi" />
+                    <input class="form-check-input" type="radio" value="2" id="radio-transaksi-2"
+                      name="1_jenis_transaksi" />
                     <label class="form-check-label" for="radio-transaksi-2">
                       2. Pemutakhiran Data
                     </label>
                   </div>
                   <div class="form-check radio-style mb-20">
-                    <input class="form-check-input" type="radio" value="3" id="radio-transaksi-3" name="1_jenis_transaksi" />
+                    <input class="form-check-input" type="radio" value="3" id="radio-transaksi-3"
+                      name="1_jenis_transaksi" />
                     <label class="form-check-label" for="radio-transaksi-3">
                       3. Penghapusan Data
                     </label>
                   </div>
                   <div class="form-check radio-style mb-20">
-                    <input class="form-check-input" type="radio" value="4" id="radio-transaksi-4" name="1_jenis_transaksi" />
+                    <input class="form-check-input" type="radio" value="4" id="radio-transaksi-4"
+                      name="1_jenis_transaksi" />
                     <label class="form-check-label" for="radio-transaksi-4">
                       4. Penilaian Individu
                     </label>
@@ -147,47 +150,56 @@
             </div>
 
             <div class="card card-form mt-4">
-              <div class="input-style-1">
+              <div class="div">
                 <h6 class="mb-25">NOP<span class="text-danger">*</span></h6>
                 <div class="d-flex flex-wrap">
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="provinsi">Provinsi</label>
-                    <input name="2_nop_provinsi" id="provinsi" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_provinsi" id="provinsi" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="2_nop_kabupaten">Kabupaten</label>
-                    <input name="2_nop_kabupaten" id="2_nop_kabupaten" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_kabupaten" id="2_nop_kabupaten" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="2_nop_kecamatan">Kecamatan</label>
-                    <input name="2_nop_kecamatan" id="2_nop_kecamatan" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_kecamatan" id="2_nop_kecamatan" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="2_nop_gampong">Gampong</label>
-                    <input name="2_nop_gampong" class="form-control" id="2_nop_gampong" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_gampong" class="form-control" id="2_nop_gampong" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="2_nop_blok">Blok</label>
-                    <input  name="2_nop_blok" class="form-control" id="2_nop_blok" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_blok" class="form-control" id="2_nop_blok" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="2_nop_no_urut">No.Urut</label>
-                    <input name="2_nop_no_urut" class="form-control" id="2_nop_no_urut" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_no_urut" class="form-control" id="2_nop_no_urut" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="2_nop_kode">Kode</label>
-                    <input  name="2_nop_kode" class="form-control" id="2_nop_kode" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="2_nop_kode" class="form-control" id="2_nop_kode" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                 </div>
-                <hr />
+
                 <div class="d-flex flex-wrap">
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="3_jumlah_bangunan">3. Jumlah Bangunan</label>
-                    <input name="3_jumlah_bangunan" id="jumlah_bangunan" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="3_jumlah_bangunan" id="jumlah_bangunan" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-lg-6 col-12 mb-2 px-3">
                     <label class="mb-1" for="4_bangunan_ke">4. Bangunan Ke</label>
-                    <input name="4_bangunan_ke" id="4_bangunan_ke" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="4_bangunan_ke" id="4_bangunan_ke" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                 </div>
               </div>
@@ -199,7 +211,7 @@
               <div class="d-flex flex-wrap">
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="5_jenis_penggunaan_bangunan">5. Jenis Penggunaan Bangunan</label>
-                  <select name="5_jenis_penggunaan_bangunan" id="5_jenis_penggunaan_bangunan" class="form-control">
+                  <select name="5_jenis_penggunaan_bangunan" id="5_jenis_penggunaan_bangunan" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="perumahan">Perumahan</option>
                     <option value="perkantoran_swasta">Perkantoran Swasta</option>
@@ -221,27 +233,32 @@
                 </div>
                 <div class="col-lg-6 col-12 px-3 mb-2">
                   <label class="mb-1" for="6_luas_bangunan">6. Luas Bangunan(M2)</label>
-                  <input class="form-control" name="6_luas_bangunan" id="6_luas_bangunan" type="text" placeholder="Masukkan Data" />
+                  <input class="form-control" name="6_luas_bangunan" id="6_luas_bangunan" type="text"
+                    placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 mb-2">
                   <label class="mb-1" for="7_jumlah_lantai">7. Jumlah Lantai</label>
-                  <input class="form-control" name="7_jumlah_lantai" id="7_jumlah_lantai" type="text" placeholder="Masukkan Data" />
+                  <input class="form-control" name="7_jumlah_lantai" id="7_jumlah_lantai" type="text"
+                    placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 mb-2">
                   <label class="mb-1" for="8_tahun_dibangun">8. Tahun Dibangun</label>
-                  <input class="form-control" name="8_tahun_dibangun" id="8_tahun_dibangun" type="text" placeholder="Masukkan Data" />
+                  <input class="form-control" name="8_tahun_dibangun" id="8_tahun_dibangun" type="text"
+                    placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 mb-2">
                   <label class="mb-1" for="9_tahun_direnovasi">9. Tahun Direnovasi</label>
-                  <input class="form-control" name="9_tahun_direnovasi" id="9_tahun_direnovasi" type="text" placeholder="Masukkan Data" />
+                  <input class="form-control" name="9_tahun_direnovasi" id="9_tahun_direnovasi" type="text"
+                    placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 mb-2">
-                  <label class="mb-1" for="10_daya_listrik_terpasang">10. Daya Listrik Trepasang (Watt)</label>
-                  <input class="form-control" name="10_daya_listrik_terpasang" id="10_daya_listrik_terpasang" type="text" placeholder="Masukkan Data" />
+                  <label class="mb-1" for="10_daya_listrik_terpasang">10. Daya Listrik Terpasang (Watt)</label>
+                  <input class="form-control" name="10_daya_listrik_terpasang" id="10_daya_listrik_terpasang"
+                    type="text" placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="11_kondisi_pada_umumnya">11. Kondisi Pada Umumnya</label>
-                  <select id="11_kondisi_pada_umumnya" name="11_kondisi_pada_umumnya" class="form-control">
+                  <select id="11_kondisi_pada_umumnya" name="11_kondisi_pada_umumnya" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="sangat_baik">Sangat Baik</option>
                     <option value="baik">Baik</option>
@@ -251,17 +268,17 @@
                 </div>
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="12_konstruksi">12. Konstruksi</label>
-                  <select id="12_konstruksi" name="12_konstruksi" class="form-control">
+                  <select id="12_konstruksi" name="12_konstruksi" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="baja">Baja</option>
                     <option value="beton">Beton</option>
-                    <option value="batu_bara">Batu Bara</option>
+                    <option value="batu_bara">Batu Bata</option>
                     <option value="kayu">Kayu</option>
                   </select>
                 </div>
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="13_atap">13. Atap</label>
-                  <select id="13_atap" name="13_atap" class="form-control">
+                  <select id="13_atap" name="13_atap" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="decrabon-beton-gtg_glazur">Decrabon/Beton/Gtg Glazur</option>
                     <option value="gtg_beton-Alumunium">Gtg Beton/Alumunium</option>
@@ -272,7 +289,7 @@
                 </div>
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="14_dinding">14. Dinding</label>
-                  <select id="14_dinding" name="14_dinding" class="form-control">
+                  <select id="14_dinding" name="14_dinding" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="kaca-alumunium">Kaca/Alumunium</option>
                     <option value="beton">Beton</option>
@@ -284,7 +301,7 @@
                 </div>
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="15_lantai">15. Lantai</label>
-                  <select name="15_lantai" id="15_lantai" class="form-control">
+                  <select name="15_lantai" id="15_lantai" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="marmer">Marmer</option>
                     <option value="keramik">Keramik</option>
@@ -295,7 +312,7 @@
                 </div>
                 <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                   <label for="16_langit_langit">16. Langit - Langit</label>
-                  <select name="16_langit_langit" id="16_langit_langit" class="form-control">
+                  <select name="16_langit_langit" id="16_langit_langit" class="form-select">
                     <option value="">Silahkan Pilih</option>
                     <option value="akustik-jati">Akustik/Jati</option>
                     <option value="triplek-asbes_bambu">Triplek/Asbes Bambu</option>
@@ -315,7 +332,8 @@
                 <div class="d-flex flex-wrap">
                   <div class="col-6 px-2">
                     <label class="mb-1" for="17_ac_split">Split</label>
-                    <input class="form-control" name="17_ac_split" id="17_ac_split" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="17_ac_split" id="17_ac_split" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-6 px-2">
                     <label class="mb-1" for="17_ac_window">Window</label>
@@ -326,21 +344,22 @@
               </div>
               <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                 <label for="18_ac_central">18. AC Central</label>
-                <select id="18_ac_central" name="18_ac_central" class="form-control">
+                <select id="18_ac_central" name="18_ac_central" class="form-select">
                   <option value="">Silahkan Pilih</option>
                   <option value="ada">Ada</option>
                   <option value="tidak_ada">Tidak Ada</option>
                 </select>
               </div>
               <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
-                <label class="mb-1" for="19_luas_kolam_renang">19. Luas Kolam Renang(M2)</label>
                 <div class="d-flex flex-wrap">
                   <div class="col-6 px-2">
+                    <label class="mb-1" for="19_luas_kolam_renang">19. Luas Kolam Renang(M2)</label>
                     <input class="form-control" name="19_luas_kolam_renang" id="19_luas_kolam_renang" type="text"
                       placeholder="Masukkan Data" />
                   </div>
                   <div class="col-6 px-2">
-                    <select id="19_tipe_kolam_renang" class="form-control">
+                    <label class="mb-1" for="19_tipe_kolam_renang">Tipe Kolam Renang</label>
+                    <select id="19_tipe_kolam_renang" class="form-select">
                       <option value="">Silahkan Pilih</option>
                       <option value="plester">Di Plester</option>
                       <option value="pelapis">Dengan Pelapis</option>
@@ -353,28 +372,39 @@
                 <div class="d-flex flex-wrap">
                   <div class="col-6 px-2">
                     <label class="mb-1" for="20_luas_perkerasan_halaman_ringan">Ringan</label>
-                    <input class="form-control" name="20_luas_perkerasan_halaman_ringan" id="20_luas_perkerasan_halaman_ringan"
-                      type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="20_luas_perkerasan_halaman_ringan"
+                      id="20_luas_perkerasan_halaman_ringan" type="text" placeholder="Masukkan Data" />
                   </div>
                   <div class="col-6 px-2">
                     <label class="mb-1" for="20_luas_perkerasan_halaman_sedang">Sedang</label>
-                    <input class="form-control" name="20_luas_perkerasan_halaman_sedang" id="20_luas_perkerasan_halaman_sedang=sedang"
-                      type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="20_luas_perkerasan_halaman_sedang"
+                      id="20_luas_perkerasan_halaman_sedang=sedang" type="text" placeholder="Masukkan Data" />
                   </div>
                   <div class="col-6 px-2">
                     <label class="mb-1" for="20_luas_perkerasan_halaman_berat">Berat</label>
-                    <input class="form-control" name="20_luas_perkerasan_halaman_berat" id="20_luas_perkerasan_halaman_berat"
-                      type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="20_luas_perkerasan_halaman_berat"
+                      id="20_luas_perkerasan_halaman_berat" type="text" placeholder="Masukkan Data" />
                   </div>
                   <div class="col-6 px-2">
                     <label class="mb-1" for="20_luas_perkerasan_halaman_dpl">Dengan Penutup Lantai</label>
-                    <input class="form-control" name="20_luas_perkerasan_halaman_dpl" id="20_luas_perkerasan_halaman_dpl"
-                      type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="20_luas_perkerasan_halaman_dpl"
+                      id="20_luas_perkerasan_halaman_dpl" type="text" placeholder="Masukkan Data" />
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 col-12 px-3 mb-2">
                 <h6>21. Jumlah Lapangan Tenis</h6>
+                <div class="d-flex flex-wrap align-items-center mt-3">
+                  <div class="col-4 text-end pe-2 ">
+                    <p></p>
+                  </div>
+                  <div class="col-4  pe-2">
+                    <p>Dengan Lampu</p>
+                  </div>
+                  <div class="col-4">
+                    <p>Tanpa Lampu</p>
+                  </div>
+                </div>
                 <div class="d-flex flex-wrap align-items-center mt-3">
                   <div class="col-4 text-end pe-2 ">
                     <p>Beton</p>
@@ -429,7 +459,8 @@
                 </div>
                 <div class="d-flex flex-wrap align-items-center mt-3">
                   <div class="col-4  pe-2">
-                    <input class="form-control" name="22_kapsul" id="22_kapsul" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="22_kapsul" id="22_kapsul" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-4 ps-2 ">
                     <p>Kapsul</p>
@@ -437,7 +468,8 @@
                 </div>
                 <div class="d-flex flex-wrap align-items-center mt-3">
                   <div class="col-4  pe-2">
-                    <input class="form-control" name="22_barang" id="22_barang" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="22_barang" id="22_barang" type="text"
+                      placeholder="Masukkan Data" />
                   </div>
                   <div class="col-4 ps-2 ">
                     <p>Barang</p>
@@ -451,7 +483,8 @@
                     <p>Lbr < 0.80 M</p>
                   </div>
                   <div class="col-4  pe-2">
-                    <input class="form-control" name="23_jumlah_tangga_berjalan_k080" id="23_jumlah_tangga_berjalan_k080" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="23_jumlah_tangga_berjalan_k080"
+                      id="23_jumlah_tangga_berjalan_k080" type="text" placeholder="Masukkan Data" />
                   </div>
                 </div>
                 <div class="d-flex flex-wrap align-items-center mt-3">
@@ -459,7 +492,8 @@
                     <p>Lbr > 0.80 M</p>
                   </div>
                   <div class="col-4  pe-2">
-                    <input class="form-control" name="23_jumlah_tangga_berjalan_b080" id="23_jumlah_tangga_berjalan_b080" type="text" placeholder="Masukkan Data" />
+                    <input class="form-control" name="23_jumlah_tangga_berjalan_b080"
+                      id="23_jumlah_tangga_berjalan_b080" type="text" placeholder="Masukkan Data" />
                   </div>
                 </div>
               </div>
@@ -472,7 +506,7 @@
                   </div>
                   <div class="col-6 px-2 ">
                     <label class="mb-1 fw-bold" for="24_bahan_pagar">Bahan Pagar(M2)</label>
-                    <select id="24_bahan_pagar" name="24_bahan_pagar" class="form-control">
+                    <select id="24_bahan_pagar" name="24_bahan_pagar" class="form-select">
                       <option value="">Silahkan Pilih</option>
                       <option value="baja-besi">Baja Besi</option>
                       <option value="bata-batako">Bata Batako</option>
@@ -536,13 +570,13 @@
               </div>
               <div class="col-lg-6 col-12 px-3 mb-2">
                 <label class="mb-1 fw-bold" for="26_jumlah_saluran_pes_pabx">26. JUMLAH SALURAN PES. PABX</label>
-                <input class="form-control" name="26_jumlah_saluran_pes_pabx" id="26_jumlah_saluran_pes_pabx" type="text"
-                  placeholder="Masukkan Data" />
+                <input class="form-control" name="26_jumlah_saluran_pes_pabx" id="26_jumlah_saluran_pes_pabx"
+                  type="text" placeholder="Masukkan Data" />
               </div>
               <div class="col-lg-6 col-12 px-3 my-2">
                 <label class="mb-1 fw-bold" for="27_kedalaman_sumur_artetis">27. KEDALAMAN SUMUR ARTETIS (M)</label>
-                <input class="form-control" name="27_kedalaman_sumur_artetis" id="27_kedalaman_sumur_artetis" type="text"
-                  placeholder="Masukkan Data" />
+                <input class="form-control" name="27_kedalaman_sumur_artetis" id="27_kedalaman_sumur_artetis"
+                  type="text" placeholder="Masukkan Data" />
               </div>
             </div>
           </div>
@@ -703,10 +737,10 @@
                   <label class="mb-1 fw-bold" for="45_kelas_bangunan">45.KELAS BANGUNAN </label>
                   <select id="45_kelas_bangunan" name="45_kelas_bangunan" class="form-select">
                     <option value="">Silahkan Pilih</option>
-                    <option value="tipe_4">Tipe 4</option>
-                    <option value="tipe_3">Tipe 3</option>
-                    <option value="tipe_2">Tipe 2</option>
                     <option value="tipe_1">Tipe 1</option>
+                    <option value="tipe_2">Tipe 2</option>
+                    <option value="tipe_3">Tipe 3</option>
+                    <option value="tipe_4">Tipe 4</option>
                   </select>
                 </div>
                 <div class="col-6 px-2 ">
