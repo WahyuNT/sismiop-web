@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="title ">
-                        <h3><b>Daftar Pajak</b></h3>
+                        <h3><b>DATA SPOP</b></h3>
                     </div>
                 </div>
             </div>
