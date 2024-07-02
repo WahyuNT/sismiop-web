@@ -50,79 +50,85 @@
                 <div class="card card-form mt-4">
                     <div class="div">
                         <h6 class="mb-25">2. NOP<span class="text-danger">*</span></h6>
-                        <div class="d-flex flex-wrap">
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="provinsi">Provinsi</label>
-                                <input class="form-control" name="2_nop_provinsi" id="provinsi" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Kabupaten">Kabupaten</label>
-                                <input class="form-control" name="2_nop_kabupaten" id="Kabupaten" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Kecamatan">Kecamatan</label>
-                                <input class="form-control" name="2_nop_kecamatan" id="Kecamatan" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Gampong">Gampong</label>
-                                <input class="form-control" name="2_nop_gampong" id="Gampong" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Blok">Blok</label>
-                                <input class="form-control" name="2_nop_blok" id="Blok" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="No.Urut">No.Urut</label>
-                                <input class="form-control" name="2_no_urut" id="No.Urut" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Kode">Kode</label>
-                                <input class="form-control" name="2_nop_kode" id="Kode" type="text"
-                                    placeholder="Masukkan Data" />
+                        <div class="col-12">
+
+                            <div class="d-flex flex-wrap">
+                                <div class="col-lg-1 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="provinsi">PROV.</label>
+                                    <input class="form-control" name="2_nop_provinsi" id="provinsi" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="Kabupaten">KAB.</label>
+                                    <input class="form-control" name="2_nop_kabupaten" id="Kabupaten" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="Kecamatan">KEC.</label>
+                                    <input class="form-control" name="2_nop_kecamatan" id="Kecamatan" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="Gampong">GAMPONG</label>
+                                    <input class="form-control" name="2_nop_gampong" id="Gampong" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="Blok">BLOK</label>
+                                    <input class="form-control" name="2_nop_blok" id="Blok" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
+                                    <input class="form-control" name="2_no_urut" id="No.Urut" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-1 col-12 mb-2 px-1">
+                                    <label class="text-black mb-1" for="Kode">KODE</label>
+                                    <input class="form-control" name="2_nop_kode" id="Kode" type="text"
+                                        placeholder="Kode" />
+                                </div>
                             </div>
                         </div>
                         <h6 class=" my-3">3. NOP BERSAMA <span class="text-danger">*</span></h6>
-                        <div class="d-flex flex-wrap">
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="provinsi">Provinsi</label>
-                                <input class="form-control" name="3_nop_bersama_provinsi" id="provinsi" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Kabupaten">Kabupaten</label>
-                                <input class="form-control" name="3_nop_bersama_kabupaten" id="Kabupaten" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Kecamatan">Kecamatan</label>
-                                <input class="form-control" name="3_nop_bersama_kecamatan" id="Kecamatan" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Gampong">Gampong</label>
-                                <input class="form-control" name="3_nop_bersama_gampong" id="Gampong" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Blok">Blok</label>
-                                <input class="form-control" name="3_nop_bersama_blok" id="Blok" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="No.Urut">No.Urut</label>
-                                <input class="form-control" name="3_no_urut" id="No.Urut" type="text"
-                                    placeholder="Masukkan Data" />
-                            </div>
-                            <div class="col-lg-6 col-12 mb-2 px-3">
-                                <label class="mb-1" for="Kode">Kode</label>
-                                <input class="form-control" name="3_nop_bersama_kode" id="Kode" type="text"
-                                    placeholder="Masukkan Data" />
+                        <div class="col-12">
+                            <div class="d-flex flex-wrap">
+
+                                <div class="col-lg-1 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="provinsi">Provinsi</label>
+                                    <input class="form-control" name="3_nop_bersama_provinsi" id="provinsi"
+                                        type="text" placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="Kabupaten">Kabupaten</label>
+                                    <input class="form-control" name="3_nop_bersama_kabupaten" id="Kabupaten"
+                                        type="text" placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="Kecamatan">Kecamatan</label>
+                                    <input class="form-control" name="3_nop_bersama_kecamatan" id="Kecamatan"
+                                        type="text" placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="Gampong">Gampong</label>
+                                    <input class="form-control" name="3_nop_bersama_gampong" id="Gampong"
+                                        type="text" placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="Blok">Blok</label>
+                                    <input class="form-control" name="3_nop_bersama_blok" id="Blok" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="No.Urut">No.Urut</label>
+                                    <input class="form-control" name="3_no_urut" id="No.Urut" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
+                                <div class="col-lg-1 col-12 mb-2 px-1">
+                                    <label class="mb-1" for="Kode">Kode</label>
+                                    <input class="form-control" name="3_nop_bersama_kode" id="Kode" type="text"
+                                        placeholder="Masukkan Data" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -257,6 +263,8 @@
                             placeholder="Masukkan Data" />
                     </div>
                 </div>
+                <small class="mt-2 ps-3">Catatan : *) yang pernghasilannya semata-mata berasal dari gaji atau uang
+                    pensiunan</small>
             </div>
             <h4 class="fw-bold text-lg-center text-start my-3">
                 D. DATA TANAH
@@ -283,8 +291,7 @@
                             <option value="fasilitas_umum">Fasilitas Umum</option>
                         </select>
                     </div>
-                    <small class="mt-2 ps-3">Catatan : *) yang pernghasilannya semata-mata berasal dari gaji atau uang
-                        pensiunan</small>
+
                 </div>
             </div>
             <h4 class="fw-bold text-lg-center text-start my-3">

@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
  * |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
+Route::get('/', [AdminController::class,'index'])->name('index');
 Route::get('/data-spop', [AdminController::class,'dataSpop'])->name('data.spop');
 Route::get('/data-lspop', [AdminController::class,'dataLspop'])->name('data.lspop');
 Route::get('/tambah-lspop', [AdminController::class,'tambahLspop'])->name('tambah.lspop');
