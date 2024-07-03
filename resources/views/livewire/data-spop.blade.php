@@ -45,10 +45,22 @@
                                 <td>{{ $item->no_formulir }}</td>
                                 <td>{{ $item->{'31_nama_jelas_petugas'} }}</td>
                                 <td>{{ $item->{'29_tanggal_pejabat'} }}</td>
-                                <td class="text-center">
-                                    <button wire:click="" class="btn btn-primary rounded-pill mx-1">Detail</button>
-                                    <button wire:click="" class="btn btn-warning rounded-pill mx-1">Edit</button>
-                                    <button wire:click="" class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                <td class="text-center d-flex flex-wrap justify-content-center">
+                                    @if ($confirmDelete != $item->id)
+                                        <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
+                                            <button class="btn btn-primary rounded-pill mx-1">Detail</button>
+                                        </a>
+                                        <div class="div">
+
+                                            <button type="button" wire:click="confirmDelete({{ $item->id }})"
+                                                class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                        </div>
+                                    @else
+                                        <button type="button" wire:click="batalDelete"
+                                            class="btn btn-danger rounded-pill mx-1">Batal</button>
+                                        <button type="button" wire:click="delete({{ $item->id }})"
+                                            class="btn btn-success rounded-pill mx-1">Hapu</button>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

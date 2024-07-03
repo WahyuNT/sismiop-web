@@ -10,10 +10,11 @@ class DetailSpop extends Component
 {
     use LivewireAlert;
     public $dataId;
+    public $disabled = 'disabled';
 
     public $data = [];
 
-    // public $isEdit;
+    public $isEdit = false;
 
     public function mount($id)
     {
@@ -22,14 +23,17 @@ class DetailSpop extends Component
 
     public function render()
     {
-        $spop = null;
+
 
         $spop = Spop::find($this->dataId);
         $spop = $spop->toArray();
         $this->data = $spop;
         $placeholder = "Masukkan Data";
 
-        return view('livewire.detail-spop', compact('spop', 'placeholder'));
+        $disabled = $this->disabled;
+        $isEdit = $this->isEdit;
+
+        return view('livewire.detail-spop', compact('spop', 'placeholder', 'disabled', 'isEdit'));
     }
 
     public function updateData()
@@ -39,8 +43,23 @@ class DetailSpop extends Component
 
         if ($data->save()) {
             $this->alert('success', 'Data berhasil diupdate');
+            $this->disabled = 'disabled';
         } else {
             $this->alert('error', 'Data gagal diupdate');
         }
+    }
+    public function edit()
+    {
+        $this->disabled = '';
+        $this->isEdit = true;
+    }
+    public function cancelEdit()
+    {
+        $this->disabled = 'disabled';
+        $this->isEdit = false;
+        
+        $spop = Spop::find($this->dataId);
+        $spop = $spop->toArray();
+        $this->data = $spop;
     }
 }
