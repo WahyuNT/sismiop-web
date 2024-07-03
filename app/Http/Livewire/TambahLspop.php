@@ -18,6 +18,7 @@ class TambahLspop extends Component
     {
         Lspop::create($this->data);
         $this->emit('simpan');
+        $this->nullData();
     }
 
     public function nullData()

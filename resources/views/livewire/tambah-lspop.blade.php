@@ -29,28 +29,28 @@
                         </h6>
                         <div class="d-flex justify-content-start gap-2">
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="1" id="radio-transaksi-1"
+                                <input class="form-check-input" type="radio" value="perekaman_data" id="radio-transaksi-1"
                                     wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" required />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-1">
                                     1. Perekaman Data
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="2" id="radio-transaksi-2"
+                                <input class="form-check-input" type="radio" value="pemutakhiran_data" id="radio-transaksi-2"
                                     wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-2">
                                     2. Pemutakhiran Data
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="3" id="radio-transaksi-3"
+                                <input class="form-check-input" type="radio" value="penghapusan_data" id="radio-transaksi-3"
                                     wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-3">
                                     3. Penghapusan Data
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="4" id="radio-transaksi-4"
+                                <input class="form-check-input" type="radio" value="penilaian_individu" id="radio-transaksi-4"
                                     wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-4">
                                     4. Penilaian Individu
@@ -481,13 +481,13 @@
                             <div class="col-6 d-flex flex-wrap">
                                 <div class="form-check radio-style">
                                     <input wire:model="data.25_hydrant" class="form-check-input" type="radio"
-                                        value="" name="25_hydrant" id="hydrant-1" />
+                                        value="ada" name="25_hydrant" id="hydrant-1" />
                                     <label class="text-black fw-bold form-check-label" for="hydrant-1">
                                         Ada</label>
                                 </div>
                                 <div class="form-check radio-style">
                                     <input wire:model="data.25_hydrant" class="form-check-input" type="radio"
-                                        value="" name="25_hydrant" id="hydrant-2" />
+                                        value="tidak" name="25_hydrant" id="hydrant-2" />
                                     <label class="text-black fw-bold form-check-label" for="hydrant-2">
                                         Tidak Ada</label>
                                 </div>
@@ -500,13 +500,13 @@
                             <div class="col-6 d-flex flex-wrap">
                                 <div class="form-check radio-style">
                                     <input wire:model="data.sprinkler" class="form-check-input" type="radio"
-                                        value="" name="25_sprinkler" id="sprinkler-1" />
+                                        value="ada" name="25_sprinkler" id="sprinkler-1" />
                                     <label class="text-black fw-bold form-check-label" for="sprinkler-1">
                                         Ada</label>
                                 </div>
                                 <div class="form-check radio-style">
                                     <input wire:model="data.sprinkler" class="form-check-input" type="radio"
-                                        value="" name="25_sprinkler" id="sprinkler-2" />
+                                        value="tidak" name="25_sprinkler" id="sprinkler-2" />
                                     <label class="text-black fw-bold form-check-label" for="sprinkler-2">
                                         Tidak Ada</label>
                                 </div>
@@ -519,13 +519,13 @@
                             <div class="col-6 d-flex flex-wrap">
                                 <div class="form-check radio-style">
                                     <input wire:model="data.25_fireA1" class="form-check-input" type="radio"
-                                        value="" name="25_fireA1" id="fireA1-1" />
+                                        value="ada" name="25_fireA1" id="fireA1-1" />
                                     <label class="text-black fw-bold form-check-label" for="fireA1-1">
                                         Ada</label>
                                 </div>
                                 <div class="form-check radio-style">
                                     <input wire:model="data.25_fireA1" class="form-check-input" type="radio"
-                                        value="" name="25_fireA1" id="fireA1-2" />
+                                        value="tidak" name="25_fireA1" id="fireA1-2" />
                                     <label class="text-black fw-bold form-check-label" for="fireA1-2">
                                         Tidak Ada</label>
                                 </div>
