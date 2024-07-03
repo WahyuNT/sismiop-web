@@ -10,7 +10,7 @@
         </section>
     </main>
 
-
+    @livewireScripts
     <x-script />
 </body>
 
