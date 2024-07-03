@@ -3,14 +3,17 @@
 namespace App\Http\Livewire;
 
 use App\Models\Lspop;
+use App\Models\Spop;
 use Livewire\Component;
 
 class TambahLspop extends Component
 {
     public $data = [];
-
+ 
     public function render()
     {
+
+
         return view('livewire.tambah-lspop');
     }
 
