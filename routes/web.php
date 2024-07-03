@@ -21,4 +21,5 @@ Route::get('/data-spop/{id}', [AdminController::class, 'detailSpop'])->name('det
 Route::get('/tambah-spop', [AdminController::class, 'tambahSpop'])->name('tambah.spop');
 
 Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
+Route::get('/data-lspop/{id}', [AdminController::class, 'detailLspop'])->name('detail.lspop');
 Route::get('/tambah-lspop', [AdminController::class, 'tambahLspop'])->name('tambah.lspop');

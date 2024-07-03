@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lspop;
 use App\Models\Spop;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,7 @@ class AdminController extends Controller
         return view('pages.detail-spop', compact('id'));
     }
 
+
     public function dataLspop()
     {
         return view('pages.data-lspop');
@@ -36,6 +38,16 @@ class AdminController extends Controller
     public function tambahSpop()
     {
         return view('pages.tambah-spop');
+    }
+    public function detailLspop($id)
+    {
+        $id = $id;
+        $data = Lspop::find($id);
+
+        if (!$data) {
+            return redirect('/data-lspop');
+        }
+        return view('pages.detail-lspop', compact('id'));
     }
 
     public function tambahLspop()

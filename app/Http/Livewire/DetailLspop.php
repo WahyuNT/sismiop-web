@@ -2,13 +2,13 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Spop;
+use App\Models\Lspop;
 use Livewire\Component;
 
-class DetailSpop extends Component
+class DetailLspop extends Component
 {
     public $dataId;
-    
+
     public $data = [];
 
     // public $isEdit;
@@ -20,19 +20,18 @@ class DetailSpop extends Component
 
     public function render()
     {
-        $spop = null;
+        $lspop = null;
 
-        $spop = Spop::find($this->dataId);
-        $spop = $spop->toArray();
-        $this->data = $spop;
-        $placeholder = "Masukkan Data";
+        $lspop = Lspop::find($this->dataId);
+        $lspop = $lspop->toArray();
+        $this->data = $lspop;
 
-        return view('livewire.detail-spop', compact('spop', 'placeholder'));
+        return view('livewire.detail-lspop');
     }
 
     public function updateData()
     {
-        $data = Spop::find($this->dataId);
+        $data = Lspop::find($this->dataId);
         $data->update($this->data);
 
         $data->save();

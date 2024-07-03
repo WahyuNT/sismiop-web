@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('lspop', function (Blueprint $table) {
             $table->id();
             $table->string('no_formulir', 10)->nullable;
+            $table->enum('status', ['aktif', 'tidak_aktif']);
             $table->string('1_jenis_transaksi', 10)->nullable;
             $table->string('2_nop_provinsi', 10)->nullable();
             $table->string('2_nop_kabupaten', 10)->nullable();

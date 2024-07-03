@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -16,6 +15,7 @@ return new class extends Migration
         Schema::create('spop', function (Blueprint $table) {
             $table->id();
             $table->string('no_formulir')->nullable();
+            $table->enum('status', ['aktif', 'tidak_aktif']);
             $table->string('1_jenis_transaksi')->nullable();
             $table->string('2_nop_provinsi')->nullable();
             $table->string('2_nop_kabupaten')->nullable();
