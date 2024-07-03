@@ -4,9 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Spop;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class TambahSpop extends Component
 {
+    use LivewireAlert;
     public $data = [];
 
     public function render()
@@ -16,9 +18,14 @@ class TambahSpop extends Component
 
     public function simpan()
     {
-        Spop::create($this->data);
-        $this->emit('simpan');
-        $this->nullData();
+   
+        $data = Spop::create($this->data);
+        if ($data) {
+            $this->nullData();
+            $this->alert('success', 'Data berhasil disimpan');
+        } else {
+            $this->alert('error', 'Data gagal disimpan');
+        }
     }
 
     public function nullData()

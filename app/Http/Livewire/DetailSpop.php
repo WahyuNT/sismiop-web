@@ -4,11 +4,13 @@ namespace App\Http\Livewire;
 
 use App\Models\Spop;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class DetailSpop extends Component
 {
+    use LivewireAlert;
     public $dataId;
-    
+
     public $data = [];
 
     // public $isEdit;
@@ -35,6 +37,10 @@ class DetailSpop extends Component
         $data = Spop::find($this->dataId);
         $data->update($this->data);
 
-        $data->save();
+        if ($data->save()) {
+            $this->alert('success', 'Data berhasil diupdate');
+        } else {
+            $this->alert('error', 'Data gagal diupdate');
+        }
     }
 }
