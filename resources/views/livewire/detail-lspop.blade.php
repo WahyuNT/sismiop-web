@@ -3,9 +3,26 @@
         <!-- ========== title-wrapper start ========== -->
         <div class="title-wrapper pt-30">
             <div class="row align-items-center">
-                <div class="col-12">
-                    <div class="title text-center">
-                        <h3><b>LAMPIRAN SURAT PEMBERITAHUAN OBJEK PAJAK</b></h3>
+                <div class="col-12 d-flex justify-content-between">
+                    <div class="div">
+                        <a href="{{ route('data.lspop') }}">
+    
+                            <button class="btn btn-info"><i class="fa-solid fa-arrow-left"></i></button>
+                        </a>
+                    </div>
+                    <div class="div">
+                        <div class="title text-center">
+                            <h3><b>LAMPIRAN SURAT PEMBERITAHUAN OBJEK PAJAK</b></h3>
+                        </div>
+                    </div>
+    
+                    <div class="div">
+                        @if ($isEdit == false)
+                            <button type="button" wire:click="edit" class="btn btn-info ">Edit Data</i></button>
+                        @elseif ($isEdit == true)
+                            <button type="button" wire:click="cancelEdit" class="btn btn-danger ">Batal</i></button>
+                            <button type="button" wire:click="updateData" class="btn btn-info ">Simpan Data</i></button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -19,7 +36,7 @@
                 <div class="card card-form">
                     <div class="col-lg-2 col-12 mb-2 px-1">
                         <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir</label>
-                        <input wire:model.defer="data.no_formulir" class="form-control" name="no_formulir"
+                        <input {{ $disabled }}  wire:model.defer="data.no_formulir" class="form-control" name="no_formulir"
                             id="no_formulir" type="text" placeholder="Masukkan Data" />
                     </div>
 
@@ -29,7 +46,7 @@
                         </h6>
                         <div class="d-flex justify-content-start gap-2">
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="perekaman_data"
+                                <input {{ $disabled }}  class="form-check-input" type="radio" value="perekaman_data"
                                     id="radio-transaksi-1" wire:model.defer="data.1_jenis_transaksi"
                                     name="1_jenis_transaksi" required />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-1">
@@ -37,7 +54,7 @@
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="pemutakhiran_data"
+                                <input {{ $disabled }}  class="form-check-input" type="radio" value="pemutakhiran_data"
                                     id="radio-transaksi-2" wire:model.defer="data.1_jenis_transaksi"
                                     name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-2">
@@ -45,7 +62,7 @@
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="penghapusan_data"
+                                <input {{ $disabled }}  class="form-check-input" type="radio" value="penghapusan_data"
                                     id="radio-transaksi-3" wire:model.defer="data.1_jenis_transaksi"
                                     name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-3">
@@ -53,7 +70,7 @@
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="penilaian_individu"
+                                <input {{ $disabled }}  class="form-check-input" type="radio" value="penilaian_individu"
                                     id="radio-transaksi-4" wire:model.defer="data.1_jenis_transaksi"
                                     name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-4">
@@ -72,43 +89,43 @@
                             <div class="d-flex flex-wrap">
                                 <div class="col-lg-1 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="provinsi">Provinsi</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_provinsi"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_provinsi"
                                         name="2_nop_provinsi" id="provinsi" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-2 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="2_nop_kabupaten">Kabupaten</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_kabupaten"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_kabupaten"
                                         name="2_nop_kabupaten" id="2_nop_kabupaten" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-2 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="2_nop_kecamatan">Kecamatan</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_kecamatan"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_kecamatan"
                                         name="2_nop_kecamatan" id="2_nop_kecamatan" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-2 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="2_nop_gampong">Gampong</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_gampong"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_gampong"
                                         name="2_nop_gampong" class="form-control" id="2_nop_gampong" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-2 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="2_nop_blok">Blok</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_blok" name="2_nop_blok"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_blok" name="2_nop_blok"
                                         class="form-control" id="2_nop_blok" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-2 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="2_nop_no_urut">No.Urut</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_no_urut"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_no_urut"
                                         name="2_nop_no_urut" class="form-control" id="2_nop_no_urut" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-1 col-12 mb-2 px-1">
                                     <label class="text-black fw-bold mb-1" for="2_nop_kode">Kode</label>
-                                    <input class="form-control" wire:model.defer="data.2_nop_kode" name="2_nop_kode"
+                                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.2_nop_kode" name="2_nop_kode"
                                         class="form-control" id="2_nop_kode" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -119,13 +136,13 @@
                             <div class="col-lg-6 col-12 mb-2 px-3">
                                 <label class="text-black fw-bold mb-1" for="3_jumlah_bangunan">3. Jumlah
                                     Bangunan</label>
-                                <input class="form-control" wire:model.defer="data.3_jumlah_bangunan"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.3_jumlah_bangunan"
                                     name="3_jumlah_bangunan" id="jumlah_bangunan" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
                             <div class="col-lg-6 col-12 mb-2 px-3">
                                 <label class="text-black fw-bold mb-1" for="4_bangunan_ke">4. Bangunan Ke</label>
-                                <input class="form-control" wire:model.defer="data.4_bangunan_ke"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.4_bangunan_ke"
                                     name="4_bangunan_ke" id="4_bangunan_ke" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -163,26 +180,26 @@
                         </div>
                         <div class="col-lg-6 col-12 px-3 mb-2">
                             <label class="text-black fw-bold mb-1" for="6_luas_bangunan">6. Luas Bangunan(M2)</label>
-                            <input class="form-control" wire:model.defer="data.6_luas_bangunan"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.6_luas_bangunan"
                                 name="6_luas_bangunan" id="6_luas_bangunan" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
                         <div class="col-lg-6 col-12 px-3 mb-2">
                             <label class="text-black fw-bold mb-1" for="7_jumlah_lantai">7. Jumlah Lantai</label>
-                            <input class="form-control" wire:model.defer="data.7_jumlah_lantai"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.7_jumlah_lantai"
                                 name="7_jumlah_lantai" id="7_jumlah_lantai" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
                         <div class="col-lg-6 col-12 px-3 mb-2">
                             <label class="text-black fw-bold mb-1" for="8_tahun_dibangun">8. Tahun Dibangun</label>
-                            <input class="form-control" wire:model.defer="data.8_tahun_dibangun"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.8_tahun_dibangun"
                                 name="8_tahun_dibangun" id="8_tahun_dibangun" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
                         <div class="col-lg-6 col-12 px-3 mb-2">
                             <label class="text-black fw-bold mb-1" for="9_tahun_direnovasi">9. Tahun
                                 Direnovasi</label>
-                            <input class="form-control" wire:model.defer="data.9_tahun_direnovasi"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.9_tahun_direnovasi"
                                 name="9_tahun_direnovasi" id="9_tahun_direnovasi" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -190,7 +207,7 @@
                             <label class="text-black fw-bold mb-1" for="10_daya_listrik_terpasang">10. Daya Listrik
                                 Terpasang
                                 (Watt)</label>
-                            <input class="form-control" wire:model.defer="data.10_daya_listrik_terpasang"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.10_daya_listrik_terpasang"
                                 name="10_daya_listrik_terpasang" id="10_daya_listrik_terpasang" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -276,12 +293,12 @@
                         <div class="d-flex flex-wrap">
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1" for="17_ac_split">Split</label>
-                                <input class="form-control" wire:model.defer="data.17_ac_split" name="17_ac_split"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.17_ac_split" name="17_ac_split"
                                     id="17_ac_split" type="text" placeholder="Masukkan Data" />
                             </div>
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1" for="17_ac_window">Window</label>
-                                <input class="form-control" wire:model.defer="data.17_ac_window" name="17_ac_window"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.17_ac_window" name="17_ac_window"
                                     id="17_ac_window" type="text" placeholder="Masukkan Data" />
                             </div>
                         </div>
@@ -300,7 +317,7 @@
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1" for="19_luas_kolam_renang">19. Luas Kolam
                                     Renang(M2)</label>
-                                <input class="form-control" wire:model.defer="data.19_luas_kolam_renang"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.19_luas_kolam_renang"
                                     name="19_luas_kolam_renang" id="19_luas_kolam_renang" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -322,14 +339,14 @@
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1"
                                     for="20_luas_perkerasan_halaman_ringan">Ringan</label>
-                                <input class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_ringan"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_ringan"
                                     name="20_luas_perkerasan_halaman_ringan" id="20_luas_perkerasan_halaman_ringan"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1"
                                     for="20_luas_perkerasan_halaman_sedang">Sedang</label>
-                                <input class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_sedang"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_sedang"
                                     name="20_luas_perkerasan_halaman_sedang"
                                     id="20_luas_perkerasan_halaman_sedang=sedang" type="text"
                                     placeholder="Masukkan Data" />
@@ -337,7 +354,7 @@
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1"
                                     for="20_luas_perkerasan_halaman_berat">Berat</label>
-                                <input class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_berat"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_berat"
                                     name="20_luas_perkerasan_halaman_berat" id="20_luas_perkerasan_halaman_berat"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -345,7 +362,7 @@
                                 <label class="text-black fw-bold mb-1" for="20_luas_perkerasan_halaman_dpl">Dengan
                                     Penutup
                                     Lantai</label>
-                                <input class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_dpl"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.20_luas_perkerasan_halaman_dpl"
                                     name="20_luas_perkerasan_halaman_dpl" id="20_luas_perkerasan_halaman_dpl"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -369,12 +386,12 @@
                                 <p>Beton</p>
                             </div>
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.21_beton_dengan_lampu"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.21_beton_dengan_lampu"
                                     name="21_beton_dengan_lampu" id="21_beton_dengan_lampu" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
                             <div class="col-4">
-                                <input class="form-control" wire:model.defer="data.21_beton_tanpa_lampu"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.21_beton_tanpa_lampu"
                                     name="21_beton_tanpa_lampu" id="21_beton_tanpa_lampu" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -384,12 +401,12 @@
                                 <p>Aspal</p>
                             </div>
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.21_aspal_dengan_lampu"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.21_aspal_dengan_lampu"
                                     name="21_aspal_dengan_lampu" id="21_aspal_dengan_lampu" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
                             <div class="col-4">
-                                <input class="form-control" wire:model.defer="data.21_aspal_tanpa_lampu"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.21_aspal_tanpa_lampu"
                                     name="21_aspal_tanpa_lampu" id="21_aspal_tanpa_lampu" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -399,12 +416,12 @@
                                 <p>Tanah Liat/Rumput</p>
                             </div>
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.21_tanah_dengan_lampu"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.21_tanah_dengan_lampu"
                                     name="21_tanah_dengan_lampu" id="21_tanah_dengan_lampu" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
                             <div class="col-4">
-                                <input class="form-control" wire:model.defer="data.21_tanah_tanpa_lampu"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.21_tanah_tanpa_lampu"
                                     name="21_tanah_tanpa_lampu" id="21_tanah_tanpa_lampu" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -415,7 +432,7 @@
                         <h6>22. Jumlah Lift</h6>
                         <div class="d-flex flex-wrap align-items-center mt-3">
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.22_lift_penumpang"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.22_lift_penumpang"
                                     name="22_lift_penumpang" id="22_lift_penumpang" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -425,7 +442,7 @@
                         </div>
                         <div class="d-flex flex-wrap align-items-center mt-3">
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.22_kapsul" name="22_kapsul"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.22_kapsul" name="22_kapsul"
                                     id="22_kapsul" type="text" placeholder="Masukkan Data" />
                             </div>
                             <div class="col-4 ps-2 ">
@@ -434,7 +451,7 @@
                         </div>
                         <div class="d-flex flex-wrap align-items-center mt-3">
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.22_barang" name="22_barang"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.22_barang" name="22_barang"
                                     id="22_barang" type="text" placeholder="Masukkan Data" />
                             </div>
                             <div class="col-4 ps-2 ">
@@ -449,7 +466,7 @@
                                 <p>Lbr < 0.80 M</p>
                             </div>
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.23_jumlah_tangga_berjalan_k080"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.23_jumlah_tangga_berjalan_k080"
                                     name="23_jumlah_tangga_berjalan_k080" id="23_jumlah_tangga_berjalan_k080"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -459,7 +476,7 @@
                                 <p>Lbr > 0.80 M</p>
                             </div>
                             <div class="col-4  pe-2">
-                                <input class="form-control" wire:model.defer="data.23_jumlah_tangga_berjalan_b080"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.23_jumlah_tangga_berjalan_b080"
                                     name="23_jumlah_tangga_berjalan_b080" id="23_jumlah_tangga_berjalan_b080"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -470,7 +487,7 @@
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1 fw-bold" for="24_panjang_pagar">24. Panjang
                                     Pagar(M2)</label>
-                                <input class="form-control" wire:model.defer="data.24_panjang_pagar"
+                                <input {{ $disabled }}  class="form-control" wire:model.defer="data.24_panjang_pagar"
                                     name="24_panjang_pagar" id="24_panjang_pagar" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -494,13 +511,13 @@
                             </div>
                             <div class="col-6 d-flex flex-wrap">
                                 <div class="form-check radio-style">
-                                    <input wire:model.defer="data.25_hydrant" class="form-check-input" type="radio"
+                                    <input {{ $disabled }}  wire:model.defer="data.25_hydrant" class="form-check-input" type="radio"
                                         value="ada" name="25_hydrant" id="hydrant-1" />
                                     <label class="text-black fw-bold form-check-label" for="hydrant-1">
                                         Ada</label>
                                 </div>
                                 <div class="form-check radio-style">
-                                    <input wire:model.defer="data.25_hydrant" class="form-check-input" type="radio"
+                                    <input {{ $disabled }}  wire:model.defer="data.25_hydrant" class="form-check-input" type="radio"
                                         value="tidak" name="25_hydrant" id="hydrant-2" />
                                     <label class="text-black fw-bold form-check-label" for="hydrant-2">
                                         Tidak Ada</label>
@@ -513,13 +530,13 @@
                             </div>
                             <div class="col-6 d-flex flex-wrap">
                                 <div class="form-check radio-style">
-                                    <input wire:model.defer="data.sprinkler" class="form-check-input" type="radio"
+                                    <input {{ $disabled }}  wire:model.defer="data.sprinkler" class="form-check-input" type="radio"
                                         value="ada" name="25_sprinkler" id="sprinkler-1" />
                                     <label class="text-black fw-bold form-check-label" for="sprinkler-1">
                                         Ada</label>
                                 </div>
                                 <div class="form-check radio-style">
-                                    <input wire:model.defer="data.sprinkler" class="form-check-input" type="radio"
+                                    <input {{ $disabled }}  wire:model.defer="data.sprinkler" class="form-check-input" type="radio"
                                         value="tidak" name="25_sprinkler" id="sprinkler-2" />
                                     <label class="text-black fw-bold form-check-label" for="sprinkler-2">
                                         Tidak Ada</label>
@@ -532,13 +549,13 @@
                             </div>
                             <div class="col-6 d-flex flex-wrap">
                                 <div class="form-check radio-style">
-                                    <input wire:model.defer="data.25_fireA1" class="form-check-input" type="radio"
+                                    <input {{ $disabled }}  wire:model.defer="data.25_fireA1" class="form-check-input" type="radio"
                                         value="ada" name="25_fireA1" id="fireA1-1" />
                                     <label class="text-black fw-bold form-check-label" for="fireA1-1">
                                         Ada</label>
                                 </div>
                                 <div class="form-check radio-style">
-                                    <input wire:model.defer="data.25_fireA1" class="form-check-input" type="radio"
+                                    <input {{ $disabled }}  wire:model.defer="data.25_fireA1" class="form-check-input" type="radio"
                                         value="tidak" name="25_fireA1" id="fireA1-2" />
                                     <label class="text-black fw-bold form-check-label" for="fireA1-2">
                                         Tidak Ada</label>
@@ -550,7 +567,7 @@
                         <label class="text-black fw-bold mb-1 fw-bold" for="26_jumlah_saluran_pes_pabx">26. JUMLAH
                             SALURAN PES.
                             PABX</label>
-                        <input class="form-control" wire:model.defer="data.26_jumlah_saluran_pes_pabx"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.26_jumlah_saluran_pes_pabx"
                             name="26_jumlah_saluran_pes_pabx" id="26_jumlah_saluran_pes_pabx" type="text"
                             placeholder="Masukkan Data" />
                     </div>
@@ -558,7 +575,7 @@
                         <label class="text-black fw-bold mb-1 fw-bold" for="27_kedalaman_sumur_artetis">27. KEDALAMAN
                             SUMUR ARTETIS
                             (M)</label>
-                        <input class="form-control" wire:model.defer="data.27_kedalaman_sumur_artetis"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.27_kedalaman_sumur_artetis"
                             name="27_kedalaman_sumur_artetis" id="27_kedalaman_sumur_artetis" type="text"
                             placeholder="Masukkan Data" />
                     </div>
@@ -574,33 +591,33 @@
             <div class="d-flex flex-wrap">
                 <div class="col-lg-6 col-12 px-3 my-2">
                     <label class="text-black fw-bold mb-1 fw-bold" for="28_tinggi_kolong">28. TINGGI KOLOM (M)</label>
-                    <input class="form-control" wire:model.defer="data.28_tinggi_kolong" name="28_tinggi_kolong"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.28_tinggi_kolong" name="28_tinggi_kolong"
                         id="28_tinggi_kolong" type="text" placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 my-2">
                     <label class="text-black fw-bold mb-1 fw-bold" for="29_lebar_bentang">29. LEBAR BENTANG
                         (M)</label>
-                    <input class="form-control" wire:model.defer="data.29_lebar_bentang" name="29_lebar_bentang"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.29_lebar_bentang" name="29_lebar_bentang"
                         id="29_lebar_bentang" type="text" placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 my-2">
                     <label class="text-black fw-bold mb-1 fw-bold" for="30_daya_dukung_lantai">30. DAYA DUKUNG LANTAI
                         (Kg/M²)</label>
-                    <input class="form-control" wire:model.defer="data.30_daya_dukung_lantai"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.30_daya_dukung_lantai"
                         name="30_daya_dukung_lantai" id="30_daya_dukung_lantai" type="text"
                         placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 my-2">
                     <label class="text-black fw-bold mb-1 fw-bold" for="31_keliling_dinding">31. KELILING DINDING
                         (M)</label>
-                    <input class="form-control" wire:model.defer="data.31_keliling_dinding"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.31_keliling_dinding"
                         name="31_keliling_dinding" id="31_keliling_dinding" type="text"
                         placeholder="Masukkan Data" />
                 </div>
                 <div class="col-lg-6 col-12 px-3 my-2">
                     <label class="text-black fw-bold mb-1 fw-bold" for="32_luas_mezzanine">32. LUAS MEZZANINE
                         (M2)</label>
-                    <input class="form-control" wire:model.defer="data.32_luas_mezzanine" name="32_luas_mezzanine"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.32_luas_mezzanine" name="32_luas_mezzanine"
                         id="32_luas_mezzanine" type="text" placeholder="Masukkan Data" />
                 </div>
             </div>
@@ -657,7 +674,7 @@
                             <label class="text-black fw-bold mb-1 fw-bold" for="36_luas_kamar_dengan_ac_sentral">36.
                                 LUAS KAMAR DENGAN AC
                                 SENTRAL(M2)</label>
-                            <input class="form-control" wire:model.defer="data.36_luas_kamar_dengan_ac_sentral"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.36_luas_kamar_dengan_ac_sentral"
                                 name="36_luas_kamar_dengan_ac_sentral" id="36_luas_kamar_dengan_ac_sentral"
                                 type="text" placeholder="Masukkan Data" />
                         </div>
@@ -667,7 +684,7 @@
                                 DENGAN
                                 AC
                                 SENTRAL (M2)</label>
-                            <input class="form-control" wire:model.defer="data.37_luas_ruang_lain_dengan_ac_sentral"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.37_luas_ruang_lain_dengan_ac_sentral"
                                 name="37_luas_ruang_lain_dengan_ac_sentral" id="37_luas_ruang_lain_dengan_ac_sentral"
                                 type="text" placeholder="Masukkan Data" />
                         </div>
@@ -713,7 +730,7 @@
                         <div class="col-6 px-2">
                             <label class="text-black fw-bold mb-1 fw-bold" for="41_jumlah_kamar">41. JUMLAH
                                 KAMAR</label>
-                            <input class="form-control" wire:model.defer="data.41_jumlah_kamar"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.41_jumlah_kamar"
                                 name="41_jumlah_kamar" id="41_jumlah_kamar" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -722,7 +739,7 @@
                                 LUAS KAMAR DENGAN AC
                                 SENTARAL
                                 (M2)</label>
-                            <input class="form-control" wire:model.defer="data.42_luas_kamar_dengan_ac_sentra"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.42_luas_kamar_dengan_ac_sentra"
                                 name="42_luas_kamar_dengan_ac_sentra" id="42_luas_kamar_dengan_ac_sentra"
                                 type="text" placeholder="Masukkan Data" />
                         </div>
@@ -732,7 +749,7 @@
                                 DENGAN
                                 AC
                                 SENTARAL (M2)</label>
-                            <input class="form-control" wire:model.defer="data.43_luas_ruang_lain_dengan_ac_sentral"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.43_luas_ruang_lain_dengan_ac_sentral"
                                 name="43_luas_ruang_lain_dengan_ac_sentral" id="43_luas_ruang_lain_dengan_ac_sentral"
                                 type="text" placeholder="Masukkan Data" />
                         </div>
@@ -768,7 +785,7 @@
                         <div class="col-6 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="46_jumlah_apartemen">46.JUMLAH
                                 APARTEMEN </label>
-                            <input class="form-control" wire:model.defer="data.46_jumlah_apartemen"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.46_jumlah_apartemen"
                                 name="46_jumlah_apartemen" id="46_jumlah_apartemen" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -777,7 +794,7 @@
                                 for="47_luas_apartemen_dengan_ac_sentral">47. LUAS APARTEMEN
                                 DENGAN AC
                                 SENTRAL (M2) </label>
-                            <input class="form-control" wire:model.defer="data.47_luas_apartemen_dengan_ac_sentral"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.47_luas_apartemen_dengan_ac_sentral"
                                 name="47_luas_apartemen_dengan_ac_sentral" id="47_luas_apartemen_dengan_ac_sentral"
                                 type="text" placeholder="Masukkan Data" />
                         </div>
@@ -786,7 +803,7 @@
                                 for="48_ls_ruang_lain_dengan_ac_sentral">48. LUAS RUANG LAIN
                                 DENGAN AC
                                 SENTRAL (M2)</label>
-                            <input class="form-control" wire:model.defer="data.48_ls_ruang_lain_dengan_ac_sentral"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.48_ls_ruang_lain_dengan_ac_sentral"
                                 name="48_ls_ruang_lain_dengan_ac_sentral" id="48_ls_ruang_lain_dengan_ac_sentral"
                                 type="text" placeholder="Masukkan Data" />
                         </div>
@@ -798,7 +815,7 @@
                         <div class="col-6 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="49_kapasitas_tangki">49. KAPASITAS
                                 TANGKI (M3)</label>
-                            <input class="form-control" wire:model.defer="data.49_kapasitas_tangki"
+                            <input {{ $disabled }}  class="form-control" wire:model.defer="data.49_kapasitas_tangki"
                                 name="49_kapasitas_tangki" id="49_kapasitas_tangki" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -834,13 +851,13 @@
 
                 <div class="col-6 px-2 ">
                     <label class="text-black fw-bold mb-1 fw-bold" for="52_nilai_sistem">52. NILAI SISTEM</label>
-                    <input class="form-control" wire:model.defer="data.52_nilai_sistem" name="52_nilai_sistem"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.52_nilai_sistem" name="52_nilai_sistem"
                         id="52_nilai_sistem" type="text" placeholder="Masukkan Data" />
                 </div>
                 <div class="col-6 px-2 ">
                     <label class="text-black fw-bold mb-1 fw-bold" for="53_nilai_individual">53. NILAI
                         INDIVIDUAL</label>
-                    <input class="form-control" wire:model.defer="data.53_nilai_individual"
+                    <input {{ $disabled }}  class="form-control" wire:model.defer="data.53_nilai_individual"
                         name="53_nilai_individual" id="53_nilai_individual" type="text"
                         placeholder="Masukkan Data" />
                 </div>
@@ -857,14 +874,14 @@
                         <label class="text-black fw-bold mb-1 fw-bold" for="54_tanggal_kunjungan_kembali">54. TANGAL
                             KUNJUNGAN
                             KEMBALI</label>
-                        <input class="form-control" wire:model.defer="data.54_tanggal_kunjungan_kembali"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.54_tanggal_kunjungan_kembali"
                             name="54_tanggal_kunjungan_kembali" id="54_tanggal_kunjungan_kembali" type="date"
                             placeholder="Masukkan Data" />
                     </div>
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="55_tanggal_pendataan">55. TANGAL
                             PENDATAAN</label>
-                        <input class="form-control" wire:model.defer="data.55_tanggal_pendataan"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.55_tanggal_pendataan"
                             name="55_tanggal_pendataan" id="55_tanggal_pendataan" type="date"
                             placeholder="Masukkan Data" />
                     </div>
@@ -876,12 +893,12 @@
                     </div>
                     <div class="col-12 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="57_nama_jelas">57. NAMA JELAS</label>
-                        <input class="form-control" wire:model.defer="data.57_nama_jelas" name="57_nama_jelas"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.57_nama_jelas" name="57_nama_jelas"
                             id="57_nama_jelas" type="text" placeholder="Masukkan Data" />
                     </div>
                     <div class="col-12 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="58_nip">58. NIP</label>
-                        <input class="form-control" wire:model.defer="data.58_nip" name="58_nip" id="58_nip"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.58_nip" name="58_nip" id="58_nip"
                             type="text" placeholder="Masukkan Data" />
                     </div>
                 </div>
@@ -890,7 +907,7 @@
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="59_tanggal_penelitian">59. TANGAL
                             PENELITIAN</label>
-                        <input class="form-control" wire:model.defer="data.59_tanggal_penelitian"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.59_tanggal_penelitian"
                             name="59_tanggal_penelitian" id="59_tanggal_penelitian" type="date"
                             placeholder="Masukkan Data" />
                     </div>
@@ -902,12 +919,12 @@
                     </div>
                     <div class="col-12 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="61_nama_jelas">61. NAMA JELAS</label>
-                        <input class="form-control" wire:model.defer="data.61_nama_jelas" name="61_nama_jelas"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.61_nama_jelas" name="61_nama_jelas"
                             id="61_nama_jelas" type="text" placeholder="Masukkan Data" />
                     </div>
                     <div class="col-12 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="62_nip">62. NIP</label>
-                        <input class="form-control" wire:model.defer="data.62_nip" name="62_nip" id="62_nip"
+                        <input {{ $disabled }}  class="form-control" wire:model.defer="data.62_nip" name="62_nip" id="62_nip"
                             type="text" placeholder="Masukkan Data" />
                     </div>
                 </div>

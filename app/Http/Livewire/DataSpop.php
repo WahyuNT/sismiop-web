@@ -3,14 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Models\Spop;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class DataSpop extends Component
 {
     use LivewireAlert;
     use WithPagination;
+
     protected $paginationTheme = 'bootstrap';
     public $search;
     public $pagination = 10;
@@ -21,9 +22,12 @@ class DataSpop extends Component
         $confirmDelete = $this->confirmDelete;
         $spop = Spop::where('status', 'aktif')
             ->when($this->search, function ($query) {
-                $query->where('no_formulir', 'like', '%' . $this->search . '%')
+                $query
+                    ->where('no_formulir', 'like', '%' . $this->search . '%')
                     ->orWhere('31_nama_jelas_petugas', 'like', '%' . $this->search . '%');
-            })->paginate($this->pagination);
+            })
+            ->paginate($this->pagination);
+
         return view('livewire.data-spop', compact('spop', 'confirmDelete'));
     }
 
@@ -31,6 +35,7 @@ class DataSpop extends Component
     {
         $this->resetPage();
     }
+
     public function updatingPagination()
     {
         $this->resetPage();
@@ -38,7 +43,6 @@ class DataSpop extends Component
 
     public function delete($id)
     {
-
         $spop = Spop::find($id);
         $spop->status = 'tidak_aktif';
         if ($spop->save()) {
@@ -47,14 +51,14 @@ class DataSpop extends Component
             $this->alert('error', 'Data gagal dihapus');
         }
     }
+
     public function confirmDelete($id)
     {
         $this->confirmDelete = $id;
-
     }
+
     public function batalDelete()
     {
         $this->confirmDelete = null;
     }
-
 }
