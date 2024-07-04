@@ -888,6 +888,7 @@
                                 <div class="wrapper-sign" id="tempatTTD" style="display: block">
                                     <canvas id="signature-pad" class="signature-pad" width=246 height=164></canvas>
                                 </div>
+                                <textarea name="ttd" id="ttd"></textarea>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
                                         id="clear">Clear</button>
@@ -944,6 +945,9 @@
         backgroundColor: 'rgba(255, 255, 255, 0)',
         penColor: 'rgb(0, 0, 0)'
     });
+
+    var data = signaturePad.toDataURL('image/png');
+    document.getElementById('ttd').value = data;
 
     var cancelButton = document.getElementById('clear');
 
