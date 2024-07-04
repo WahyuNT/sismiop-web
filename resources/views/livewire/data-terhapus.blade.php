@@ -51,7 +51,12 @@
                                     <div class="div">
 
                                         <button type="button" wire:click="delete({{ $item->id }})"
-                                            class="btn btn-danger rounded-pill mx-1">Hapus Selamanya</button>
+                                            class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                    </div>
+                                    <div class="div">
+
+                                        <button type="button" wire:click="delete({{ $item->id }})"
+                                            class="btn btn-success rounded-pill mx-1">Kembalikan Data</button>
                                     </div>
 
                                 </td>

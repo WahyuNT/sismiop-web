@@ -15,6 +15,11 @@
     <div class="form-elements-wrapper">
         <div class="row">
             <div class="card card-form">
+                <div class="col-lg-4 col-12 mb-2 px-1">
+                    <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir</label>
+                    <input wire:model="data.no_formulir" class="form-control" name="no_formulir" id="no_formulir"
+                        type="text" placeholder="Masukkan Data" />
+                </div>
                 <div class="div">
                     <h6 class="mb-25">
                         1. Jenis Transaksi<span class="text-danger">*</span>
@@ -78,8 +83,8 @@
                             </div>
                             <div class="col-lg-2 col-12 mb-2 px-1">
                                 <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
-                                <input class="form-control" wire:model="data.2_no_urut" name="2_no_urut" id="No.Urut"
-                                    type="text" placeholder="Masukkan Data" />
+                                <input class="form-control" wire:model="data.2_no_urut" name="2_no_urut"
+                                    id="No.Urut" type="text" placeholder="Masukkan Data" />
                             </div>
                             <div class="col-lg-1 col-12 mb-2 px-1">
                                 <label class="text-black mb-1" for="Kode">KODE</label>
@@ -446,9 +451,9 @@
             </div>
             <div class="col-6 text-center">
                 <p class="text-center mb-2"><b><u>Contoh Penggambaran</u></b></p>
-                <img class="w-75 rounded" src="/public/img/contoh_map.png" alt="">
+                <img class="w-75 rounded" src="{{ asset('img/contoh_map.png') }}" alt="">
             </div>
         </div>
-        <button class="btn btn-primary" type="button" wire:click="simpan">Simpan</button>
+        <button class="btn btn-primary" type="button" wire:click="simpan">Simpan Data</button>
     </div>
 </div>

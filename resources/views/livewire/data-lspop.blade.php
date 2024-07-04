@@ -31,6 +31,7 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">No Formulir</th>
+                            <th scope="col">NOP</th>
                             <th scope="col">Petugas Pendata</th>
                             <th scope="col">Tanggal</th>
                             <th scope="col" class="text-center">Aksi</th>
@@ -41,6 +42,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->no_formulir }}</td>
+                                <td>839201302{{ $loop->iteration }}</td>
                                 <td>{{ $item->{'57_nama_jelas'} }}</td>
                                 <td>{{ $item->{'59_tanggal_penelitian'} }}</td>
                                 <td class="text-center d-flex flex-wrap justify-content-center">

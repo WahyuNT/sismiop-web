@@ -17,7 +17,7 @@
         <div class="form-elements-wrapper">
             <div class="row">
                 <div class="card card-form">
-                    <div class="col-lg-2 col-12 mb-2 px-1">
+                    <div class="col-lg-4 col-12 mb-2 px-1">
                         <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir</label>
                         <input wire:model="data.no_formulir" class="form-control" name="no_formulir" id="no_formulir"
                             type="text" placeholder="Masukkan Data" />
@@ -29,29 +29,33 @@
                         </h6>
                         <div class="d-flex justify-content-start gap-2">
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="perekaman_data" id="radio-transaksi-1"
-                                    wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" required />
+                                <input class="form-check-input" type="radio" value="perekaman_data"
+                                    id="radio-transaksi-1" wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi"
+                                    required />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-1">
                                     1. Perekaman Data
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="pemutakhiran_data" id="radio-transaksi-2"
-                                    wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
+                                <input class="form-check-input" type="radio" value="pemutakhiran_data"
+                                    id="radio-transaksi-2" wire:model="data.1_jenis_transaksi"
+                                    name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-2">
                                     2. Pemutakhiran Data
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="penghapusan_data" id="radio-transaksi-3"
-                                    wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
+                                <input class="form-check-input" type="radio" value="penghapusan_data"
+                                    id="radio-transaksi-3" wire:model="data.1_jenis_transaksi"
+                                    name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-3">
                                     3. Penghapusan Data
                                 </label>
                             </div>
                             <div class="form-check radio-style mb-20">
-                                <input class="form-check-input" type="radio" value="penilaian_individu" id="radio-transaksi-4"
-                                    wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
+                                <input class="form-check-input" type="radio" value="penilaian_individu"
+                                    id="radio-transaksi-4" wire:model="data.1_jenis_transaksi"
+                                    name="1_jenis_transaksi" />
                                 <label class="text-black fw-bold form-check-label" for="radio-transaksi-4">
                                     4. Penilaian Individu
                                 </label>
