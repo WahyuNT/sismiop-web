@@ -31,7 +31,7 @@
                                 <div class="form-check radio-style mb-20">
                                     <input class="form-check-input" type="radio" value="perekaman_data"
                                         id="radio-transaksi-1" wire:model="data.1_jenis_transaksi"
-                                        name="1_jenis_transaksi" required />
+                                        name="1_jenis_transaksi" />
                                     <label class="text-black fw-bold form-check-label" for="radio-transaksi-1">
                                         1. Perekaman Data
                                     </label>
@@ -886,11 +886,10 @@
                                 TANGAN</label>
                             <div class="card w-50">
                                 <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                    <canvas  id="signature-pad" wire:model="ttd"
-                                        class="signature-pad" width=246 height=164></canvas>
+                                    <canvas id="signature-pad" class="signature-pad" width=246 height=164></canvas>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button class="btn rounded-pill btn-danger py-0 mb-2"
+                                    <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
                                         id="clear">Clear</button>
                                 </div>
 
@@ -949,9 +948,10 @@
     var cancelButton = document.getElementById('clear');
 
     cancelButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad.clear();
+        // event.preventDefault();
+        // signaturePad.clear();
         // document.getElementById('ttd').value = "";
 
+        console.log(signaturePad)
     });
 </script>
