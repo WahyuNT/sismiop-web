@@ -23,3 +23,6 @@ Route::get('/tambah-spop', [AdminController::class, 'tambahSpop'])->name('tambah
 Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
 Route::get('/data-lspop/{id}/detail', [AdminController::class, 'detailLspop'])->name('detail.lspop');
 Route::get('/tambah-lspop', [AdminController::class, 'tambahLspop'])->name('tambah.lspop');
+
+Route::get('/data-terhapus', [AdminController::class, 'dataTerhapus'])->name('data.terhapus');
+Route::get('/data-terhapus/{id}/detail', [AdminController::class, 'detailTerhapus'])->name('detail.terhapus');
