@@ -14,3 +14,9 @@
     background-color: #f9f9f9;
  color: #365CF5 !important; 
 }
+.img-dashboard{
+    height: 120px;
+}
+.card-dashboard{
+    border-radius: 15px;
+}
