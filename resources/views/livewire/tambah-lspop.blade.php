@@ -884,14 +884,15 @@
                         <div class="col-12">
                             <label class="text-black fw-bold mb-1 fw-bold" for="56_tanda_tangan">56. TANDA
                                 TANGAN</label>
-                            <div class="card w-50">
+                            <div class="card sign-lspop_56">
                                 <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                    <canvas id="signature-pad" class="signature-pad" width=246 height=164></canvas>
+                                    <canvas id="signature-pad_56" class="signature-pad_56" width=246
+                                        height=164></canvas>
                                 </div>
-                                <textarea name="ttd" id="ttd"></textarea>
+                                <textarea wire:model="data.56_tanda_tangan" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
-                                        id="clear">Clear</button>
+                                        id="clear_56">Clear</button>
                                 </div>
 
                             </div>
@@ -919,8 +920,17 @@
                         <div class="col-12">
                             <label class="text-black fw-bold mb-1 fw-bold" for="60_tanda_tangan">60. TANDA
                                 TANGAN</label>
-                            <div class="card w-50">
-                                <div class="card-body py-5"></div>
+                            <div class="card sign-lspop_56">
+                                <div class="wrapper-sign" id="tempatTTD" style="display: block">
+                                    <canvas id="signature-pad_60" class="signature-pad_60" width=246
+                                        height=164></canvas>
+                                </div>
+                                <textarea wire:model="data.60_tanda_tangan" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
+                                        id="clear_60">Clear</button>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-12 px-2 ">
@@ -936,26 +946,61 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary w-100 mt-3" type="submit">submit</button>
+            <button class="btn btn-primary w-100 mt-3" id="submitBtn" type="submit">submit</button>
         </form>
     </div>
 </div>
 <script>
-    var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
+    var signaturePad_56 = new SignaturePad(document.getElementById('signature-pad_56'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+    var signaturePad_60 = new SignaturePad(document.getElementById('signature-pad_60'), {
         backgroundColor: 'rgba(255, 255, 255, 0)',
         penColor: 'rgb(0, 0, 0)'
     });
 
-    var data = signaturePad.toDataURL('image/png');
-    document.getElementById('ttd').value = data;
+    var cancelButton_56 = document.getElementById('clear_56');
+    var cancelButton_60 = document.getElementById('clear_60');
 
-    var cancelButton = document.getElementById('clear');
+    var canvasPad_56 = document.getElementById('signature-pad_56');
+    var canvasPad_60 = document.getElementById('signature-pad_60');
 
-    cancelButton.addEventListener('click', function(event) {
-        // event.preventDefault();
-        // signaturePad.clear();
-        // document.getElementById('ttd').value = "";
+    canvasPad_56.addEventListener('click', function(event) {
+        if (signaturePad_56.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            var data_56 = signaturePad_56.toDataURL('image/png');
 
-        console.log(signaturePad)
+            var tandaTanganInput_56 = document.getElementById('tanda_tangan_56');
+            tandaTanganInput_56.value = data_56;
+
+            @this.set('data.56_tanda_tangan', data_56);
+        }
+    });
+
+    canvasPad_60.addEventListener('click', function(event) {
+        if (signaturePad_60.isEmpty()) {
+            alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
+        } else {
+            var data_60 = signaturePad_60.toDataURL('image/png');
+
+            var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
+            tandaTanganInput_60.value = data_60;
+
+            @this.set('data.60_tanda_tangan', data_60);
+        }
+    });
+
+    cancelButton_56.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_56.clear();
+        document.getElementById('tanda_tangan_56').value = "";
+    });
+
+    cancelButton_60.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_60.clear();
+        document.getElementById('tanda_tangan_60').value = "";
     });
 </script>
