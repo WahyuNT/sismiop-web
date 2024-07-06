@@ -379,9 +379,17 @@
                             id="29_tanggal_petugas" type="date" placeholder="Masukkan Data" />
                     </div>
                     <div class="col-12">
-                        <label class="mb-1" for="30_tanda_tangan_petugas">30. TANDA TANGAN</label>
-                        <div class="card w-50">
-                            <div class="card-body py-5"></div>
+                        <label class="mb-1" for="30_tanda_tangan_pejabat_petugas">30. TANDA TANGAN</label>
+                        <div class="card sign-lspop_pendata_30">
+                            <div class="wrapper-sign" id="tempatTTD" style="display: block">
+                                <canvas id="signature-pad_pendata_30" class="signature-pad_pendata_30" width=246 height=164></canvas>
+                            </div>
+                            <textarea wire:model="data.30_tanda_tangan_petugas" name="30_tanda_tangan" id="tanda_tangan_pendata_30"></textarea>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
+                                    id="clear_pendata_30">Clear</button>
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-12">
@@ -404,7 +412,7 @@
                             id="29_tanggal_pejabat" type="text" placeholder="Masukkan Data" />
                     </div>
                     <div class="col-12">
-                        <label class="mb-1" for="30_tanda_tangan_pejabat">30. TANDA TANGAN</label>
+                        <label class="mb-1" for="30_tanda_tangan_pejabat_pejabat">30. TANDA TANGAN</label>
                         <div class="card w-50">
                             <div class="card-body py-5"></div>
                         </div>
@@ -457,3 +465,58 @@
         <button class="btn btn-primary" type="button" wire:click="simpan">Simpan Data</button>
     </div>
 </div>
+
+<script>
+    var signaturePad_pendata_30 = new SignaturePad(document.getElementById('signature-pad_pendata_30'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+    var signaturePad_60 = new SignaturePad(document.getElementById('signature-pad_60'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+
+    var cancelButton_pendata_30 = document.getElementById('clear_pendata_30');
+    var cancelButton_60 = document.getElementById('clear_60');
+
+    var canvasPad_pendata_30 = document.getElementById('signature-pad_pendata_30');
+    var canvasPad_60 = document.getElementById('signature-pad_60');
+
+    canvasPad_pendata_30.addEventListener('click', function(event) {
+        if (signaturePad_pendata_30.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            var data_pendata_30 = signaturePad_pendata_30.toDataURL('image/png');
+
+            var tandaTanganInput_pendata_30 = document.getElementById('tanda_tangan_pendata_30');
+            tandaTanganInput_pendata_30.value = data_pendata_30;
+
+            @this.set('data.30_tanda_tangan_petugas', data_pendata_30);
+        }
+    });
+
+    canvasPad_60.addEventListener('click', function(event) {
+        if (signaturePad_60.isEmpty()) {
+            alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
+        } else {
+            var data_60 = signaturePad_60.toDataURL('image/png');
+
+            var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
+            tandaTanganInput_60.value = data_60;
+
+            @this.set('data.60_tanda_tangan', data_60);
+        }
+    });
+
+    cancelButton_pendata_30.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_pendata_30.clear();
+        document.getElementById('tanda_tangan_pendata_30').value = "";
+    });
+
+    cancelButton_60.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_60.clear();
+        document.getElementById('tanda_tangan_60').value = "";
+    });
+</script>
