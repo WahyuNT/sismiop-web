@@ -462,12 +462,15 @@
             <div class="wrapper-sign border-0 " id="tempatTTD" style="display: block">
                 <canvas id="signature-pad_sket" class="signature-pad_sket" width=1080 height=512></canvas>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center gap-2">
+                <button type="button" class="btn rounded-pill btn-warning py-0 mb-2 mt-1"
+                    id="undo_sket">Undo</button>
                 <button type="button" class="btn rounded-pill btn-danger py-0 mb-2 mt-1"
                     id="clear_sket">Clear</button>
+
+
             </div>
             <textarea hidden wire:model="data.sket_tanda_tangan" name="sket_tanda_tangan" id="tanda_tangan_sket"></textarea>
-
         </div>
         <div class="d-flex flex-wrap mt-4">
             <div class="col-6">
@@ -547,6 +550,8 @@
         penColor: 'rgb(0, 0, 0)'
     });
 
+    var undoButton_sket = document.getElementById('undo_sket');
+    var redoButton_sket = document.getElementById('redo_sket');
     var cancelButton_sket = document.getElementById('clear_sket');
     var canvasPad_sket = document.getElementById('signature-pad_sket');
 
@@ -554,20 +559,33 @@
         if (signaturePad_sket.isEmpty()) {
             alert("Silahkan petugas Tanda tangan terlebih dahulu.");
         } else {
-            var data_sket = signaturePad_sket.toDataURL('image/png');
-
-            var tandaTanganInput_sket = document.getElementById('tanda_tangan_sket');
-            tandaTanganInput_sket.value = data_sket;
-
-            @this.set('data.sket_tanda_tangan', data_sket);
+            storeSket()
         }
     });
+
 
     cancelButton_sket.addEventListener('click', function(event) {
         event.preventDefault();
         signaturePad_sket.clear();
         document.getElementById('tanda_tangan_sket').value = "";
     });
+
+    undoButton_sket.addEventListener("click", function(event) {
+        var data = signaturePad_sket.toData();
+        if (data) {
+            data.pop(); // remove the last dot or line
+            signaturePad_sket.fromData(data);
+            storeSket()
+        }
+    });
+
+    function storeSket() {
+        var data_sket = signaturePad_sket.toDataURL('image/png');
+        var tandaTanganInput_sket = document.getElementById('tanda_tangan_sket');
+        tandaTanganInput_sket.value = data_sket;
+
+        @this.set('data.sket_tanda_tangan', data_sket);
+    }
 </script>
 <script>
     var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
