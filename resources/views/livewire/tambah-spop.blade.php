@@ -335,7 +335,10 @@
                         <div class="card border-0 ">
                             <div class="mt-5"></div>
                             <div class="mt-5"></div>
-                            <hr>
+                            <input class="input-no-border" wire:model="data.26_nama_subjek_pajak-kuasanya"
+                                name="26_nama_subjek_pajak-kuasanya" id="26_nama_subjek_pajak-kuasanya"
+                                type="text" placeholder="Masukkan Nama" />
+
                         </div>
                     </div>
                     <div class="col-4 px-3">
@@ -343,15 +346,26 @@
                         <div class="card border-0 ">
                             <div class="mt-5"></div>
                             <div class="mt-5"></div>
-                            <hr>
+                            <input class="input-no-border" wire:model="data.26_nama_subjek_pajak-kuasanya"
+                                name="26_nama_subjek_pajak-kuasanya" id="26_nama_subjek_pajak-kuasanya"
+                                type="date" placeholder="Masukkan Nama" />
                         </div>
                     </div>
                     <div class="col-4 px-3">
                         <p class="text-center fw-bold text-black">28. TANDA TANGAN</p>
-                        <div class="card border-0 ">
-                            <div class="mt-5"></div>
-                            <div class="mt-5"></div>
-                            <hr>
+                        <div class="d-flex justify-content-center">
+                            <div class="card sign-ttd">
+                                <div class="wrapper-sign" id="tempatTTD" style="display: block">
+                                    <canvas id="signature-pad_28" class="signature-pad_28" width=246
+                                        height=100></canvas>
+                                </div>
+                                <textarea hidden wire:model="data.28_tanda_tangan" name="28_tanda_tangan" id="tanda_tangan_28"></textarea>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
+                                        id="clear_28">Clear</button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                     <ul>
@@ -447,7 +461,7 @@
         <div class="card ">
             <div class="wrapper-sign border-0 " id="tempatTTD" style="display: block">
                 <canvas id="signature-pad_sket" class="signature-pad_sket" width=1080 height=512></canvas>
-            </div>  
+            </div>
             <div class="d-flex justify-content-center">
                 <button type="button" class="btn rounded-pill btn-danger py-0 mb-2 mt-1"
                     id="clear_sket">Clear</button>
@@ -553,5 +567,33 @@
         event.preventDefault();
         signaturePad_sket.clear();
         document.getElementById('tanda_tangan_sket').value = "";
+    });
+</script>
+<script>
+    var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+
+    var cancelButton_28 = document.getElementById('clear_28');
+    var canvasPad_28 = document.getElementById('signature-pad_28');
+
+    canvasPad_28.addEventListener('click', function(event) {
+        if (signaturePad_28.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            var data_28 = signaturePad_28.toDataURL('image/png');
+
+            var tandaTanganInput_28 = document.getElementById('tanda_tangan_28');
+            tandaTanganInput_28.value = data_28;
+
+            @this.set('data.28_tanda_tangan', data_28);
+        }
+    });
+
+    cancelButton_28.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_28.clear();
+        document.getElementById('tanda_tangan_28').value = "";
     });
 </script>

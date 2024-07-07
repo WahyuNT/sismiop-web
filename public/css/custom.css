@@ -34,3 +34,12 @@
         width: 500px;
     }
 }
+.input-no-border{
+    border: none;
+    border-bottom: 2px solid #767676 !important;
+    border-radius: 0px;
+}
+.input-no-border::-webkit-input-placeholder{
+    font-style: italic;
+
+}
