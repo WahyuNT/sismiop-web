@@ -21,6 +21,16 @@
     border-radius: 15px;
 }
 
-.sign-lspop_56{
+.sign-ttd{
     width: 246px;
+}
+.sket-denah{
+    width:1080px;
+    height: 512px;
+    border-radius: 15px !important;
+    border: 0.5px solid #a5a5a549;
+    @media screen and (max-width: 768px){
+        height:1000px;
+        width: 500px;
+    }
 }

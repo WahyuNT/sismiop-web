@@ -884,7 +884,7 @@
                         <div class="col-12">
                             <label class="text-black fw-bold mb-1 fw-bold" for="56_tanda_tangan">56. TANDA
                                 TANGAN</label>
-                            <div class="card sign-lspop_56">
+                            <div class="card sign-ttd">
                                 <div class="wrapper-sign" id="tempatTTD" style="display: block">
                                     <canvas id="signature-pad_56" class="signature-pad_56" width=246
                                         height=164></canvas>
@@ -920,7 +920,7 @@
                         <div class="col-12">
                             <label class="text-black fw-bold mb-1 fw-bold" for="60_tanda_tangan">60. TANDA
                                 TANGAN</label>
-                            <div class="card sign-lspop_56">
+                            <div class="card sign-ttd">
                                 <div class="wrapper-sign" id="tempatTTD" style="display: block">
                                     <canvas id="signature-pad_60" class="signature-pad_60" width=246
                                         height=164></canvas>
