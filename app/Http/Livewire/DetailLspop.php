@@ -14,6 +14,8 @@ class DetailLspop extends Component
     public $disabled = 'disabled';
     public $data = [];
     public $isEdit = false;
+    public $edit56 = false;
+    public $edit60 = false;
 
     public function mount($id)
     {
@@ -25,10 +27,11 @@ class DetailLspop extends Component
         $lspop = null;
 
         $lspop = Lspop::find($this->dataId);
-        $lspop = $lspop->toArray();
-        $this->data = $lspop;
+        $lspopArray = $lspop->toArray();
+        $this->data = $lspopArray;
+        
 
-        return view('livewire.detail-lspop');
+        return view('livewire.detail-lspop', compact('lspop'));
     }
 
     public function updateData()
@@ -60,4 +63,22 @@ class DetailLspop extends Component
         $lspop = $lspop->toArray();
         $this->data = $lspop;
     }
+    public function edit56()
+    {
+        $this->edit56 = true;
+    }
+    public function cancelEdit56()
+    {
+        $this->edit56 = false;
+    }
+
+    public function edit60()
+    {
+        $this->edit60 = true;
+    }
+    public function cancelEdit60()
+    {
+        $this->edit60 = false;
+    }
+
 }

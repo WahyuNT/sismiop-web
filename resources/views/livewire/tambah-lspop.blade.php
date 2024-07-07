@@ -889,7 +889,7 @@
                                     <canvas id="signature-pad_56" class="signature-pad_56" width=246
                                         height=164></canvas>
                                 </div>
-                                <textarea wire:model="data.56_tanda_tangan" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
+                                <textarea hidden wire:model="data.56_tanda_tangan" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
                                         id="clear_56">Clear</button>
@@ -925,7 +925,7 @@
                                     <canvas id="signature-pad_60" class="signature-pad_60" width=246
                                         height=164></canvas>
                                 </div>
-                                <textarea wire:model="data.60_tanda_tangan" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
+                                <textarea hidden wire:model="data.60_tanda_tangan" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
                                         id="clear_60">Clear</button>
