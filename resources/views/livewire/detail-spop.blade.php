@@ -223,8 +223,8 @@
                 <div class="d-flex flex-wrap">
                     <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                         <label for="11_status">11. STATUS</label>
-                        <select wire:model.defer="data.11_status" name="11_status" id="11_status"
-                            class="form-select">
+                        <select {{ $disabled }} wire:model.defer="data.11_status" name="11_status"
+                            id="11_status" class="form-select">
                             <option value="">Silahkan Pilih</option>
                             <option value="pemilik">Pemilik</option>
                             <option value="penyewa">Penyewa</option>
@@ -235,8 +235,8 @@
                     </div>
                     <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                         <label for="12_pekerjaan">12. PEKERJAAN</label>
-                        <select wire:model.defer="data.12_pekerjaan" name="12_pekerjaan" id="12_pekerjaan"
-                            class="form-select">
+                        <select {{ $disabled }} wire:model.defer="data.12_pekerjaan" name="12_pekerjaan"
+                            id="12_pekerjaan" class="form-select">
                             <option value="">Silahkan Pilih</option>
                             <option value="pns">PNS *)</option>
                             <option value="abri">ABRI *)</option>
@@ -319,8 +319,8 @@
                     </div>
                     <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                         <label for="24_jenis_tanah">24. JENIS TANAH</label>
-                        <select wire:model.defer="data.24_jenis_tanah" name="24_jenis_tanah" id="24_jenis_tanah"
-                            class="form-select">
+                        <select {{ $disabled }} wire:model.defer="data.24_jenis_tanah" name="24_jenis_tanah"
+                            id="24_jenis_tanah" class="form-select">
                             <option value="">Silahkan Pilih</option>
                             <option value="tanah+bangunan">Tanah + Bangunan</option>
                             <option value="kavling_siap_bangun">Kavling Siap Bangun</option>
@@ -361,7 +361,11 @@
                             <div class="card border-0 ">
                                 <div class="mt-5"></div>
                                 <div class="mt-5"></div>
-                                <hr>
+                                <input {{ $disabled }} class="input-no-border"
+                                    wire:model.defer="data.26_nama_subjek_pajak-kuasanya"
+                                    name="26_nama_subjek_pajak-kuasanya" id="26_nama_subjek_pajak-kuasanya"
+                                    type="text" placeholder="Masukkan Nama" />
+
                             </div>
                         </div>
                         <div class="col-4 px-3">
@@ -369,15 +373,45 @@
                             <div class="card border-0 ">
                                 <div class="mt-5"></div>
                                 <div class="mt-5"></div>
-                                <hr>
+                                <input {{ $disabled }} class="input-no-border" wire:model.defer="data.27_tanggal"
+                                    name="27_tanggal" id="27_tanggal" type="date" placeholder="Masukkan Nama" />
                             </div>
                         </div>
-                        <div class="col-4 px-3">
-                            <p class="text-center fw-bold text-black">28. TANDA TANGAN</p>
-                            <div class="card border-0 ">
-                                <div class="mt-5"></div>
-                                <div class="mt-5"></div>
-                                <hr>
+                        <div class="col-4 px-3 d-flex flex-wrap justify-content-center ">
+                            <div class="div">
+                                <p class="text-center fw-bold text-black">28. TANDA TANGAN</p>
+                            </div>
+                            @if ($edit28 == false)
+                                <div class="d-flex flex-wrap">
+
+                                    <img class="image-ttd"
+                                        src="{{ asset('img/ttd/spop/pernyataan/' . $spop->{'28_tanda_tangan'}) }}"
+                                        width=246 height=164 alt="">
+                                    <div class="div d-flex align-items-center">
+
+                                        <button type="button" wire:click="edit28"
+                                            class="btn rounded-pill ms-1 btn-edit-ttd btn-warning py-1"><i
+                                                class="fa-solid fa-pencil"></i></button>
+                                    </div>
+                                </div>
+                            @endif
+                            <div class="card  sign-ttd" style="{{ $edit28 ? 'display: block' : 'display: none' }}">
+                                <div class="wrapper-sign" id="tempatTTD">
+                                    <canvas id="signature-pad_28" class="signature-pad_28" width=246
+                                        height=164></canvas>
+                                </div>
+                                <textarea hidden wire:model="newTTD28" name="28_tanda_tangan" id="tanda_tangan_28"></textarea>
+                                <div style="display:block" id="div_button_28">
+                                    <div class="d-flex justify-content-center">
+
+                                        <button id="cancel_28" wire:click="cancelEdit28" type="button"
+                                            class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
+                                        <button type="button" class="btn rounded-pill btn-info me-2 py-0 mb-2"
+                                            id="clear_28">Clear</button>
+                                        <button wire:click="simpan28" id="simpan_28" type="button"
+                                            class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <ul>
@@ -490,3 +524,54 @@
         </div>
     @endif
 </div>
+<script>
+    var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+
+
+    var cancelButton_28 = document.getElementById('cancel_28');
+
+
+    var clearButton_28 = document.getElementById('clear_28');
+
+
+
+
+    var cancelSimpanButton_28 = document.getElementById('cancel_simpan_28');
+
+
+
+    var canvasPad_28 = document.getElementById('signature-pad_28');
+
+    canvasPad_28.addEventListener('click', function(event) {
+        if (signaturePad_28.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            var data_28 = signaturePad_28.toDataURL('image/png');
+
+            var tandaTanganInput_28 = document.getElementById('tanda_tangan_28');
+            tandaTanganInput_28.value = data_28;
+
+            @this.set('newTTD28', data_28);
+        }
+    });
+
+
+    cancelButton_28.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_28.clear();
+        document.getElementById('tanda_tangan_28').value = "";
+
+    });
+
+
+
+    clearButton_28.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_28.clear();
+        document.getElementById('tanda_tangan_28').value = "";
+
+    });
+</script>
