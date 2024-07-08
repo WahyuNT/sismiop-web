@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -66,6 +65,7 @@ return new class extends Migration
             $table->string('31_nama_jelas_pejabat', 50)->nullable();
             $table->string('32_nip_pejabat', 50)->nullable();
             $table->string('sket_tanda_tangan', 255)->nullable();
+            $table->longText('sket_base64')->nullable();
             $table->timestamps();
         });
     }

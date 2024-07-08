@@ -540,22 +540,32 @@
                 </div>
             </div>
         </div>
-        <h4 class="fw-bold text-lg-center text-start my-3"><u>
-                SKET / DENAH LOKASI OBJEK PAJAK</u>
+        <h4 class="fw-bold text-lg-center text-start my-3">
+            <u>SKET / DENAH LOKASI OBJEK PAJAK</u>
         </h4>
-        <div class="card w-100">
-            <div class="card-body py-5">
-                <div class="my-5"></div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+        @if ($editsket == false)
+            <img class="image-ttd card" src="{{ asset('img/sket/' . $spop->{'sket_tanda_tangan'}) }}" width=1080
+                height=512 alt="">
+            <div class="d-flex justify-content-center">
+
+                <button type="button"wire:click="editsket" class="btn rounded-pill mt-3 btn-warning py-1"><i
+                        class="fa-solid fa-pencil me-2"></i>Edit Denah</button>
             </div>
+        @endif
+
+        <div class="card " style="{{ $editsket ? 'display: block' : 'display: none' }}">
+            <div class="wrapper-sign border-0 " id="tempatTTD" style="display: block">
+                <canvas id="signature-pad_sket" class="signature-pad_sket" width=1080 height=512></canvas>
+            </div>
+            <div class="d-flex justify-content-center gap-2">
+                <button type="button" class="btn rounded-pill btn-warning py-0 mb-2 mt-1"
+                    id="undo_sket">Undo</button>
+                <button type="button" class="btn rounded-pill btn-danger py-0 mb-2 mt-1"
+                    id="clear_sket">Clear</button>
+                <button type="button" wire:click="simpanSket" class="btn rounded-pill btn-success py-0 mb-2 mt-1"
+                    id="">Simpan</button>
+            </div>
+            <textarea hidden wire:model="newsket" name="sket_tanda_tangan" id="tanda_tangan_sket"></textarea>
         </div>
         <div class="d-flex flex-wrap mt-4">
             <div class="col-6">
@@ -569,7 +579,7 @@
             </div>
             <div class="col-6 text-center">
                 <p class="text-center mb-2"><b><u>Contoh Penggambaran</u></b></p>
-                <img class="w-75 rounded" src="/public/img/contoh_map.png" alt="">
+                <img class="w-75 rounded" src="{{ asset('img/contoh_map.png') }}" alt="">
             </div>
         </div>
 
@@ -582,18 +592,9 @@
         penColor: 'rgb(0, 0, 0)'
     });
 
-
     var cancelButton_28 = document.getElementById('cancel_28');
-
-
     var clearButton_28 = document.getElementById('clear_28');
-
-
-
-
     var cancelSimpanButton_28 = document.getElementById('cancel_simpan_28');
-
-
 
     var canvasPad_28 = document.getElementById('signature-pad_28');
 
@@ -704,4 +705,56 @@
         signaturePad_30B.clear();
         document.getElementById('tanda_tangan_30B').value = "";
     });
+</script>
+
+<script>
+    var signaturePad_sket = new SignaturePad(document.getElementById('signature-pad_sket'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+
+    var sketbase64 = {!! json_encode($sket64) !!}
+
+    var image = new Image();
+        image.onload = function() {
+            signaturePad_sket.fromDataURL(sketbase64);
+        };
+        image.src = sketbase64;
+
+    var undoButton_sket = document.getElementById('undo_sket');
+    var redoButton_sket = document.getElementById('redo_sket');
+    var cancelButton_sket = document.getElementById('clear_sket');
+    var canvasPad_sket = document.getElementById('signature-pad_sket');
+
+    canvasPad_sket.addEventListener('click', function(event) {
+        if (signaturePad_sket.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            storeSket()
+        }
+    });
+
+
+    cancelButton_sket.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_sket.clear();
+        document.getElementById('tanda_tangan_sket').value = "";
+    });
+
+    undoButton_sket.addEventListener("click", function(event) {
+        var data = signaturePad_sket.toData();
+        if (data) {
+            data.pop(); // remove the last dot or line
+            signaturePad_sket.fromData(data);
+            storeSket()
+        }
+    });
+
+    function storeSket() {
+        var data_sket = signaturePad_sket.toDataURL('image/png');
+        var tandaTanganInput_sket = document.getElementById('tanda_tangan_sket');
+        tandaTanganInput_sket.value = data_sket;
+
+        @this.set('newsket', data_sket);
+    }
 </script>

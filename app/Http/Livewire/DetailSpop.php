@@ -19,9 +19,11 @@ class DetailSpop extends Component
     public $edit28 = false;
     public $edit30A = false;
     public $edit30B = false;
+    public $editsket = false;
     public $newTTD28 = null;
     public $newTTD30A = null;
     public $newTTD30B = null;
+    public $newsket = null;
 
     public function mount($id)
     {
@@ -38,7 +40,9 @@ class DetailSpop extends Component
         $disabled = $this->disabled;
         $isEdit = $this->isEdit;
 
-        return view('livewire.detail-spop', compact('spopArray', 'spop', 'placeholder', 'disabled', 'isEdit'));
+        $sket64 = $spop->sket_base64;
+
+        return view('livewire.detail-spop', compact('spopArray', 'spop', 'placeholder', 'disabled', 'isEdit', 'sket64'));
     }
 
     public function updateData()
@@ -85,6 +89,10 @@ class DetailSpop extends Component
     public function edit30A()
     {
         $this->edit30A = true;
+    }
+    public function editsket()
+    {
+        $this->editsket = true;
     }
 
     public function cancelEdit30A()
@@ -218,6 +226,46 @@ class DetailSpop extends Component
         } else {
             $this->edit30B = false;
             $this->alert('error', 'Tidak ada tanda tangan pejabat yang diupload');
+        }
+    }
+
+    public function simpanSket()
+    {
+        $gambarLamasket = Spop::find($this->dataId)->getOriginal()['sket_tanda_tangan'];
+        $gambarLamasket = public_path('img/sket/' . $gambarLamasket);
+
+        if ($this->newsket != null) {
+            $data_uri_sket = $this->newsket;
+            $encoded_image_sket = explode(',', $data_uri_sket)[1];
+            $decoded_image_sket = base64_decode($encoded_image_sket);
+
+            $directory_sket = public_path('img/sket');
+            if (!File::isDirectory($directory_sket)) {
+                File::makeDirectory($directory_sket, 0777, true, true);
+            }
+
+            $image_name_sket = 'sketsa_' . Str::random(20) . '.png';
+            $image_path_sket = $directory_sket . '/' . $image_name_sket;
+            file_put_contents($image_path_sket, $decoded_image_sket);
+            $this->data['sket_tanda_tangan'] = $image_name_sket;
+            $this->data['sket_base64'] = $data_uri_sket;
+
+            $data = Spop::find($this->dataId);
+            $data->update($this->data);
+
+            if ($data->save()) {
+                if (file_exists($gambarLamasket)) {
+                    unlink($gambarLamasket);
+                }
+                $this->alert('success', 'Sket berhasil diperbarui');
+                $this->editsket = false;
+                $this->newsket = null;
+            } else {
+                $this->alert('error', 'Sket gagal diperbarui');
+            }
+        } else {
+            $this->editsket = false;
+            $this->alert('error', 'Tidak ada dket yang diupload');
         }
     }
 }

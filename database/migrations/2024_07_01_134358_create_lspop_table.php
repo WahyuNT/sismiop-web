@@ -98,7 +98,7 @@ return new class extends Migration
             $table->string('57_nama_jelas', 50)->nullable();
             $table->string('58_nip', 50)->nullable();
             $table->date('59_tanggal_penelitian')->nullable();
-            $table->string('60_tanda_tangan', 50)->nullable();
+            $table->string('60_tanda_tangan', 50)->nullable();  
             $table->string('61_nama_jelas', 50)->nullable();
             $table->string('62_nip', 50)->nullable();
 

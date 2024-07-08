@@ -468,10 +468,8 @@
                     id="undo_sket">Undo</button>
                 <button type="button" class="btn rounded-pill btn-danger py-0 mb-2 mt-1"
                     id="clear_sket">Clear</button>
-
-
             </div>
-            <textarea hidden wire:model="data.sket_tanda_tangan" name="sket_tanda_tangan" id="tanda_tangan_sket"></textarea>
+            <textarea  wire:model="data.sket_tanda_tangan" name="sket_tanda_tangan" id="tanda_tangan_sket"></textarea>
         </div>
         <div class="d-flex flex-wrap mt-4">
             <div class="col-6">
