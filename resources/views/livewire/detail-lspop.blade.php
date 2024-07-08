@@ -924,7 +924,7 @@
                                 height=164 alt="">
                         @endif
                         @if ($edit56 == false)
-                            <button type="button" wire:click="edit56" class="btn rounded-pill  btn-warning py-1"><i
+                            <button type="button"wire:click="edit56" class="btn rounded-pill  btn-warning py-1"><i
                                     class="fa-solid fa-pencil"></i></button>
                         @endif
 
@@ -934,14 +934,18 @@
                                 <canvas id="signature-pad_56" class="signature-pad_56" width=246 height=164></canvas>
                             </div>
                             <textarea hidden wire:model="newTTD56" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
-                            <div class="d-flex justify-content-center">
-                                <button id="cancel_56" wire:click="cancelEdit56" type="button"
-                                    class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
-                                <button type="button" class="btn rounded-pill btn-info py-0 mb-2"
-                                    id="clear_56">Clear</button>
-                                <button wire:click="simpan56" type="button"
-                                    class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                            <div style="display:block" id="div_button_56">
+                                <div class="d-flex justify-content-center">
+
+                                    <button id="cancel_56" wire:click="cancelEdit56" type="button"
+                                        class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
+                                    <button type="button" class="btn rounded-pill btn-info me-2 py-0 mb-2"
+                                        id="clear_56">Clear</button>
+                                    <button wire:click="simpan56" id="simpan_56" type="button"
+                                        class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -989,7 +993,7 @@
                                     class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
                                 <button type="button" class="btn rounded-pill btn-info py-0 mb-2 me-2"
                                     id="clear_60">Clear</button>
-                                <button wire:click="simpan60" type="button"
+                                <button wire:click="simpan60" id="simpan_60" type="button"
                                     class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
                             </div>
                         </div>
@@ -1023,11 +1027,18 @@
         penColor: 'rgb(0, 0, 0)'
     });
 
-    var cancelButton_56 = document.getElementById('clear_56');
-    var cancelButton_60 = document.getElementById('clear_60');
+    var cancelButton_56 = document.getElementById('cancel_56');
+    var cancelButton_60 = document.getElementById('cancel_60');
 
-    var clearButton_56 = document.getElementById('cancel_56');
-    var clearButton_60 = document.getElementById('cancel_60');
+    var clearButton_56 = document.getElementById('clear_56');
+    var clearButton_60 = document.getElementById('clear_60');
+
+
+
+    var cancelSimpanButton_56 = document.getElementById('cancel_simpan_56');
+    var cancelSimpanButton_60 = document.getElementById('cancel_simpan_60');
+
+
 
     var canvasPad_56 = document.getElementById('signature-pad_56');
     var canvasPad_60 = document.getElementById('signature-pad_60');
