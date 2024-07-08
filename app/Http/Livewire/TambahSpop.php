@@ -3,14 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Models\Spop;
-use Livewire\Component;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Component;
 
 class TambahSpop extends Component
 {
     use LivewireAlert;
+
     public $data = [];
 
     public function render()
@@ -21,7 +22,7 @@ class TambahSpop extends Component
     public function simpan()
     {
         if (isset($this->data['petugas_tanda_tangan'])) {
-            //ttd petugas
+            // ttd petugas
             $data_uri_petugas = $this->data['petugas_tanda_tangan'];
             $encoded_image_petugas = explode(',', $data_uri_petugas)[1];
             $decoded_image_petugas = base64_decode($encoded_image_petugas);
@@ -40,7 +41,7 @@ class TambahSpop extends Component
         }
 
         if (isset($this->data['pejabat_tanda_tangan'])) {
-            //ttd pejabat
+            // ttd pejabat
             $data_uri_pejabat = $this->data['pejabat_tanda_tangan'];
             $encoded_image_pejabat = explode(',', $data_uri_pejabat)[1];
             $decoded_image_pejabat = base64_decode($encoded_image_pejabat);
@@ -58,8 +59,7 @@ class TambahSpop extends Component
             $this->data['30_tanda_tangan_pejabat'] = $image_name_pejabat;
         }
         if (isset($this->data['sket_tanda_tangan'])) {
-
-            //sket
+            // sket
             $data_uri_sket = $this->data['sket_tanda_tangan'];
             $encoded_image_sket = explode(',', $data_uri_sket)[1];
             $decoded_image_sket = base64_decode($encoded_image_sket);
@@ -69,7 +69,7 @@ class TambahSpop extends Component
                 File::makeDirectory($directory_sket, 0777, true, true);
             }
 
-            $image_name_sket = 'sketsa' . Str::random(20) . '.png';
+            $image_name_sket = 'sketsa_' . Str::random(20) . '.png';
             $image_path_sket = $directory_sket . '/' . $image_name_sket;
 
             file_put_contents($image_path_sket, $decoded_image_sket);
@@ -77,8 +77,7 @@ class TambahSpop extends Component
         }
 
         if (isset($this->data['28_tanda_tangan'])) {
-
-            //ttd 28
+            // ttd 28
             $data_uri_28 = $this->data['28_tanda_tangan'];
             $encoded_image_28 = explode(',', $data_uri_28)[1];
             $decoded_image_28 = base64_decode($encoded_image_28);
@@ -96,6 +95,7 @@ class TambahSpop extends Component
             $this->data['28_tanda_tangan'] = $image_name_28;
         }
 
+        $this->data['status'] = 'aktif';
         $data = Spop::create($this->data);
         if ($data) {
             $this->nullData();

@@ -54,7 +54,7 @@
                                         </a>
                                         <div class="div">
 
-                                            <button type="button" wire:click="confirmDelete({{ $item->id }})"
+                                            <button type="button" wire:click="deletePermanen({{ $item->id }})"
                                                 class="btn btn-danger rounded-pill mx-1">Hapus</button>
                                         </div>
                                     @else
