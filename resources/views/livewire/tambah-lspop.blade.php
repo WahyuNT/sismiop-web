@@ -930,7 +930,6 @@
                                     <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
                                         id="clear_60">Clear</button>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-12 px-2 ">

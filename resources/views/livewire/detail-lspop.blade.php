@@ -919,29 +919,30 @@
                         <br>
 
                         @if ($edit56 == false)
-                            <img src="{{ asset('img/ttd/lspop/pendata/' . $lspop->{'56_tanda_tangan'}) }}" width=246
+                            <img class="image-ttd"
+                                src="{{ asset('img/ttd/lspop/pendata/' . $lspop->{'56_tanda_tangan'}) }}" width=246
                                 height=164 alt="">
                         @endif
-                        @if ($isEdit == true && $edit56 == false)
-                            <button type="button" wire:click="edit56"
-                                class="btn rounded-pill btn-warning py-0 mb-2">Edit TTD</i></button>
+                        @if ($edit56 == false)
+                            <button type="button" wire:click="edit56" class="btn rounded-pill  btn-warning py-1"><i
+                                    class="fa-solid fa-pencil"></i></button>
                         @endif
-                        @if ($isEdit == true && $edit56 == true)
-                            <div class="card sign-ttd">
-                                <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                    <canvas id="signature-pad_56" class="signature-pad_56" width=246
-                                        height=164></canvas>
-                                </div>
-                                <textarea hidden wire:model="data.56_tanda_tangan" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
-                                <div class="d-flex justify-content-center">
-                                    <button wire:click="cancelEdit56" type="button"
-                                        class="btn rounded-pill btn-danger py-0 mb-2 me-2"
-                                        id="clear_56">Batal</button>
-                                    <button type="button" class="btn rounded-pill btn-info py-0 mb-2"
-                                        id="clear_56">Clear</button>
-                                </div>
+
+                        <div class="card  sign-ttd" style="{{ $edit56 ? 'display: block' : 'display: none' }}">
+
+                            <div class="wrapper-sign" id="tempatTTD">
+                                <canvas id="signature-pad_56" class="signature-pad_56" width=246 height=164></canvas>
                             </div>
-                        @endif
+                            <textarea hidden wire:model="newTTD56" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
+                            <div class="d-flex justify-content-center">
+                                <button id="cancel_56" wire:click="cancelEdit56" type="button"
+                                    class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
+                                <button type="button" class="btn rounded-pill btn-info py-0 mb-2"
+                                    id="clear_56">Clear</button>
+                                <button wire:click="simpan56" type="button"
+                                    class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="col-12 px-2 ">
@@ -967,36 +968,38 @@
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="60_tanda_tangan">60. TANDA
                             TANGAN</label><br>
-               
+
                         @if ($edit60 == false)
-                            <img src="{{ asset('img/ttd/lspop/pejabat/' . $lspop->{'60_tanda_tangan'}) }}" width=246
+                            <img class="image-ttd"
+                                src="{{ asset('img/ttd/lspop/pejabat/' . $lspop->{'60_tanda_tangan'}) }}" width=246
                                 height=164 alt="">
                         @endif
-                        @if ($isEdit == true && $edit60 == false)
-                            <button type="button" wire:click="edit60"
-                                class="btn rounded-pill btn-warning py-0 mb-2">Edit TTD</i></button>
+                        @if ($edit60 == false)
+                            <button type="button" wire:click="edit60" class="btn rounded-pill  btn-warning py-1"><i
+                                    class="fa-solid fa-pencil"></i></button>
                         @endif
-                        @if ($isEdit == true && $edit60 == true)
-                            <div class="card sign-ttd">
-                                <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                    <canvas id="signature-pad_60" class="signature-pad_60" width=246
-                                        height=164></canvas>
-                                </div>
-                                <textarea hidden wire:model="data.60_tanda_tangan" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
-                                <div class="d-flex justify-content-center">
-                                    <button wire:click="cancelEdit60" type="button"
-                                        class="btn rounded-pill btn-danger py-0 mb-2 me-2"
-                                        id="clear_60">Batal</button>
-                                    <button type="button" class="btn rounded-pill btn-info py-0 mb-2"
-                                        id="clear_60">Clear</button>
-                                </div>
+
+                        <div class="card sign-ttd" style="{{ $edit60 ? 'display: block' : 'display: none' }}">
+                            <div class="wrapper-sign" id="tempatTTD" style="display: block">
+                                <canvas id="signature-pad_60" class="signature-pad_60" width=246 height=164></canvas>
                             </div>
-                        @endif
+                            <textarea hidden wire:model="newTTD60" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
+                            <div class="d-flex justify-content-center">
+                                <button wire:click="cancelEdit60" id="cancel_60" type="button"
+                                    class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
+                                <button type="button" class="btn rounded-pill btn-info py-0 mb-2 me-2"
+                                    id="clear_60">Clear</button>
+                                <button wire:click="simpan60" type="button"
+                                    class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="col-12 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="61_nama_jelas">61. NAMA JELAS</label>
                         <input {{ $disabled }} class="form-control" wire:model.defer="data.61_nama_jelas"
-                            name="61_nama_jelas" id="61_nama_jelas" type="text" placeholder="Masukkan Data" />
+                            name="61_nama_jelas" id="61_nama_jelas" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                     <div class="col-12 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="62_nip">62. NIP</label>
@@ -1023,6 +1026,9 @@
     var cancelButton_56 = document.getElementById('clear_56');
     var cancelButton_60 = document.getElementById('clear_60');
 
+    var clearButton_56 = document.getElementById('cancel_56');
+    var clearButton_60 = document.getElementById('cancel_60');
+
     var canvasPad_56 = document.getElementById('signature-pad_56');
     var canvasPad_60 = document.getElementById('signature-pad_60');
 
@@ -1035,7 +1041,7 @@
             var tandaTanganInput_56 = document.getElementById('tanda_tangan_56');
             tandaTanganInput_56.value = data_56;
 
-            @this.set('data.56_tanda_tangan', data_56);
+            @this.set('newTTD56', data_56);
         }
     });
 
@@ -1048,7 +1054,7 @@
             var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
             tandaTanganInput_60.value = data_60;
 
-            @this.set('data.60_tanda_tangan', data_60);
+            @this.set('newTTD60', data_60);
         }
     });
 
@@ -1056,9 +1062,23 @@
         event.preventDefault();
         signaturePad_56.clear();
         document.getElementById('tanda_tangan_56').value = "";
+
     });
 
     cancelButton_60.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_60.clear();
+        document.getElementById('tanda_tangan_60').value = "";
+    });
+
+    clearButton_56.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_56.clear();
+        document.getElementById('tanda_tangan_56').value = "";
+
+    });
+
+    clearButton_60.addEventListener('click', function(event) {
         event.preventDefault();
         signaturePad_60.clear();
         document.getElementById('tanda_tangan_60').value = "";

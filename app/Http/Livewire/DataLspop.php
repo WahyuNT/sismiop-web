@@ -27,6 +27,7 @@ class DataLspop extends Component
                     ->orWhere('57_nama_jelas', 'like', '%' . $this->search . '%')
                     ->orWhere('59_tanggal_penelitian', 'like', '%' . $this->search . '%');
             })
+            ->orderBy('created_at', 'desc')
             ->paginate($this->pagination);
         return view('livewire.data-lspop', compact('lspop', 'confirmDelete'));
     }
