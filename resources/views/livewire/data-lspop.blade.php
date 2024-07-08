@@ -52,13 +52,13 @@
                                         </a>
                                         <div class="div">
 
-                                            <button type="button" wire:click="confirmDelete({{ $item->id }})"
+                                            <button type="button" wire:click="deletePermanen({{ $item->id }})"
                                                 class="btn btn-danger rounded-pill mx-1">Hapus</button>
                                         </div>
                                     @else
                                         <button type="button" wire:click="batalDelete"
                                             class="btn btn-danger rounded-pill mx-1">Batal</button>
-                                        <button type="button" wire:click="delete({{ $item->id }})"
+                                        <button type="button" wire:click="deletePermanen({{ $item->id }})"
                                             class="btn btn-success rounded-pill mx-1">Hapus</button>
                                     @endif
                                 </td>

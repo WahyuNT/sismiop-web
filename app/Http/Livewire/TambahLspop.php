@@ -38,7 +38,6 @@ class TambahLspop extends Component
             $image_path_56 = $directory_56 . '/' . $image_name_56;
             file_put_contents($image_path_56, $decoded_image_56);
             $this->data['56_tanda_tangan'] = $image_name_56;
-       
         }
 
         if ($this->data['60_tanda_tangan']) {
@@ -56,7 +55,7 @@ class TambahLspop extends Component
             file_put_contents($image_path_60, $decoded_image_60);
             $this->data['60_tanda_tangan'] = $image_name_60;
         }
-
+        $this->data['status'] = 'aktif';
         $data = Lspop::create($this->data);
 
         if ($data) {
