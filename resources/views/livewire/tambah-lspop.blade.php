@@ -889,6 +889,7 @@
                                     <canvas id="signature-pad_56" class="signature-pad_56" width=246
                                         height=164></canvas>
                                 </div>
+
                                 <textarea hidden wire:model="data.56_tanda_tangan" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
@@ -896,6 +897,9 @@
                                 </div>
 
                             </div>
+                            @error('data.56_tanda_tangan')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-12 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="57_nama_jelas">57. NAMA JELAS</label>
@@ -931,6 +935,9 @@
                                         id="clear_60">Clear</button>
                                 </div>
                             </div>
+                            @error('data.60_tanda_tangan')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-12 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="61_nama_jelas">61. NAMA JELAS</label>

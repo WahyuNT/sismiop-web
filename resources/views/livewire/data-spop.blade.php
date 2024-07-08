@@ -61,7 +61,7 @@
                                         <button type="button" wire:click="batalDelete"
                                             class="btn btn-danger rounded-pill mx-1">Batal</button>
                                         <button type="button" wire:click="delete({{ $item->id }})"
-                                            class="btn btn-success rounded-pill mx-1">Hapu</button>
+                                            class="btn btn-success rounded-pill mx-1">Hapus</button>
                                     @endif
                                 </td>
                             </tr>

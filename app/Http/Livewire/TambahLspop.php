@@ -24,6 +24,10 @@ class TambahLspop extends Component
 
     public function simpan()
     {
+        $this->validate([
+            'data.56_tanda_tangan' => 'required',
+            'data.60_tanda_tangan' => 'required',
+        ]);
         if ($this->data['56_tanda_tangan']) {
             $data_uri_56 = $this->data['56_tanda_tangan'];
             $encoded_image_56 = explode(',', $data_uri_56)[1];

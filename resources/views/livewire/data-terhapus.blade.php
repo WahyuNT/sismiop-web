@@ -86,17 +86,32 @@
                                         <td>{{ $item->{'57_nama_jelas'} }}</td>
                                         <td>{{ $item->{'59_tanggal_penelitian'} }}</td>
                                         <td class="text-center d-flex flex-wrap justify-content-center">
-                                            <a href="{{ route('detail.lspop', ['id' => $item->id]) }}">
-                                                <button class="btn btn-primary rounded-pill mx-1">Detail</button>
-                                            </a>
-                                            <div class="div">
-                                                <button type="button" wire:click="deletePermanenLspop({{ $item->id }})"
-                                                    class="btn btn-danger rounded-pill mx-1">Hapus</button>
-                                            </div>
-                                            <div class="div">
-                                                <button type="button" wire:click="pulihkanLspop({{ $item->id }})"
-                                                    class="btn btn-success rounded-pill mx-1">Pulihkan Data</button>
-                                            </div>
+                                            @if ($confirmDeleteLspop == null)
+                                                <a href="{{ route('detail.lspop', ['id' => $item->id]) }}">
+                                                    <button class="btn btn-primary rounded-pill mx-1">Detail</button>
+                                                </a>
+                                                <div class="div">
+                                                    <button type="button"
+                                                        wire:click="confirmDeleteLspop({{ $item->id }})"
+                                                        class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                                </div>
+                                                <div class="div">
+                                                    <button type="button"
+                                                        wire:click="pulihkanLspop({{ $item->id }})"
+                                                        class="btn btn-success rounded-pill mx-1">Pulihkan Data</button>
+                                                </div>
+                                            @else
+                                                <div class="d-flex flex-column">
+                                                    <small>Data akan terhapus permanen</small>
+                                                    <div class="div">
+                                                        <button type="button" wire:click="batalDelete()"
+                                                            class="btn btn-success rounded-pill mx-1">Batal</button>
+                                                        <button type="button"
+                                                            wire:click="deletePermanenLspop({{ $item->id }})"
+                                                            class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                                    </div>
+                                                </div>
+                                            @endif
 
                                         </td>
                                     </tr>
@@ -167,18 +182,33 @@
                                         <td>{{ $item->{'31_nama_jelas_petugas'} }}</td>
                                         <td>{{ $item->{'29_tanggal_petugas'} }}</td>
                                         <td class="text-center d-flex flex-wrap justify-content-center">
-
-                                            <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
-                                                <button class="btn btn-primary rounded-pill mx-1">Detail</button>
-                                            </a>
-                                            <div class="div">
-                                                <button type="button" wire:click="deletePermanenSpop({{ $item->id }})"
-                                                    class="btn btn-danger rounded-pill mx-1">Hapus</button>
-                                            </div>
-                                            <div class="div">
-                                                <button type="button" wire:click="pulihkanSpop({{ $item->id }})"
-                                                    class="btn btn-success rounded-pill mx-1">Pulihkan Data</button>
-                                            </div>
+                                            @if ($confirmDeleteSpop == null)
+                                                <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
+                                                    <button class="btn btn-primary rounded-pill mx-1">Detail</button>
+                                                </a>
+                                                <div class="div">
+                                                    <button type="button"
+                                                        wire:click="confirmDeleteSpop({{ $item->id }})"
+                                                        class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                                </div>
+                                                <div class="div">
+                                                    <button type="button"
+                                                        wire:click="pulihkanSpop({{ $item->id }})"
+                                                        class="btn btn-success rounded-pill mx-1">Pulihkan
+                                                        Data</button>
+                                                </div>
+                                            @else
+                                                <div class="d-flex flex-column">
+                                                    <small>Data akan terhapus permanen</small>
+                                                    <div class="div">
+                                                        <button type="button" wire:click="batalDelete()"
+                                                            class="btn btn-success rounded-pill mx-1">Batal</button>
+                                                        <button type="button"
+                                                            wire:click="deletePermanenSpop({{ $item->id }})"
+                                                            class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty

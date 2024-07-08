@@ -19,6 +19,8 @@ class DataTerhapus extends Component
     public $confirmDelete;
     public $lspopEdit = false;
     public $spopEdit = false;
+    public $confirmDeleteLspop;
+    public $confirmDeleteSpop;
 
     public function render()
     {
@@ -61,6 +63,14 @@ class DataTerhapus extends Component
             $this->alert('error', 'Data gagal dihapus');
         }
     }
+    public function confirmDeleteLspop($id)
+    {
+        $this->confirmDeleteLspop = $id;
+    }
+    public function confirmDeleteSpop($id)
+    {
+        $this->confirmDeleteSpop = $id;
+    }
 
     public function editLspop()
     {
@@ -78,6 +88,10 @@ class DataTerhapus extends Component
         $this->spopEdit = false;
     }
 
+    public function batalDelete(){
+        $this->confirmDeleteLspop = null;
+        $this->confirmDeleteSpop = null;
+    }
     public function deletePermanenSpop($id)
     {
         $spop = Spop::find($id);
