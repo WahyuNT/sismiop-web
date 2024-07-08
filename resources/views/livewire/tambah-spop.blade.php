@@ -392,40 +392,7 @@
                         <input class="form-control" wire:model="data.29_tanggal_petugas" name="29_tanggal_petugas"
                             id="29_tanggal_petugas" type="date" placeholder="Masukkan Data" />
                     </div>
-                    <div class="col-12">
-                        <label class="mb-1" for="30_tanda_tangan_pejabat_petugas">30. TANDA TANGAN</label>
-                        <div class="card sign-ttd">
-                            <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                <canvas id="signature-pad_pejabat" class="signature-pad_pejabat" width=246
-                                    height=164></canvas>
-                            </div>
-                            <textarea hidden wire:model="data.pejabat_tanda_tangan" name="pejabat_tanda_tangan" id="tanda_tangan_pejabat"></textarea>
-                            <div class="d-flex justify-content-center">
-                                <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
-                                    id="clear_pejabat">Clear</button>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <label class="mb-1" for="31_nama_jelas_petugas">31. NAMA JELAS</label>
-                        <input class="form-control" wire:model="data.31_nama_jelas_petugas"
-                            name="31_nama_jelas_petugas" id="31_nama_jelas_petugas" type="text"
-                            placeholder="Masukkan Data" />
-                    </div>
-                    <div class="col-12">
-                        <label class="mb-1" for="32_nip_petugas">32. NIP</label>
-                        <input class="form-control" wire:model="data.32_nip_petugas" name="32_nip_petugas"
-                            id="32_nip_petugas" type="text" placeholder="Masukkan Data" />
-                    </div>
-                </div>
-                <div class="col-6 px-3">
-                    <p class="text-center fw-bold mb-3">MENGETAHUI PEJABAT YANG BERWENANG</p>
-                    <div class="col-12">
-                        <label class="mb-1" for="29_tanggal_pejabat">29. TANGGAL</label>
-                        <input class="form-control" wire:model="data.29_tanggal_pejabat" name="29_tanggal_pejabat"
-                            id="29_tanggal_pejabat" type="text" placeholder="Masukkan Data" />
-                    </div>
                     <div class="col-12">
                         <label class="mb-1" for="30_tanda_tangan_pejabat_pejabat">30. TANDA TANGAN</label>
                         <div class="card sign-ttd">
@@ -450,6 +417,40 @@
                             <label class="mb-1" for="32_nip_pejabat">32. NIP</label>
                             <input class="form-control" wire:model="data.32_nip_pejabat" name="32_nip_pejabat"
                                 id="32_nip_pejabat" type="text" placeholder="Masukkan Data" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="mb-1" for="31_nama_jelas_petugas">31. NAMA JELAS</label>
+                        <input class="form-control" wire:model="data.31_nama_jelas_petugas"
+                            name="31_nama_jelas_petugas" id="31_nama_jelas_petugas" type="text"
+                            placeholder="Masukkan Data" />
+                    </div>
+                    <div class="col-12">
+                        <label class="mb-1" for="32_nip_petugas">32. NIP</label>
+                        <input class="form-control" wire:model="data.32_nip_petugas" name="32_nip_petugas"
+                            id="32_nip_petugas" type="text" placeholder="Masukkan Data" />
+                    </div>
+                </div>
+                <div class="col-6 px-3">
+                    <p class="text-center fw-bold mb-3">MENGETAHUI PEJABAT YANG BERWENANG</p>
+                    <div class="col-12">
+                        <label class="mb-1" for="29_tanggal_pejabat">29. TANGGAL</label>
+                        <input class="form-control" wire:model="data.29_tanggal_pejabat" name="29_tanggal_pejabat"
+                            id="29_tanggal_pejabat" type="text" placeholder="Masukkan Data" />
+                    </div>
+                    <div class="col-12">
+                        <label class="mb-1" for="30_tanda_tangan_pejabat_petugas">30. TANDA TANGAN</label>
+                        <div class="card sign-ttd">
+                            <div class="wrapper-sign" id="tempatTTD" style="display: block">
+                                <canvas id="signature-pad_pejabat" class="signature-pad_pejabat" width=246
+                                    height=164></canvas>
+                            </div>
+                            <textarea hidden wire:model="data.pejabat_tanda_tangan" name="pejabat_tanda_tangan" id="tanda_tangan_pejabat"></textarea>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
+                                    id="clear_pejabat">Clear</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -136,6 +136,7 @@ class DetailLspop extends Component
                 }
                 $this->alert('success', 'Tanda tangan pejabat berhasil diperbarui');
                 $this->edit60 = false;
+                $this->newTTD60 = null;
             } else {
                 $this->alert('error', 'Tanda tangan pejabat gagal diperbarui');
             }
@@ -175,6 +176,7 @@ class DetailLspop extends Component
 
                 $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
                 $this->edit56 = false;
+                $this->newTTD56 = null;
             } else {
                 $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
             }

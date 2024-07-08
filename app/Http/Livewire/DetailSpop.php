@@ -17,7 +17,11 @@ class DetailSpop extends Component
     public $data = [];
     public $isEdit = false;
     public $edit28 = false;
+    public $edit30A = false;
+    public $edit30B = false;
     public $newTTD28 = null;
+    public $newTTD30A = null;
+    public $newTTD30B = null;
 
     public function mount($id)
     {
@@ -78,6 +82,28 @@ class DetailSpop extends Component
         $this->newTTD28 = null;
     }
 
+    public function edit30A()
+    {
+        $this->edit30A = true;
+    }
+
+    public function cancelEdit30A()
+    {
+        $this->edit30A = false;
+        $this->newTTD30A = null;
+    }
+
+    public function edit30B()
+    {
+        $this->edit30B = true;
+    }
+
+    public function cancelEdit30B()
+    {
+        $this->edit30B = false;
+        $this->newTTD30B = null;
+    }
+
     public function simpan28()
     {
         $gambarLama28 = Spop::find($this->dataId)->getOriginal()['28_tanda_tangan'];
@@ -107,12 +133,91 @@ class DetailSpop extends Component
                 }
                 $this->alert('success', 'Tanda tangan pernyataan berhasil diperbarui');
                 $this->edit28 = false;
+                $this->newTTD28 = null;
             } else {
                 $this->alert('error', 'Tanda tangan pernyataan gagal diperbarui');
             }
         } else {
             $this->edit28 = false;
             $this->alert('error', 'Tidak ada tanda tangan pernyataan yang diupload');
+        }
+    }
+
+    public function simpan30A()
+    {
+        $gambarLama30A = Spop::find($this->dataId)->getOriginal()['30_tanda_tangan_petugas'];
+        $gambarLama30A = public_path('img/ttd/spop/pendata/' . $gambarLama30A);
+
+        if ($this->newTTD30A != null) {
+            $data_uri_30A = $this->newTTD30A;
+            $encoded_image_30A = explode(',', $data_uri_30A)[1];
+            $decoded_image_30A = base64_decode($encoded_image_30A);
+
+            $directory_30A = public_path('img/ttd/spop/pendata');
+            if (!File::isDirectory($directory_30A)) {
+                File::makeDirectory($directory_30A, 0777, true, true);
+            }
+
+            $image_name_30A = 'pendata_spop_30A_' . Str::random(20) . '.png';
+            $image_path_30A = $directory_30A . '/' . $image_name_30A;
+            file_put_contents($image_path_30A, $decoded_image_30A);
+            $this->data['30_tanda_tangan_petugas'] = $image_name_30A;
+
+            $data = Spop::find($this->dataId);
+            $data->update($this->data);
+
+            if ($data->save()) {
+                if (file_exists($gambarLama30A)) {
+                    unlink($gambarLama30A);
+                }
+                $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
+                $this->edit30A = false;
+                $this->newTTD30A = null;
+            } else {
+                $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
+            }
+        } else {
+            $this->edit30A = false;
+            $this->alert('error', 'Tidak ada tanda tangan pendata yang diupload');
+        }
+    }
+
+    public function simpan30B()
+    {
+        $gambarLama30B = Spop::find($this->dataId)->getOriginal()['30_tanda_tangan_pejabat'];
+        $gambarLama30B = public_path('img/ttd/spop/pejabat/' . $gambarLama30B);
+
+        if ($this->newTTD30B != null) {
+            $data_uri_30B = $this->newTTD30B;
+            $encoded_image_30B = explode(',', $data_uri_30B)[1];
+            $decoded_image_30B = base64_decode($encoded_image_30B);
+
+            $directory_30B = public_path('img/ttd/spop/pejabat');
+            if (!File::isDirectory($directory_30B)) {
+                File::makeDirectory($directory_30B, 0777, true, true);
+            }
+
+            $image_name_30B = 'ttd_pejabat_spop_30B_' . Str::random(20) . '.png';
+            $image_path_30B = $directory_30B . '/' . $image_name_30B;
+            file_put_contents($image_path_30B, $decoded_image_30B);
+            $this->data['30_tanda_tangan_pejabat'] = $image_name_30B;
+
+            $data = Spop::find($this->dataId);
+            $data->update($this->data);
+
+            if ($data->save()) {
+                if (file_exists($gambarLama30B)) {
+                    unlink($gambarLama30B);
+                }
+                $this->alert('success', 'Tanda tangan pejabat berhasil diperbarui');
+                $this->edit30B = false;
+                $this->newTTD30B = null;
+            } else {
+                $this->alert('error', 'Tanda tangan pejabat gagal diperbarui');
+            }
+        } else {
+            $this->edit30B = false;
+            $this->alert('error', 'Tidak ada tanda tangan pejabat yang diupload');
         }
     }
 }

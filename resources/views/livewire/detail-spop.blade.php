@@ -383,7 +383,6 @@
                             </div>
                             @if ($edit28 == false)
                                 <div class="d-flex flex-wrap">
-
                                     <img class="image-ttd"
                                         src="{{ asset('img/ttd/spop/pernyataan/' . $spop->{'28_tanda_tangan'}) }}"
                                         width=246 height=164 alt="">
@@ -443,8 +442,34 @@
                         </div>
                         <div class="col-12">
                             <label class="mb-1" for="30_tanda_tangan_petugas">30. TANDA TANGAN</label>
-                            <div class="card w-50">
-                                <div class="card-body py-5"></div>
+                            @if ($edit30A == false)
+                                <img class="image-ttd"
+                                    src="{{ asset('img/ttd/spop/pendata/' . $spop->{'30_tanda_tangan_petugas'}) }}"
+                                    width=246 height=164 alt="">
+                            @endif
+                            @if ($edit30A == false)
+                                <button type="button"wire:click="edit30A"
+                                    class="btn rounded-pill  btn-warning py-1"><i
+                                        class="fa-solid fa-pencil"></i></button>
+                            @endif
+
+                            <div class="card  sign-ttd" style="{{ $edit30A ? 'display: block' : 'display: none' }}">
+
+                                <div class="wrapper-sign" id="tempatTTD">
+                                    <canvas id="signature-pad_30A" class="signature-pad_30A" width=246
+                                        height=164></canvas>
+                                </div>
+                                <textarea wire:model="newTTD30A" name="pejabat_tanda_tangan" id="tanda_tangan_30A"></textarea>
+                                <div style="display:block" id="div_button_30A">
+                                    <div class="d-flex justify-content-center">
+                                        <button id="cancel_30A" wire:click="cancelEdit30A" type="button"
+                                            class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
+                                        <button type="button" class="btn rounded-pill btn-info me-2 py-0 mb-2"
+                                            id="clear_30A">Clear</button>
+                                        <button wire:click="simpan30A" id="simpan_30A" type="button"
+                                            class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
@@ -469,60 +494,87 @@
                         </div>
                         <div class="col-12">
                             <label class="mb-1" for="30_tanda_tangan_pejabat">30. TANDA TANGAN</label>
-                            <div class="card w-50">
-                                <div class="card-body py-5"></div>
+                            @if ($edit30B == false)
+                                <img class="image-ttd"
+                                    src="{{ asset('img/ttd/spop/pejabat/' . $spop->{'30_tanda_tangan_pejabat'}) }}"
+                                    width=246 height=164 alt="">
+                            @endif
+                            @if ($edit30B == false)
+                                <button type="button"wire:click="edit30B"
+                                    class="btn rounded-pill  btn-warning py-1"><i
+                                        class="fa-solid fa-pencil"></i></button>
+                            @endif
+
+                            <div class="card  sign-ttd" style="{{ $edit30B ? 'display: block' : 'display: none' }}">
+
+                                <div class="wrapper-sign" id="tempatTTD">
+                                    <canvas id="signature-pad_30B" class="signature-pad_30B" width=246
+                                        height=164></canvas>
+                                </div>
+                                <textarea wire:model="newTTD30B" name="pejabat_tanda_tangan" id="tanda_tangan_30B"></textarea>
+                                <div style="display:block" id="div_button_30B">
+                                    <div class="d-flex justify-content-center">
+
+                                        <button id="cancel_30B" wire:click="cancelEdit30B" type="button"
+                                            class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
+                                        <button type="button" class="btn rounded-pill btn-info me-2 py-0 mb-2"
+                                            id="clear_30B">Clear</button>
+                                        <button wire:click="simpan30B" id="simpan_30B" type="button"
+                                            class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12">
-                                <label class="mb-1" for="31_nama_jelas_pejabat">31. NAMA JELAS</label>
-                                <input {{ $disabled }} class="form-control"
-                                    wire:model.defer="data.31_nama_jelas_pejabat" name="31_nama_jelas_pejabat"
-                                    id="31_nama_jelas_pejabat" type="text" placeholder="Memuat..." />
-                            </div>
-                            <div class="col-12">
-                                <label class="mb-1" for="32_nip_pejabat">32. NIP</label>
-                                <input {{ $disabled }} class="form-control"
-                                    wire:model.defer="data.32_nip_pejabat" name="32_nip_pejabat" id="32_nip_pejabat"
-                                    type="text" placeholder="Memuat..." />
-                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="mb-1" for="31_nama_jelas_pejabat">31. NAMA JELAS</label>
+                            <input {{ $disabled }} class="form-control"
+                                wire:model.defer="data.31_nama_jelas_pejabat" name="31_nama_jelas_pejabat"
+                                id="31_nama_jelas_pejabat" type="text" placeholder="Memuat..." />
+                        </div>
+                        <div class="col-12">
+                            <label class="mb-1" for="32_nip_pejabat">32. NIP</label>
+                            <input {{ $disabled }} class="form-control" wire:model.defer="data.32_nip_pejabat"
+                                name="32_nip_pejabat" id="32_nip_pejabat" type="text" placeholder="Memuat..." />
                         </div>
                     </div>
                 </div>
             </div>
-            <h4 class="fw-bold text-lg-center text-start my-3"><u>
-                    SKET / DENAH LOKASI OBJEK PAJAK</u>
-            </h4>
-            <div class="card w-100">
-                <div class="card-body py-5">
-                    <div class="my-5"></div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="d-flex flex-wrap mt-4">
-                <div class="col-6">
-                    <p class="mb-2"><b><i><u>KETERANGAN</u></i></b></p>
-                    <ul>
-                        <li>- Gambar sket/denah lokasi objek pajak (tanpa skala), yang dihubungkan dengan jalan
-                            raya/jalan
-                            protokol, jalan lingkungan, dan lain-lain, yang mudah diketahui oleh umum.</li>
-                        <li>- Sebutkan batas-batas kepemilikan sebelah Utara, Selatan, Timur, dan Barat.</li>
-                    </ul>
-                </div>
-                <div class="col-6 text-center">
-                    <p class="text-center mb-2"><b><u>Contoh Penggambaran</u></b></p>
-                    <img class="w-75 rounded" src="/public/img/contoh_map.png" alt="">
-                </div>
-            </div>
-
         </div>
-    @endif
+        <h4 class="fw-bold text-lg-center text-start my-3"><u>
+                SKET / DENAH LOKASI OBJEK PAJAK</u>
+        </h4>
+        <div class="card w-100">
+            <div class="card-body py-5">
+                <div class="my-5"></div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap mt-4">
+            <div class="col-6">
+                <p class="mb-2"><b><i><u>KETERANGAN</u></i></b></p>
+                <ul>
+                    <li>- Gambar sket/denah lokasi objek pajak (tanpa skala), yang dihubungkan dengan jalan
+                        raya/jalan
+                        protokol, jalan lingkungan, dan lain-lain, yang mudah diketahui oleh umum.</li>
+                    <li>- Sebutkan batas-batas kepemilikan sebelah Utara, Selatan, Timur, dan Barat.</li>
+                </ul>
+            </div>
+            <div class="col-6 text-center">
+                <p class="text-center mb-2"><b><u>Contoh Penggambaran</u></b></p>
+                <img class="w-75 rounded" src="/public/img/contoh_map.png" alt="">
+            </div>
+        </div>
+
+</div>
+@endif
 </div>
 <script>
     var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
@@ -573,5 +625,83 @@
         signaturePad_28.clear();
         document.getElementById('tanda_tangan_28').value = "";
 
+    });
+</script>
+<script>
+    var signaturePad_30A = new SignaturePad(document.getElementById('signature-pad_30A'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+    var signaturePad_30B = new SignaturePad(document.getElementById('signature-pad_30B'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+
+    var cancelButton_30A = document.getElementById('cancel_30A');
+    var cancelButton_30B = document.getElementById('cancel_30B');
+
+    var clearButton_30A = document.getElementById('clear_30A');
+    var clearButton_30B = document.getElementById('clear_30B');
+
+
+
+    var cancelSimpanButton_30A = document.getElementById('cancel_simpan_30A');
+    var cancelSimpanButton_30B = document.getElementById('cancel_simpan_30B');
+
+
+
+    var canvasPad_30A = document.getElementById('signature-pad_30A');
+    var canvasPad_30B = document.getElementById('signature-pad_30B');
+
+    canvasPad_30A.addEventListener('click', function(event) {
+        if (signaturePad_30A.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            var data_30A = signaturePad_30A.toDataURL('image/png');
+
+            var tandaTanganInput_30A = document.getElementById('tanda_tangan_30A');
+            tandaTanganInput_30A.value = data_30A;
+
+            @this.set('newTTD30A', data_30A);
+        }
+    });
+
+    canvasPad_30B.addEventListener('click', function(event) {
+        if (signaturePad_30B.isEmpty()) {
+            alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
+        } else {
+            var data_30B = signaturePad_30B.toDataURL('image/png');
+
+            var tandaTanganInput_30B = document.getElementById('tanda_tangan_30B');
+            tandaTanganInput_30B.value = data_30B;
+
+            @this.set('newTTD30B', data_30B);
+        }
+    });
+
+    cancelButton_30A.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_30A.clear();
+        document.getElementById('tanda_tangan_30A').value = "";
+
+    });
+
+    cancelButton_30B.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_30B.clear();
+        document.getElementById('tanda_tangan_30B').value = "";
+    });
+
+    clearButton_30A.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_30A.clear();
+        document.getElementById('tanda_tangan_30A').value = "";
+
+    });
+
+    clearButton_30B.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_30B.clear();
+        document.getElementById('tanda_tangan_30B').value = "";
     });
 </script>

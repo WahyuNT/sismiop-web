@@ -933,7 +933,7 @@
                             <div class="wrapper-sign" id="tempatTTD">
                                 <canvas id="signature-pad_56" class="signature-pad_56" width=246 height=164></canvas>
                             </div>
-                            <textarea hidden wire:model="newTTD56" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
+                            <textarea  wire:model="newTTD56" name="56_tanda_tangan" id="tanda_tangan_56"></textarea>
                             <div style="display:block" id="div_button_56">
                                 <div class="d-flex justify-content-center">
 
@@ -945,7 +945,6 @@
                                         class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
@@ -987,7 +986,7 @@
                             <div class="wrapper-sign" id="tempatTTD" style="display: block">
                                 <canvas id="signature-pad_60" class="signature-pad_60" width=246 height=164></canvas>
                             </div>
-                            <textarea hidden wire:model="newTTD60" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
+                            <textarea  wire:model="newTTD60" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
                             <div class="d-flex justify-content-center">
                                 <button wire:click="cancelEdit60" id="cancel_60" type="button"
                                     class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
