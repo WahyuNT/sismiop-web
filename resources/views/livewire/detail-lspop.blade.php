@@ -37,7 +37,7 @@
                 <div class="card card-form">
                     <div class="col-lg-2 col-12 mb-2 px-1">
                         <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir</label>
-                        <input {{ $disabled }} wire:model.defer="data.no_formulir" class="form-control"
+                        <input maxlength="9" {{ $disabled }} wire:model.defer="data.no_formulir" class="form-control"
                             name="no_formulir" id="no_formulir" type="text" placeholder="Masukkan Data" />
                     </div>
 

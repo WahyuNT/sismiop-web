@@ -19,7 +19,7 @@
                     <div class="card card-form">
                         <div class="col-lg-4 col-12 mb-2 px-1">
                             <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir</label>
-                            <input wire:model="data.no_formulir" class="form-control" name="no_formulir"
+                            <input maxlength="9" wire:model="data.no_formulir" class="form-control" name="no_formulir"
                                 id="no_formulir" type="text" placeholder="Masukkan Data" />
                         </div>
 
@@ -29,7 +29,7 @@
                             </h6>
                             <div class="d-flex justify-content-start gap-2">
                                 <div class="form-check radio-style mb-20">
-                                    <input class="form-check-input" type="radio" value="perekaman_data"
+                                    <input maxlength="9" class="form-check-input" type="radio" value="perekaman_data"
                                         id="radio-transaksi-1" wire:model="data.1_jenis_transaksi"
                                         name="1_jenis_transaksi" />
                                     <label class="text-black fw-bold form-check-label" for="radio-transaksi-1">
@@ -72,44 +72,44 @@
                                 <div class="d-flex flex-wrap">
                                     <div class="col-lg-1 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="provinsi">Provinsi</label>
-                                        <input class="form-control" wire:model="data.2_nop_provinsi"
+                                        <input maxlength="2" class="form-control" wire:model="data.2_nop_provinsi"
                                             name="2_nop_provinsi" id="provinsi" type="text"
                                             placeholder="Masukkan Data" />
                                     </div>
                                     <div class="col-lg-2 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="2_nop_kabupaten">Kabupaten</label>
-                                        <input class="form-control" wire:model="data.2_nop_kabupaten"
+                                        <input maxlength="2" class="form-control" wire:model="data.2_nop_kabupaten"
                                             name="2_nop_kabupaten" id="2_nop_kabupaten" type="text"
                                             placeholder="Masukkan Data" />
                                     </div>
                                     <div class="col-lg-2 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="2_nop_kecamatan">Kecamatan</label>
-                                        <input class="form-control" wire:model="data.2_nop_kecamatan"
+                                        <input maxlength="3" class="form-control" wire:model="data.2_nop_kecamatan"
                                             name="2_nop_kecamatan" id="2_nop_kecamatan" type="text"
                                             placeholder="Masukkan Data" />
                                     </div>
                                     <div class="col-lg-2 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="2_nop_gampong">Gampong</label>
-                                        <input class="form-control" wire:model="data.2_nop_gampong" name="2_nop_gampong"
-                                            class="form-control" id="2_nop_gampong" type="text"
-                                            placeholder="Masukkan Data" />
+                                        <input maxlength="3" class="form-control" wire:model="data.2_nop_gampong"
+                                            name="2_nop_gampong" class="form-control" id="2_nop_gampong"
+                                            type="text" placeholder="Masukkan Data" />
                                     </div>
                                     <div class="col-lg-2 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="2_nop_blok">Blok</label>
-                                        <input class="form-control" wire:model="data.2_nop_blok" name="2_nop_blok"
-                                            class="form-control" id="2_nop_blok" type="text"
+                                        <input maxlength="4" class="form-control" wire:model="data.2_nop_blok"
+                                            name="2_nop_blok" class="form-control" id="2_nop_blok" type="text"
                                             placeholder="Masukkan Data" />
                                     </div>
                                     <div class="col-lg-2 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="2_nop_no_urut">No.Urut</label>
-                                        <input class="form-control" wire:model="data.2_nop_no_urut"
+                                        <input maxlength="4" class="form-control" wire:model="data.2_nop_no_urut"
                                             name="2_nop_no_urut" class="form-control" id="2_nop_no_urut"
                                             type="text" placeholder="Masukkan Data" />
                                     </div>
                                     <div class="col-lg-1 col-12 mb-2 px-1">
                                         <label class="text-black fw-bold mb-1" for="2_nop_kode">Kode</label>
-                                        <input class="form-control" wire:model="data.2_nop_kode" name="2_nop_kode"
-                                            class="form-control" id="2_nop_kode" type="text"
+                                        <input maxlength="1" class="form-control" wire:model="data.2_nop_kode"
+                                            name="2_nop_kode" class="form-control" id="2_nop_kode" type="text"
                                             placeholder="Masukkan Data" />
                                     </div>
                                 </div>
@@ -119,14 +119,15 @@
                                 <div class="col-lg-6 col-12 mb-2 px-3">
                                     <label class="text-black fw-bold mb-1" for="3_jumlah_bangunan">3. Jumlah
                                         Bangunan</label>
-                                    <input class="form-control" wire:model="data.3_jumlah_bangunan"
+                                    <input maxlength="3" class="form-control" wire:model="data.3_jumlah_bangunan"
                                         name="3_jumlah_bangunan" id="jumlah_bangunan" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-lg-6 col-12 mb-2 px-3">
                                     <label class="text-black fw-bold mb-1" for="4_bangunan_ke">4. Bangunan Ke</label>
-                                    <input class="form-control" wire:model="data.4_bangunan_ke" name="4_bangunan_ke"
-                                        id="4_bangunan_ke" type="text" placeholder="Masukkan Data" />
+                                    <input maxlength="3" class="form-control" wire:model="data.4_bangunan_ke"
+                                        name="4_bangunan_ke" id="4_bangunan_ke" type="text"
+                                        placeholder="Masukkan Data" />
                                 </div>
                             </div>
                         </div>
@@ -163,25 +164,27 @@
                             <div class="col-lg-6 col-12 px-3 mb-2">
                                 <label class="text-black fw-bold mb-1" for="6_luas_bangunan">6. Luas
                                     Bangunan(M2)</label>
-                                <input class="form-control" wire:model="data.6_luas_bangunan" name="6_luas_bangunan"
-                                    id="6_luas_bangunan" type="text" placeholder="Masukkan Data" />
+                                <input maxlength="10" class="form-control" wire:model="data.6_luas_bangunan"
+                                    name="6_luas_bangunan" id="6_luas_bangunan" type="text"
+                                    placeholder="Masukkan Data" />
                             </div>
                             <div class="col-lg-6 col-12 px-3 mb-2">
                                 <label class="text-black fw-bold mb-1" for="7_jumlah_lantai">7. Jumlah Lantai</label>
-                                <input class="form-control" wire:model="data.7_jumlah_lantai" name="7_jumlah_lantai"
-                                    id="7_jumlah_lantai" type="text" placeholder="Masukkan Data" />
+                                <input maxlength="2" class="form-control" wire:model="data.7_jumlah_lantai"
+                                    name="7_jumlah_lantai" id="7_jumlah_lantai" type="text"
+                                    placeholder="Masukkan Data" />
                             </div>
                             <div class="col-lg-6 col-12 px-3 mb-2">
                                 <label class="text-black fw-bold mb-1" for="8_tahun_dibangun">8. Tahun
                                     Dibangun</label>
-                                <input class="form-control" wire:model="data.8_tahun_dibangun"
+                                <input maxlength="4" class="form-control" wire:model="data.8_tahun_dibangun"
                                     name="8_tahun_dibangun" id="8_tahun_dibangun" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
                             <div class="col-lg-6 col-12 px-3 mb-2">
                                 <label class="text-black fw-bold mb-1" for="9_tahun_direnovasi">9. Tahun
                                     Direnovasi</label>
-                                <input class="form-control" wire:model="data.9_tahun_direnovasi"
+                                <input maxlength="4" class="form-control" wire:model="data.9_tahun_direnovasi"
                                     name="9_tahun_direnovasi" id="9_tahun_direnovasi" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -190,9 +193,9 @@
                                     Listrik
                                     Terpasang
                                     (Watt)</label>
-                                <input class="form-control" wire:model="data.10_daya_listrik_terpasang"
-                                    name="10_daya_listrik_terpasang" id="10_daya_listrik_terpasang" type="text"
-                                    placeholder="Masukkan Data" />
+                                <input maxlength="10" class="form-control"
+                                    wire:model="data.10_daya_listrik_terpasang" name="10_daya_listrik_terpasang"
+                                    id="10_daya_listrik_terpasang" type="text" placeholder="Masukkan Data" />
                             </div>
                             <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                                 <label for="11_kondisi_pada_umumnya">11. Kondisi Pada Umumnya</label>
@@ -275,13 +278,15 @@
                             <div class="d-flex flex-wrap">
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1" for="17_ac_split">Split</label>
-                                    <input class="form-control" wire:model="data.17_ac_split" name="17_ac_split"
-                                        id="17_ac_split" type="text" placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control" wire:model="data.17_ac_split"
+                                        name="17_ac_split" id="17_ac_split" type="text"
+                                        placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1" for="17_ac_window">Window</label>
-                                    <input class="form-control" wire:model="data.17_ac_window" name="17_ac_window"
-                                        id="17_ac_window" type="text" placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control" wire:model="data.17_ac_window"
+                                        name="17_ac_window" id="17_ac_window" type="text"
+                                        placeholder="Masukkan Data" />
                                 </div>
                             </div>
                         </div>
@@ -299,7 +304,7 @@
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1" for="19_luas_kolam_renang">19. Luas Kolam
                                         Renang(M2)</label>
-                                    <input class="form-control" wire:model="data.19_luas_kolam_renang"
+                                    <input maxlength="4" class="form-control" wire:model="data.19_luas_kolam_renang"
                                         name="19_luas_kolam_renang" id="19_luas_kolam_renang" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -321,7 +326,8 @@
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1"
                                         for="20_luas_perkerasan_halaman_ringan">Ringan</label>
-                                    <input class="form-control" wire:model="data.20_luas_perkerasan_halaman_ringan"
+                                    <input maxlength="5" class="form-control"
+                                        wire:model="data.20_luas_perkerasan_halaman_ringan"
                                         name="20_luas_perkerasan_halaman_ringan"
                                         id="20_luas_perkerasan_halaman_ringan" type="text"
                                         placeholder="Masukkan Data" />
@@ -329,7 +335,8 @@
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1"
                                         for="20_luas_perkerasan_halaman_sedang">Sedang</label>
-                                    <input class="form-control" wire:model="data.20_luas_perkerasan_halaman_sedang"
+                                    <input maxlength="5" class="form-control"
+                                        wire:model="data.20_luas_perkerasan_halaman_sedang"
                                         name="20_luas_perkerasan_halaman_sedang"
                                         id="20_luas_perkerasan_halaman_sedang=sedang" type="text"
                                         placeholder="Masukkan Data" />
@@ -337,7 +344,8 @@
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1"
                                         for="20_luas_perkerasan_halaman_berat">Berat</label>
-                                    <input class="form-control" wire:model="data.20_luas_perkerasan_halaman_berat"
+                                    <input maxlength="5" class="form-control"
+                                        wire:model="data.20_luas_perkerasan_halaman_berat"
                                         name="20_luas_perkerasan_halaman_berat" id="20_luas_perkerasan_halaman_berat"
                                         type="text" placeholder="Masukkan Data" />
                                 </div>
@@ -345,7 +353,8 @@
                                     <label class="text-black fw-bold mb-1" for="20_luas_perkerasan_halaman_dpl">Dengan
                                         Penutup
                                         Lantai</label>
-                                    <input class="form-control" wire:model="data.20_luas_perkerasan_halaman_dpl"
+                                    <input maxlength="5" class="form-control"
+                                        wire:model="data.20_luas_perkerasan_halaman_dpl"
                                         name="20_luas_perkerasan_halaman_dpl" id="20_luas_perkerasan_halaman_dpl"
                                         type="text" placeholder="Masukkan Data" />
                                 </div>
@@ -369,12 +378,12 @@
                                     <p>Beton</p>
                                 </div>
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.21_beton_dengan_lampu"
-                                        name="21_beton_dengan_lampu" id="21_beton_dengan_lampu" type="text"
-                                        placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control"
+                                        wire:model="data.21_beton_dengan_lampu" name="21_beton_dengan_lampu"
+                                        id="21_beton_dengan_lampu" type="text" placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-4">
-                                    <input class="form-control" wire:model="data.21_beton_tanpa_lampu"
+                                    <input maxlength="2" class="form-control" wire:model="data.21_beton_tanpa_lampu"
                                         name="21_beton_tanpa_lampu" id="21_beton_tanpa_lampu" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -384,12 +393,12 @@
                                     <p>Aspal</p>
                                 </div>
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.21_aspal_dengan_lampu"
-                                        name="21_aspal_dengan_lampu" id="21_aspal_dengan_lampu" type="text"
-                                        placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control"
+                                        wire:model="data.21_aspal_dengan_lampu" name="21_aspal_dengan_lampu"
+                                        id="21_aspal_dengan_lampu" type="text" placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-4">
-                                    <input class="form-control" wire:model="data.21_aspal_tanpa_lampu"
+                                    <input maxlength="2" class="form-control" wire:model="data.21_aspal_tanpa_lampu"
                                         name="21_aspal_tanpa_lampu" id="21_aspal_tanpa_lampu" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -399,12 +408,12 @@
                                     <p>Tanah Liat/Rumput</p>
                                 </div>
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.21_tanah_dengan_lampu"
-                                        name="21_tanah_dengan_lampu" id="21_tanah_dengan_lampu" type="text"
-                                        placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control"
+                                        wire:model="data.21_tanah_dengan_lampu" name="21_tanah_dengan_lampu"
+                                        id="21_tanah_dengan_lampu" type="text" placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-4">
-                                    <input class="form-control" wire:model="data.21_tanah_tanpa_lampu"
+                                    <input maxlength="2" class="form-control" wire:model="data.21_tanah_tanpa_lampu"
                                         name="21_tanah_tanpa_lampu" id="21_tanah_tanpa_lampu" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -415,7 +424,7 @@
                             <h6>22. Jumlah Lift</h6>
                             <div class="d-flex flex-wrap align-items-center mt-3">
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.22_lift_penumpang"
+                                    <input maxlength="2" class="form-control" wire:model="data.22_lift_penumpang"
                                         name="22_lift_penumpang" id="22_lift_penumpang" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -425,8 +434,9 @@
                             </div>
                             <div class="d-flex flex-wrap align-items-center mt-3">
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.22_kapsul" name="22_kapsul"
-                                        id="22_kapsul" type="text" placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control" wire:model="data.22_kapsul"
+                                        name="22_kapsul" id="22_kapsul" type="text"
+                                        placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-4 ps-2 ">
                                     <p>Kapsul</p>
@@ -434,8 +444,9 @@
                             </div>
                             <div class="d-flex flex-wrap align-items-center mt-3">
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.22_barang" name="22_barang"
-                                        id="22_barang" type="text" placeholder="Masukkan Data" />
+                                    <input maxlength="2" class="form-control" wire:model="data.22_barang"
+                                        name="22_barang" id="22_barang" type="text"
+                                        placeholder="Masukkan Data" />
                                 </div>
                                 <div class="col-4 ps-2 ">
                                     <p>Barang</p>
@@ -446,10 +457,11 @@
                             <h6>23. Jumlah Tangga Berjalan</h6>
                             <div class="d-flex flex-wrap align-items-center mt-3">
                                 <div class="col-4 ps-2 ">
-                                    <p>Lbr < 0.80 M</p>
+                                    <p>Lbr ≤ 0.80 M</p>
                                 </div>
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.23_jumlah_tangga_berjalan_k080"
+                                    <input maxlength="2" class="form-control"
+                                        wire:model="data.23_jumlah_tangga_berjalan_k080"
                                         name="23_jumlah_tangga_berjalan_k080" id="23_jumlah_tangga_berjalan_k080"
                                         type="text" placeholder="Masukkan Data" />
                                 </div>
@@ -459,7 +471,8 @@
                                     <p>Lbr > 0.80 M</p>
                                 </div>
                                 <div class="col-4  pe-2">
-                                    <input class="form-control" wire:model="data.23_jumlah_tangga_berjalan_b080"
+                                    <input maxlength="2" class="form-control"
+                                        wire:model="data.23_jumlah_tangga_berjalan_b080"
                                         name="23_jumlah_tangga_berjalan_b080" id="23_jumlah_tangga_berjalan_b080"
                                         type="text" placeholder="Masukkan Data" />
                                 </div>
@@ -470,7 +483,7 @@
                                 <div class="col-6 px-2">
                                     <label class="text-black fw-bold mb-1 fw-bold" for="24_panjang_pagar">24. Panjang
                                         Pagar(M2)</label>
-                                    <input class="form-control" wire:model="data.24_panjang_pagar"
+                                    <input maxlength="4" class="form-control" wire:model="data.24_panjang_pagar"
                                         name="24_panjang_pagar" id="24_panjang_pagar" type="text"
                                         placeholder="Masukkan Data" />
                                 </div>
@@ -551,7 +564,7 @@
                             <label class="text-black fw-bold mb-1 fw-bold" for="26_jumlah_saluran_pes_pabx">26. JUMLAH
                                 SALURAN PES.
                                 PABX</label>
-                            <input class="form-control" wire:model="data.26_jumlah_saluran_pes_pabx"
+                            <input maxlength="4" class="form-control" wire:model="data.26_jumlah_saluran_pes_pabx"
                                 name="26_jumlah_saluran_pes_pabx" id="26_jumlah_saluran_pes_pabx" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -560,7 +573,7 @@
                                 KEDALAMAN
                                 SUMUR ARTETIS
                                 (M)</label>
-                            <input class="form-control" wire:model="data.27_kedalaman_sumur_artetis"
+                            <input maxlength="4" class="form-control" wire:model="data.27_kedalaman_sumur_artetis"
                                 name="27_kedalaman_sumur_artetis" id="27_kedalaman_sumur_artetis" type="text"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -577,34 +590,38 @@
                     <div class="col-lg-6 col-12 px-3 my-2">
                         <label class="text-black fw-bold mb-1 fw-bold" for="28_tinggi_kolong">28. TINGGI KOLOM
                             (M)</label>
-                        <input class="form-control" wire:model="data.28_tinggi_kolong" name="28_tinggi_kolong"
-                            id="28_tinggi_kolong" type="text" placeholder="Masukkan Data" />
+                        <input maxlength="9" class="form-control" wire:model="data.28_tinggi_kolong"
+                            name="28_tinggi_kolong" id="28_tinggi_kolong" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                     <div class="col-lg-6 col-12 px-3 my-2">
                         <label class="text-black fw-bold mb-1 fw-bold" for="29_lebar_bentang">29. LEBAR BENTANG
                             (M)</label>
-                        <input class="form-control" wire:model="data.29_lebar_bentang" name="29_lebar_bentang"
-                            id="29_lebar_bentang" type="text" placeholder="Masukkan Data" />
+                        <input maxlength="9" class="form-control" wire:model="data.29_lebar_bentang"
+                            name="29_lebar_bentang" id="29_lebar_bentang" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                     <div class="col-lg-6 col-12 px-3 my-2">
                         <label class="text-black fw-bold mb-1 fw-bold" for="30_daya_dukung_lantai">30. DAYA DUKUNG
                             LANTAI
                             (Kg/M²)</label>
-                        <input class="form-control" wire:model="data.30_daya_dukung_lantai"
+                        <input maxlength="9" class="form-control" wire:model="data.30_daya_dukung_lantai"
                             name="30_daya_dukung_lantai" id="30_daya_dukung_lantai" type="text"
                             placeholder="Masukkan Data" />
                     </div>
                     <div class="col-lg-6 col-12 px-3 my-2">
                         <label class="text-black fw-bold mb-1 fw-bold" for="31_keliling_dinding">31. KELILING DINDING
                             (M)</label>
-                        <input class="form-control" wire:model="data.31_keliling_dinding" name="31_keliling_dinding"
-                            id="31_keliling_dinding" type="text" placeholder="Masukkan Data" />
+                        <input maxlength="9" class="form-control" wire:model="data.31_keliling_dinding"
+                            name="31_keliling_dinding" id="31_keliling_dinding" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                     <div class="col-lg-6 col-12 px-3 my-2">
                         <label class="text-black fw-bold mb-1 fw-bold" for="32_luas_mezzanine">32. LUAS MEZZANINE
                             (M2)</label>
-                        <input class="form-control" wire:model="data.32_luas_mezzanine" name="32_luas_mezzanine"
-                            id="32_luas_mezzanine" type="text" placeholder="Masukkan Data" />
+                        <input maxlength="9" class="form-control" wire:model="data.32_luas_mezzanine"
+                            name="32_luas_mezzanine" id="32_luas_mezzanine" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                 </div>
             </div>
@@ -663,7 +680,8 @@
                                     for="36_luas_kamar_dengan_ac_sentral">36.
                                     LUAS KAMAR DENGAN AC
                                     SENTRAL(M2)</label>
-                                <input class="form-control" wire:model="data.36_luas_kamar_dengan_ac_sentral"
+                                <input maxlength="9" class="form-control"
+                                    wire:model="data.36_luas_kamar_dengan_ac_sentral"
                                     name="36_luas_kamar_dengan_ac_sentral" id="36_luas_kamar_dengan_ac_sentral"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -673,7 +691,8 @@
                                     DENGAN
                                     AC
                                     SENTRAL (M2)</label>
-                                <input class="form-control" wire:model="data.37_luas_ruang_lain_dengan_ac_sentral"
+                                <input maxlength="9" class="form-control"
+                                    wire:model="data.37_luas_ruang_lain_dengan_ac_sentral"
                                     name="37_luas_ruang_lain_dengan_ac_sentral"
                                     id="37_luas_ruang_lain_dengan_ac_sentral" type="text"
                                     placeholder="Masukkan Data" />
@@ -721,8 +740,9 @@
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1 fw-bold" for="41_jumlah_kamar">41. JUMLAH
                                     KAMAR</label>
-                                <input class="form-control" wire:model="data.41_jumlah_kamar" name="41_jumlah_kamar"
-                                    id="41_jumlah_kamar" type="text" placeholder="Masukkan Data" />
+                                <input maxlength="9" class="form-control" wire:model="data.41_jumlah_kamar"
+                                    name="41_jumlah_kamar" id="41_jumlah_kamar" type="text"
+                                    placeholder="Masukkan Data" />
                             </div>
                             <div class="col-6 px-2">
                                 <label class="text-black fw-bold mb-1 fw-bold"
@@ -730,7 +750,8 @@
                                     LUAS KAMAR DENGAN AC
                                     SENTARAL
                                     (M2)</label>
-                                <input class="form-control" wire:model="data.42_luas_kamar_dengan_ac_sentra"
+                                <input maxlength="9" class="form-control"
+                                    wire:model="data.42_luas_kamar_dengan_ac_sentra"
                                     name="42_luas_kamar_dengan_ac_sentra" id="42_luas_kamar_dengan_ac_sentra"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -740,7 +761,8 @@
                                     DENGAN
                                     AC
                                     SENTARAL (M2)</label>
-                                <input class="form-control" wire:model="data.43_luas_ruang_lain_dengan_ac_sentral"
+                                <input maxlength="9" class="form-control"
+                                    wire:model="data.43_luas_ruang_lain_dengan_ac_sentral"
                                     name="43_luas_ruang_lain_dengan_ac_sentral"
                                     id="43_luas_ruang_lain_dengan_ac_sentral" type="text"
                                     placeholder="Masukkan Data" />
@@ -779,7 +801,7 @@
                             <div class="col-6 px-2 ">
                                 <label class="text-black fw-bold mb-1 fw-bold" for="46_jumlah_apartemen">46.JUMLAH
                                     APARTEMEN </label>
-                                <input class="form-control" wire:model="data.46_jumlah_apartemen"
+                                <input maxlength="9" class="form-control" wire:model="data.46_jumlah_apartemen"
                                     name="46_jumlah_apartemen" id="46_jumlah_apartemen" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -788,7 +810,8 @@
                                     for="47_luas_apartemen_dengan_ac_sentral">47. LUAS APARTEMEN
                                     DENGAN AC
                                     SENTRAL (M2) </label>
-                                <input class="form-control" wire:model="data.47_luas_apartemen_dengan_ac_sentral"
+                                <input maxlength="9" class="form-control"
+                                    wire:model="data.47_luas_apartemen_dengan_ac_sentral"
                                     name="47_luas_apartemen_dengan_ac_sentral"
                                     id="47_luas_apartemen_dengan_ac_sentral" type="text"
                                     placeholder="Masukkan Data" />
@@ -798,7 +821,8 @@
                                     for="48_ls_ruang_lain_dengan_ac_sentral">48. LUAS RUANG LAIN
                                     DENGAN AC
                                     SENTRAL (M2)</label>
-                                <input class="form-control" wire:model="data.48_ls_ruang_lain_dengan_ac_sentral"
+                                <input maxlength="9" class="form-control"
+                                    wire:model="data.48_ls_ruang_lain_dengan_ac_sentral"
                                     name="48_ls_ruang_lain_dengan_ac_sentral" id="48_ls_ruang_lain_dengan_ac_sentral"
                                     type="text" placeholder="Masukkan Data" />
                             </div>
@@ -810,7 +834,7 @@
                             <div class="col-6 px-2 ">
                                 <label class="text-black fw-bold mb-1 fw-bold" for="49_kapasitas_tangki">49. KAPASITAS
                                     TANGKI (M3)</label>
-                                <input class="form-control" wire:model="data.49_kapasitas_tangki"
+                                <input maxlength="9" class="form-control" wire:model="data.49_kapasitas_tangki"
                                     name="49_kapasitas_tangki" id="49_kapasitas_tangki" type="text"
                                     placeholder="Masukkan Data" />
                             </div>
@@ -847,14 +871,16 @@
 
                     <div class="col-6 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="52_nilai_sistem">52. NILAI SISTEM</label>
-                        <input class="form-control" wire:model="data.52_nilai_sistem" name="52_nilai_sistem"
-                            id="52_nilai_sistem" type="text" placeholder="Masukkan Data" />
+                        <input maxlength="9" class="form-control" wire:model="data.52_nilai_sistem"
+                            name="52_nilai_sistem" id="52_nilai_sistem" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                     <div class="col-6 px-2 ">
                         <label class="text-black fw-bold mb-1 fw-bold" for="53_nilai_individual">53. NILAI
                             INDIVIDUAL</label>
-                        <input class="form-control" wire:model="data.53_nilai_individual" name="53_nilai_individual"
-                            id="53_nilai_individual" type="text" placeholder="Masukkan Data" />
+                        <input maxlength="9" class="form-control" wire:model="data.53_nilai_individual"
+                            name="53_nilai_individual" id="53_nilai_individual" type="text"
+                            placeholder="Masukkan Data" />
                     </div>
                 </div>
             </div>
@@ -870,14 +896,14 @@
                                 TANGAL
                                 KUNJUNGAN
                                 KEMBALI</label>
-                            <input class="form-control" wire:model="data.54_tanggal_kunjungan_kembali"
+                            <input maxlength="9" class="form-control" wire:model="data.54_tanggal_kunjungan_kembali"
                                 name="54_tanggal_kunjungan_kembali" id="54_tanggal_kunjungan_kembali" type="date"
                                 placeholder="Masukkan Data" />
                         </div>
                         <div class="col-12">
                             <label class="text-black fw-bold mb-1 fw-bold" for="55_tanggal_pendataan">55. TANGAL
                                 PENDATAAN</label>
-                            <input class="form-control" wire:model="data.55_tanggal_pendataan"
+                            <input maxlength="9" class="form-control" wire:model="data.55_tanggal_pendataan"
                                 name="55_tanggal_pendataan" id="55_tanggal_pendataan" type="date"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -903,13 +929,14 @@
                         </div>
                         <div class="col-12 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="57_nama_jelas">57. NAMA JELAS</label>
-                            <input class="form-control" wire:model="data.57_nama_jelas" name="57_nama_jelas"
-                                id="57_nama_jelas" type="text" placeholder="Masukkan Data" />
+                            <input maxlength="9" class="form-control" wire:model="data.57_nama_jelas"
+                                name="57_nama_jelas" id="57_nama_jelas" type="text"
+                                placeholder="Masukkan Data" />
                         </div>
                         <div class="col-12 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="58_nip">58. NIP</label>
-                            <input class="form-control" wire:model="data.58_nip" name="58_nip" id="58_nip"
-                                type="text" placeholder="Masukkan Data" />
+                            <input maxlength="9" class="form-control" wire:model="data.58_nip" name="58_nip"
+                                id="58_nip" type="text" placeholder="Masukkan Data" />
                         </div>
                     </div>
                     <div class="col-6 px-2">
@@ -917,7 +944,7 @@
                         <div class="col-12">
                             <label class="text-black fw-bold mb-1 fw-bold" for="59_tanggal_penelitian">59. TANGAL
                                 PENELITIAN</label>
-                            <input class="form-control" wire:model="data.59_tanggal_penelitian"
+                            <input maxlength="9" class="form-control" wire:model="data.59_tanggal_penelitian"
                                 name="59_tanggal_penelitian" id="59_tanggal_penelitian" type="date"
                                 placeholder="Masukkan Data" />
                         </div>
@@ -940,14 +967,16 @@
                             @enderror
                         </div>
                         <div class="col-12 px-2 ">
-                            <label class="text-black fw-bold mb-1 fw-bold" for="61_nama_jelas">61. NAMA JELAS</label>
-                            <input class="form-control" wire:model="data.61_nama_jelas" name="61_nama_jelas"
-                                id="61_nama_jelas" type="text" placeholder="Masukkan Data" />
+                            <label class="text-black fw-bold mb-1 fw-bold" for="61_nama_jelas">61. NAMA
+                                JELAS</label>
+                            <input maxlength="9" class="form-control" wire:model="data.61_nama_jelas"
+                                name="61_nama_jelas" id="61_nama_jelas" type="text"
+                                placeholder="Masukkan Data" />
                         </div>
                         <div class="col-12 px-2 ">
                             <label class="text-black fw-bold mb-1 fw-bold" for="62_nip">62. NIP</label>
-                            <input class="form-control" wire:model="data.62_nip" name="62_nip" id="62_nip"
-                                type="text" placeholder="Masukkan Data" />
+                            <input maxlength="9" class="form-control" wire:model="data.62_nip" name="62_nip"
+                                id="62_nip" type="text" placeholder="Masukkan Data" />
                         </div>
                     </div>
                 </div>

@@ -26,6 +26,7 @@ class DataSpop extends Component
                     ->where('no_formulir', 'like', '%' . $this->search . '%')
                     ->orWhere('31_nama_jelas_petugas', 'like', '%' . $this->search . '%');
             })
+            ->orderby('created_at', 'desc')
             ->paginate($this->pagination);
 
         return view('livewire.data-spop', compact('spop', 'confirmDelete'));
