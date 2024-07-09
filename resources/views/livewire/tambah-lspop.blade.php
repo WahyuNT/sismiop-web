@@ -28,7 +28,7 @@
                             <h6 class="mb-2">
                                 Jenis Transaksi<span class="text-danger">*</span>
                             </h6>
-                            <div class="d-flex justify-content-start gap-2">
+                            <div class="d-flex justify-content-start flex-wrap gap-2">
                                 <div class="form-check radio-style mb-20">
                                     <input maxlength="9" class="form-check-input" type="radio" value="perekaman_data"
                                         id="radio-transaksi-1" wire:model="data.1_jenis_transaksi"
@@ -70,42 +70,42 @@
                             <h6 class="mb-2">NOP<span class="text-danger">*</span></h6>
                             <div class="col-12 px-3">
                                 <div class="d-flex flex-wrap">
-                                    <div class="col-lg-1 col-12 mb-2 px-1">
+                                    <div class="col-lg-1 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="provinsi">PROV.</label>
                                         <input maxlength="2" class="form-control" wire:model="data.2_nop_provinsi"
                                             name="2_nop_provinsi" id="provinsi" type="text" placeholder="..." />
                                     </div>
-                                    <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <div class="col-lg-2 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="2_nop_kabupaten">KAB.</label>
                                         <input maxlength="2" class="form-control" wire:model="data.2_nop_kabupaten"
                                             name="2_nop_kabupaten" id="2_nop_kabupaten" type="text"
                                             placeholder="..." />
                                     </div>
-                                    <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <div class="col-lg-2 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="2_nop_kecamatan">KEC.</label>
                                         <input maxlength="3" class="form-control" wire:model="data.2_nop_kecamatan"
                                             name="2_nop_kecamatan" id="2_nop_kecamatan" type="text"
                                             placeholder="..." />
                                     </div>
-                                    <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <div class="col-lg-2 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="2_nop_gampong">GAMPONG</label>
                                         <input maxlength="3" class="form-control" wire:model="data.2_nop_gampong"
                                             name="2_nop_gampong" class="form-control" id="2_nop_gampong"
                                             type="text" placeholder="..." />
                                     </div>
-                                    <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <div class="col-lg-2 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="2_nop_blok">BLOK</label>
                                         <input maxlength="4" class="form-control" wire:model="data.2_nop_blok"
                                             name="2_nop_blok" class="form-control" id="2_nop_blok" type="text"
                                             placeholder="..." />
                                     </div>
-                                    <div class="col-lg-2 col-12 mb-2 px-1">
+                                    <div class="col-lg-2 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="2_nop_no_urut">NO.URUT</label>
                                         <input maxlength="4" class="form-control" wire:model="data.2_nop_no_urut"
                                             name="2_nop_no_urut" class="form-control" id="2_nop_no_urut"
                                             type="text" placeholder="..." />
                                     </div>
-                                    <div class="col-lg-1 col-12 mb-2 px-1">
+                                    <div class="col-lg-1 col-6 mb-2 px-1">
                                         <label class="text-black  mb-1" for="2_nop_kode">KODE</label>
                                         <input maxlength="1" class="form-control" wire:model="data.2_nop_kode"
                                             name="2_nop_kode" class="form-control" id="2_nop_kode" type="text"
@@ -274,12 +274,12 @@
                         <div class="col-lg-6 col-12 px-3 mb-2">
                             <h6 class=" text-black">17. Jumlah AC</h6>
                             <div class="d-flex flex-wrap">
-                                <div class="col-3 px-2">
+                                <div class="col-lg-3 col-6 px-2">
                                     <label class="text-black " for="17_ac_split">Split</label>
                                     <input maxlength="2" class="form-control" wire:model="data.17_ac_split"
                                         name="17_ac_split" id="17_ac_split" type="text" placeholder="..." />
                                 </div>
-                                <div class="col-3 px-2">
+                                <div class="col-lg-3 col-6 px-2">
                                     <label class="text-black " for="17_ac_window">Window</label>
                                     <input maxlength="2" class="form-control" wire:model="data.17_ac_window"
                                         name="17_ac_window" id="17_ac_window" type="text" placeholder="..." />
@@ -473,14 +473,14 @@
                         </div>
                         <div class="col-lg-6 col-12 mb-2 px-3 mb-2">
                             <div class="d-flex flex-wrap">
-                                <div class="col-6 px-2">
+                                <div class="col-lg-2 col-12 px-2">
                                     <label class="text-black  mb-1 " for="24_panjang_pagar">24. Panjang
                                         Pagar(M2)</label>
                                     <input maxlength="4" class="form-control" wire:model="data.24_panjang_pagar"
                                         name="24_panjang_pagar" id="24_panjang_pagar" type="text"
                                         placeholder="..." />
                                 </div>
-                                <div class="col-6 px-2 ">
+                                <div class="col-lg-2 col-12 px-2 ">
                                     <label class="text-black  mb-1 " for="24_bahan_pagar">Bahan
                                         Pagar(M2)</label>
                                     <select id="24_bahan_pagar" wire:model="data.24_bahan_pagar"
@@ -496,10 +496,10 @@
                             <label class="text-black  mb-1 " for="hydrant">25. PEMADAM
                                 KEBAKARAN</label>
                             <div class="d-flex flex-wrap align-items-center">
-                                <div class="col-2 text-start pe-2">
+                                <div class="col-lg-2 col-4 text-start pe-2">
                                     Hydrant
                                 </div>
-                                <div class="col-6 d-flex flex-wrap">
+                                <div class="col-lg-6 col-6 d-flex flex-wrap">
                                     <div class="form-check radio-style">
                                         <input wire:model="data.25_hydrant" class="form-check-input" type="radio"
                                             value="ada" name="25_hydrant" id="hydrant-1" />
@@ -515,10 +515,10 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap align-items-center">
-                                <div class="col-2 text-start pe-2">
+                                <div class="col-lg-2 col-4 text-start pe-2">
                                     Sprinkler
                                 </div>
-                                <div class="col-6 d-flex flex-wrap">
+                                <div class="col-lg-6 col-6 d-flex flex-wrap">
                                     <div class="form-check radio-style">
                                         <input wire:model="data.sprinkler" class="form-check-input" type="radio"
                                             value="ada" name="25_sprinkler" id="sprinkler-1" />
@@ -534,10 +534,10 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap align-items-center">
-                                <div class="col-2 text-start pe-2">
+                                <div class="col-lg-2 col-4 text-start pe-2">
                                     Fire A1
                                 </div>
-                                <div class="col-6 d-flex flex-wrap">
+                                <div class="col-lg-6 col-6 d-flex flex-wrap">
                                     <div class="form-check radio-style">
                                         <input wire:model="data.25_fireA1" class="form-check-input" type="radio"
                                             value="ada" name="25_fireA1" id="fireA1-1" />
@@ -620,7 +620,7 @@
 
             <div class="card card-form">
                 <div class="d-flex flex-wrap">
-                    <div class="col-6 px-2 ">
+                    <div class="col-lg-6  col-12 px-2 ">
                         <P class="fw-bold text-black">PERKANTORAN SWASTA/GEDUNG/PEMERINTAHAN (JPB = 2/9)</P>
                         <label class="text-black  mb-1 " for="33_perkantoran_swasta_gedung_pemerintahan">33.
                             KELAS
@@ -635,7 +635,7 @@
                             <option value="kelas_4">Kelas 4</option>
                         </select>
                     </div>
-                    <div class="col-6 px-2 ">
+                    <div class="col-lg-6  col-12 px-2 ">
                         <P class=" fw-bold text-black">TOKO/APOTIK/PASAR/RUKO (JPB=4)</P>
                         <label class="text-black  mb-1 " for="34_toko_apotik_pasar_ruko">34.KELAS
                             BANGUNAN
@@ -648,7 +648,7 @@
                             <option value="4">Kelas 3</option>
                         </select>
                     </div>
-                    <div class="col-12 px-2 ">
+                    <div class="col-lg-12 col-12  px-2 ">
                         <P class=" fw-bold text-black mt-3">RUMAH SAKIT / KLINK (JPB = 5)</P>
                         <label class="text-black  mb-1 " for="35_rumah_sakit_klinik">35.KELAS BANGUNAN
                         </label>
@@ -663,7 +663,7 @@
                     </div>
                     <div class="col-lg-12 col-12 px-2 my-2 ">
                         <div class="d-flex flex-wrap">
-                            <div class="col-6 pe-lg-2">
+                            <div class="col-lg-6 col-12 pe-lg-2">
                                 <label class="text-black  mb-1 " for="36_luas_kamar_dengan_ac_sentral">36.
                                     LUAS KAMAR DENGAN AC
                                     SENTRAL(M2)</label>
@@ -672,7 +672,7 @@
                                     name="36_luas_kamar_dengan_ac_sentral" id="36_luas_kamar_dengan_ac_sentral"
                                     type="text" placeholder="..." />
                             </div>
-                            <div class="col-6 ps-lg-2">
+                            <div class="col-lg-6 col-12 ps-lg-2">
                                 <label class="text-black  mb-1 " for="37_luas_ruang_lain_dengan_ac_sentral">37. LUAS
                                     RUANG LAIN
                                     DENGAN
@@ -685,7 +685,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 px-2 ">
+                    <div class="col-lg-6  col-12 px-2 ">
                         <P class=" fw-bold text-black">OLAHRAGA / REKREASI (JBP=6)</P>
                         <label class="text-black  mb-1 " for="38_olahraga_rekreasi">38.KELAS BANGUNAN
                         </label>
@@ -699,7 +699,7 @@
                     <div class="col-lg-12 col-12 px-2 my-2 ">
                         <P class=" fw-bold text-black">HOTEL / WISMA (JBP = 7)</P>
                         <div class="d-flex flex-wrap">
-                            <div class="col-6 px-2">
+                            <div class="col-lg-6 col-12 px-2">
                                 <label class="text-black mt-2  mb-0 " for="39_jenis_hotel">39.JENIS HOTEL
                                 </label>
                                 <select id="39_jenis_hotel" wire:model="data.39_jenis_hotel" name="39_jenis_hotel"
@@ -709,7 +709,7 @@
                                     <option value="resort">Resort</option>
                                 </select>
                             </div>
-                            <div class="col-6 px-2">
+                            <div class="col-lg-6 col-12 px-2">
                                 <label class="text-black mt-2  mb-0 " for="40_jumlah_bintang">40. JUMLAH
                                     BINTANG
                                 </label>
@@ -723,13 +723,13 @@
                                     <option value="non_bintang">Non Bintang</option>
                                 </select>
                             </div>
-                            <div class="col-6 px-2">
+                            <div class="col-lg-6 col-12 px-2">
                                 <label class="text-black mt-2  mb-0 " for="41_jumlah_kamar">41. JUMLAH
                                     KAMAR</label>
                                 <input maxlength="4" class="form-control" wire:model="data.41_jumlah_kamar"
                                     name="41_jumlah_kamar" id="41_jumlah_kamar" type="text" placeholder="..." />
                             </div>
-                            <div class="col-6 px-2">
+                            <div class="col-lg-6 col-12 px-2">
                                 <label class="text-black mt-2  mb-0 " for="42_luas_kamar_dengan_ac_sentra">42.
                                     LUAS KAMAR DENGAN AC
                                     SENTARAL
@@ -739,7 +739,7 @@
                                     name="42_luas_kamar_dengan_ac_sentra" id="42_luas_kamar_dengan_ac_sentra"
                                     type="text" placeholder="..." />
                             </div>
-                            <div class="col-6 px-2">
+                            <div class="col-lg-6 col-12 px-2">
                                 <label class="text-black mt-2  mb-0 " for="43_luas_ruang_lain_dengan_ac_sentral">43.
                                     LUAS
                                     RUANG LAIN
@@ -753,7 +753,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 px-2 ">
+                    <div class="col-lg-6  col-12 px-2 ">
                         <P class=" fw-bold text-black">BANGUNAN PARKIR (JPB =12)</P>
                         <label class="text-black  mb-1 " for="44_tipe_bangunan">44.TIPE BANGUNAN
                         </label>
@@ -766,10 +766,10 @@
                             <option value="tipe_1">Tipe 1</option>
                         </select>
                     </div>
-                    <div class="col-12  px-2">
-                        <P class=" fw-bold text-black mt-3">APARTEMEN (JPB = 13)</P>
+                    <div class="col-lg-12 col-12   px-2">
+                        <P class="fw-bold text-black mt-3">APARTEMEN (JPB = 13)</P>
                         <div class="d-flex flex-wrap">
-                            <div class="col-6 px-2 ">
+                            <div class="col-lg-6 col-12 px-2 ">
                                 <label class="text-black  mb-1 " for="45_kelas_bangunan">45.KELAS
                                     BANGUNAN
                                 </label>
@@ -782,14 +782,14 @@
                                     <option value="tipe_4">Tipe 4</option>
                                 </select>
                             </div>
-                            <div class="col-6 px-2 ">
+                            <div class="col-lg-6 col-12 px-2 ">
                                 <label class="text-black  mb-1 " for="46_jumlah_apartemen">46.JUMLAH
                                     APARTEMEN </label>
                                 <input maxlength="5" class="form-control" wire:model="data.46_jumlah_apartemen"
                                     name="46_jumlah_apartemen" id="46_jumlah_apartemen" type="text"
                                     placeholder="..." />
                             </div>
-                            <div class="col-6 px-2 ">
+                            <div class="col-lg-6 col-12 px-2 ">
                                 <label class="text-black  mb-1 " for="47_luas_apartemen_dengan_ac_sentral">47. LUAS
                                     APARTEMEN
                                     DENGAN AC
@@ -799,7 +799,7 @@
                                     name="47_luas_apartemen_dengan_ac_sentral"
                                     id="47_luas_apartemen_dengan_ac_sentral" type="text" placeholder="..." />
                             </div>
-                            <div class="col-6 px-2 ">
+                            <div class="col-lg-6 col-12 px-2 ">
                                 <label class="text-black  mb-1 " for="48_ls_ruang_lain_dengan_ac_sentral">48. LUAS
                                     RUANG LAIN
                                     DENGAN AC
@@ -811,17 +811,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 px-2 ">
+                    <div class="col-lg-12 col-12  px-2 ">
                         <P class=" fw-bold text-black mt-3">TANGKI MINYAK (JPB = 15)</P>
                         <div class=" d-flex flex-wrap">
-                            <div class="col-6 px-2 ">
+                            <div class="col-lg-6 col-12 px-2 ">
                                 <label class="text-black  mb-1 " for="49_kapasitas_tangki">49. KAPASITAS
                                     TANGKI (M3)</label>
                                 <input maxlength="5" class="form-control" wire:model="data.49_kapasitas_tangki"
                                     name="49_kapasitas_tangki" id="49_kapasitas_tangki" type="text"
                                     placeholder="..." />
                             </div>
-                            <div class="col-6 px-2 ">
+                            <div class="col-lg-6 col-12 px-2 ">
                                 <label class="text-black  mb-1 " for="50_letak_tangki">50. LETAK TANGKI
                                 </label>
                                 <select id="50_letak_tangki" name="50_letak_tangki" wire:model="data.50_letak_tangki"
@@ -833,7 +833,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 px-2 ">
+                    <div class="col-lg-6  col-12 px-2 ">
                         <P class=" fw-bold text-black mt-3">GEDUNG SEKOLAH (JPB=16)</P>
                         <label class="text-black  mb-1 " for="51_kelas_bangunan">51. KELAS BANGUNAN
                         </label>
@@ -870,7 +870,7 @@
             </h4>
             <div class="card card-form ">
                 <div class="d-flex flex-wrap">
-                    <div class="col-6 px-2">
+                    <div class="col-lg-6 col-12 px-2">
                         <P class=" text-black mt-3 text-center mb-3">PETUGAS PENDATA</P>
                         <div class="col-12">
                             <label class="text-black  mb-1 " for="54_tanggal_kunjungan_kembali">54.
@@ -919,7 +919,7 @@
                                 id="58_nip" type="text" placeholder="..." />
                         </div>
                     </div>
-                    <div class="col-6 px-2">
+                    <div class="col-lg-6 col-12 px-2">
                         <P class=" text-black mt-3 text-center mb-3">MENGETAHUI PEJABAT YANG BERWENANG</P>
                         <div class="col-12">
                             <label class="text-black  mb-1 " for="59_tanggal_penelitian">59. TANGAL
