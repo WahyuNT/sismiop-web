@@ -6,7 +6,7 @@
                     <div class="div">
                         <a href="{{ route('data.spop') }}">
 
-                            <button class="btn btn-info"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i></button>
                         </a>
                     </div>
                     <div class="div">
@@ -17,7 +17,7 @@
 
                     <div class="div d-lg-block d-none">
                         @if ($isEdit == false)
-                            <button type="button" wire:click="edit" class="btn btn-info ">Edit Data</i></button>
+                            <button type="button" wire:click="edit" class="btn btn-primary ">Edit Data</i></button>
                         @elseif ($isEdit == true)
                             <button type="button" wire:click="cancelEdit" class="btn btn-danger ">Batal</i></button>
                             <button type="submit" class="btn btn-info ">Simpan
@@ -37,8 +37,8 @@
                     <div class="col-lg-4 col-12 mb-2 px-1">
                         <label class="text-black text-black fw-bold mb-1" for="no_formulir">No Formulir<span
                                 class="text-danger">*</span></label>
-                        <input {{ $disabled }} required maxlength="9" wire:model="data.no_formulir"
-                            class="form-control" name="no_formulir" id="no_formulir" type="text" placeholder="..." />
+                        <input {{ $disabled }} required maxlength="9" wire:model.defer="data.no_formulir"
+                            class="form-control" name="no_formulir" id="no_formulir" type="text" placeholder="-" />
                     </div>
                     <div class="div">
                         <h6 class="mb-2 fw-bold text-black">
@@ -47,7 +47,7 @@
                         <div class="d-flex justify-content-start flex-wrap gap-2">
                             <div class="form-check radio-style mb-20">
                                 <input {{ $disabled }} maxlength="9" class="form-check-input"
-                                    wire:model="data.1_jenis_transaksi" type="radio" value="1"
+                                    wire:model.defer="data.1_jenis_transaksi" type="radio" value="1"
                                     id="radio-transaksi-1" name="1_jenis_transaksi" required />
                                 <label class="text-black form-check-label" for="radio-transaksi-1">
                                     1. Perekaman Data
@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-check radio-style mb-20">
                                 <input {{ $disabled }} maxlength="9" class="form-check-input"
-                                    wire:model="data.1_jenis_transaksi" type="radio" value="2"
+                                    wire:model.defer="data.1_jenis_transaksi" type="radio" value="2"
                                     id="radio-transaksi-2" name="1_jenis_transaksi" />
                                 <label class="text-black form-check-label" for="radio-transaksi-2">
                                     2. Pemutakhiran Data
@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-check radio-style mb-20">
                                 <input {{ $disabled }} maxlength="9" class="form-check-input"
-                                    wire:model="data.1_jenis_transaksi" type="radio" value="3"
+                                    wire:model.defer="data.1_jenis_transaksi" type="radio" value="3"
                                     id="radio-transaksi-3" name="1_jenis_transaksi" />
                                 <label class="text-black form-check-label" for="radio-transaksi-3">
                                     3. Penghapusan Data
@@ -81,44 +81,44 @@
                                 <div class="col-lg-1 col-6 mb-2 pe-1">
                                     <label class="text-black mb-1" for="provinsi">PROV.</label>
                                     <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model="data.2_nop_provinsi" name="2_nop_provinsi" id="provinsi"
+                                        wire:model.defer="data.2_nop_provinsi" name="2_nop_provinsi" id="provinsi"
                                         type="text" placeholder=".." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Kabupaten">KAB.</label>
                                     <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model="data.2_nop_kabupaten" name="2_nop_kabupaten" id="Kabupaten"
-                                        type="text" placeholder="..." />
+                                        wire:model.defer="data.2_nop_kabupaten" name="2_nop_kabupaten" id="Kabupaten"
+                                        type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Kecamatan">KEC.</label>
                                     <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model="data.2_nop_kecamatan" name="2_nop_kecamatan" id="Kecamatan"
+                                        wire:model.defer="data.2_nop_kecamatan" name="2_nop_kecamatan" id="Kecamatan"
                                         type="text" placeholder="." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Gampong">GAMPONG</label>
                                     <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model="data.2_nop_gampong" name="2_nop_gampong" id="Gampong"
-                                        type="text" placeholder="..." />
+                                        wire:model.defer="data.2_nop_gampong" name="2_nop_gampong" id="Gampong"
+                                        type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Blok">BLOK</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model="data.2_nop_blok" name="2_nop_blok" id="Blok" type="text"
-                                        placeholder="..." />
+                                        wire:model.defer="data.2_nop_blok" name="2_nop_blok" id="Blok" type="text"
+                                        placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model="data.2_no_urut" name="2_no_urut" id="No.Urut" type="text"
-                                        placeholder="..." />
+                                        wire:model.defer="data.2_no_urut" name="2_no_urut" id="No.Urut" type="text"
+                                        placeholder="-" />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
                                     <label class="text-black mb-1" for="Kode">KODE</label>
                                     <input {{ $disabled }} maxlength="1" class="form-control"
-                                        wire:model="data.2_nop_kode" name="2_nop_kode" id="Kode" type="text"
-                                        placeholder="..." />
+                                        wire:model.defer="data.2_nop_kode" name="2_nop_kode" id="Kode" type="text"
+                                        placeholder="-" />
                                 </div>
                             </div>
                         </div>
@@ -129,44 +129,44 @@
                                 <div class="col-lg-1 col-6 mb-2 pe-1">
                                     <label class="text-black mb-1" for="provinsi">PROV.</label>
                                     <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model="data.3_nop_bersama_provinsi" name="3_nop_bersama_provinsi"
-                                        id="provinsi" type="text" placeholder="..." />
+                                        wire:model.defer="data.3_nop_bersama_provinsi" name="3_nop_bersama_provinsi"
+                                        id="provinsi" type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Kabupaten">KAB.</label>
                                     <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model="data.3_nop_bersama_kabupaten" name="3_nop_bersama_kabupaten"
-                                        id="Kabupaten" type="text" placeholder="..." />
+                                        wire:model.defer="data.3_nop_bersama_kabupaten" name="3_nop_bersama_kabupaten"
+                                        id="Kabupaten" type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Kecamatan">KEC.</label>
                                     <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model="data.3_nop_bersama_kecamatan" name="3_nop_bersama_kecamatan"
-                                        id="Kecamatan" type="text" placeholder="..." />
+                                        wire:model.defer="data.3_nop_bersama_kecamatan" name="3_nop_bersama_kecamatan"
+                                        id="Kecamatan" type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Gampong">GAMPONG</label>
                                     <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model="data.3_nop_bersama_gampong" name="3_nop_bersama_gampong"
-                                        id="Gampong" type="text" placeholder="..." />
+                                        wire:model.defer="data.3_nop_bersama_gampong" name="3_nop_bersama_gampong"
+                                        id="Gampong" type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Blok">BLOK</label>
                                     <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model="data.3_nop_bersama_blok" name="3_nop_bersama_blok" id="Blok"
-                                        type="text" placeholder="..." />
+                                        wire:model.defer="data.3_nop_bersama_blok" name="3_nop_bersama_blok" id="Blok"
+                                        type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model="data.3_no_urut" name="3_no_urut" id="No.Urut" type="text"
-                                        placeholder="..." />
+                                        wire:model.defer="data.3_no_urut" name="3_no_urut" id="No.Urut" type="text"
+                                        placeholder="-" />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
                                     <label class="text-black mb-1" for="Kode">KODE</label>
                                     <input {{ $disabled }} maxlength="1" class="form-control"
-                                        wire:model="data.3_nop_bersama_kode" name="3_nop_bersama_kode" id="Kode"
-                                        type="text" placeholder="..." />
+                                        wire:model.defer="data.3_nop_bersama_kode" name="3_nop_bersama_kode" id="Kode"
+                                        type="text" placeholder="-" />
                                 </div>
                             </div>
                         </div>
@@ -180,14 +180,14 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="4_nop_asal">4. NOP ASAL</label>
                             <input {{ $disabled }} maxlength="18" class="form-control"
-                                wire:model="data.4_nop_asal" name="4_nop_asal" id="4_nop_asal" type="text"
-                                placeholder="..." />
+                                wire:model.defer="data.4_nop_asal" name="4_nop_asal" id="4_nop_asal" type="text"
+                                placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="5_no_sppt_lama">5. NO. SPPT LAMA</label>
                             <input {{ $disabled }} maxlength="5" class="form-control"
-                                wire:model="data.5_no_sppt_lama" name="5_no_sppt_lama" id="5_no_sppt_lama"
-                                type="text" placeholder="..." />
+                                wire:model.defer="data.5_no_sppt_lama" name="5_no_sppt_lama" id="5_no_sppt_lama"
+                                type="text" placeholder="-" />
                         </div>
                     </div>
                 </div>
@@ -199,34 +199,34 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="6_nama_jalan">6. NAMA JALAN</label>
                             <input {{ $disabled }} maxlength="30" class="form-control"
-                                wire:model="data.6_nama_jalan" name="6_nama_jalan" id="6_nama_jalan" type="text"
-                                placeholder="..." />
+                                wire:model.defer="data.6_nama_jalan" name="6_nama_jalan" id="6_nama_jalan" type="text"
+                                placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="7_blok_kav_nomor">7. BLOK / KAV / NOMOR</label>
                             <input {{ $disabled }} maxlength="12" class="form-control"
-                                wire:model="data.7_blok_kav_nomor" name="7_blok_kav_nomor" id="7_blok_kav_nomor"
-                                type="text" placeholder="..." />
+                                wire:model.defer="data.7_blok_kav_nomor" name="7_blok_kav_nomor" id="7_blok_kav_nomor"
+                                type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="8_gampong">8. GAMPONG</label>
                             <input {{ $disabled }} maxlength="25" class="form-control"
-                                wire:model="data.8_gampong" name="8_gampong" id="8_gampong" type="text"
-                                placeholder="..." />
+                                wire:model.defer="data.8_gampong" name="8_gampong" id="8_gampong" type="text"
+                                placeholder="-" />
                         </div>
                         <div class="col-12 col-lg-6 d-flex flex-wrap">
 
                             <div class="col-lg-6 col-6 px-lg-3 pe-3 px-0 mb-2">
                                 <label class="text-black mb-1" for="9_rw">9. RW</label>
                                 <input {{ $disabled }} maxlength="2" class="form-control"
-                                    wire:model="data.9_rw" name="9_rw" id="9_rw" type="text"
-                                    placeholder="..." />
+                                    wire:model.defer="data.9_rw" name="9_rw" id="9_rw" type="text"
+                                    placeholder="-" />
                             </div>
                             <div class="col-lg-6 col-6 px-lg-3 px-0 mb-2">
                                 <label class="text-black mb-1" for="10_rt">10. RT</label>
                                 <input {{ $disabled }} maxlength="2" class="form-control"
-                                    wire:model="data.10_rt" name="10_rt" id="10_rt" type="text"
-                                    placeholder="..." />
+                                    wire:model.defer="data.10_rt" name="10_rt" id="10_rt" type="text"
+                                    placeholder="-" />
                             </div>
                         </div>
                     </div>
@@ -238,7 +238,7 @@
                     <div class="d-flex flex-wrap">
                         <div class="col-lg-6 col-12 mb-2 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="11_status">11. STATUS</label>
-                            <select {{ $disabled }} wire:model="data.11_status" name="11_status" id="11_status"
+                            <select {{ $disabled }} wire:model.defer="data.11_status" name="11_status" id="11_status"
                                 class="form-select">
                                 <option value="">Silahkan Pilih</option>
                                 <option value="pemilik">Pemilik</option>
@@ -250,7 +250,7 @@
                         </div>
                         <div class="col-lg-6 col-12 mb-2 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="12_pekerjaan">12. PEKERJAAN</label>
-                            <select {{ $disabled }} wire:model="data.12_pekerjaan" name="12_pekerjaan"
+                            <select {{ $disabled }} wire:model.defer="data.12_pekerjaan" name="12_pekerjaan"
                                 id="12_pekerjaan" class="form-select">
                                 <option value="">Silahkan Pilih</option>
                                 <option value="pns">PNS *)</option>
@@ -263,45 +263,45 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="13_nama_subjek_pajak">13. NAMA SUBJEK PAJAK</label>
                             <input {{ $disabled }} maxlength="30" class="form-control"
-                                wire:model="data.13_nama_subjek_pajak" name="13_nama_subjek_pajak"
-                                id="13_nama_subjek_pajak" type="text" placeholder="..." />
+                                wire:model.defer="data.13_nama_subjek_pajak" name="13_nama_subjek_pajak"
+                                id="13_nama_subjek_pajak" type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="14_npwp">14. NPWP</label>
-                            <input {{ $disabled }} maxlength="11" class="form-control" wire:model="data.14_npwp"
-                                name="14_npwp" id="14_npwp" type="text" placeholder="..." />
+                            <input {{ $disabled }} maxlength="11" class="form-control" wire:model.defer="data.14_npwp"
+                                name="14_npwp" id="14_npwp" type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="15_nama_jalan">15. NAMA JALAN</label>
                             <input {{ $disabled }} maxlength="30" class="form-control"
-                                wire:model="data.15_nama_jalan" name="15_nama_jalan" id="15_nama_jalan"
-                                type="text" placeholder="..." />
+                                wire:model.defer="data.15_nama_jalan" name="15_nama_jalan" id="15_nama_jalan"
+                                type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="16_blok_kav_nomor">16. BLOK / KAV / NOMOR</label>
                             <input {{ $disabled }} maxlength="12" class="form-control"
-                                wire:model="data.16_blok_kav_nomor" name="16_blok_kav_nomor" id="16_blok_kav_nomor"
-                                type="text" placeholder="..." />
+                                wire:model.defer="data.16_blok_kav_nomor" name="16_blok_kav_nomor" id="16_blok_kav_nomor"
+                                type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="17_gampong">17. GAMPONG</label>
                             <input {{ $disabled }} maxlength="25" class="form-control"
-                                wire:model="data.17_gampong" name="17_gampong" id="17_gampong" type="text"
-                                placeholder="..." />
+                                wire:model.defer="data.17_gampong" name="17_gampong" id="17_gampong" type="text"
+                                placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 d-flex flex-wrap">
 
                             <div class="col-lg-6 col-6 pe-3 px-lg-3 px-0 mb-2">
                                 <label class="text-black mb-1" for="18_rw">18. RW</label>
                                 <input {{ $disabled }} maxlength="2" class="form-control"
-                                    wire:model="data.18_rw" name="18_rw" id="18_rw" type="text"
-                                    placeholder="..." />
+                                    wire:model.defer="data.18_rw" name="18_rw" id="18_rw" type="text"
+                                    placeholder="-" />
                             </div>
                             <div class="col-lg-6 col-6 px-lg-3 px-0 mb-2">
                                 <label class="text-black mb-1" for="19_rt">19. RT</label>
                                 <input {{ $disabled }} maxlength="3" class="form-control"
-                                    wire:model="data.19_rt" name="19_rt" id="19_rt" type="text"
-                                    placeholder="..." />
+                                    wire:model.defer="data.19_rt" name="19_rt" id="19_rt" type="text"
+                                    placeholder="-" />
                             </div>
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
@@ -310,14 +310,14 @@
                                 KOTA (KODE
                                 POS)</label>
                             <input {{ $disabled }} maxlength="25" class="form-control"
-                                wire:model="data.20_kecamatan_kabupaten_kota" name="20_kecamatan_kabupaten_kota"
-                                id="20_kecamatan_kabupaten_kota" type="text" placeholder="..." />
+                                wire:model.defer="data.20_kecamatan_kabupaten_kota" name="20_kecamatan_kabupaten_kota"
+                                id="20_kecamatan_kabupaten_kota" type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="21_nomor_ktp">21. NOMOR KTP</label>
                             <input {{ $disabled }} maxlength="20" class="form-control"
-                                wire:model="data.21_nomor_ktp" name="21_nomor_ktp" id="21_nomor_ktp" type="text"
-                                placeholder="..." />
+                                wire:model.defer="data.21_nomor_ktp" name="21_nomor_ktp" id="21_nomor_ktp" type="text"
+                                placeholder="-" />
                         </div>
                     </div>
                     <small class="mt-2 ps-lg-3 text-black">Catatan : *) yang pernghasilannya semata-mata berasal dari
@@ -333,18 +333,18 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="22_luas_tanah">22. LUAS TANAH</label>
                             <input {{ $disabled }} maxlength="10" class="form-control"
-                                wire:model="data.22_luas_tanah" name="22_luas_tanah" id="22_luas_tanah"
-                                type="text" placeholder="..." />
+                                wire:model.defer="data.22_luas_tanah" name="22_luas_tanah" id="22_luas_tanah"
+                                type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="23_zona_nilai_tanah">23. ZONA NILAI TANAH</label>
                             <input {{ $disabled }} maxlength="2" class="form-control"
-                                wire:model="data.23_zona_nilai_tanah" name="23_zona_nilai_tanah"
-                                id="23_zona_nilai_tanah" type="text" placeholder="..." />
+                                wire:model.defer="data.23_zona_nilai_tanah" name="23_zona_nilai_tanah"
+                                id="23_zona_nilai_tanah" type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 mb-2 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="24_jenis_tanah">24. JENIS TANAH</label>
-                            <select {{ $disabled }} wire:model="data.24_jenis_tanah" name="24_jenis_tanah"
+                            <select {{ $disabled }} wire:model.defer="data.24_jenis_tanah" name="24_jenis_tanah"
                                 id="24_jenis_tanah" class="form-select">
                                 <option value="">Silahkan Pilih</option>
                                 <option value="tanah+bangunan">Tanah + Bangunan</option>
@@ -364,8 +364,8 @@
                         <div class="col-lg-12 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="25_jumlah_bangunan">25. JUMLAH BANGUNAN</label>
                             <input {{ $disabled }} maxlength="3" class="form-control"
-                                wire:model="data.25_jumlah_bangunan" name="25_jumlah_bangunan"
-                                id="25_jumlah_bangunan" type="text" placeholder="..." />
+                                wire:model.defer="data.25_jumlah_bangunan" name="25_jumlah_bangunan"
+                                id="25_jumlah_bangunan" type="text" placeholder="-" />
                         </div>
                     </div>
                 </div>
@@ -413,11 +413,10 @@
                                         <img class="image-ttd"
                                             src="{{ asset('img/ttd/spop/pernyataan/' . $spop->{'28_tanda_tangan'}) }}"
                                             width=246 height=164 alt="">
-                                        <div class="div d-flex align-items-center justify-content-lg-center mt-2">
-
+                                        <div class="div d-flex align-items-center justify-content-center mt-2">
                                             <button type="button" wire:click="edit28"
                                                 class="btn rounded-pill ms-1 btn-edit-ttd btn-warning py-1"><i
-                                                    class="fa-solid fa-pencil"></i></button>
+                                                    class="fa-solid fa-pencil "></i></button>
                                         </div>
                                     </div>
                                 @endif
@@ -430,14 +429,14 @@
                                     </div>
                                     <textarea hidden wire:model="newTTD28" name="28_tanda_tangan" id="tanda_tangan_28"></textarea>
                                     <div style="display:block" id="div_button_28">
-                                        <div class="d-flex justify-content-center">
+                                        <div class="d-flex justify-content-center ">
 
                                             <button id="cancel_28" wire:click="cancelEdit28" type="button"
                                                 class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
                                             <button type="button" class="btn rounded-pill btn-info me-2 py-0 mb-2"
                                                 id="clear_28">Clear</button>
                                             <button wire:click="simpan28" id="simpan_28" type="button"
-                                                class="btn rounded-pill btn-success py-0 mb-2">Simpan</button>
+                                                class="btn rounded-pill btn-success py-0 mb-2 ">Simpan</button>
                                         </div>
                                     </div>
                                 </div>
@@ -479,7 +478,7 @@
                                 @endif
                                 @if ($edit30A == false)
                                     <button type="button"wire:click="edit30A"
-                                        class="btn rounded-pill  btn-warning py-1"><i
+                                        class="btn rounded-pill  btn-warning py-1 mt-2"><i
                                             class="fa-solid fa-pencil"></i></button>
                                 @endif
 
@@ -534,7 +533,7 @@
                                 @endif
                                 @if ($edit30B == false)
                                     <button type="button"wire:click="edit30B"
-                                        class="btn rounded-pill  btn-warning py-1"><i
+                                        class="btn rounded-pill  btn-warning py-1 mt-2"><i
                                             class="fa-solid fa-pencil"></i></button>
                                 @endif
 
@@ -625,6 +624,19 @@
 
         @endif
     </form>
+
+    <nav class="navbar bottom-btn-card bg-white navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom px-3 ">
+
+        @if ($isEdit == false)
+            <button type="button" wire:click="edit" class="w-100 btn btn-primary my-3 rounded-pill ">Edit
+                Data</i></button>
+        @elseif ($isEdit == true)
+            <button type="button" wire:click="cancelEdit"
+                class="w-50 btn btn-danger my-3 rounded-pill me-1">Batal</i></button>
+            <button type="submit" class="w-50 btn btn-primary my-3 rounded-pill ms-1">Simpan
+                Data</i></button>
+        @endif
+    </nav>
 </div>
 <script>
     var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
