@@ -570,8 +570,8 @@
                 <u>SKET / DENAH LOKASI OBJEK PAJAK</u>
             </h4>
             @if ($editsket == false)
-                <img class="image-ttd card" src="{{ asset('img/sket/' . $spop->{'sket_tanda_tangan'}) }}" width=1080
-                    height=512 alt="">
+                <img class="image-ttd card" src="{{ asset('img/sket/' . $spop->{'sket_tanda_tangan'}) }}" width=1000
+                    height=500 alt="">
                 <div class="d-flex justify-content-center">
 
                     <button type="button"wire:click="editsket" class="btn rounded-pill mt-3 btn-warning py-1"><i
@@ -581,7 +581,7 @@
 
             <div class="card " style="{{ $editsket ? 'display: block' : 'display: none' }}">
                 <div class="wrapper-sign border-0 " id="tempatTTD" style="display: block">
-                    <canvas id="signature-pad_sket" class="signature-pad_sket" width=1080 height=512></canvas>
+                    <canvas id="signature-pad_sket" class="signature-pad_sket" width=1000 height=500></canvas>
                 </div>
                 <div class="d-flex justify-content-center gap-2">
                     <button type="button" class="btn rounded-pill btn-warning py-0 mb-2 mt-1"

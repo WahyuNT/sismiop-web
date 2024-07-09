@@ -25,14 +25,10 @@
     width: 246px;
 }
 .sket-denah{
-    width:1080px;
-    height: 512px;
+    background-color: #ececec;
     border-radius: 15px !important;
-    border: 0.5px solid #a5a5a549;
-    @media screen and (max-width: 768px){
-        height:1000px;
-        width: 500px;
-    }
+    border: 0.5px solid #d4d4d4;
+    
 }
 .input-no-border{
     border: none;
