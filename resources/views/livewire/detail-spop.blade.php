@@ -6,7 +6,7 @@
                     <div class="div">
                         <a href="{{ route('data.spop') }}">
 
-                            <button class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i></button>
                         </a>
                     </div>
                     <div class="div">
@@ -105,20 +105,20 @@
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Blok">BLOK</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.2_nop_blok" name="2_nop_blok" id="Blok" type="text"
-                                        placeholder="-" />
+                                        wire:model.defer="data.2_nop_blok" name="2_nop_blok" id="Blok"
+                                        type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.2_no_urut" name="2_no_urut" id="No.Urut" type="text"
-                                        placeholder="-" />
+                                        wire:model.defer="data.2_no_urut" name="2_no_urut" id="No.Urut"
+                                        type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
                                     <label class="text-black mb-1" for="Kode">KODE</label>
                                     <input {{ $disabled }} maxlength="1" class="form-control"
-                                        wire:model.defer="data.2_nop_kode" name="2_nop_kode" id="Kode" type="text"
-                                        placeholder="-" />
+                                        wire:model.defer="data.2_nop_kode" name="2_nop_kode" id="Kode"
+                                        type="text" placeholder="-" />
                                 </div>
                             </div>
                         </div>
@@ -153,20 +153,20 @@
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Blok">BLOK</label>
                                     <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_blok" name="3_nop_bersama_blok" id="Blok"
-                                        type="text" placeholder="-" />
+                                        wire:model.defer="data.3_nop_bersama_blok" name="3_nop_bersama_blok"
+                                        id="Blok" type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.3_no_urut" name="3_no_urut" id="No.Urut" type="text"
-                                        placeholder="-" />
+                                        wire:model.defer="data.3_no_urut" name="3_no_urut" id="No.Urut"
+                                        type="text" placeholder="-" />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
                                     <label class="text-black mb-1" for="Kode">KODE</label>
                                     <input {{ $disabled }} maxlength="1" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_kode" name="3_nop_bersama_kode" id="Kode"
-                                        type="text" placeholder="-" />
+                                        wire:model.defer="data.3_nop_bersama_kode" name="3_nop_bersama_kode"
+                                        id="Kode" type="text" placeholder="-" />
                                 </div>
                             </div>
                         </div>
@@ -199,14 +199,14 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="6_nama_jalan">6. NAMA JALAN</label>
                             <input {{ $disabled }} maxlength="30" class="form-control"
-                                wire:model.defer="data.6_nama_jalan" name="6_nama_jalan" id="6_nama_jalan" type="text"
-                                placeholder="-" />
+                                wire:model.defer="data.6_nama_jalan" name="6_nama_jalan" id="6_nama_jalan"
+                                type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="7_blok_kav_nomor">7. BLOK / KAV / NOMOR</label>
                             <input {{ $disabled }} maxlength="12" class="form-control"
-                                wire:model.defer="data.7_blok_kav_nomor" name="7_blok_kav_nomor" id="7_blok_kav_nomor"
-                                type="text" placeholder="-" />
+                                wire:model.defer="data.7_blok_kav_nomor" name="7_blok_kav_nomor"
+                                id="7_blok_kav_nomor" type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="8_gampong">8. GAMPONG</label>
@@ -238,8 +238,8 @@
                     <div class="d-flex flex-wrap">
                         <div class="col-lg-6 col-12 mb-2 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="11_status">11. STATUS</label>
-                            <select {{ $disabled }} wire:model.defer="data.11_status" name="11_status" id="11_status"
-                                class="form-select">
+                            <select {{ $disabled }} wire:model.defer="data.11_status" name="11_status"
+                                id="11_status" class="form-select">
                                 <option value="">Silahkan Pilih</option>
                                 <option value="pemilik">Pemilik</option>
                                 <option value="penyewa">Penyewa</option>
@@ -268,8 +268,9 @@
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="14_npwp">14. NPWP</label>
-                            <input {{ $disabled }} maxlength="11" class="form-control" wire:model.defer="data.14_npwp"
-                                name="14_npwp" id="14_npwp" type="text" placeholder="-" />
+                            <input {{ $disabled }} maxlength="11" class="form-control"
+                                wire:model.defer="data.14_npwp" name="14_npwp" id="14_npwp" type="text"
+                                placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="15_nama_jalan">15. NAMA JALAN</label>
@@ -280,8 +281,8 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="16_blok_kav_nomor">16. BLOK / KAV / NOMOR</label>
                             <input {{ $disabled }} maxlength="12" class="form-control"
-                                wire:model.defer="data.16_blok_kav_nomor" name="16_blok_kav_nomor" id="16_blok_kav_nomor"
-                                type="text" placeholder="-" />
+                                wire:model.defer="data.16_blok_kav_nomor" name="16_blok_kav_nomor"
+                                id="16_blok_kav_nomor" type="text" placeholder="-" />
                         </div>
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="17_gampong">17. GAMPONG</label>
@@ -316,8 +317,8 @@
                         <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
                             <label class="text-black mb-1" for="21_nomor_ktp">21. NOMOR KTP</label>
                             <input {{ $disabled }} maxlength="20" class="form-control"
-                                wire:model.defer="data.21_nomor_ktp" name="21_nomor_ktp" id="21_nomor_ktp" type="text"
-                                placeholder="-" />
+                                wire:model.defer="data.21_nomor_ktp" name="21_nomor_ktp" id="21_nomor_ktp"
+                                type="text" placeholder="-" />
                         </div>
                     </div>
                     <small class="mt-2 ps-lg-3 text-black">Catatan : *) yang pernghasilannya semata-mata berasal dari
@@ -623,20 +624,20 @@
 
 
         @endif
+        <nav class="navbar bottom-btn-card bg-white navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom px-3 ">
+
+            @if ($isEdit == false)
+                <button type="button" wire:click="edit" class="w-100 btn btn-primary my-3 rounded-pill ">Edit
+                    Data</i></button>
+            @elseif ($isEdit == true)
+                <button type="button" wire:click="cancelEdit"
+                    class="w-50 btn btn-danger my-3 rounded-pill me-1">Batal</i></button>
+                <button type="submit" class="w-50 btn btn-primary my-3 rounded-pill ms-1">Simpan
+                    Data</i></button>
+            @endif
+        </nav>
     </form>
 
-    <nav class="navbar bottom-btn-card bg-white navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom px-3 ">
-
-        @if ($isEdit == false)
-            <button type="button" wire:click="edit" class="w-100 btn btn-primary my-3 rounded-pill ">Edit
-                Data</i></button>
-        @elseif ($isEdit == true)
-            <button type="button" wire:click="cancelEdit"
-                class="w-50 btn btn-danger my-3 rounded-pill me-1">Batal</i></button>
-            <button type="submit" class="w-50 btn btn-primary my-3 rounded-pill ms-1">Simpan
-                Data</i></button>
-        @endif
-    </nav>
 </div>
 <script>
     var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {

@@ -6,7 +6,7 @@
                     <h3><b>DATA LSPOP</b></h3>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
-                    <div class="col-3 px-3">
+                    <div class="col-lg-3 col-6 px-3">
                         <select wire:model="pagination" id="pagination" wire:model="pagination" name="pagination"
                             class="form-select">
                             <option value="10">10</option>
@@ -15,7 +15,7 @@
                             <option value="100">100</option>
                         </select>
                     </div>
-                    <div class="col-5">
+                    <div class="col-lg-5 col-6">
                         <input wire:model="search" type="text" class="form-control" placeholder="Cari Data LSPOP">
                     </div>
                 </div>

@@ -14,8 +14,6 @@
         <!-- ========== title-wrapper end ========== -->
         <form wire:submit.prevent="simpan">
             <!-- ========== form-elements-wrapper start ========== -->
-
-
             <div class="card card-form">
                 <div class="col-lg-4 col-12 mb-2 px-lg-3 px-1">
                     <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir <span
@@ -60,7 +58,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card card-form mt-4">
                 <div class="div">
                     <h6 class="mb-2 px-lg-3 px-1">NOP<span class="text-danger">*</span></h6>
@@ -284,7 +281,7 @@
                     </div>
                     <div class="col-lg-6 px-lg-3 px-1 col-12 mb-2  mb-2">
                         <div class="d-flex flex-wrap ">
-                            <div class="col-lg-6 col-12 ">
+                            <div class="col-lg-6 col-12 pe-lg-3">
                                 <label class="text-black  " for="19_luas_kolam_renang">19. Luas Kolam
                                     Renang(M2)</label>
                                 <input maxlength="4" class="form-control" wire:model="data.19_luas_kolam_renang"
@@ -555,7 +552,6 @@
                     </div>
                 </div>
             </div>
-
             <h4 class=" text-center my-3">
                 C. DATA TAMBAHAN UNTUK JPB = 3/8
             </h4>
@@ -600,7 +596,6 @@
             <h4 class=" text-center my-3">
                 D. DATA TAMBAHAN UNTUK NON STANDARD
             </h4>
-
             <div class="card card-form">
                 <div class="d-flex flex-wrap">
                     <div class="col-lg-6  col-12 px-lg-3 px-1 ">
@@ -799,14 +794,14 @@
                     <div class="col-lg-12 col-12  px-lg-3 px-1 ">
                         <P class=" fw-bold text-black mt-3 ">TANGKI MINYAK (JPB = 15)</P>
                         <div class=" d-flex flex-wrap">
-                            <div class="col-lg-6 col-12 pe-lg-2 ps-lg-0  px-1 ">
+                            <div class="col-lg-6 col-12 pe-lg-2 ps-lg-0  px-0 ">
                                 <label class="text-black  mb-1 mt-1" for="49_kapasitas_tangki">49. KAPASITAS
                                     TANGKI (M3)</label>
                                 <input maxlength="5" class="form-control" wire:model="data.49_kapasitas_tangki"
                                     name="49_kapasitas_tangki" id="49_kapasitas_tangki" type="text"
                                     placeholder="..." />
                             </div>
-                            <div class="col-lg-6 col-12 ps-lg-2  pe-lg-0 px-1 ">
+                            <div class="col-lg-6 col-12 ps-lg-2  pe-lg-0 px-0 ">
                                 <label class="text-black  mb-1 mt-1" for="50_letak_tangki">50. LETAK TANGKI
                                 </label>
                                 <select id="50_letak_tangki" name="50_letak_tangki" wire:model="data.50_letak_tangki"
@@ -893,12 +888,12 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-12 px-lg-3 px-lg-3 px-0 ">
+                        <div class="col-12 px-lg-0  px-0 ">
                             <label class="text-black  mb-1 mt-2" for="57_nama_jelas">57. NAMA JELAS</label>
                             <input class="form-control" wire:model="data.57_nama_jelas" name="57_nama_jelas"
                                 id="57_nama_jelas" type="text" placeholder="..." />
                         </div>
-                        <div class="col-12 px-lg-3 px-lg-3 px-0 ">
+                        <div class="col-12  px-lg-0 px-0 ">
                             <label class="text-black  mb-1 mt-2" for="58_nip">58. NIP</label>
                             <input maxlength="18" class="form-control" wire:model="data.58_nip" name="58_nip"
                                 id="58_nip" type="text" placeholder="..." />
@@ -931,13 +926,13 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-12 px-lg-3 px-lg-3 px-0 ">
+                        <div class="col-12   px-0 ">
                             <label class="text-black mt-2 mb-1 " for="61_nama_jelas">61. NAMA
                                 JELAS</label>
                             <input class="form-control" wire:model="data.61_nama_jelas" name="61_nama_jelas"
                                 id="61_nama_jelas" type="text" placeholder="..." />
                         </div>
-                        <div class="col-12 px-lg-3 px-lg-3 px-0 ">
+                        <div class="col-12   px-0 ">
                             <label class="text-black  mb-1 mt-2" for="62_nip">62. NIP</label>
                             <input maxlength="18" class="form-control" wire:model="data.62_nip" name="62_nip"
                                 id="62_nip" type="text" placeholder="..." />
