@@ -90,9 +90,16 @@ class DetailSpop extends Component
     {
         $this->edit30A = true;
     }
+
     public function editsket()
     {
         $this->editsket = true;
+    }
+
+    public function cancelEditSket()
+    {
+        $this->editsket = false;
+        $this->newsket = null;
     }
 
     public function cancelEdit30A()

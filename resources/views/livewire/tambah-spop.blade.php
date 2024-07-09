@@ -14,150 +14,145 @@
     <!-- ========== form-elements-wrapper start ========== -->
     <div class="form-elements-wrapper">
         <form wire:submit.prevent="simpan">
-            <div class="row">
-                <div class="card card-form">
-                    <div class="col-lg-4 col-12 mb-2 px-1">
-                        <label class="text-black text-black fw-bold mb-1" for="no_formulir">No Formulir <span
-                                class="text-danger">*</span></label>
-                        <input required maxlength="9" wire:model="data.no_formulir" class="form-control"
-                            name="no_formulir" id="no_formulir" type="text" placeholder="..." />
+            <div class="card card-form">
+                <div class="col-lg-4 col-12 mb-2 px-1">
+                    <label class="text-black text-black fw-bold mb-1" for="no_formulir">No Formulir<span
+                            class="text-danger">*</span></label>
+                    <input required maxlength="9" wire:model="data.no_formulir" class="form-control" name="no_formulir"
+                        id="no_formulir" type="text" placeholder="..." />
+                </div>
+                <div class="div">
+                    <h6 class="mb-2 fw-bold text-black">
+                        1. Jenis Transaksi<span class="text-danger">*</span>
+                    </h6>
+                    <div class="d-flex justify-content-start flex-wrap gap-2">
+                        <div class="form-check radio-style mb-20">
+                            <input maxlength="9" class="form-check-input" wire:model="data.1_jenis_transaksi"
+                                type="radio" value="1" id="radio-transaksi-1" name="1_jenis_transaksi"
+                                required />
+                            <label class="text-black form-check-label" for="radio-transaksi-1">
+                                1. Perekaman Data
+                            </label>
+                        </div>
+                        <div class="form-check radio-style mb-20">
+                            <input maxlength="9" class="form-check-input" wire:model="data.1_jenis_transaksi"
+                                type="radio" value="2" id="radio-transaksi-2" name="1_jenis_transaksi" />
+                            <label class="text-black form-check-label" for="radio-transaksi-2">
+                                2. Pemutakhiran Data
+                            </label>
+                        </div>
+                        <div class="form-check radio-style mb-20">
+                            <input maxlength="9" class="form-check-input" wire:model="data.1_jenis_transaksi"
+                                type="radio" value="3" id="radio-transaksi-3" name="1_jenis_transaksi" />
+                            <label class="text-black form-check-label" for="radio-transaksi-3">
+                                3. Penghapusan Data
+                            </label>
+                        </div>
                     </div>
-                    <div class="div">
-                        <h6 class="mb-2 fw-bold text-black">
-                            1. Jenis Transaksi<span class="text-danger">*</span>
-                        </h6>
-                        <div class="d-flex justify-content-start flex-wrap gap-2">
-                            <div class="form-check radio-style mb-20">
-                                <input maxlength="9" class="form-check-input" wire:model="data.1_jenis_transaksi"
-                                    type="radio" value="1" id="radio-transaksi-1" name="1_jenis_transaksi"
-                                    required />
-                                <label class="text-black form-check-label" for="radio-transaksi-1">
-                                    1. Perekaman Data
-                                </label>
+                </div>
+            </div>
+            <div class="card card-form mt-4">
+                <div class="div">
+                    <h6 class="mb-2 fw-bold text-black">2. NOP <span class="text-danger">*</span></h6>
+                    <div class="col-12">
+
+                        <div class="d-flex flex-wrap px-lg-3 px-0">
+                            <div class="col-lg-1 col-6 mb-2 pe-1">
+                                <label class="text-black mb-1" for="provinsi">PROV.</label>
+                                <input maxlength="2" class="form-control" wire:model="data.2_nop_provinsi"
+                                    name="2_nop_provinsi" id="provinsi" type="text" placeholder=".." />
                             </div>
-                            <div class="form-check radio-style mb-20">
-                                <input maxlength="9" class="form-check-input" wire:model="data.1_jenis_transaksi"
-                                    type="radio" value="2" id="radio-transaksi-2" name="1_jenis_transaksi" />
-                                <label class="text-black form-check-label" for="radio-transaksi-2">
-                                    2. Pemutakhiran Data
-                                </label>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Kabupaten">KAB.</label>
+                                <input maxlength="2" class="form-control" wire:model="data.2_nop_kabupaten"
+                                    name="2_nop_kabupaten" id="Kabupaten" type="text" placeholder="..." />
                             </div>
-                            <div class="form-check radio-style mb-20">
-                                <input maxlength="9" class="form-check-input" wire:model="data.1_jenis_transaksi"
-                                    type="radio" value="3" id="radio-transaksi-3" name="1_jenis_transaksi" />
-                                <label class="text-black form-check-label" for="radio-transaksi-3">
-                                    3. Penghapusan Data
-                                </label>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Kecamatan">KEC.</label>
+                                <input maxlength="3" class="form-control" wire:model="data.2_nop_kecamatan"
+                                    name="2_nop_kecamatan" id="Kecamatan" type="text" placeholder="." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Gampong">GAMPONG</label>
+                                <input maxlength="3" class="form-control" wire:model="data.2_nop_gampong"
+                                    name="2_nop_gampong" id="Gampong" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Blok">BLOK</label>
+                                <input maxlength="4" class="form-control" wire:model="data.2_nop_blok"
+                                    name="2_nop_blok" id="Blok" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
+                                <input maxlength="4" class="form-control" wire:model="data.2_no_urut"
+                                    name="2_no_urut" id="No.Urut" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-1 col-6 mb-2 ps-1">
+                                <label class="text-black mb-1" for="Kode">KODE</label>
+                                <input maxlength="1" class="form-control" wire:model="data.2_nop_kode"
+                                    name="2_nop_kode" id="Kode" type="text" placeholder="..." />
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class=" my-2">3. NOP BERSAMA</h6>
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap px-lg-3 px-0">
+
+                            <div class="col-lg-1 col-6 mb-2 pe-1">
+                                <label class="text-black mb-1" for="provinsi">PROV.</label>
+                                <input maxlength="2" class="form-control" wire:model="data.3_nop_bersama_provinsi"
+                                    name="3_nop_bersama_provinsi" id="provinsi" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Kabupaten">KAB.</label>
+                                <input maxlength="2" class="form-control" wire:model="data.3_nop_bersama_kabupaten"
+                                    name="3_nop_bersama_kabupaten" id="Kabupaten" type="text"
+                                    placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Kecamatan">KEC.</label>
+                                <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_kecamatan"
+                                    name="3_nop_bersama_kecamatan" id="Kecamatan" type="text"
+                                    placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Gampong">GAMPONG</label>
+                                <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_gampong"
+                                    name="3_nop_bersama_gampong" id="Gampong" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="Blok">BLOK</label>
+                                <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_blok"
+                                    name="3_nop_bersama_blok" id="Blok" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-2 col-6 mb-2 px-1">
+                                <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
+                                <input maxlength="4" class="form-control" wire:model="data.3_no_urut"
+                                    name="3_no_urut" id="No.Urut" type="text" placeholder="..." />
+                            </div>
+                            <div class="col-lg-1 col-6 mb-2 ps-1">
+                                <label class="text-black mb-1" for="Kode">KODE</label>
+                                <input maxlength="1" class="form-control" wire:model="data.3_nop_bersama_kode"
+                                    name="3_nop_bersama_kode" id="Kode" type="text" placeholder="..." />
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card card-form mt-4">
-                    <div class="div">
-                        <h6 class="mb-2 fw-bold text-black">2. NOP <span class="text-danger">*</span></h6>
-                        <div class="col-12">
-
-                            <div class="d-flex flex-wrap px-lg-3 px-0">
-                                <div class="col-lg-1 col-6 mb-2 pe-1">
-                                    <label class="text-black mb-1" for="provinsi">PROV.</label>
-                                    <input maxlength="2" class="form-control" wire:model="data.2_nop_provinsi"
-                                        name="2_nop_provinsi" id="provinsi" type="text" placeholder=".." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Kabupaten">KAB.</label>
-                                    <input maxlength="2" class="form-control" wire:model="data.2_nop_kabupaten"
-                                        name="2_nop_kabupaten" id="Kabupaten" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Kecamatan">KEC.</label>
-                                    <input maxlength="3" class="form-control" wire:model="data.2_nop_kecamatan"
-                                        name="2_nop_kecamatan" id="Kecamatan" type="text" placeholder="." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Gampong">GAMPONG</label>
-                                    <input maxlength="3" class="form-control" wire:model="data.2_nop_gampong"
-                                        name="2_nop_gampong" id="Gampong" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Blok">BLOK</label>
-                                    <input maxlength="4" class="form-control" wire:model="data.2_nop_blok"
-                                        name="2_nop_blok" id="Blok" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
-                                    <input maxlength="4" class="form-control" wire:model="data.2_no_urut"
-                                        name="2_no_urut" id="No.Urut" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-1 col-6 mb-2 ps-1">
-                                    <label class="text-black mb-1" for="Kode">KODE</label>
-                                    <input maxlength="1" class="form-control" wire:model="data.2_nop_kode"
-                                        name="2_nop_kode" id="Kode" type="text" placeholder="..." />
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class=" my-2">3. NOP BERSAMA</h6>
-                        <div class="col-12">
-                            <div class="d-flex flex-wrap px-lg-3 px-0">
-
-                                <div class="col-lg-1 col-6 mb-2 pe-1">
-                                    <label class="text-black mb-1" for="provinsi">PROV.</label>
-                                    <input maxlength="2" class="form-control"
-                                        wire:model="data.3_nop_bersama_provinsi" name="3_nop_bersama_provinsi"
-                                        id="provinsi" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Kabupaten">KAB.</label>
-                                    <input maxlength="2" class="form-control"
-                                        wire:model="data.3_nop_bersama_kabupaten" name="3_nop_bersama_kabupaten"
-                                        id="Kabupaten" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Kecamatan">KEC.</label>
-                                    <input maxlength="3" class="form-control"
-                                        wire:model="data.3_nop_bersama_kecamatan" name="3_nop_bersama_kecamatan"
-                                        id="Kecamatan" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Gampong">GAMPONG</label>
-                                    <input maxlength="3" class="form-control"
-                                        wire:model="data.3_nop_bersama_gampong" name="3_nop_bersama_gampong"
-                                        id="Gampong" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Blok">BLOK</label>
-                                    <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_blok"
-                                        name="3_nop_bersama_blok" id="Blok" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
-                                    <input maxlength="4" class="form-control" wire:model="data.3_no_urut"
-                                        name="3_no_urut" id="No.Urut" type="text" placeholder="..." />
-                                </div>
-                                <div class="col-lg-1 col-6 mb-2 ps-1">
-                                    <label class="text-black mb-1" for="Kode">KODE</label>
-                                    <input maxlength="1" class="form-control" wire:model="data.3_nop_bersama_kode"
-                                        name="3_nop_bersama_kode" id="Kode" type="text" placeholder="..." />
-                                </div>
-                            </div>
-                        </div>
+            </div>
+            <h4 class="fw-bold text-lg-center text-start my-3">
+                A. INFORMASI TAMBAHAN UNTUK DATA BARU
+            </h4>
+            <div class="card card-form">
+                <div class="d-flex flex-wrap">
+                    <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
+                        <label class="text-black mb-1" for="4_nop_asal">4. NOP ASAL</label>
+                        <input maxlength="18" class="form-control" wire:model="data.4_nop_asal" name="4_nop_asal"
+                            id="4_nop_asal" type="text" placeholder="..." />
                     </div>
-                </div>
-                <h4 class="fw-bold text-lg-center text-start my-3">
-                    A. INFORMASI TAMBAHAN UNTUK DATA BARU
-                </h4>
-                <div class="card card-form">
-                    <div class="d-flex flex-wrap">
-                        <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
-                            <label class="text-black mb-1" for="4_nop_asal">4. NOP ASAL</label>
-                            <input maxlength="18" class="form-control" wire:model="data.4_nop_asal"
-                                name="4_nop_asal" id="4_nop_asal" type="text" placeholder="..." />
-                        </div>
-                        <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
-                            <label class="text-black mb-1" for="5_no_sppt_lama">5. NO. SPPT LAMA</label>
-                            <input maxlength="5" class="form-control" wire:model="data.5_no_sppt_lama"
-                                name="5_no_sppt_lama" id="5_no_sppt_lama" type="text" placeholder="..." />
-                        </div>
+                    <div class="col-lg-6 col-12 px-lg-3 px-0 mb-2">
+                        <label class="text-black mb-1" for="5_no_sppt_lama">5. NO. SPPT LAMA</label>
+                        <input maxlength="5" class="form-control" wire:model="data.5_no_sppt_lama"
+                            name="5_no_sppt_lama" id="5_no_sppt_lama" type="text" placeholder="..." />
                     </div>
                 </div>
             </div>
@@ -277,7 +272,7 @@
                             name="21_nomor_ktp" id="21_nomor_ktp" type="text" placeholder="..." />
                     </div>
                 </div>
-                <small class="mt-2 ps-3 text-black">Catatan : *) yang pernghasilannya semata-mata berasal dari gaji
+                <small class="mt-2 ps-lg-3 text-black">Catatan : *) yang pernghasilannya semata-mata berasal dari gaji
                     atau uang
                     pensiunan</small>
             </div>
@@ -350,13 +345,12 @@
                             <div class="card border-0 ">
                                 <div class="mt-5"></div>
                                 <div class="mt-5"></div>
-                                <input class="input-no-border" wire:model="data.26_nama_subjek_pajak-kuasanya"
-                                    name="26_nama_subjek_pajak-kuasanya" id="26_nama_subjek_pajak-kuasanya"
-                                    type="date" placeholder="Masukkan Nama" />
+                                <input class="input-no-border" wire:model="data.27_tanggal" name="27_tanggal"
+                                    id="27_tanggal" type="date" placeholder="Masukkan Nama" />
                             </div>
                         </div>
                         <div class="col-12 col-lg-4 px-lg-3 px-0 mb-2 mb-lg-0">
-                            <p class="text-center fw-bold text-black mt-3 mt-lg-0">28. TANDA TANGAN</p>
+                            <p class="text-center fw-bold text-black mt-3 mb-1 mt-lg-0">28. TANDA TANGAN</p>
                             <div class="d-flex justify-content-center">
                                 <div class="card sign-ttd">
                                     <div class="wrapper-sign" id="tempatTTD" style="display: block">
@@ -372,17 +366,17 @@
                                 </div>
                             </div>
                         </div>
-                        <ul>
-                            <li>- Dalam hal bertindak selaku kuasa, Surat kuasa harap dilampirkan</li>
-                            <li>- Dalam hal Subjek Pajak mendaftarkan Objek Pajak, supaya menggambarkan Sket/Denah
-                                Lokasi
-                                Objek
-                                Pajak</li>
-                            <li>- Batas waktu pengembalian SPOP 30 (tiga puluh) hari sejak diterima oleh Subjek Pajak
-                                sesuai
-                                Pasal
-                                9 ayat (2) UU No. 12 Tahun 1985</li>
-                        </ul>
+
+                        <small>- Dalam hal bertindak selaku kuasa, Surat kuasa harap dilampirkan</small>
+                        <small>- Dalam hal Subjek Pajak mendaftarkan Objek Pajak, supaya menggambarkan Sket/Denah
+                            Lokasi
+                            Objek
+                            Pajak</small>
+                        <small>- Batas waktu pengembalian SPOP 30 (tiga puluh) hari sejak diterima oleh Subjek Pajak
+                            sesuai
+                            Pasal
+                            9 ayat (2) UU No. 12 Tahun 1985
+
                     </div>
                 </div>
             </div>
@@ -392,7 +386,7 @@
             <div class="card card-form">
                 <div class="d-flex flex-wrap">
                     <div class="col-12 col-lg-6 px-lg-3 px-0">
-                        <p class="text-center text-black fw-bold mb-3">PETUGAS PENDATA</p>
+                        <p class="text-center text-black fw-bold mb-1">PETUGAS PENDATA</p>
                         <div class="col-12">
                             <label class="text-black mt-2 mb-1" for="29_tanggal_petugas">29. TANGGAL</label>
                             <input class="form-control" wire:model="data.29_tanggal_petugas"
@@ -400,31 +394,61 @@
                                 placeholder="..." />
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-12 ">
                             <label class="text-black mt-2 mb-1" for="30_tanda_tangan_pejabat_pejabat">30. TANDA
                                 TANGAN</label>
-                            <div class="card sign-ttd">
-                                <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                    <canvas id="signature-pad_petugas" class="signature-pad_petugas" width=246
-                                        height=164></canvas>
-                                </div>
-                                <textarea hidden wire:model="data.petugas_tanda_tangan" name="petugas_tanda_tangan" id="tanda_tangan_petugas"></textarea>
-                                <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
-                                        id="clear_petugas">Clear</button>
-                                </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="card sign-ttd">
+                                    <div class="wrapper-sign " id="tempatTTD" style="display: block">
+                                        <canvas id="signature-pad_petugas" class="signature-pad_petugas" width=246
+                                            height=164></canvas>
+                                    </div>
+                                    <textarea hidden wire:model="data.petugas_tanda_tangan" name="petugas_tanda_tangan" id="tanda_tangan_petugas"></textarea>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
+                                            id="clear_petugas">Clear</button>
+                                    </div>
 
+                                </div>
                             </div>
-                            <div class="col-12">
-                                <label class="text-black mt-2 mb-1" for="31_nama_jelas_pejabat">31. NAMA JELAS</label>
-                                <input class="form-control" wire:model="data.31_nama_jelas_pejabat"
-                                    name="31_nama_jelas_pejabat" id="31_nama_jelas_pejabat" type="text"
-                                    placeholder="..." />
-                            </div>
-                            <div class="col-12">
-                                <label class="text-black mt-2 mb-1" for="32_nip_pejabat">32. NIP</label>
-                                <input maxlength="18" class="form-control" wire:model="data.32_nip_pejabat"
-                                    name="32_nip_pejabat" id="32_nip_pejabat" type="text" placeholder="..." />
+                        </div>
+                        <div class="col-12">
+                            <label class="text-black mt-2 mb-1" for="31_nama_jelas_pejabat">31. NAMA JELAS</label>
+                            <input class="form-control" wire:model="data.31_nama_jelas_pejabat"
+                                name="31_nama_jelas_pejabat" id="31_nama_jelas_pejabat" type="text"
+                                placeholder="..." />
+                        </div>
+                        <div class="col-12">
+                            <label class="text-black mt-2 mb-1" for="32_nip_pejabat">32. NIP</label>
+                            <input maxlength="18" class="form-control" wire:model="data.32_nip_pejabat"
+                                name="32_nip_pejabat" id="32_nip_pejabat" type="text" placeholder="..." />
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-lg-6 px-lg-3 px-0">
+                        <p class="text-center text-black fw-bold mb-1 mt-3 ">MENGETAHUI PEJABAT YANG BERWENANG</p>
+                        <div class="col-12">
+                            <label class="text-black mt-2 mb-1" for="29_tanggal_pejabat">29. TANGGAL</label>
+                            <input class="form-control" wire:model="data.29_tanggal_pejabat"
+                                name="29_tanggal_pejabat" id="29_tanggal_pejabat" type="text"
+                                placeholder="..." />
+                        </div>
+                        <div class="col-12">
+                            <label class="text-black mt-2 mb-1" for="30_tanda_tangan_pejabat_petugas">30. TANDA
+                                TANGAN</label>
+                            <div class="d-flex justify-content-center">
+                                <div class="card sign-ttd">
+                                    <div class="wrapper-sign" id="tempatTTD" style="display: block">
+                                        <canvas id="signature-pad_pejabat" class="signature-pad_pejabat" width=246
+                                            height=164></canvas>
+                                    </div>
+                                    <textarea hidden wire:model="data.pejabat_tanda_tangan" name="pejabat_tanda_tangan" id="tanda_tangan_pejabat"></textarea>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
+                                            id="clear_pejabat">Clear</button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
@@ -439,39 +463,15 @@
                                 name="32_nip_petugas" id="32_nip_petugas" type="text" placeholder="..." />
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6 px-lg-3 px-0">
-                        <p class="text-center text-black fw-bold mb-3 mt-3">MENGETAHUI PEJABAT YANG BERWENANG</p>
-                        <div class="col-12">
-                            <label class="text-black mt-2 mb-1" for="29_tanggal_pejabat">29. TANGGAL</label>
-                            <input class="form-control" wire:model="data.29_tanggal_pejabat"
-                                name="29_tanggal_pejabat" id="29_tanggal_pejabat" type="text"
-                                placeholder="..." />
-                        </div>
-                        <div class="col-12">
-                            <label class="text-black mt-2 mb-1" for="30_tanda_tangan_pejabat_petugas">30. TANDA
-                                TANGAN</label>
-                            <div class="card sign-ttd">
-                                <div class="wrapper-sign" id="tempatTTD" style="display: block">
-                                    <canvas id="signature-pad_pejabat" class="signature-pad_pejabat" width=246
-                                        height=164></canvas>
-                                </div>
-                                <textarea hidden wire:model="data.pejabat_tanda_tangan" name="pejabat_tanda_tangan" id="tanda_tangan_pejabat"></textarea>
-                                <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn rounded-pill btn-danger py-0 mb-2"
-                                        id="clear_pejabat">Clear</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <h4 class="fw-bold text-lg-center text-start my-3"><u>
                     SKET / DENAH LOKASI OBJEK PAJAK</u>
             </h4>
             <div class="card ">
-                <div class="wrapper-sign border-0 table-responsive" id="tempatTTD" style="display: block">
-                    <canvas id="signature-pad_sket" class="sket-denah" width=1000 height=500></canvas>
+                <div class="wrapper-sign border-0 table-responsive d-flex justify-content-lg-center mt-lg-1"
+                    id="tempatTTD" style="display: block">
+                    <canvas id="signature-pad_sket" class="sket-denah" width=1080 height=500></canvas>
                 </div>
                 <div class="d-flex justify-content-center gap-2">
                     <button type="button" class="btn rounded-pill btn-warning py-0 mb-2 mt-1"
@@ -483,7 +483,7 @@
             </div>
             <div class="d-flex flex-wrap mt-4">
                 <div class="col-12 col-lg-6">
-                    <p class="mb-2 text-black"><b><i><u>KETERANGAN</u></i></b></p>
+                    <p class="mb-2 text-black text-lg-start text-center"><b><i><u>KETERANGAN</u></i></b></p>
                     <ul>
                         <li>- Gambar sket/denah lokasi objek pajak (tanpa skala), yang dihubungkan dengan jalan
                             raya/jalan
@@ -491,12 +491,12 @@
                         <li>- Sebutkan batas-batas kepemilikan sebelah Utara, Selatan, Timur, dan Barat.</li>
                     </ul>
                 </div>
-                <div class="col-12 col-lg-6 text-lg-center">
+                <div class="col-12 col-lg-6 text-center">
                     <p class="text-lg-center mt-lg-0 mt-2 text-black mb-2"><b><u>Contoh Penggambaran</u></b></p>
                     <img class="w-lg-75 w-100 rounded" src="{{ asset('img/contoh_map.png') }}" alt="">
                 </div>
             </div>
-            <button class="btn btn-primary mt-3 mt-lg-0 w-lg-25 w-100" type="submit">Simpan Data</button>
+            <button class="btn btn-primary mt-4  w-lg-25 w-100" type="submit">Simpan Data</button>
 
     </div>
     </form>
