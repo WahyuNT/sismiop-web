@@ -421,6 +421,7 @@
                                         </div>
                                     </div>
                                 @endif
+
                                 <div class="card  sign-ttd"
                                     style="{{ $edit28 ? 'display: block' : 'display: none' }}">
                                     <div class="wrapper-sign" id="tempatTTD">
@@ -463,13 +464,14 @@
                         <div class="col-lg-6 col-12 px-3">
                             <p class="text-center text-black fw-bold mb-3">PETUGAS PENDATA</p>
                             <div class="col-12">
-                                <label class="mb-1" for="29_tanggal_petugas">29. TANGGAL</label>
-                                <input {{ $disabled }} {{ $disabled }} class="form-control"
+                                <label class="mb-1 text-black" for="29_tanggal_petugas">29. TANGGAL</label>
+                                <input {{ $disabled }} class="form-control"
                                     wire:model.defer="data.29_tanggal_petugas" name="29_tanggal_petugas"
                                     id="29_tanggal_petugas" type="date" placeholder="Memuat..." />
                             </div>
                             <div class="col-12">
-                                <label class="mb-1 mt-2" for="30_tanda_tangan_petugas">30. TANDA TANGAN</label><br>
+                                <label class="mb-1 mt-2 text-black" for="30_tanda_tangan_petugas">30. TANDA
+                                    TANGAN</label><br>
                                 @if ($edit30A == false)
                                     <img class="image-ttd"
                                         src="{{ asset('img/ttd/spop/pendata/' . $spop->{'30_tanda_tangan_petugas'}) }}"
@@ -502,13 +504,13 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <label class="mb-1 mt-2" for="31_nama_jelas_petugas">31. NAMA JELAS</label>
+                                <label class="mb-1 mt-2 text-black" for="31_nama_jelas_petugas">31. NAMA JELAS</label>
                                 <input {{ $disabled }} {{ $disabled }} class="form-control"
                                     wire:model.defer="data.31_nama_jelas_petugas" name="31_nama_jelas_petugas"
                                     id="31_nama_jelas_petugas" type="text" placeholder="Memuat..." />
                             </div>
                             <div class="col-12">
-                                <label class="mb-1 mt-2" for="32_nip_petugas">32. NIP</label>
+                                <label class="mb-1 mt-2 text-black" for="32_nip_petugas">32. NIP</label>
                                 <input {{ $disabled }} {{ $disabled }} class="form-control"
                                     wire:model.defer="data.32_nip_petugas" name="32_nip_petugas" id="32_nip_petugas"
                                     type="text" placeholder="Memuat..." />
@@ -517,13 +519,14 @@
                         <div class="col-lg-6 col-12 px-3">
                             <p class="text-center text-black mt-3 fw-bold mb-1">MENGETAHUI PEJABAT YANG BERWENANG</p>
                             <div class="col-12">
-                                <label class="mb-1 " for="29_tanggal_pejabat">29. TANGGAL</label>
-                                <input {{ $disabled }} {{ $disabled }} class="form-control"
+                                <label class="mb-1 text-black" for="29_tanggal_pejabat">29. TANGGAL</label>
+                                <input {{ $disabled }} class="form-control text-black"
                                     wire:model.defer="data.29_tanggal_pejabat" name="29_tanggal_pejabat"
                                     id="29_tanggal_pejabat" type="text" placeholder="Memuat..." />
                             </div>
                             <div class="col-12">
-                                <label class="mb-1  mt-2" for="30_tanda_tangan_pejabat">30. TANDA TANGAN</label><br>
+                                <label class="mb-1 text-black mt-2" for="30_tanda_tangan_pejabat">30. TANDA
+                                    TANGAN</label><br>
                                 @if ($edit30B == false)
                                     <img class="image-ttd"
                                         src="{{ asset('img/ttd/spop/pejabat/' . $spop->{'30_tanda_tangan_pejabat'}) }}"
@@ -556,13 +559,14 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <label class="mb-1 mt-2" for="31_nama_jelas_pejabat">31. NAMA JELAS</label>
+                                    <label class="mb-1 mt-2 text-black" for="31_nama_jelas_pejabat">31. NAMA
+                                        JELAS</label>
                                     <input {{ $disabled }} {{ $disabled }} class="form-control"
                                         wire:model.defer="data.31_nama_jelas_pejabat" name="31_nama_jelas_pejabat"
                                         id="31_nama_jelas_pejabat" type="text" placeholder="Memuat..." />
                                 </div>
                                 <div class="col-12">
-                                    <label class="mb-1 mt-2" for="32_nip_pejabat">32. NIP</label>
+                                    <label class="mb-1 mt-2 text-black" for="32_nip_pejabat">32. NIP</label>
                                     <input {{ $disabled }} {{ $disabled }} class="form-control"
                                         wire:model.defer="data.32_nip_pejabat" name="32_nip_pejabat"
                                         id="32_nip_pejabat" type="text" placeholder="Memuat..." />
