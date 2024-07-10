@@ -16,6 +16,7 @@ class DataSpop extends Component
     public $search;
     public $pagination = 10;
     public $confirmDelete;
+    public $jenisTransaksi;
 
     public function render()
     {
@@ -25,6 +26,10 @@ class DataSpop extends Component
                 $query
                     ->where('no_formulir', 'like', '%' . $this->search . '%')
                     ->orWhere('31_nama_jelas_petugas', 'like', '%' . $this->search . '%');
+            })
+            ->when($this->jenisTransaksi, function ($query) {
+                $query
+                    ->where('1_jenis_transaksi', 'like', '%' . $this->jenisTransaksi . '%');
             })
             ->orderby('created_at', 'desc')
             ->paginate($this->pagination);
@@ -38,6 +43,11 @@ class DataSpop extends Component
     }
 
     public function updatingPagination()
+    {
+        $this->resetPage();
+    }
+
+    public function updatingjenisTransaksi()
     {
         $this->resetPage();
     }

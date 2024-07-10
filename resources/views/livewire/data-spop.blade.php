@@ -1,22 +1,34 @@
 <div>
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
-            <div class="col-12 d-flex justify-content-between align-items-center mb-3">
-                <h3 class="m-0"><b>DATA SPOP</b></h3>
-                <div class="col-6 d-flex justify-content-end ">
-                    <div class="col-lg-3 col-6 px-lg-3 px-1">
-                        <select class="w-100 form-select" wire:model="pagination" id="pagination" wire:model="pagination"
-                            name="pagination" class="form-select">
+            <div class="col-12 d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                <h3 class="mb-2 mb-lg-0"><b>DATA SPOP</b></h3>
+
+                <div class="col-12 col-lg-6 d-flex justify-content-lg-end justify-content-between ">
+                    <div class="col-lg-4 col-3 px-lg-1 pe-1">
+                        <select class="w-100 form-select" wire:model="jenisTransaksi" id="jenisTransaksi"
+                            wire:model="jenisTransaksi" name="jenisTransaksi" class="form-select">
+                            <option value="" selected>Semua Jenis</option>
+                            <option value="1">Perekaman Data</option>
+                            <option value="2">Pemutakhiran Data</option>
+                            <option value="3">Penghapusan Data</option>
+
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-3 px-lg-1 pe-1 ps-1">
+                        <select class="w-100 form-select" wire:model="pagination" id="pagination"
+                            wire:model="pagination" name="pagination" class="form-select">
                             <option value="10">10</option>
                             <option value="20">20</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
                         </select>
                     </div>
-                    <div class="col-lg-5 col-6">
+                    <div class="col-lg-5 col-6 ps-lg-1 ps-1 ">
                         <input wire:model="search" type="text" class="form-control" placeholder="Cari Data SPOP">
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -74,9 +86,11 @@
                     <table style="width: 100%" class="table striped-table ">
                         <thead>
                             <tr>
-
                                 <th class="pe-2">
                                     No
+                                </th>
+                                <th class="pe-4">
+                                    Jenis Transaksi
                                 </th>
                                 <th class="pe-4">
                                     No Formulir
@@ -100,6 +114,16 @@
                             @foreach ($spop as $item)
                                 <tr>
                                     <th>{{ ($spop->currentPage() - 1) * $spop->perPage() + $loop->iteration }}</th>
+                                    <td class="">
+                                        @if ($item->{'1_jenis_transaksi'} == '1')
+                                            <span class="badge text-bg-warning rounded-pill">Perekaman Data</span>
+                                        @elseif($item->{'1_jenis_transaksi'} == '2')
+                                            <span class="badge text-bg-success rounded-pill">Pemutakhiran Data</span>
+                                        @elseif($item->{'1_jenis_transaksi'} == '3')
+                                            <span class="badge text-bg-info rounded-pill">Penghapusan Data</span>
+                                        @endif
+
+                                    </td>
                                     <td class="">{{ $item->no_formulir }}</td>
                                     <td class="">
                                         {{ $item->{'2_nop_provinsi'} }}

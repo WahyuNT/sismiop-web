@@ -28,29 +28,29 @@
                     </h6>
                     <div class="d-flex justify-content-start flex-wrap gap-2">
                         <div class="form-check radio-style mb-20">
-                            <input maxlength="9" class="form-check-input" type="radio" value="perekaman_data"
+                            <input maxlength="9" class="form-check-input" type="radio" value="1"
                                 id="radio-transaksi-1" wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                             <label class="text-black  form-check-label" for="radio-transaksi-1">
                                 1. Perekaman Data
                             </label>
                         </div>
                         <div class="form-check radio-style mb-20">
-                            <input class="form-check-input" type="radio" value="pemutakhiran_data"
-                                id="radio-transaksi-2" wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
+                            <input class="form-check-input" type="radio" value="2" id="radio-transaksi-2"
+                                wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                             <label class="text-black  form-check-label" for="radio-transaksi-2">
                                 2. Pemutakhiran Data
                             </label>
                         </div>
                         <div class="form-check radio-style mb-20">
-                            <input class="form-check-input" type="radio" value="penghapusan_data"
-                                id="radio-transaksi-3" wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
+                            <input class="form-check-input" type="radio" value="3" id="radio-transaksi-3"
+                                wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                             <label class="text-black  form-check-label" for="radio-transaksi-3">
                                 3. Penghapusan Data
                             </label>
                         </div>
                         <div class="form-check radio-style mb-20">
-                            <input class="form-check-input" type="radio" value="penilaian_individu"
-                                id="radio-transaksi-4" wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
+                            <input class="form-check-input" type="radio" value="4" id="radio-transaksi-4"
+                                wire:model="data.1_jenis_transaksi" name="1_jenis_transaksi" />
                             <label class="text-black  form-check-label" for="radio-transaksi-4">
                                 4. Penilaian Individu
                             </label>

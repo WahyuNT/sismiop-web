@@ -16,6 +16,7 @@ class DataLspop extends Component
     public $search;
     public $pagination = 10;
     public $confirmDelete;
+    public $jenisTransaksi;
 
     public function render()
     {
@@ -26,6 +27,10 @@ class DataLspop extends Component
                     ->where('no_formulir', 'like', '%' . $this->search . '%')
                     ->orWhere('57_nama_jelas', 'like', '%' . $this->search . '%')
                     ->orWhere('59_tanggal_penelitian', 'like', '%' . $this->search . '%');
+            })
+            ->when($this->jenisTransaksi, function ($query) {
+                $query
+                    ->where('1_jenis_transaksi', $this->jenisTransaksi);
             })
             ->orderBy('created_at', 'desc')
             ->paginate($this->pagination);
@@ -38,6 +43,10 @@ class DataLspop extends Component
     }
 
     public function updatingPagination()
+    {
+        $this->resetPage();
+    }
+    public function updatingjenisTransaksi()
     {
         $this->resetPage();
     }
