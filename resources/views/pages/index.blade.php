@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-lg-5 pt-3">
         <div class="d-flex flex-wrap ">
-            <div class="col-lg-3 px-3 mb-4 col-6">
+            <div class="col-lg-3 px-lg-3 px-2 mb-3 mb-lg-4 col-6">
                 <div class="card card-dashboard py-3 border-0">
                     <div class="card-body ">
                         <div class="d-flex justify-content-center ">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 px-3 mb-4 col-6">
+            <div class="col-lg-3 px-lg-3 px-2 mb-3 mb-lg-4 col-6">
                 <div class="card card-dashboard py-3 border-0">
                     <div class="card-body">
                         <div class="d-flex justify-content-center ">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 px-3 mb-4 col-6">
+            <div class="col-lg-3 px-lg-3 px-2 mb-3 mb-lg-4 col-6">
                 <div class="card card-dashboard py-3 border-0">
                     <div class="card-body">
                         <div class="d-flex justify-content-center ">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 px-3 mb-4 col-6">
+            <div class="col-lg-3 px-lg-3 px-2 mb-3 mb-lg-4 col-6">
                 <div class="card card-dashboard py-3 border-0">
                     <div class="card-body">
                         <div class="d-flex justify-content-center ">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 px-3 mb-4 col-6">
+            <div class="col-lg-3 px-lg-3 px-2 mb-3 mb-lg-4 col-6">
                 <div class="card card-dashboard py-3 border-0">
                     <div class="card-body">
                         <div class="d-flex justify-content-center ">

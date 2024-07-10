@@ -6,6 +6,12 @@
         <ul>
 
             <li class="nav-item d-flex align-items-center">
+                <a href="{{ route('index') }}" class="{{ request()->routeIs('index') ? 'card-sidebar-active' : '' }}">
+                    <i class="fa-solid fa-house me-2"></i></i>
+                    <p class="text m-0">Beranda</p>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
                 <a href="{{ route('data.spop') }}"
                     class="{{ request()->routeIs('data.spop') ? 'card-sidebar-active' : '' }}">
                     <i class="fa-solid fa-book-atlas me-2 "></i>
