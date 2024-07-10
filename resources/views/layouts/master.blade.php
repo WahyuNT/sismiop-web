@@ -7,6 +7,8 @@
         <section class="tab-components">
 
             @yield('content')
+
+            <x-modalheader />
         </section>
     </main>
 

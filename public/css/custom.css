@@ -53,3 +53,22 @@
     box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.031);
 
 }
+.card-header-list-active{
+     background-color: #f9f9f9 !important;
+    border-radius: 10px !important;
+  color: #365CF5;
+}
+
+.card-header-list{
+    background-color: transparent;
+    border-radius: 10px !important;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.card-header-list:hover{
+    background-color: #f9f9f9b9;
+    border-radius: 10px !important;
+    border: none;
+    color: #365CF5;
+}
