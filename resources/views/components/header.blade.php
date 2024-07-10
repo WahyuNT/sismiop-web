@@ -13,7 +13,11 @@
                 </div>
             </div>
             <div class="col-lg-7 col-md-7 col-6 d-flex justify-content-end">
-                <button class="btn text-end btn-danger">Keluar</button>
+
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button class="btn text-end btn-danger">Keluar</button>
+                </form>
             </div>
         </div>
     </div>

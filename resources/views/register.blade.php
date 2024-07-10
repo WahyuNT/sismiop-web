@@ -8,30 +8,32 @@
                     <div class="form-wrapper card card-login ">
                         <h3 class="mb-lg-4 fw-bold text-center ">Buat Akun</h3>
 
-                        <form action="#">
+                        <form action="{{ route('register.proses') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <div class="input-style-1">
                                         <label>Username</label>
-                                        <input type="text" placeholder="username" />
+                                        <input required name="username" type="text" placeholder="username" />
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="input-style-1">
                                         <label>Email</label>
-                                        <input type="email" placeholder="Email" />
+                                        <input required name="email" type="email" placeholder="Email" />
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="input-style-1">
                                         <label>Password</label>
-                                        <input type="password" placeholder="Password" />
+                                        <input required name="password" type="password" placeholder="Password" />
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="button-group d-flex justify-content-center flex-wrap">
-                                        <button class="main-btn primary-btn btn-hover rounded-pill w-100 text-center">
+                                        <button type="submit"
+                                            class="main-btn primary-btn btn-hover rounded-pill w-100 text-center">
                                             Buat Akun
                                         </button>
                                     </div>

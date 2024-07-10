@@ -28,24 +28,26 @@
                         <p class="text-sm mb-25 text-lg-start text-center">
                             Silahkkan masukkan username dan katasandi.
                         </p>
-                        <form action="#">
+                        <form action="{{ route('login.proses') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <div class="input-style-1">
-                                        <label>Email</label>
-                                        <input type="email" placeholder="Email" />
+                                        <label>Username</label>
+                                        <input name="username" type="text" placeholder="username" />
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="input-style-1">
                                         <label>Password</label>
-                                        <input type="password" placeholder="Password" />
+                                        <input name="password" type="password" placeholder="Password" />
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="button-group d-flex justify-content-center flex-wrap">
-                                        <button class="main-btn primary-btn btn-hover rounded-pill w-100 text-center">
+                                        <button type="submit"
+                                            class="main-btn primary-btn btn-hover rounded-pill w-100 text-center">
                                             Masuk
                                         </button>
                                     </div>

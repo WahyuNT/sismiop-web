@@ -17,15 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
-Route::get('/', [AdminController::class, 'index'])->name('index');
+Route::post('/registerProses', [UserController::class, 'registerProses'])->name('register.proses');
+Route::post('/loginStore', [UserController::class, 'loginStore'])->name('login.proses');
 
-Route::get('/data-spop', [AdminController::class, 'dataSpop'])->name('data.spop');
-Route::get('/data-spop/{id}/detail', [AdminController::class, 'detailSpop'])->name('detail.spop');
-Route::get('/tambah-spop', [AdminController::class, 'tambahSpop'])->name('tambah.spop');
+Route::prefix('/')->middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('index');
+    Route::get('/data-spop', [AdminController::class, 'dataSpop'])->name('data.spop');
+    Route::get('/data-spop/{id}/detail', [AdminController::class, 'detailSpop'])->name('detail.spop');
+    Route::get('/tambah-spop', [AdminController::class, 'tambahSpop'])->name('tambah.spop');
 
-Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
-Route::get('/data-lspop/{id}/detail', [AdminController::class, 'detailLspop'])->name('detail.lspop');
-Route::get('/tambah-lspop', [AdminController::class, 'tambahLspop'])->name('tambah.lspop');
+    Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
+    Route::get('/data-lspop/{id}/detail', [AdminController::class, 'detailLspop'])->name('detail.lspop');
+    Route::get('/tambah-lspop', [AdminController::class, 'tambahLspop'])->name('tambah.lspop');
 
-Route::get('/data-terhapus', [AdminController::class, 'dataTerhapus'])->name('data.terhapus');
-Route::get('/data-terhapus/{id}/detail', [AdminController::class, 'detailTerhapus'])->name('detail.terhapus');
+    Route::get('/data-terhapus', [AdminController::class, 'dataTerhapus'])->name('data.terhapus');
+    Route::get('/data-terhapus/{id}/detail', [AdminController::class, 'detailTerhapus'])->name('detail.terhapus');
+
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+});
