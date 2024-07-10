@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
+
+
 class UserController extends Controller
 {
     public function login(Request $request)
@@ -31,13 +33,29 @@ class UserController extends Controller
 
     public function registerProses(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users,username',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+
         $data = new User();
-        $data->username = $request->input('username');  // Menggunakan ->input() untuk mengakses data dari request
+        $data->username = $request->input('username');
         $data->email = $request->input('email');
         $data->password = bcrypt($request->input('password'));
-        $data->save();
 
-        return redirect('/login');
+        if ($data->save()) {
+
+            return redirect('/login')->with('success', 'Registrasi Berhasil, Silahkan Login');
+        } else {
+           
+            return redirect('/register')->with('error', 'Registrasi Gagal');
+        }
     }
 
     public function loginStore(Request $request)
@@ -59,11 +77,11 @@ class UserController extends Controller
         try {
             // Coba membuat token menggunakan credentials yang diberikan
             if (!$token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'Invalid credentials'], 401);
+                return redirect('/login')->with('error', 'Email dan password tidak sesuai');
             }
         } catch (JWTException $e) {
-            // Jika terjadi error saat mencoba membuat token
-            return response()->json(['error' => 'Could not create token'], 500);
+           
+            return redirect('/login')->with('error', 'Silahkan ulang kembali');
         }
 
         // Mengatur cookie dengan token JWT

@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
  * |
  */
 
+
+
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/registerProses', [UserController::class, 'registerProses'])->name('register.proses');
 Route::post('/loginStore', [UserController::class, 'loginStore'])->name('login.proses');
 
 Route::prefix('/')->middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('index');
+    Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::get('/data-spop', [AdminController::class, 'dataSpop'])->name('data.spop');
     Route::get('/data-spop/{id}/detail', [AdminController::class, 'detailSpop'])->name('detail.spop');
     Route::get('/tambah-spop', [AdminController::class, 'tambahSpop'])->name('tambah.spop');

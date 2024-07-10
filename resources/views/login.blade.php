@@ -24,6 +24,16 @@
             <div class="col-lg-6 col-12 d-flex align-items-center ">
                 <div class="signin-wrapper ">
                     <div class="form-wrapper card card-login ">
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
                         <h3 class="mb-lg-4 text-lg-start text-center ">Masuk</h3>
                         <p class="text-sm mb-25 text-lg-start text-center">
                             Silahkkan masukkan username dan katasandi.

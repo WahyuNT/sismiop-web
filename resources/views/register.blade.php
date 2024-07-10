@@ -12,22 +12,34 @@
                             @csrf
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="input-style-1">
+                                    <div class="input-style-1 mb-3">
                                         <label>Username</label>
-                                        <input required name="username" type="text" placeholder="username" />
+                                        <input value="{{ old('username') }}" required name="username" type="text"
+                                            placeholder="username" />
                                     </div>
+                                    @error('username')
+                                        <span class="error text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
-                                    <div class="input-style-1">
+                                    <div class="input-style-1 mb-3">
                                         <label>Email</label>
-                                        <input required name="email" type="email" placeholder="Email" />
+                                        <input value="{{ old('email') }}" required name="email" type="email"
+                                            placeholder="Email" />
                                     </div>
+                                    @error('email')
+                                        <span class="error text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
-                                    <div class="input-style-1">
+                                    <div class="input-style-1 mb-3">
                                         <label>Password</label>
-                                        <input required name="password" type="password" placeholder="Password" />
+                                        <input value="{{ old('password') }}" required name="password" type="password"
+                                            placeholder="Password" />
                                     </div>
+                                    @error('password')
+                                        <span class="error text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="col-12">
