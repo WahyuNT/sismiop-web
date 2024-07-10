@@ -23,60 +23,124 @@
 
 
 
-    <div class="form-elements-wrapper">
-        <div class="row">
-            <div class="card card-form ">
+    <div class="div">
 
-                <div class="table-responsive">
+        <div class="card card-form ">
+            <div class="table-responsive">
+                {{-- <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>No Formulir</th>
+                            <th>NOP</th>
+                            <th>Petugas Pendata</th>
+                            <th>Tanggal Pendata</th>
+                            <th class="text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($spop as $item)
+                            <tr>
+                                <th>{{ $loop->iteration }}</th>
+                                <td>{{ $item->no_formulir }}</td>
+                                <td>{{ $item->{'2_nop_provinsi'} }} {{ $item->{'2_nop_kabupaten'} }}
+                                    {{ $item->{'2_nop_kecamatan'} }} {{ $item->{'2_nop_gampong'} }}
+                                    {{ $item->{'2_nop_blok'} }} {{ $item->{'2_nop_kode'} }}</td>
+                                <td>{{ $item->{'31_nama_jelas_petugas'} }}</td>
+                                <td>{{ $item->{'29_tanggal_petugas'} }}</td>
+                                <td class="text-center d-flex flex-wrap justify-content-center">
+                                    @if ($confirmDelete != $item->id)
+                                        <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
+                                            <button class="btn btn-primary rounded-pill mx-1">Detail</button>
+                                        </a>
+                                        <div class="div">
 
-                    <table class="table">
+                                            <button type="button" wire:click="confirmDelete({{ $item->id }})"
+                                                class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                        </div>
+                                    @else
+                                        <button type="button" wire:click="batalDelete"
+                                            class="btn btn-danger rounded-pill mx-1">Batal</button>
+                                        <button type="button" wire:click="delete({{ $item->id }})"
+                                            class="btn btn-success rounded-pill mx-1">Hapus</button>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table> --}}
+                <div class="table-wrapper table-responsive">
+                    <table style="width: 100%" class="table striped-table ">
                         <thead>
                             <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">No Formulir</th>
-                                <th scope="col">NOP</th>
-                                <th scope="col">Petugas Pendata</th>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col" class="text-center">Aksi</th>
+
+                                <th class="pe-2">
+                                    No
+                                </th>
+                                <th class="pe-4">
+                                    No Formulir
+                                </th>
+                                <th class="pe-5">
+                                    NOP
+                                </th>
+                                <th class="pe-4">
+                                    Petugas Pendata
+                                </th>
+                                <th class="pe-4">
+                                    Tanggal Pendata
+                                </th>
+                                <th class="text-center">
+                                    Aksi
+                                </th>
                             </tr>
+                            <!-- end table row-->
                         </thead>
                         <tbody>
                             @foreach ($spop as $item)
                                 <tr>
-                                    <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $item->no_formulir }}</td>
-                                    <td>4342343sadasdasdasdas{{ $loop->iteration }}</td>
-                                    <td>{{ $item->{'31_nama_jelas_petugas'} }}</td>
-                                    <td>{{ $item->{'29_tanggal_pejabat'} }}</td>
-                                    <td class="text-center d-flex flex-wrap justify-content-center">
+                                    <th>{{ ($spop->currentPage() - 1) * $spop->perPage() + $loop->iteration }}</th>
+                                    <td class="">{{ $item->no_formulir }}</td>
+                                    <td class="">
+                                        {{ $item->{'2_nop_provinsi'} }}
+                                        {{ $item->{'2_nop_kabupaten'} }}
+                                        {{ $item->{'2_nop_kecamatan'} }} {{ $item->{'2_nop_gampong'} }}
+                                        {{ $item->{'2_nop_blok'} }} {{ $item->{'2_nop_kode'} }}
+                                    </td>
+                                    <td class="">{{ $item->{'31_nama_jelas_petugas'} }}</td>
+                                    <td class="">{{ $item->{'29_tanggal_petugas'} }}</td>
+                                    <td
+                                        class="text-center
+                                        d-flex flex-wrap justify-content-center gap-lg-0 gap-1">
                                         @if ($confirmDelete != $item->id)
                                             <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
-                                                <button class="btn btn-primary rounded-pill mx-1">Detail</button>
+                                                <button class="btn btn-sm btn-primary rounded-pill mx-1">Detail</button>
                                             </a>
                                             <div class="div">
 
                                                 <button type="button" wire:click="confirmDelete({{ $item->id }})"
-                                                    class="btn btn-danger rounded-pill mx-1">Hapus</button>
+                                                    class="btn btn-sm btn-danger rounded-pill mx-1">Hapus</button>
                                             </div>
                                         @else
                                             <button type="button" wire:click="batalDelete"
-                                                class="btn btn-danger rounded-pill mx-1">Batal</button>
+                                                class="btn btn-sm btn-danger rounded-pill mx-1">Batal</button>
                                             <button type="button" wire:click="delete({{ $item->id }})"
-                                                class="btn btn-success rounded-pill mx-1">Hapus</button>
+                                                class="btn btn-sm btn-success rounded-pill mx-1">Hapus</button>
                                         @endif
                                     </td>
                                 </tr>
                             @endforeach
-
                         </tbody>
                     </table>
-                </div>
-
-                <div class="d-flex justify-content-center mt-3">
-                    {{ $spop->links() }}
+                    <!-- end table -->
                 </div>
             </div>
+
+            <div class="d-flex justify-content-center mt-3">
+                {{ $spop->links() }}
+            </div>
         </div>
+
     </div>
 
 </div>
