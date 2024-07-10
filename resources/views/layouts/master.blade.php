@@ -4,7 +4,7 @@
     <x-sidebar />
     <main class="main-wrapper">
         <x-header />
-        @include('sweetalert::alert')
+  
 
         <section class="tab-components">
 

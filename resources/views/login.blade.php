@@ -25,12 +25,12 @@
                 <div class="signin-wrapper ">
                     <div class="form-wrapper card card-login ">
                         @if (session('success'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-success text-center text-lg-start">
                                 {{ session('success') }}
                             </div>
                         @endif
                         @if (session('error'))
-                            <div class="alert alert-danger">
+                            <div class="alert alert-danger text-center text-lg-start">
                                 {{ session('error') }}
                             </div>
                         @endif
