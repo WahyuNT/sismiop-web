@@ -430,7 +430,7 @@
                         <div class="col-12">
                             <label class="text-black mt-2 mb-1" for="29_tanggal_pejabat">29. TANGGAL</label>
                             <input class="form-control" wire:model="data.29_tanggal_pejabat"
-                                name="29_tanggal_pejabat" id="29_tanggal_pejabat" type="text"
+                                name="29_tanggal_pejabat" id="29_tanggal_pejabat" type="date"
                                 placeholder="..." />
                         </div>
                         <div class="col-12">
