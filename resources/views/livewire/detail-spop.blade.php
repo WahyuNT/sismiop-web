@@ -522,7 +522,7 @@
                                 <label class="mb-1 text-black" for="29_tanggal_pejabat">29. TANGGAL</label>
                                 <input {{ $disabled }} class="form-control text-black"
                                     wire:model.defer="data.29_tanggal_pejabat" name="29_tanggal_pejabat"
-                                    id="29_tanggal_pejabat" type="text" placeholder="Memuat..." />
+                                    id="29_tanggal_pejabat" type="date" placeholder="Memuat..." />
                             </div>
                             <div class="col-12">
                                 <label class="mb-1 text-black mt-2" for="30_tanda_tangan_pejabat">30. TANDA
