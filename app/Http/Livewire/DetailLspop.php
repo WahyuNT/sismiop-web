@@ -20,6 +20,8 @@ class DetailLspop extends Component
     public $edit60 = false;
     public $newTTD56 = null;
     public $newTTD60 = null;
+    public $TTD56 = null;
+    public $TTD60 = null;
 
     public function mount($id)
     {
@@ -34,7 +36,11 @@ class DetailLspop extends Component
         $lspopArray = $lspop->toArray();
         $this->data = $lspopArray;
 
-        return view('livewire.detail-lspop', compact('lspop'));
+        $dataTtd56 = $lspop->{"56_tanda_tangan"};
+        $dataTtd60 = $lspop->{"60_tanda_tangan"};
+
+    
+        return view('livewire.detail-lspop', compact('lspop', 'dataTtd56', 'dataTtd60'));
     }
 
     public function updateData()
@@ -109,8 +115,8 @@ class DetailLspop extends Component
 
     public function simpan60()
     {
-        $gambarLama60 = Lspop::find($this->dataId)->getOriginal()['60_tanda_tangan'];
-        $gambarLama60 = public_path('img/ttd/lspop/pejabat/' . $gambarLama60);
+        // $gambarLama60 = Lspop::find($this->dataId)->getOriginal()['60_tanda_tangan'];
+        // $gambarLama60 = public_path('img/ttd/lspop/pejabat/' . $gambarLama60);
 
         if ($this->newTTD60 != null) {
             $data_uri_60 = $this->newTTD60;
@@ -131,9 +137,9 @@ class DetailLspop extends Component
             $data->update($this->data);
 
             if ($data->save()) {
-                if (file_exists($gambarLama60)) {
-                    unlink($gambarLama60);
-                }
+                // if (file_exists($gambarLama60)) {
+                //     unlink($gambarLama60);
+                // }
                 $this->alert('success', 'Tanda tangan pejabat berhasil diperbarui');
                 $this->edit60 = false;
                 $this->newTTD60 = null;

@@ -921,13 +921,12 @@
                         <br>
 
                         @if ($edit56 == false)
-                            <img class="image-ttd"
-                                src="{{ asset('img/ttd/lspop/pendata/' . $lspop->{'56_tanda_tangan'}) }}" width=246
-                                height=164 alt="">
+                            <img class="image-ttd" src="{{ $lspop->{'56_tanda_tangan'} }}" width=246 height=164
+                                alt="">
                         @endif
                         @if ($edit56 == false)
-                            <button type="button"wire:click="edit56" class="btn rounded-pill  btn-warning py-1"><i
-                                    class="fa-solid fa-pencil"></i></button>
+                            <button type="button"wire:click="edit56" id="edit56"
+                                class="btn rounded-pill  btn-warning py-1"><i class="fa-solid fa-pencil"></i></button>
                         @endif
 
                         <div class="card  sign-ttd" style="{{ $edit56 ? 'display: block' : 'display: none' }}">
@@ -975,13 +974,12 @@
                             TANGAN</label><br>
 
                         @if ($edit60 == false)
-                            <img class="image-ttd"
-                                src="{{ asset('img/ttd/lspop/pejabat/' . $lspop->{'60_tanda_tangan'}) }}" width=246
-                                height=164 alt="">
+                            <img class="image-ttd" src="{{ $lspop->{'60_tanda_tangan'} }}" width=246 height=164
+                                alt="">
                         @endif
                         @if ($edit60 == false)
-                            <button type="button" wire:click="edit60"
-                                class="btn rounded-pill  btn-warning py-1"><i
+                            <button type="button" wire:click="edit60" id="edit60"
+                                class="btn rounded-pill   btn-warning py-1"><i
                                     class="fa-solid fa-pencil"></i></button>
                         @endif
 
@@ -1043,19 +1041,18 @@
         backgroundColor: 'rgba(255, 255, 255, 0)',
         penColor: 'rgb(0, 0, 0)'
     });
-
+    loadTTD()
     var cancelButton_56 = document.getElementById('cancel_56');
     var cancelButton_60 = document.getElementById('cancel_60');
 
     var clearButton_56 = document.getElementById('clear_56');
     var clearButton_60 = document.getElementById('clear_60');
 
-
+    var editButton_56 = document.getElementById('edit56');
+    var editButton_60 = document.getElementById('edit60');
 
     var cancelSimpanButton_56 = document.getElementById('cancel_simpan_56');
     var cancelSimpanButton_60 = document.getElementById('cancel_simpan_60');
-
-
 
     var canvasPad_56 = document.getElementById('signature-pad_56');
     var canvasPad_60 = document.getElementById('signature-pad_60');
@@ -1111,4 +1108,29 @@
         signaturePad_60.clear();
         document.getElementById('tanda_tangan_60').value = "";
     });
+
+    editButton_56.addEventListener('click', function(event) {
+        loadTTD()
+
+    });
+    editButton_60.addEventListener('click', function(event) {
+        loadTTD()
+    });
+
+
+    function loadTTD() {
+        var ttd56 = {!! json_encode($dataTtd56) !!}
+        var image = new Image();
+        image.onload = function() {
+            signaturePad_56.fromDataURL(ttd56);
+        };
+        image.src = ttd56;
+
+        var ttd60 = {!! json_encode($dataTtd60) !!}
+        var image = new Image();
+        image.onload = function() {
+            signaturePad_60.fromDataURL(ttd60);
+        };
+        image.src = ttd60;
+    }
 </script>

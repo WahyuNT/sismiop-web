@@ -814,8 +814,6 @@
             signaturePad_sket.fromDataURL(sketbase64);
         };
         image.src = sketbase64;
-
-
     }
 
     batalButton_sket.addEventListener("click", function(event) {
