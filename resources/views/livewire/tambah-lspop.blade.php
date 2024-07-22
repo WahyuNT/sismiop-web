@@ -944,7 +944,15 @@
         </form>
     </div>
 </div>
+
+
 <script>
+    document.addEventListener('livewire:load', function() {
+        Livewire.on('data-saved', function() {
+            clearPad();
+        });
+    });
+
     var signaturePad_56 = new SignaturePad(document.getElementById('signature-pad_56'), {
         backgroundColor: 'rgba(255, 255, 255, 0)',
         penColor: 'rgb(0, 0, 0)'
@@ -985,6 +993,16 @@
             @this.set('data.60_tanda_tangan', data_60);
         }
     });
+
+    function clearPad() {
+        signaturePad_56.clear();
+        document.getElementById('tanda_tangan_56').value = "";
+
+        signaturePad_60.clear();
+        document.getElementById('tanda_tangan_60').value = "";
+
+        console.log('clear');
+    }
 
     cancelButton_56.addEventListener('click', function(event) {
         event.preventDefault();

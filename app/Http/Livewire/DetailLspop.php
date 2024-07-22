@@ -39,21 +39,21 @@ class DetailLspop extends Component
 
     public function updateData()
     {
-        if ($this->newTTD56 != null) {
-            $data_uri_56 = $this->newTTD56;
-            $encoded_image_56 = explode(',', $data_uri_56)[1];
-            $decoded_image_56 = base64_decode($encoded_image_56);
+        // if ($this->newTTD56 != null) {
+        //     $data_uri_56 = $this->newTTD56;
+        //     $encoded_image_56 = explode(',', $data_uri_56)[1];
+        //     $decoded_image_56 = base64_decode($encoded_image_56);
 
-            $directory_56 = public_path('img/ttd/lspop/pendata');  // Tentukan direktori tujuan
-            if (!File::isDirectory($directory_56)) {
-                File::makeDirectory($directory_56, 0777, true, true);
-            }
+        //     $directory_56 = public_path('img/ttd/lspop/pendata');  // Tentukan direktori tujuan
+        //     if (!File::isDirectory($directory_56)) {
+        //         File::makeDirectory($directory_56, 0777, true, true);
+        //     }
 
-            $image_name_56 = 'ttd_petugas_lspop_56_' . Str::random(20) . '.png';
-            $image_path_56 = $directory_56 . '/' . $image_name_56;
-            file_put_contents($image_path_56, $decoded_image_56);
-            $this->data['56_tanda_tangan'] = $image_name_56;
-        }
+        //     $image_name_56 = 'ttd_petugas_lspop_56_' . Str::random(20) . '.png';
+        //     $image_path_56 = $directory_56 . '/' . $image_name_56;
+        //     file_put_contents($image_path_56, $decoded_image_56);
+        //     $this->data['56_tanda_tangan'] = $image_name_56;
+        // }
 
         $data = Lspop::find($this->dataId);
         $data->update($this->data);
@@ -148,41 +148,41 @@ class DetailLspop extends Component
 
     public function simpan56()
     {
-        $gambarLama56 = Lspop::find($this->dataId)->getOriginal()['56_tanda_tangan'];
-        $gambarLama56 = public_path('img/ttd/lspop/pendata/' . $gambarLama56);
+        // $gambarLama56 = Lspop::find($this->dataId)->getOriginal()['56_tanda_tangan'];
+        // $gambarLama56 = public_path('img/ttd/lspop/pendata/' . $gambarLama56);
 
-        if ($this->newTTD56 != null) {
-            $data_uri_56 = $this->newTTD56;
-            $encoded_image_56 = explode(',', $data_uri_56)[1];
-            $decoded_image_56 = base64_decode($encoded_image_56);
+        // if ($this->newTTD56 != null) {
+        //     $data_uri_56 = $this->newTTD56;
+        //     $encoded_image_56 = explode(',', $data_uri_56)[1];
+        //     $decoded_image_56 = base64_decode($encoded_image_56);
 
-            $directory_56 = public_path('img/ttd/lspop/pendata');  // Tentukan direktori tujuan
-            if (!File::isDirectory($directory_56)) {
-                File::makeDirectory($directory_56, 0777, true, true);
-            }
+        //     $directory_56 = public_path('img/ttd/lspop/pendata');  // Tentukan direktori tujuan
+        //     if (!File::isDirectory($directory_56)) {
+        //         File::makeDirectory($directory_56, 0777, true, true);
+        //     }
 
-            $image_name_56 = 'ttd_petugas_lspop_56_' . Str::random(20) . '.png';
-            $image_path_56 = $directory_56 . '/' . $image_name_56;
-            file_put_contents($image_path_56, $decoded_image_56);
-            $this->data['56_tanda_tangan'] = $image_name_56;
+        //     $image_name_56 = 'ttd_petugas_lspop_56_' . Str::random(20) . '.png';
+        //     $image_path_56 = $directory_56 . '/' . $image_name_56;
+        //     file_put_contents($image_path_56, $decoded_image_56);
+        //     $this->data['56_tanda_tangan'] = $image_name_56;
 
-            $data = Lspop::find($this->dataId);
-            $data->update($this->data);
+        //     $data = Lspop::find($this->dataId);
+        //     $data->update($this->data);
 
-            if ($data->save()) {
-                if (file_exists($gambarLama56)) {
-                    unlink($gambarLama56);
-                }
+        //     if ($data->save()) {
+        //         if (file_exists($gambarLama56)) {
+        //             unlink($gambarLama56);
+        //         }
 
-                $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
-                $this->edit56 = false;
-                $this->newTTD56 = null;
-            } else {
-                $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
-            }
-        } else {
-            $this->edit56= false;
-            $this->alert('error', 'Tidak ada tanda tangan petugas yang diupload');
-        }
+        //         $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
+        //         $this->edit56 = false;
+        //         $this->newTTD56 = null;
+        //     } else {
+        //         $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
+        //     }
+        // } else {
+        //     $this->edit56= false;
+        //     $this->alert('error', 'Tidak ada tanda tangan petugas yang diupload');
+        // }
     }
 }

@@ -136,7 +136,7 @@ class DetailSpop extends Component
 
             $image_name_28 = 'ttd_pernyataan_spop_28_' . Str::random(20) . '.png';
             $image_path_28 = $directory_28 . '/' . $image_name_28;
-            file_put_contents($image_path_28, $decoded_image_28);
+            // file_put_contents($image_path_28, $decoded_image_28);
             $this->data['28_tanda_tangan'] = $image_name_28;
 
             $data = Spop::find($this->dataId);

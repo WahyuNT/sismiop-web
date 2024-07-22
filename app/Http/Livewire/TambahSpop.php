@@ -72,7 +72,9 @@ class TambahSpop extends Component
             $image_name_sket = 'sketsa_' . Str::random(20) . '.png';
             $image_path_sket = $directory_sket . '/' . $image_name_sket;
 
-            file_put_contents($image_path_sket, $decoded_image_sket);
+            file_put_contents('img/sket', $decoded_image_sket);
+
+            // $decoded_image_sket->move('img/sket', $image_name_sket);
             $this->data['sket_tanda_tangan'] = $image_name_sket;
         }
 
