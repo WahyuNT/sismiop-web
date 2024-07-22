@@ -25,6 +25,7 @@ class DetailLspop extends Component
     public function mount($id)
     {
         $this->dataId = $id;
+        
     }
 
     public function render()
@@ -38,7 +39,7 @@ class DetailLspop extends Component
         $dataTtd56 = $lspop->{"56_tanda_tangan"};
         $dataTtd60 = $lspop->{"60_tanda_tangan"};
 
-       
+
         return view('livewire.detail-lspop', compact('lspop', 'dataTtd56', 'dataTtd60'));
     }
 
@@ -79,7 +80,6 @@ class DetailLspop extends Component
     public function edit56()
     {
         $this->edit56 = true;
-        $this->dispatchBrowserEvent('contentChanged');
     }
 
     public function cancelEdit56()
@@ -149,6 +149,7 @@ class DetailLspop extends Component
                 $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
                 $this->edit56 = false;
                 $this->newTTD56 = null;
+                $this->dispatchBrowserEvent('contentChanged');
             } else {
                 $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
             }

@@ -1037,113 +1037,113 @@
 </div>
 
 <script>
-
-        loadTTD()
-
-
-        var signaturePad_56 = new SignaturePad(document.getElementById('signature-pad_56'), {
-            backgroundColor: 'rgba(255, 255, 255, 0)',
-            penColor: 'rgb(0, 0, 0)'
-        });
-        var signaturePad_60 = new SignaturePad(document.getElementById('signature-pad_60'), {
-            backgroundColor: 'rgba(255, 255, 255, 0)',
-            penColor: 'rgb(0, 0, 0)'
-        });
+    // document.addEventListener('livewire:load', function() {
+    loadTTD()
 
 
-
-        var cancelButton_56 = document.getElementById('cancel_56');
-        var cancelButton_60 = document.getElementById('cancel_60');
-
-        var clearButton_56 = document.getElementById('clear_56');
-        var clearButton_60 = document.getElementById('clear_60');
-
-        var editButton_56 = document.getElementById('edit56btn');
-        var editButton_60 = document.getElementById('edit60btn');
-
-
-        var cancelSimpanButton_56 = document.getElementById('cancel_simpan_56');
-        var cancelSimpanButton_60 = document.getElementById('cancel_simpan_60');
-
-        var canvasPad_56 = document.getElementById('signature-pad_56');
-        var canvasPad_60 = document.getElementById('signature-pad_60');
-
-        canvasPad_56.addEventListener('click', function(event) {
-            if (signaturePad_56.isEmpty()) {
-                alert("Silahkan petugas Tanda tangan terlebih dahulu.");
-            } else {
-                var data_56 = signaturePad_56.toDataURL('image/png');
-
-                var tandaTanganInput_56 = document.getElementById('tanda_tangan_56');
-                tandaTanganInput_56.value = data_56;
-
-                @this.set('newTTD56', data_56);
-            }
-        });
-
-        canvasPad_60.addEventListener('click', function(event) {
-            if (signaturePad_60.isEmpty()) {
-                alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
-            } else {
-                var data_60 = signaturePad_60.toDataURL('image/png');
-
-                var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
-                tandaTanganInput_60.value = data_60;
-
-                @this.set('newTTD60', data_60);
-            }
-        });
-
-        cancelButton_56.addEventListener('click', function(event) {
-            event.preventDefault();
-            signaturePad_56.clear();
-            document.getElementById('tanda_tangan_56').value = "";
-            loadTTD()
-        });
-
-        cancelButton_60.addEventListener('click', function(event) {
-            event.preventDefault();
-            signaturePad_60.clear();
-            document.getElementById('tanda_tangan_60').value = "";
-            loadTTD()
-        });
-
-        clearButton_56.addEventListener('click', function(event) {
-            event.preventDefault();
-            signaturePad_56.clear();
-            document.getElementById('tanda_tangan_56').value = "";
-
-        });
-
-        clearButton_60.addEventListener('click', function(event) {
-            event.preventDefault();
-            signaturePad_60.clear();
-            document.getElementById('tanda_tangan_60').value = "";
-        });
-
-        editButton_56.addEventListener('click', function(event) {
-            loadTTD();
-            console.log('edit 56');
-        });
+    var signaturePad_56 = new SignaturePad(document.getElementById('signature-pad_56'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
+    var signaturePad_60 = new SignaturePad(document.getElementById('signature-pad_60'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
+    });
 
 
 
-        function loadTTD() {
-            var ttd56 = {!! json_encode($dataTtd56) !!}
-            var image = new Image();
-            image.onload = function() {
-                signaturePad_56.fromDataURL(ttd56);
-            };
-            image.src = ttd56;
 
-            var ttd60 = {!! json_encode($dataTtd60) !!}
-            var image = new Image();
-            image.onload = function() {
-                signaturePad_60.fromDataURL(ttd60);
-            };
-            image.src = ttd60;
+    var cancelButton_56 = document.getElementById('cancel_56');
+    var cancelButton_60 = document.getElementById('cancel_60');
 
-            console.log(ttd56)
+    var clearButton_56 = document.getElementById('clear_56');
+    var clearButton_60 = document.getElementById('clear_60');
+
+    var editButton_56 = document.getElementById('edit56btn');
+    var editButton_60 = document.getElementById('edit60btn');
+
+
+    var cancelSimpanButton_56 = document.getElementById('cancel_simpan_56');
+    var cancelSimpanButton_60 = document.getElementById('cancel_simpan_60');
+
+    var canvasPad_56 = document.getElementById('signature-pad_56');
+    var canvasPad_60 = document.getElementById('signature-pad_60');
+
+    canvasPad_56.addEventListener('click', function(event) {
+        if (signaturePad_56.isEmpty()) {
+            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+        } else {
+            var data_56 = signaturePad_56.toDataURL('image/png');
+
+            var tandaTanganInput_56 = document.getElementById('tanda_tangan_56');
+            tandaTanganInput_56.value = data_56;
+
+            @this.set('newTTD56', data_56);
         }
+    });
 
+    canvasPad_60.addEventListener('click', function(event) {
+        if (signaturePad_60.isEmpty()) {
+            alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
+        } else {
+            var data_60 = signaturePad_60.toDataURL('image/png');
+
+            var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
+            tandaTanganInput_60.value = data_60;
+
+            @this.set('newTTD60', data_60);
+        }
+    });
+
+    cancelButton_56.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_56.clear();
+        document.getElementById('tanda_tangan_56').value = "";
+
+    });
+
+    cancelButton_60.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_60.clear();
+        document.getElementById('tanda_tangan_60').value = "";
+
+    });
+
+    clearButton_56.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_56.clear();
+        document.getElementById('tanda_tangan_56').value = "";
+
+    });
+
+    clearButton_60.addEventListener('click', function(event) {
+        event.preventDefault();
+        signaturePad_60.clear();
+        document.getElementById('tanda_tangan_60').value = "";
+    });
+
+    editButton_56.addEventListener('click', function(event) {
+        loadTTD();
+        console.log('edit 56');
+    });
+
+
+
+    function loadTTD() {
+        var ttd56 = {!! json_encode($dataTtd56) !!}
+        var image = new Image();
+        image.onload = function() {
+            signaturePad_56.fromDataURL(ttd56);
+        };
+        image.src = ttd56;
+
+        var ttd60 = {!! json_encode($dataTtd60) !!}
+        var image = new Image();
+        image.onload = function() {
+            signaturePad_60.fromDataURL(ttd60);
+        };
+        image.src = ttd60;
+
+        console.log(ttd56)
+    }
 </script>
