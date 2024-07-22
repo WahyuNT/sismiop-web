@@ -20,8 +20,7 @@ class DetailLspop extends Component
     public $edit60 = false;
     public $newTTD56 = null;
     public $newTTD60 = null;
-    public $TTD56 = null;
-    public $TTD60 = null;
+
 
     public function mount($id)
     {
@@ -39,27 +38,13 @@ class DetailLspop extends Component
         $dataTtd56 = $lspop->{"56_tanda_tangan"};
         $dataTtd60 = $lspop->{"60_tanda_tangan"};
 
-    
+       
         return view('livewire.detail-lspop', compact('lspop', 'dataTtd56', 'dataTtd60'));
     }
 
     public function updateData()
     {
-        // if ($this->newTTD56 != null) {
-        //     $data_uri_56 = $this->newTTD56;
-        //     $encoded_image_56 = explode(',', $data_uri_56)[1];
-        //     $decoded_image_56 = base64_decode($encoded_image_56);
 
-        //     $directory_56 = public_path('img/ttd/lspop/pendata');  // Tentukan direktori tujuan
-        //     if (!File::isDirectory($directory_56)) {
-        //         File::makeDirectory($directory_56, 0777, true, true);
-        //     }
-
-        //     $image_name_56 = 'ttd_petugas_lspop_56_' . Str::random(20) . '.png';
-        //     $image_path_56 = $directory_56 . '/' . $image_name_56;
-        //     file_put_contents($image_path_56, $decoded_image_56);
-        //     $this->data['56_tanda_tangan'] = $image_name_56;
-        // }
 
         $data = Lspop::find($this->dataId);
         $data->update($this->data);
@@ -94,6 +79,7 @@ class DetailLspop extends Component
     public function edit56()
     {
         $this->edit56 = true;
+        $this->dispatchBrowserEvent('contentChanged');
     }
 
     public function cancelEdit56()
@@ -154,41 +140,21 @@ class DetailLspop extends Component
 
     public function simpan56()
     {
-        // $gambarLama56 = Lspop::find($this->dataId)->getOriginal()['56_tanda_tangan'];
-        // $gambarLama56 = public_path('img/ttd/lspop/pendata/' . $gambarLama56);
+        if ($this->newTTD56 != null) {
+            $data = Lspop::find($this->dataId);
+            $this->data['56_tanda_tangan'] = $this->newTTD56;
+            $data->update($this->data);
 
-        // if ($this->newTTD56 != null) {
-        //     $data_uri_56 = $this->newTTD56;
-        //     $encoded_image_56 = explode(',', $data_uri_56)[1];
-        //     $decoded_image_56 = base64_decode($encoded_image_56);
-
-        //     $directory_56 = public_path('img/ttd/lspop/pendata');  // Tentukan direktori tujuan
-        //     if (!File::isDirectory($directory_56)) {
-        //         File::makeDirectory($directory_56, 0777, true, true);
-        //     }
-
-        //     $image_name_56 = 'ttd_petugas_lspop_56_' . Str::random(20) . '.png';
-        //     $image_path_56 = $directory_56 . '/' . $image_name_56;
-        //     file_put_contents($image_path_56, $decoded_image_56);
-        //     $this->data['56_tanda_tangan'] = $image_name_56;
-
-        //     $data = Lspop::find($this->dataId);
-        //     $data->update($this->data);
-
-        //     if ($data->save()) {
-        //         if (file_exists($gambarLama56)) {
-        //             unlink($gambarLama56);
-        //         }
-
-        //         $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
-        //         $this->edit56 = false;
-        //         $this->newTTD56 = null;
-        //     } else {
-        //         $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
-        //     }
-        // } else {
-        //     $this->edit56= false;
-        //     $this->alert('error', 'Tidak ada tanda tangan petugas yang diupload');
-        // }
+            if ($data->save()) {
+                $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
+                $this->edit56 = false;
+                $this->newTTD56 = null;
+            } else {
+                $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
+            }
+        } else {
+            $this->edit56 = false;
+            $this->alert('error', 'Tidak ada tanda tangan petugas yang diupload');
+        }
     }
 }
