@@ -900,7 +900,7 @@
         </h4>
         <div class="card card-form ">
             <div class="d-flex flex-wrap">
-                <div class="col-6 px-2">
+                <div class="col-12 col-lg-6 px-2">
                     <P class="fw-bold text-black mt-3 text-center mb-3">PETUGAS PENDATA</P>
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="54_tanggal_kunjungan_kembali">54. TANGAL
@@ -919,22 +919,19 @@
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="56_tanda_tangan">56. TANDA TANGAN</label>
                         <br>
-
-                        @if ($edit56 == false)
-                            <img class="image-ttd" src="{{ $lspop->{'56_tanda_tangan'} }}" width=246 height=164
-                                alt="">
-                        @endif
-
-
-
-                        <button style="{{ $edit56 ? 'display: none' : 'display: block' }}" id="edit56btn"
-                            wire:click="edit56" type="button" class="btn rounded-pill  btn-warning py-1 "><i
-                                class="fa-solid fa-pencil"></i></button>
-
-
+                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                            @if ($edit56 == false)
+                                <div class="me-2">
+                                    <img class="image-ttd" src="{{ $lspop->{'56_tanda_tangan'} }}" width=246
+                                        height=164 alt="">
+                                </div>
+                            @endif
+                            <button style="{{ $edit56 ? 'display: none' : 'display: block' }}" id="edit56btn"
+                                wire:click="edit56" type="button" class="btn rounded-pill  btn-warning py-1 "><i
+                                    class="fa-solid fa-pencil"></i></button>
+                        </div>
 
                         <div class="card  sign-ttd" style="{{ $edit56 ? 'display: block' : 'display: none' }}">
-
                             <div class="wrapper-sign" id="tempatTTD">
                                 <canvas id="signature-pad_56" class="signature-pad_56" width=246 height=164></canvas>
                             </div>
@@ -964,7 +961,7 @@
                             name="58_nip" id="58_nip" type="text" placeholder="-" />
                     </div>
                 </div>
-                <div class="col-6 px-2">
+                <div class="col-12 col-lg-6 px-2">
                     <P class="fw-bold text-black mt-3 text-center mb-3">MENGETAHUI PEJABAT YANG BERWENANG</P>
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="59_tanggal_penelitian">59. TANGAL
@@ -976,23 +973,24 @@
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="60_tanda_tangan">60. TANDA
                             TANGAN</label><br>
+                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                            @if ($edit60 == false)
+                                <div class="me-2">
+                                    <img class="image-ttd" src="{{ $lspop->{'60_tanda_tangan'} }}" width=246
+                                        height=164 alt="">
+                                </div>
+                            @endif
 
-                        @if ($edit60 == false)
-                            <img class="image-ttd" src="{{ $lspop->{'60_tanda_tangan'} }}" width=246 height=164
-                                alt="">
-                        @endif
-                        @if ($edit60 == false)
-                            <button type="button" wire:click="edit60"
-                                class="btn rounded-pill  btn-warning py-1"><i
+                            <button style="{{ $edit60 ? 'display: none' : 'display: block' }}" type="button"
+                                wire:click="edit60" class="btn rounded-pill  btn-warning py-1"><i
                                     class="fa-solid fa-pencil"></i></button>
-                        @endif
-
+                        </div>
                         <div class="card sign-ttd" style="{{ $edit60 ? 'display: block' : 'display: none' }}">
                             <div class="wrapper-sign" id="tempatTTD" style="display: block">
                                 <canvas id="signature-pad_60" class="signature-pad_60" width=246
                                     height=164></canvas>
                             </div>
-                            <textarea wire:model="newTTD60" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
+                            <textarea hidden wire:model="newTTD60" name="60_tanda_tangan" id="tanda_tangan_60"></textarea>
                             <div class="d-flex justify-content-center">
                                 <button wire:click="cancelEdit60" id="cancel_60" type="button"
                                     class="btn rounded-pill btn-danger py-0 mb-2 me-2">Batal</button>
@@ -1037,113 +1035,95 @@
 </div>
 
 <script>
-    // document.addEventListener('livewire:load', function() {
-    loadTTD()
-
-
-    var signaturePad_56 = new SignaturePad(document.getElementById('signature-pad_56'), {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        penColor: 'rgb(0, 0, 0)'
-    });
-    var signaturePad_60 = new SignaturePad(document.getElementById('signature-pad_60'), {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        penColor: 'rgb(0, 0, 0)'
+    ttd()
+    document.addEventListener('livewire:load', function() {
+        Livewire.on('dataUpdated', function() {
+            ttd()
+        });
     });
 
+    function ttd() {
+
+
+        var signaturePad_56 = new SignaturePad(document.getElementById('signature-pad_56'), {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+            penColor: 'rgb(0, 0, 0)'
+        });
+        var signaturePad_60 = new SignaturePad(document.getElementById('signature-pad_60'), {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+            penColor: 'rgb(0, 0, 0)'
+        });
 
 
 
-    var cancelButton_56 = document.getElementById('cancel_56');
-    var cancelButton_60 = document.getElementById('cancel_60');
 
-    var clearButton_56 = document.getElementById('clear_56');
-    var clearButton_60 = document.getElementById('clear_60');
+        var cancelButton_56 = document.getElementById('cancel_56');
+        var cancelButton_60 = document.getElementById('cancel_60');
 
-    var editButton_56 = document.getElementById('edit56btn');
-    var editButton_60 = document.getElementById('edit60btn');
+        var clearButton_56 = document.getElementById('clear_56');
+        var clearButton_60 = document.getElementById('clear_60');
 
-
-    var cancelSimpanButton_56 = document.getElementById('cancel_simpan_56');
-    var cancelSimpanButton_60 = document.getElementById('cancel_simpan_60');
-
-    var canvasPad_56 = document.getElementById('signature-pad_56');
-    var canvasPad_60 = document.getElementById('signature-pad_60');
-
-    canvasPad_56.addEventListener('click', function(event) {
-        if (signaturePad_56.isEmpty()) {
-            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
-        } else {
-            var data_56 = signaturePad_56.toDataURL('image/png');
-
-            var tandaTanganInput_56 = document.getElementById('tanda_tangan_56');
-            tandaTanganInput_56.value = data_56;
-
-            @this.set('newTTD56', data_56);
-        }
-    });
-
-    canvasPad_60.addEventListener('click', function(event) {
-        if (signaturePad_60.isEmpty()) {
-            alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
-        } else {
-            var data_60 = signaturePad_60.toDataURL('image/png');
-
-            var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
-            tandaTanganInput_60.value = data_60;
-
-            @this.set('newTTD60', data_60);
-        }
-    });
-
-    cancelButton_56.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_56.clear();
-        document.getElementById('tanda_tangan_56').value = "";
-
-    });
-
-    cancelButton_60.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_60.clear();
-        document.getElementById('tanda_tangan_60').value = "";
-
-    });
-
-    clearButton_56.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_56.clear();
-        document.getElementById('tanda_tangan_56').value = "";
-
-    });
-
-    clearButton_60.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_60.clear();
-        document.getElementById('tanda_tangan_60').value = "";
-    });
-
-    editButton_56.addEventListener('click', function(event) {
-        loadTTD();
-        console.log('edit 56');
-    });
+        var editButton_56 = document.getElementById('edit56btn');
+        var editButton_60 = document.getElementById('edit60btn');
 
 
+        var cancelSimpanButton_56 = document.getElementById('cancel_simpan_56');
+        var cancelSimpanButton_60 = document.getElementById('cancel_simpan_60');
 
-    function loadTTD() {
-        var ttd56 = {!! json_encode($dataTtd56) !!}
-        var image = new Image();
-        image.onload = function() {
-            signaturePad_56.fromDataURL(ttd56);
-        };
-        image.src = ttd56;
+        var canvasPad_56 = document.getElementById('signature-pad_56');
+        var canvasPad_60 = document.getElementById('signature-pad_60');
 
-        var ttd60 = {!! json_encode($dataTtd60) !!}
-        var image = new Image();
-        image.onload = function() {
-            signaturePad_60.fromDataURL(ttd60);
-        };
-        image.src = ttd60;
+        canvasPad_56.addEventListener('click', function(event) {
+            if (signaturePad_56.isEmpty()) {
+                alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+            } else {
+                var data_56 = signaturePad_56.toDataURL('image/png');
 
-        console.log(ttd56)
+                var tandaTanganInput_56 = document.getElementById('tanda_tangan_56');
+                tandaTanganInput_56.value = data_56;
+
+                @this.set('newTTD56', data_56);
+            }
+        });
+
+        canvasPad_60.addEventListener('click', function(event) {
+            if (signaturePad_60.isEmpty()) {
+                alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
+            } else {
+                var data_60 = signaturePad_60.toDataURL('image/png');
+
+                var tandaTanganInput_60 = document.getElementById('tanda_tangan_60');
+                tandaTanganInput_60.value = data_60;
+
+                @this.set('newTTD60', data_60);
+            }
+        });
+
+        cancelButton_56.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_56.clear();
+            document.getElementById('tanda_tangan_56').value = "";
+
+        });
+
+        cancelButton_60.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_60.clear();
+            document.getElementById('tanda_tangan_60').value = "";
+
+        });
+
+        clearButton_56.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_56.clear();
+            document.getElementById('tanda_tangan_56').value = "";
+
+        });
+
+        clearButton_60.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_60.clear();
+            document.getElementById('tanda_tangan_60').value = "";
+        });
     }
 </script>

@@ -406,14 +406,13 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 px-3 d-flex flex-wrap justify-content-center ">
-                                <div class="div">
-                                    <p class="text-center fw-bold text-black mt-2">28. TANDA TANGAN</p>
-                                </div>
+
+                                <p class="text-center fw-bold text-black mt-2">28. TANDA TANGAN</p> <br>
+
                                 @if ($edit28 == false)
                                     <div class="d-flex flex-wrap">
-                                        <img class="image-ttd"
-                                            src="{{ asset('img/ttd/spop/pernyataan/' . $spop->{'28_tanda_tangan'}) }}"
-                                            width=246 height=164 alt="">
+                                        <img class="image-ttd" src="{{ $spop->{'28_tanda_tangan'} }}" width=246
+                                            height=164 alt="">
                                         <div class="div d-flex align-items-center justify-content-center mt-2">
                                             <button type="button" wire:click="edit28"
                                                 class="btn rounded-pill ms-1 btn-edit-ttd btn-warning py-1"><i
@@ -473,9 +472,8 @@
                                 <label class="mb-1 mt-2 text-black" for="30_tanda_tangan_petugas">30. TANDA
                                     TANGAN</label><br>
                                 @if ($edit30A == false)
-                                    <img class="image-ttd"
-                                        src="{{ asset('img/ttd/spop/pendata/' . $spop->{'30_tanda_tangan_petugas'}) }}"
-                                        width=246 height=164 alt="">
+                                    <img class="image-ttd" src="{{ $spop->{'30_tanda_tangan_petugas'} }}" width=246
+                                        height=164 alt="">
                                 @endif
                                 @if ($edit30A == false)
                                     <button type="button"wire:click="edit30A"
@@ -490,7 +488,7 @@
                                         <canvas id="signature-pad_30A" class="signature-pad_30A" width=246
                                             height=164></canvas>
                                     </div>
-                                    <textarea wire:model="newTTD30A" name="pejabat_tanda_tangan" id="tanda_tangan_30A"></textarea>
+                                    <textarea hidden wire:model="newTTD30A" name="pejabat_tanda_tangan" id="tanda_tangan_30A"></textarea>
                                     <div style="display:block" id="div_button_30A">
                                         <div class="d-flex justify-content-center">
                                             <button id="cancel_30A" wire:click="cancelEdit30A" type="button"
@@ -528,9 +526,8 @@
                                 <label class="mb-1 text-black mt-2" for="30_tanda_tangan_pejabat">30. TANDA
                                     TANGAN</label><br>
                                 @if ($edit30B == false)
-                                    <img class="image-ttd"
-                                        src="{{ asset('img/ttd/spop/pejabat/' . $spop->{'30_tanda_tangan_pejabat'}) }}"
-                                        width=246 height=164 alt="">
+                                    <img class="image-ttd" src="{{ $spop->{'30_tanda_tangan_pejabat'} }}" width=246
+                                        height=164 alt="">
                                 @endif
                                 @if ($edit30B == false)
                                     <button type="button"wire:click="edit30B"
@@ -545,7 +542,7 @@
                                         <canvas id="signature-pad_30B" class="signature-pad_30B" width=246
                                             height=164></canvas>
                                     </div>
-                                    <textarea wire:model="newTTD30B" name="pejabat_tanda_tangan" id="tanda_tangan_30B"></textarea>
+                                    <textarea hidden wire:model="newTTD30B" name="pejabat_tanda_tangan" id="tanda_tangan_30B"></textarea>
                                     <div style="display:block" id="div_button_30B">
                                         <div class="d-flex justify-content-center">
 
@@ -640,124 +637,133 @@
 
 </div>
 <script>
-    var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        penColor: 'rgb(0, 0, 0)'
+    ttd()
+    document.addEventListener('livewire:load', function() {
+        Livewire.on('dataUpdated', function() {
+            ttd()
+        });
     });
 
-    var cancelButton_28 = document.getElementById('cancel_28');
-    var clearButton_28 = document.getElementById('clear_28');
-    var cancelSimpanButton_28 = document.getElementById('cancel_simpan_28');
+    function ttd() {
+        var signaturePad_28 = new SignaturePad(document.getElementById('signature-pad_28'), {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+            penColor: 'rgb(0, 0, 0)'
+        });
 
-    var canvasPad_28 = document.getElementById('signature-pad_28');
+        var cancelButton_28 = document.getElementById('cancel_28');
+        var clearButton_28 = document.getElementById('clear_28');
+        var cancelSimpanButton_28 = document.getElementById('cancel_simpan_28');
 
-    canvasPad_28.addEventListener('click', function(event) {
-        if (signaturePad_28.isEmpty()) {
-            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
-        } else {
-            var data_28 = signaturePad_28.toDataURL('image/png');
+        var canvasPad_28 = document.getElementById('signature-pad_28');
 
-            var tandaTanganInput_28 = document.getElementById('tanda_tangan_28');
-            tandaTanganInput_28.value = data_28;
+        canvasPad_28.addEventListener('click', function(event) {
+            if (signaturePad_28.isEmpty()) {
+                alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+            } else {
+                var data_28 = signaturePad_28.toDataURL('image/png');
 
-            @this.set('newTTD28', data_28);
-        }
-    });
+                var tandaTanganInput_28 = document.getElementById('tanda_tangan_28');
+                tandaTanganInput_28.value = data_28;
 
-
-    cancelButton_28.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_28.clear();
-        document.getElementById('tanda_tangan_28').value = "";
-
-    });
+                @this.set('newTTD28', data_28);
+            }
+        });
 
 
+        cancelButton_28.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_28.clear();
+            document.getElementById('tanda_tangan_28').value = "";
 
-    clearButton_28.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_28.clear();
-        document.getElementById('tanda_tangan_28').value = "";
-
-    });
-</script>
-<script>
-    var signaturePad_30A = new SignaturePad(document.getElementById('signature-pad_30A'), {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        penColor: 'rgb(0, 0, 0)'
-    });
-    var signaturePad_30B = new SignaturePad(document.getElementById('signature-pad_30B'), {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        penColor: 'rgb(0, 0, 0)'
-    });
-
-    var cancelButton_30A = document.getElementById('cancel_30A');
-    var cancelButton_30B = document.getElementById('cancel_30B');
-
-    var clearButton_30A = document.getElementById('clear_30A');
-    var clearButton_30B = document.getElementById('clear_30B');
+        });
 
 
 
-    var cancelSimpanButton_30A = document.getElementById('cancel_simpan_30A');
-    var cancelSimpanButton_30B = document.getElementById('cancel_simpan_30B');
+        clearButton_28.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_28.clear();
+            document.getElementById('tanda_tangan_28').value = "";
+
+        });
+
+
+        var signaturePad_30A = new SignaturePad(document.getElementById('signature-pad_30A'), {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+            penColor: 'rgb(0, 0, 0)'
+        });
+        var signaturePad_30B = new SignaturePad(document.getElementById('signature-pad_30B'), {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+            penColor: 'rgb(0, 0, 0)'
+        });
+
+        var cancelButton_30A = document.getElementById('cancel_30A');
+        var cancelButton_30B = document.getElementById('cancel_30B');
+
+        var clearButton_30A = document.getElementById('clear_30A');
+        var clearButton_30B = document.getElementById('clear_30B');
 
 
 
-    var canvasPad_30A = document.getElementById('signature-pad_30A');
-    var canvasPad_30B = document.getElementById('signature-pad_30B');
+        var cancelSimpanButton_30A = document.getElementById('cancel_simpan_30A');
+        var cancelSimpanButton_30B = document.getElementById('cancel_simpan_30B');
 
-    canvasPad_30A.addEventListener('click', function(event) {
-        if (signaturePad_30A.isEmpty()) {
-            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
-        } else {
-            var data_30A = signaturePad_30A.toDataURL('image/png');
 
-            var tandaTanganInput_30A = document.getElementById('tanda_tangan_30A');
-            tandaTanganInput_30A.value = data_30A;
 
-            @this.set('newTTD30A', data_30A);
-        }
-    });
+        var canvasPad_30A = document.getElementById('signature-pad_30A');
+        var canvasPad_30B = document.getElementById('signature-pad_30B');
 
-    canvasPad_30B.addEventListener('click', function(event) {
-        if (signaturePad_30B.isEmpty()) {
-            alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
-        } else {
-            var data_30B = signaturePad_30B.toDataURL('image/png');
+        canvasPad_30A.addEventListener('click', function(event) {
+            if (signaturePad_30A.isEmpty()) {
+                alert("Silahkan petugas Tanda tangan terlebih dahulu.");
+            } else {
+                var data_30A = signaturePad_30A.toDataURL('image/png');
 
-            var tandaTanganInput_30B = document.getElementById('tanda_tangan_30B');
-            tandaTanganInput_30B.value = data_30B;
+                var tandaTanganInput_30A = document.getElementById('tanda_tangan_30A');
+                tandaTanganInput_30A.value = data_30A;
 
-            @this.set('newTTD30B', data_30B);
-        }
-    });
+                @this.set('newTTD30A', data_30A);
+            }
+        });
 
-    cancelButton_30A.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_30A.clear();
-        document.getElementById('tanda_tangan_30A').value = "";
+        canvasPad_30B.addEventListener('click', function(event) {
+            if (signaturePad_30B.isEmpty()) {
+                alert("Silahkan pejabat Tanda tangan terlebih dahulu.");
+            } else {
+                var data_30B = signaturePad_30B.toDataURL('image/png');
 
-    });
+                var tandaTanganInput_30B = document.getElementById('tanda_tangan_30B');
+                tandaTanganInput_30B.value = data_30B;
 
-    cancelButton_30B.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_30B.clear();
-        document.getElementById('tanda_tangan_30B').value = "";
-    });
+                @this.set('newTTD30B', data_30B);
+            }
+        });
 
-    clearButton_30A.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_30A.clear();
-        document.getElementById('tanda_tangan_30A').value = "";
+        cancelButton_30A.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_30A.clear();
+            document.getElementById('tanda_tangan_30A').value = "";
 
-    });
+        });
 
-    clearButton_30B.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_30B.clear();
-        document.getElementById('tanda_tangan_30B').value = "";
-    });
+        cancelButton_30B.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_30B.clear();
+            document.getElementById('tanda_tangan_30B').value = "";
+        });
+
+        clearButton_30A.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_30A.clear();
+            document.getElementById('tanda_tangan_30A').value = "";
+
+        });
+
+        clearButton_30B.addEventListener('click', function(event) {
+            event.preventDefault();
+            signaturePad_30B.clear();
+            document.getElementById('tanda_tangan_30B').value = "";
+        });
+    }
 </script>
 
 <script>

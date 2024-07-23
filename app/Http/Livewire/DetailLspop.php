@@ -24,8 +24,8 @@ class DetailLspop extends Component
 
     public function mount($id)
     {
+
         $this->dataId = $id;
-        
     }
 
     public function render()
@@ -38,7 +38,6 @@ class DetailLspop extends Component
 
         $dataTtd56 = $lspop->{"56_tanda_tangan"};
         $dataTtd60 = $lspop->{"60_tanda_tangan"};
-
 
         return view('livewire.detail-lspop', compact('lspop', 'dataTtd56', 'dataTtd60'));
     }
@@ -101,46 +100,29 @@ class DetailLspop extends Component
 
     public function simpan60()
     {
-        // $gambarLama60 = Lspop::find($this->dataId)->getOriginal()['60_tanda_tangan'];
-        // $gambarLama60 = public_path('img/ttd/lspop/pejabat/' . $gambarLama60);
-
         if ($this->newTTD60 != null) {
-            $data_uri_60 = $this->newTTD60;
-            $encoded_image_60 = explode(',', $data_uri_60)[1];
-            $decoded_image_60 = base64_decode($encoded_image_60);
-
-            $directory_60 = public_path('img/ttd/lspop/pejabat');
-            if (!File::isDirectory($directory_60)) {
-                File::makeDirectory($directory_60, 0777, true, true);
-            }
-
-            $image_name_60 = 'ttd_pejabat_lspop_60_' . Str::random(20) . '.png';
-            $image_path_60 = $directory_60 . '/' . $image_name_60;
-            file_put_contents($image_path_60, $decoded_image_60);
-            $this->data['60_tanda_tangan'] = $image_name_60;
-
+            $this->emit('dataUpdated');
             $data = Lspop::find($this->dataId);
+            $this->data['60_tanda_tangan'] = $this->newTTD60;
             $data->update($this->data);
 
             if ($data->save()) {
-                // if (file_exists($gambarLama60)) {
-                //     unlink($gambarLama60);
-                // }
-                $this->alert('success', 'Tanda tangan pejabat berhasil diperbarui');
+                $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
                 $this->edit60 = false;
                 $this->newTTD60 = null;
             } else {
-                $this->alert('error', 'Tanda tangan pejabat gagal diperbarui');
+                $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
             }
         } else {
             $this->edit60 = false;
-            $this->alert('error', 'Tidak ada tanda tangan pejabat yang diupload');
+            $this->alert('error', 'Tidak ada tanda tangan petugas yang diupload');
         }
     }
 
     public function simpan56()
     {
         if ($this->newTTD56 != null) {
+            $this->emit('dataUpdated');
             $data = Lspop::find($this->dataId);
             $this->data['56_tanda_tangan'] = $this->newTTD56;
             $data->update($this->data);
@@ -149,7 +131,6 @@ class DetailLspop extends Component
                 $this->alert('success', 'Tanda tangan pendata berhasil diperbarui');
                 $this->edit56 = false;
                 $this->newTTD56 = null;
-                $this->dispatchBrowserEvent('contentChanged');
             } else {
                 $this->alert('error', 'Tanda tangan pendata gagal diperbarui');
             }
