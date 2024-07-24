@@ -57,8 +57,8 @@
                     </a>
                 </li>
                 <li class="nav-item d-flex align-items-center ">
-                    <a href="{{ route('buat-akun') }}"
-                        class="{{ request()->routeIs('buat-akun') ? 'card-sidebar-active' : '' }}">
+                    <a href="{{ route('data-akun') }}"
+                        class="{{ request()->routeIs('data-akun') ? 'card-sidebar-active' : '' }}">
                         <i class="fa-solid fa-id-card me-2"></i>
                         <p class="text m-0">Data Akun</p>
                     </a>

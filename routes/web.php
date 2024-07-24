@@ -37,6 +37,7 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/profile', fn () => view('pages.profile'))->name('profile');
     Route::get('/buat-akun', fn () => view('pages.buat-akun'))->name('buat-akun');
     Route::get('/ubah-password', fn () => view('pages.ubah-password'))->name('ubah-password');
+    Route::get('/data-akun', fn () => view('pages.data-akun'))->name('data-akun');
 
 
     Route::get('/register', [UserController::class, 'register'])->name('register');

@@ -2,16 +2,15 @@
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
             <div class="col-12 d-flex justify-content-between align-items-center mb-3 flex-wrap">
-                <h3 class="mb-2 mb-lg-0"><b>DATA SPOP</b></h3>
+                <h3 class="mb-2 mb-lg-0"><b>DATA AKUN</b></h3>
 
                 <div class="col-12 col-lg-6 d-flex justify-content-lg-end justify-content-between ">
                     <div class="col-lg-4 col-3 px-lg-1 pe-1">
-                        <select class="w-100 form-select" wire:model="jenisTransaksi" id="jenisTransaksi"
-                            wire:model="jenisTransaksi" name="jenisTransaksi" class="form-select">
-                            <option value="" selected>Semua Jenis</option>
-                            <option value="1">Perekaman Data</option>
-                            <option value="2">Pemutakhiran Data</option>
-                            <option value="3">Penghapusan Data</option>
+                        <select class="w-100 form-select" wire:model="role" id="role"
+                            wire:model="role" name="role" class="form-select">
+                            <option value="" selected>Semua Role</option>
+                            <option value="1">Super Admin</option>
+                            <option value="2">Admin</option>
 
                         </select>
                     </div>
@@ -25,7 +24,7 @@
                         </select>
                     </div>
                     <div class="col-lg-5 col-6 ps-lg-1 ps-1 ">
-                        <input wire:model="search" type="text" class="form-control" placeholder="Cari Data SPOP">
+                        <input wire:model="search" type="text" class="form-control" placeholder="Cari Data Akun">
                     </div>
                 </div>
 
@@ -33,11 +32,8 @@
         </div>
     </div>
 
-
-
-    <div class="div">
-
-        <div class="card card-form ">
+    <div class="card card-form mt-3">
+        <div class="card-body">
             <div class="table-responsive">
                 <div class="table-wrapper table-responsive">
                     <table style="width: 100%" class="table striped-table ">
@@ -47,50 +43,39 @@
                                     No
                                 </th>
                                 <th class="pe-4">
-                                    Jenis Transaksi
+                                    Username
                                 </th>
                                 <th class="pe-4">
-                                    No Formulir
-                                </th>
-                                <th class="pe-5">
-                                    NOP
+                                    Email
                                 </th>
                                 <th class="pe-4">
-                                    Petugas Pendata
+                                    Role
                                 </th>
                                 <th class="pe-4">
-                                    Tanggal Pendata
-                                </th>
-                                <th class="text-center">
                                     Aksi
                                 </th>
+
                             </tr>
                             <!-- end table row-->
                         </thead>
                         <tbody>
-                            @foreach ($spop as $item)
+                            @foreach ($data as $item)
                                 <tr>
-                                    <th>{{ ($spop->currentPage() - 1) * $spop->perPage() + $loop->iteration }}</th>
-                                    <td class="">
-                                        @if ($item->{'1_jenis_transaksi'} == '1')
-                                            <span class="badge text-bg-warning rounded-pill">Perekaman Data</span>
-                                        @elseif($item->{'1_jenis_transaksi'} == '2')
-                                            <span class="badge text-bg-success rounded-pill">Pemutakhiran Data</span>
-                                        @elseif($item->{'1_jenis_transaksi'} == '3')
-                                            <span class="badge text-bg-info rounded-pill">Penghapusan Data</span>
-                                        @endif
+                                    <th>{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</th>
 
-                                    </td>
-                                    <td class="">{{ $item->no_formulir }}</td>
+                                    <td class="">{{ $item->username }}</td>
+                                    <td class="">{{ $item->email }}</td>
                                     <td class="">
-                                        {{ $item->{'2_nop_provinsi'} }}
-                                        {{ $item->{'2_nop_kabupaten'} }}
-                                        {{ $item->{'2_nop_kecamatan'} }} {{ $item->{'2_nop_gampong'} }}
-                                        {{ $item->{'2_nop_blok'} }} {{ $item->{'2_nop_kode'} }}
+                                        @if ($item->role_id == 1)
+                                            Super Admin
+                                        @elseif ($item->role_id == 2)
+                                            Admin
+                                        @endif
                                     </td>
-                                    <td class="">{{ $item->{'31_nama_jelas_petugas'} }}</td>
-                                    <td class="">{{ $item->{'29_tanggal_petugas'} }}</td>
-                                    <td
+                                    <td>
+                                        <button class="btn btn-sm btn-primary rounded-pill">Edit Akun</button>
+                                    </td>
+                                    {{-- <td
                                         class="text-center
                                         d-flex flex-wrap justify-content-center gap-lg-0 gap-1">
                                         @if ($confirmDelete != $item->id)
@@ -108,7 +93,7 @@
                                             <button type="button" wire:click="delete({{ $item->id }})"
                                                 class="btn btn-sm btn-success rounded-pill mx-1">Hapus</button>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
                         </tbody>
@@ -118,10 +103,8 @@
             </div>
 
             <div class="d-flex justify-content-center mt-3">
-                {{ $spop->links() }}
+                {{ $data->links() }}
             </div>
         </div>
-
     </div>
-
 </div>
