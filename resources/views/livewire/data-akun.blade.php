@@ -6,8 +6,8 @@
 
                 <div class="col-12 col-lg-6 d-flex justify-content-lg-end justify-content-between ">
                     <div class="col-lg-4 col-3 px-lg-1 pe-1">
-                        <select class="w-100 form-select" wire:model="role" id="role"
-                            wire:model="role" name="role" class="form-select">
+                        <select class="w-100 form-select" wire:model="role" id="role" wire:model="role" name="role"
+                            class="form-select">
                             <option value="" selected>Semua Role</option>
                             <option value="1">Super Admin</option>
                             <option value="2">Admin</option>
@@ -73,7 +73,10 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary rounded-pill">Edit Akun</button>
+                                        <a href="{{ route('ubah-data-akun', ['id' => $item->id]) }}">
+
+                                            <button class="btn btn-sm btn-primary rounded-pill">Edit Akun</button>
+                                        </a>
                                     </td>
                                     {{-- <td
                                         class="text-center

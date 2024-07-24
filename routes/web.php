@@ -38,6 +38,9 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/buat-akun', fn () => view('pages.buat-akun'))->name('buat-akun');
     Route::get('/ubah-password', fn () => view('pages.ubah-password'))->name('ubah-password');
     Route::get('/data-akun', fn () => view('pages.data-akun'))->name('data-akun');
+    Route::get('/data-akun/{id}/update', fn ($id) => view('pages.ubah-data-akun', ['id' => $id]))->name('ubah-data-akun');
+
+
 
 
     Route::get('/register', [UserController::class, 'register'])->name('register');
