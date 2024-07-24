@@ -14,10 +14,25 @@
             </div>
             <div class="col-lg-7 col-md-7 col-6 d-flex justify-content-end">
 
-                <form action="{{ route('logout') }}" method="post">
+                {{-- <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button class="btn text-end btn-danger">Keluar</button>
-                </form>
+                </form> --}}
+
+                <div class="dropdown">
+                    <button class="btn btn-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        admin
+                    </button>
+                    <ul class="dropdown-menu dropdown-profil">
+                        <li><a class="dropdown-item item-profil" href="#"><i
+                                    class="fa-solid fa-user me-2 fa-sm"></i>Edit
+                                Profil</a>
+                        </li>
+                        <li><a class="dropdown-item item-profil" href="#"><i
+                                    class="fa-solid fa-arrow-right-from-bracket me-2 fa-sm"></i>Keluar</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
