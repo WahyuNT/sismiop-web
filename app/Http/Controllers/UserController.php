@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -19,10 +20,13 @@ class UserController extends Controller
     {
         $token = $request->bearerToken() ?? $request->cookie('token');
         if ($token) {
+
             return redirect()->route('index');
         } else {
             return view('login');
         }
+
+
         return view('login');
     }
 
@@ -47,13 +51,14 @@ class UserController extends Controller
         $data = new User();
         $data->username = $request->input('username');
         $data->email = $request->input('email');
+        $data->role_id = 2;
         $data->password = bcrypt($request->input('password'));
 
         if ($data->save()) {
 
             return redirect('/login')->with('success', 'Registrasi Berhasil, Silahkan Login');
         } else {
-           
+
             return redirect('/register')->with('error', 'Registrasi Gagal');
         }
     }
@@ -77,16 +82,22 @@ class UserController extends Controller
         try {
             // Coba membuat token menggunakan credentials yang diberikan
             if (!$token = JWTAuth::attempt($credentials)) {
+
                 return redirect('/login')->with('error', 'Email dan password tidak sesuai');
             }
         } catch (JWTException $e) {
-           
+
             return redirect('/login')->with('error', 'Silahkan ulang kembali');
         }
 
         // Mengatur cookie dengan token JWT
         $cookie = $this->getCookieWithToken($token);
 
+        if ($cookie) {
+            $user = User::where('username', $request->username)->first();
+            session()->put('user', $user->username);
+            session()->put('role_id', $user->role_id);
+        }
         // Mengembalikan response dengan cookie
         return redirect()->route('index')->withCookie($cookie);
     }

@@ -12,7 +12,7 @@ class AuthenticateWithJWT
     public function handle(Request $request, Closure $next)
     {
         $token = $request->bearerToken() ?? $request->cookie('token');
-
+        
         if (!$token) {
             return redirect('/login');
         }

@@ -18,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
-Route::get('/register', [UserController::class, 'register'])->name('register');
-Route::post('/registerProses', [UserController::class, 'registerProses'])->name('register.proses');
+
 Route::post('/loginStore', [UserController::class, 'loginStore'])->name('login.proses');
 
 Route::prefix('/')->middleware(['auth'])->group(function () {
@@ -35,5 +34,14 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/data-terhapus', [AdminController::class, 'dataTerhapus'])->name('data.terhapus');
     Route::get('/data-terhapus/{id}/detail', [AdminController::class, 'detailTerhapus'])->name('detail.terhapus');
 
+    Route::get('/profile', function () {
+        return view('pages.profile');
+    })->name('profile');
+    Route::get('/buat-akun', function () {
+        return view('pages.buat-akun');
+    })->name('buat-akun');
+
+    Route::get('/register', [UserController::class, 'register'])->name('register');
+    Route::post('/registerProses', [UserController::class, 'registerProses'])->name('register.proses');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });

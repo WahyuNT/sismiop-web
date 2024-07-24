@@ -48,6 +48,16 @@
                 </a>
             </li>
 
+            @if (session()->get('role_id') == '1')
+                <li class="nav-item d-flex align-items-center ">
+                    <a href="{{ route('register') }}"
+                        class="{{ request()->routeIs('register') ? 'card-sidebar-active' : '' }}">
+                        <i class="fa-solid fa-id-card-clip me-2"></i>
+                        <p class="text m-0">Buat Akun</p>
+                    </a>
+                </li>
+            @endif
+
         </ul>
     </nav>
 

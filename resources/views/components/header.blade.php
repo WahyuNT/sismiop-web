@@ -25,13 +25,21 @@
                         admin
                     </button>
                     <ul class="dropdown-menu dropdown-profil">
-                        <li><a class="dropdown-item item-profil" href="#"><i
-                                    class="fa-solid fa-user me-2 fa-sm"></i>Edit
-                                Profil</a>
+                        <li>
+                            <a class="dropdown-item item-profil" href="{{ route('profile') }}">
+                                <i class="fa-solid fa-user me-2 fa-sm"></i>Edit Profil
+                            </a>
                         </li>
-                        <li><a class="dropdown-item item-profil" href="#"><i
-                                    class="fa-solid fa-arrow-right-from-bracket me-2 fa-sm"></i>Keluar</a></li>
+                        <li>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item item-profil">
+                                    <i class="fa-solid fa-arrow-right-from-bracket me-2 fa-sm"></i>Keluar
+                                </button>
+                            </form>
+                        </li>
                     </ul>
+
                 </div>
             </div>
         </div>
