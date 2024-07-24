@@ -34,12 +34,10 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/data-terhapus', [AdminController::class, 'dataTerhapus'])->name('data.terhapus');
     Route::get('/data-terhapus/{id}/detail', [AdminController::class, 'detailTerhapus'])->name('detail.terhapus');
 
-    Route::get('/profile', function () {
-        return view('pages.profile');
-    })->name('profile');
-    Route::get('/buat-akun', function () {
-        return view('pages.buat-akun');
-    })->name('buat-akun');
+    Route::get('/profile', fn () => view('pages.profile'))->name('profile');
+    Route::get('/buat-akun', fn () => view('pages.buat-akun'))->name('buat-akun');
+    Route::get('/ubah-password', fn () => view('pages.ubah-password'))->name('ubah-password');
+
 
     Route::get('/register', [UserController::class, 'register'])->name('register');
     Route::post('/registerProses', [UserController::class, 'registerProses'])->name('register.proses');

@@ -22,12 +22,17 @@
                 <div class="dropdown">
                     <button class="btn btn-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        admin
+                        {{ session()->get('username') }}
                     </button>
                     <ul class="dropdown-menu dropdown-profil">
                         <li>
                             <a class="dropdown-item item-profil" href="{{ route('profile') }}">
                                 <i class="fa-solid fa-user me-2 fa-sm"></i>Edit Profil
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item item-profil" href="{{ route('ubah-password') }}">
+                                <i class="fa-solid fa-key me-2 fa-sm"></i>Ubah Kata Sandi
                             </a>
                         </li>
                         <li>

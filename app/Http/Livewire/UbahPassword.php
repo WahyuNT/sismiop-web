@@ -4,41 +4,40 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class Profile extends Component
+class UbahPassword extends Component
 {
     use LivewireAlert;
+    public $password;
+    public $password_confirm;
 
-    public $dataAkun;
     public $user;
 
     public function mount()
     {
         $this->user = User::where('username', session()->get('username'))->first();
-
-        $this->dataAkun = [
-            'username' => $this->user['username'],
-            'email' => $this->user['email'],
-            
-        ];
     }
+
+    protected $rules = [
+        'password' => 'required',
+        'password_confirm' => 'required|same:password',
+    ];
 
     public function render()
     {
-
-        // dd($this->user['id']);
-        return view('livewire.profile');
+        return view('livewire.ubah-password');
     }
-
     public function update()
     {
+        $this->validate();
         $data = User::find($this->user['id']);
-        $data->update($this->dataAkun);
+        $data->password = bcrypt($this->password);
 
-        if ($data->save()) {
+        if ($data->update()) {
+            $this->reset('password', 'password_confirm');
             $this->alert('success', 'Data berhasil diupdate');
+
         } else {
             $this->alert('error', 'Data gagal diupdate');
         }

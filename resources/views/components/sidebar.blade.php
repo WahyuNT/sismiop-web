@@ -50,10 +50,17 @@
 
             @if (session()->get('role_id') == '1')
                 <li class="nav-item d-flex align-items-center ">
-                    <a href="{{ route('register') }}"
-                        class="{{ request()->routeIs('register') ? 'card-sidebar-active' : '' }}">
+                    <a href="{{ route('buat-akun') }}"
+                        class="{{ request()->routeIs('buat-akun') ? 'card-sidebar-active' : '' }}">
                         <i class="fa-solid fa-id-card-clip me-2"></i>
                         <p class="text m-0">Buat Akun</p>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center ">
+                    <a href="{{ route('buat-akun') }}"
+                        class="{{ request()->routeIs('buat-akun') ? 'card-sidebar-active' : '' }}">
+                        <i class="fa-solid fa-id-card me-2"></i>
+                        <p class="text m-0">Data Akun</p>
                     </a>
                 </li>
             @endif

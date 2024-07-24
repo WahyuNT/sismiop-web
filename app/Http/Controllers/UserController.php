@@ -95,7 +95,7 @@ class UserController extends Controller
 
         if ($cookie) {
             $user = User::where('username', $request->username)->first();
-            session()->put('user', $user->username);
+            session()->put('username', $user->username);
             session()->put('role_id', $user->role_id);
         }
         // Mengembalikan response dengan cookie
