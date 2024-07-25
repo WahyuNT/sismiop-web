@@ -34,13 +34,13 @@
         <!-- ========== form-elements-wrapper start ========== -->
         <div class="card card-form">
             <div class="col-lg-4 col-12 mb-2 px-lg-3 px-1">
-                <label class="text-black fw-bold mb-1" for="no_formulir">No Formulir <span
+                <label class="text-black fw-bold mb-1" for="no_formulir">1. No Formulir <span
                         class="text-danger">*</span></label>
                 <input {{ $disabled }} maxlength="9" wire:model.defer="data.no_formulir" class="form-control"
                     name="no_formulir" id="no_formulir" type="text" placeholder="..." />
             </div>
 
-            <div class="div">
+            {{-- <div class="div">
                 <h6 class="mb-2 px-lg-3 px-1">
                     Jenis Transaksi<span class="text-danger">*</span>
                 </h6>
@@ -75,14 +75,14 @@
                         </label>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="card card-form mt-4">
             <div class="div">
-                <h6 class="mb-2 px-lg-3 px-1">NOP<span class="text-danger">*</span></h6>
+                <h6 class="mb-2 px-lg-3 px-1">2. NOP<span class="text-danger">*</span></h6>
                 <div class="col-12 px-lg-3 px-0">
                     <div class="d-flex flex-wrap">
-                        <div class="col-lg-1 col-6 mb-2 px-lg-3 px-1">
+                        <div class="col-lg-1 col-6 mb-2  px-1">
                             <label class="text-black  mb-1" for="provinsi">PROV.</label>
                             <input {{ $disabled }} maxlength="2" class="form-control"
                                 wire:model.defer="data.2_nop_provinsi" name="2_nop_provinsi" id="provinsi"
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="d-flex flex-wrap px-lg-3 px-0">
-                    <div class="col-lg-6 col-12 mb-2  px-lg-3 px-1 ">
+                    <div class="col-lg-6 col-12 mb-2   px-1 ">
                         <label class="text-black  mb-1" for="3_jumlah_bangunan">3. Jumlah
                             Bangunan</label>
                         <input {{ $disabled }} maxlength="3" class="form-control"

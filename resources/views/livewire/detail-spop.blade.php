@@ -35,12 +35,12 @@
             <div class="form-elements-wrapper">
                 <div class="card card-form">
                     <div class="col-lg-4 col-12 mb-2 px-1">
-                        <label class="text-black text-black fw-bold mb-1" for="no_formulir">No Formulir<span
+                        <label class="text-black text-black fw-bold mb-1" for="no_formulir">1. No Formulir<span
                                 class="text-danger">*</span></label>
                         <input {{ $disabled }} required maxlength="9" wire:model.defer="data.no_formulir"
                             class="form-control" name="no_formulir" id="no_formulir" type="text" placeholder="-" />
                     </div>
-                    <div class="div">
+                    {{-- <div class="div">
                         <h6 class="mb-2 fw-bold text-black">
                             1. Jenis Transaksi<span class="text-danger">*</span>
                         </h6>
@@ -70,7 +70,7 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="card card-form mt-4">
                     <div class="div">

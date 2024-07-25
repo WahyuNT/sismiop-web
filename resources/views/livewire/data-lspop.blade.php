@@ -2,20 +2,28 @@
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
             <div class="col-12 d-flex justify-content-between align-items-center mb-3 flex-wrap">
-                <h3 class="mb-2 mb-lg-0"><b>DATA LSPOP</b></h3>
-
-                <div class="col-12 col-lg-6 d-flex justify-content-lg-end justify-content-between ">
-                    <div class="col-lg-4 col-3 px-lg-1 pe-1">
-                        <select class="w-100 form-select" wire:model="jenisTransaksi" id="jenisTransaksi"
-                            wire:model="jenisTransaksi" name="jenisTransaksi" class="form-select">
-                            <option value="" selected>Semua Jenis</option>
-                            <option value="1">Perekaman Data</option>
-                            <option value="2">Pemutakhiran Data</option>
-                            <option value="3">Penghapusan Data</option>
-
-                        </select>
+                <div class="col">
+                    <h3 class="mb-2 mb-lg-0"><b>DATA LSPOP</b></h3>
+                </div>
+                <div class="col d-flex justify-content-end d-lg-none d-block">
+                    <div class="div">
+                        <a href="{{ route('tambah.lspop') }}">
+                            <button class="btn btn-primary btn-sm rounded-pill ">Tambah Data</button>
+                        </a>
                     </div>
-                    <div class="col-lg-3 col-3 px-lg-1 pe-1 ps-1">
+                </div>
+
+                <div class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
+                    <div class="col-lg-3 col-6 d-lg-block d-none">
+                        <div class="px-lg-1 pe-1 ps-1 d-flex  justify-content-end">
+                            <a href="{{ route('tambah.lspop') }}">
+                                <button class="btn btn-primary btn-sm rounded-pill">Tambah Data</button>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-6 px-lg-1 pe-1 ps-1">
                         <select class="w-100 form-select" wire:model="pagination" id="pagination"
                             wire:model="pagination" name="pagination" class="form-select">
                             <option value="10">10</option>
@@ -28,7 +36,6 @@
                         <input wire:model="search" type="text" class="form-control" placeholder="Cari Data LSPOP">
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

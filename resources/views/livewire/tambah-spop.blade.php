@@ -16,12 +16,12 @@
         <form wire:submit.prevent="simpan">
             <div class="card card-form">
                 <div class="col-lg-4 col-12 mb-2 px-1">
-                    <label class="text-black text-black fw-bold mb-1" for="no_formulir">No Formulir<span
+                    <label class="text-black text-black fw-bold mb-1" for="no_formulir">1. No Formulir<span
                             class="text-danger">*</span></label>
                     <input required maxlength="9" wire:model="data.no_formulir" class="form-control" name="no_formulir"
                         id="no_formulir" type="text" placeholder="..." />
                 </div>
-                <div class="div">
+                {{-- <div class="div">
                     <h6 class="mb-2 fw-bold text-black">
                         1. Jenis Transaksi<span class="text-danger">*</span>
                     </h6>
@@ -49,7 +49,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="card card-form mt-4">
                 <div class="div">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="fw-bold text-lg-center text-start my-3">
+            {{-- <h4 class="fw-bold text-lg-center text-start my-3">
                 A. INFORMASI TAMBAHAN UNTUK DATA BARU
             </h4>
             <div class="card card-form">
@@ -495,7 +495,7 @@
                     <p class="text-lg-center mt-lg-0 mt-2 text-black mb-2"><b><u>Contoh Penggambaran</u></b></p>
                     <img class="w-lg-75 w-100 rounded" src="{{ asset('img/contoh_map.png') }}" alt="">
                 </div>
-            </div>
+            </div> --}}
             <button class="btn btn-primary mt-4  w-lg-25 w-100" type="submit">Simpan Data</button>
 
     </div>
