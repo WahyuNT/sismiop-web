@@ -67,22 +67,14 @@
         }
 
 
-        // function loadSket() {
-        //     var sketbase64 = {!! json_encode($sket64) !!}
-        //     var image = new Image();
-        //     image.onload = function() {
-        //         signaturePad_sket.fromDataURL(sketbase64);
-
-        //     };
-        //     image.src = sketbase64;
-        // }
         function loadSket() {
-            var sketbase64 = {!! json_encode($sket64) !!}; // Mengambil data base64 dari PHP
+            var sketbase64 = {!! json_encode($sket64) !!}
             var image = new Image();
             image.onload = function() {
-                signaturePad_sket.fromDataURL(sketbase64); // Memuat gambar ke signaturePad
+                signaturePad_sket.fromDataURL(sketbase64);
+
             };
-            image.src = sketbase64; // Mengatur src gambar
+            image.src = sketbase64;
         }
 
         batalButton_sket.addEventListener("click", function(event) {
