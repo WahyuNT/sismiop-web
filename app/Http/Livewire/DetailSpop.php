@@ -188,32 +188,16 @@ class DetailSpop extends Component
 
     public function simpanSket()
     {
-        $gambarLamasket = Spop::find($this->dataId)->getOriginal()['sket_tanda_tangan'];
-        $gambarLamasket = public_path('img/sket/' . $gambarLamasket);
+
 
         if ($this->newsket != null) {
-            $data_uri_sket = $this->newsket;
-            $encoded_image_sket = explode(',', $data_uri_sket)[1];
-            $decoded_image_sket = base64_decode($encoded_image_sket);
-
-            $directory_sket = public_path('img/sket');
-            if (!File::isDirectory($directory_sket)) {
-                File::makeDirectory($directory_sket, 0777, true, true);
-            }
-
-            $image_name_sket = 'sketsa_' . Str::random(20) . '.png';
-            $image_path_sket = $directory_sket . '/' . $image_name_sket;
-            file_put_contents($image_path_sket, $decoded_image_sket);
-            $this->data['sket_tanda_tangan'] = $image_name_sket;
-            $this->data['sket_base64'] = $data_uri_sket;
+            $this->data['sket_base64'] = $this->newsket;
 
             $data = Spop::find($this->dataId);
             $data->update($this->data);
 
             if ($data->save()) {
-                if (file_exists($gambarLamasket)) {
-                    unlink($gambarLamasket);
-                }
+    
                 $this->alert('success', 'Sket berhasil diperbarui');
                 $this->editsket = false;
                 $this->newsket = null;

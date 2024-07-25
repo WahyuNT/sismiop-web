@@ -76,23 +76,10 @@ class DataLspop extends Component
     {
         $lspop = Lspop::find($id);
         $lspopArray = $lspop->toArray();
-        // if ($lspop->delete()) {
-        //     $gambarLama60 = $lspopArray['60_tanda_tangan'];
-        //     $gambarLama60 = public_path('img/ttd/lspop/pejabat/' . $gambarLama60);
-
-        //     $gambarLama56 = $lspopArray['56_tanda_tangan'];
-        //     $gambarLama56 = public_path('img/ttd/lspop/pendata/' . $gambarLama56);
-
-        //     if (file_exists($gambarLama60)) {
-        //         unlink($gambarLama60);
-        //     }
-        //     if (file_exists($gambarLama56)) {
-        //         unlink($gambarLama56);
-        //     }
-
-        //     $this->alert('success', 'Data berhasil dihapus');
-        // } else {
-        //     $this->alert('error', 'Data gagal dihapus');
-        // }
+        if ($lspop->delete()) {
+            $this->alert('success', 'Data berhasil dihapus');
+        } else {
+            $this->alert('error', 'Data gagal dihapus');
+        }
     }
 }

@@ -67,36 +67,11 @@ class DataSpop extends Component
     {
         $spop = Spop::find($id);
         $spopArray = $spop->toArray();
-        // if ($spop->delete()) {
-        //     $gambarLama28 = $spopArray['28_tanda_tangan'];
-        //     $gambarLama28 = public_path('img/ttd/spop/pernyataan/' . $gambarLama28);
-
-        //     $gambarLama30A = $spopArray['30_tanda_tangan_petugas'];
-        //     $gambarLama30A = public_path('img/ttd/spop/petugas/' . $gambarLama30A);
-
-        //     $gambarLama30B = $spopArray['30_tanda_tangan_pejabat'];
-        //     $gambarLama30B = public_path('img/ttd/spop/pejabat/' . $gambarLama30B);
-
-        //     $gambarLamasket = $spopArray['sket_tanda_tangan'];
-        //     $gambarLamasket = public_path('img/sket/' . $gambarLamasket);
-
-        //     if (file_exists($gambarLama28)) {
-        //         unlink($gambarLama28);
-        //     }
-        //     if (file_exists($gambarLama30A)) {
-        //         unlink($gambarLama30A);
-        //     }
-        //     if (file_exists($gambarLama30B)) {
-        //         unlink($gambarLama30B);
-        //     }
-        //     if (file_exists($gambarLamasket)) {
-        //         unlink($gambarLamasket);
-        //     }
-
-        //     $this->alert('success', 'Data berhasil dihapus');
-        // } else {
-        //     $this->alert('error', 'Data gagal dihapus');
-        // }
+        if ($spop->delete()) {
+            $this->alert('success', 'Data berhasil dihapus');
+        } else {
+            $this->alert('error', 'Data gagal dihapus');
+        }
     }
 
     public function confirmDelete($id)
