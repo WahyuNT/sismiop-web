@@ -43,7 +43,7 @@
                             <div class="d-flex flex-wrap align-items-center">
                                 <button class="btn btn-primary me-2" wire:click="back"><i
                                         class="fa-solid fa-arrow-left"></i></button>
-                                <h3><b>Data LSPOP</b></h3>
+                                <h3><b>Data LSPOP Terhapus</b></h3>
                             </div>
                         </div>
                         <div class="col-6 d-flex justify-content-end">
@@ -139,7 +139,7 @@
                             <div class="d-flex flex-wrap align-items-center">
                                 <button class="btn btn-primary me-2" wire:click="back"><i
                                         class="fa-solid fa-arrow-left"></i></button>
-                                <h3><b>Data SPOP</b></h3>
+                                <h3><b>Data SPOP Terhapus</b></h3>
                             </div>
                         </div>
                         <div class="col-6 d-flex justify-content-end">

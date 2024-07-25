@@ -13,7 +13,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
+                <div
+                    class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
                     <div class="col-lg-3 col-6 d-lg-block d-none">
                         <div class="px-lg-1 pe-1 ps-1 d-flex  justify-content-end">
                             <a href="{{ route('tambah.spop') }}">
@@ -54,9 +55,6 @@
                                     No
                                 </th>
                                 <th class="pe-4">
-                                    Jenis Transaksi
-                                </th>
-                                <th class="pe-4">
                                     No Formulir
                                 </th>
                                 <th class="pe-5">
@@ -78,16 +76,7 @@
                             @foreach ($spop as $item)
                                 <tr>
                                     <th>{{ ($spop->currentPage() - 1) * $spop->perPage() + $loop->iteration }}</th>
-                                    <td class="">
-                                        @if ($item->{'1_jenis_transaksi'} == '1')
-                                            <span class="badge text-bg-warning rounded-pill">Perekaman Data</span>
-                                        @elseif($item->{'1_jenis_transaksi'} == '2')
-                                            <span class="badge text-bg-success rounded-pill">Pemutakhiran Data</span>
-                                        @elseif($item->{'1_jenis_transaksi'} == '3')
-                                            <span class="badge text-bg-info rounded-pill">Penghapusan Data</span>
-                                        @endif
 
-                                    </td>
                                     <td class="">{{ $item->no_formulir }}</td>
                                     <td class="">
                                         {{ $item->{'2_nop_provinsi'} }}
@@ -95,7 +84,7 @@
                                         {{ $item->{'2_nop_kecamatan'} }} {{ $item->{'2_nop_gampong'} }}
                                         {{ $item->{'2_nop_blok'} }} {{ $item->{'2_nop_kode'} }}
                                     </td>
-                                    <td class="">{{ $item->{'31_nama_jelas_petugas'} }}</td>
+                                    <td class="">{{ $item->user->username }}</td>
                                     <td class="">{{ $item->{'29_tanggal_petugas'} }}</td>
                                     <td
                                         class="text-center
@@ -110,10 +99,19 @@
                                                     class="btn btn-sm btn-danger rounded-pill mx-1">Hapus</button>
                                             </div>
                                         @else
-                                            <button type="button" wire:click="batalDelete"
-                                                class="btn btn-sm btn-danger rounded-pill mx-1">Batal</button>
-                                            <button type="button" wire:click="delete({{ $item->id }})"
-                                                class="btn btn-sm btn-success rounded-pill mx-1">Hapus</button>
+                                            <div class="d-flex flex-column">
+
+                                                <small>Apa anda yakin ?</small>
+                                                <div class="d-flex justify-content-center gap-2 mt-1">
+                                                    <div class="d-flex">
+
+                                                        <button type="button" wire:click="batalDelete"
+                                                            class="btn btn-sm btn-danger rounded-pill mx-1">Batal</button>
+                                                        <button type="button" wire:click="delete({{ $item->id }})"
+                                                            class="btn btn-sm btn-success rounded-pill mx-1">Hapus</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endif
                                     </td>
                                 </tr>
