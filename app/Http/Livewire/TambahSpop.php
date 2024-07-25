@@ -25,7 +25,7 @@ class TambahSpop extends Component
         $user = JWTAuth::toUser(JWTAuth::getToken());
 
         $this->data['status'] = 'aktif';
-        $this->data['31_nama_jelas_petugas'] = $user->id;
+        $this->data['user_id'] = $user->id;
         $data = Spop::create($this->data);
         if ($data) {
             $this->nullData();

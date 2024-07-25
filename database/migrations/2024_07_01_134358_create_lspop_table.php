@@ -98,9 +98,10 @@ return new class extends Migration
             $table->string('57_nama_jelas', 50)->nullable();
             $table->string('58_nip', 50)->nullable();
             $table->date('59_tanggal_penelitian')->nullable();
-            $table->longText('60_tanda_tangan')->nullable();  
+            $table->longText('60_tanda_tangan')->nullable();
             $table->string('61_nama_jelas', 50)->nullable();
             $table->string('62_nip', 50)->nullable();
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
 
             $table->timestamps();
         });

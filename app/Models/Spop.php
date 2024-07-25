@@ -13,6 +13,6 @@ class Spop extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, '31_nama_jelas_petugas');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

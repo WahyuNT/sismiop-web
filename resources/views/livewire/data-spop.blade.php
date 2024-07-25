@@ -61,7 +61,7 @@
                                     NOP
                                 </th>
                                 <th class="pe-4">
-                                    Petugas Pendata
+                                    User
                                 </th>
                                 <th class="pe-4">
                                     Tanggal Pendata

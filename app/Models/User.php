@@ -64,4 +64,12 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(Role::class);
     }
+    public function spop()
+    {
+        return $this->hasMany(Spop::class);
+    }
+    public function lspop()
+    {
+        return $this->hasMany(Lspop::class);
+    }
 }

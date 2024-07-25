@@ -96,16 +96,13 @@
                                         No
                                     </th>
                                     <th class="pe-4">
-                                        Jenis Transaksi
-                                    </th>
-                                    <th class="pe-4">
                                         No Formulir
                                     </th>
                                     <th class="pe-5">
                                         NOP
                                     </th>
                                     <th class="pe-4">
-                                        Petugas Pendata
+                                        User
                                     </th>
                                     <th class="pe-4">
                                         Tanggal Pendata
@@ -121,19 +118,7 @@
                                     <tr>
                                         <th>{{ ($lspop->currentPage() - 1) * $lspop->perPage() + $loop->iteration }}
                                         </th>
-                                        <td class="">
-                                            @if ($item->{'1_jenis_transaksi'} == '1')
-                                                <span class="badge text-bg-warning rounded-pill">Perekaman Data</span>
-                                            @elseif($item->{'1_jenis_transaksi'} == '2')
-                                                <span class="badge text-bg-success rounded-pill">Pemutakhiran
-                                                    Data</span>
-                                            @elseif($item->{'1_jenis_transaksi'} == '3')
-                                                <span class="badge text-bg-danger rounded-pill">Penghapusan Data</span>
-                                            @elseif($item->{'1_jenis_transaksi'} == '4')
-                                                <span class="badge text-bg-info rounded-pill">Penilaian Individu</span>
-                                            @endif
 
-                                        </td>
                                         <td class="">{{ $item->no_formulir }}</td>
                                         <td class="">
                                             {{ $item->{'2_nop_provinsi'} }}
@@ -141,7 +126,7 @@
                                             {{ $item->{'2_nop_kecamatan'} }} {{ $item->{'2_nop_gampong'} }}
                                             {{ $item->{'2_nop_blok'} }} {{ $item->{'2_nop_kode'} }}
                                         </td>
-                                        <td class="">{{ $item->{'57_nama_jelas'} }}</td>
+                                        <td class="">{{ $item->user->username }}</td>
                                         <td class="">{{ $item->{'55_tanggal_pendataan'} }}</td>
                                         <td
                                             class="text-center
