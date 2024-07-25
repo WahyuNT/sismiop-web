@@ -39,19 +39,19 @@
                     <table style="width: 100%" class="table striped-table ">
                         <thead>
                             <tr>
-                                <th class="pe-2">
+                                <th class="text-center pe-2">
                                     No
                                 </th>
-                                <th class="pe-4">
+                                <th class="text-center pe-4">
                                     Username
                                 </th>
-                                <th class="pe-4">
+                                <th class="text-center pe-4">
                                     Email
                                 </th>
-                                <th class="pe-4">
+                                <th class="text-center pe-4">
                                     Role
                                 </th>
-                                <th class="pe-4">
+                                <th class="text-center pe-4">
                                     Aksi
                                 </th>
 
@@ -63,20 +63,46 @@
                                 <tr>
                                     <th>{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</th>
 
-                                    <td class="">{{ $item->username }}</td>
-                                    <td class="">{{ $item->email }}</td>
-                                    <td class="">
+                                    <td class=" text-start">{{ $item->username }}</td>
+                                    <td class=" text-center">{{ $item->email }}</td>
+                                    <td class=" text-center">
                                         @if ($item->role_id == 1)
                                             Super Admin
                                         @elseif ($item->role_id == 2)
                                             Admin
                                         @endif
                                     </td>
-                                    <td>
-                                        <a href="{{ route('ubah-data-akun', ['id' => $item->id]) }}">
+                                    <td class="d-flex justify-content-center gap-2 flex-wrap">
+                                        @if ($confirmDelete != $item->id)
+                                            <a href="{{ route('ubah-data-akun', ['id' => $item->id]) }}">
+                                                <button class="btn btn-sm btn-primary rounded-pill">Edit Akun</button>
+                                            </a>
+                                            @if ($item->status == 'aktif')
+                                                <div class="div">
+                                                    <button type="button" wire:click="tangguhkan({{ $item->id }})"
+                                                        class="btn btn-sm btn-warning rounded-pill">Tangguhkan</button>
+                                                </div>
+                                            @elseif($item->status == 'tidak_aktif')
+                                                <div class="div">
+                                                    <button type="button" wire:click="aktifkan({{ $item->id }})"
+                                                        class="btn btn-sm btn-success rounded-pill">Aktifkan</button>
+                                                </div>
+                                            @endif
+                                            <button wire:click="confirmDelete({{ $item->id }})"
+                                                class="btn btn-sm btn-danger rounded-pill"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        @else
+                                            <div class="d-flex flex-column">
+                                                <small>Apa anda yakin menghapus?</small>
+                                                <div class="d-flex justify-content-center gap-2 mt-1 flex-wrap">
+                                                    <button wire:click="delete({{ $item->id }})"
+                                                        class="btn btn-sm btn-danger rounded-pill">Delete</button>
+                                                    <button wire:click="batalDelete"
+                                                        class="btn btn-sm btn-success rounded-pill">Batal</button>
+                                                </div>
+                                            </div>
+                                        @endif
 
-                                            <button class="btn btn-sm btn-primary rounded-pill">Edit Akun</button>
-                                        </a>
                                     </td>
                                     {{-- <td
                                         class="text-center

@@ -12,25 +12,37 @@ class BuatAkun extends Component
     public $dataAkun = [];
 
 
+    protected $rules = [
+        'dataAkun.username' => 'required|unique:users,username',
+        'dataAkun.email' => 'email|unique:users,email',
+        'dataAkun.role_id' => 'required',
+    ];
+    protected $messages = [
+        'dataAkun.email.email' => 'Email harus berupa alamat email yang valid.',
+        'dataAkun.email.unique' => 'Email sudah ada.',
+        'dataAkun.username.unique' => 'Username sudah ada.',
+        'dataAkun.username.required' => 'Username harus di isi.',
+        'dataAkun.role_id.required' => 'Role harus di isi.',
+
+    ];
+
     public function render()
     {
         return view('livewire.buat-akun');
     }
     public function simpan()
     {
-        $data = User::create($this->dataAkun);
 
-        $data = new User();
-        $data->username = $this->dataAkun['username'];
-        $data->email = $this->dataAkun['email'];
-        $data->role_id = $this->dataAkun['role_id'];
-        $data->password = bcrypt($this->dataAkun['password']);
+        $this->validate();
+        $data = $this->dataAkun;
+        $data['password'] = bcrypt($data['password']);
 
-        if ($data) {
+        $createdUser = User::create($data);
 
-            $this->alert('success', 'Akun berhasil di buat');
+        if ($createdUser) {
+            $this->alert('success', 'Akun berhasil dibuat');
         } else {
-            $this->alert('error', 'Akun gagal di buat');
+            $this->alert('error', 'Akun gagal dibuat');
         }
 
         $this->reset('dataAkun');

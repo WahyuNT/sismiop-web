@@ -43,7 +43,7 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/register', [UserController::class, 'register'])->name('register');
+    // Route::get('/register', [UserController::class, 'register'])->name('register');
     Route::post('/registerProses', [UserController::class, 'registerProses'])->name('register.proses');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });

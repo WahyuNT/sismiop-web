@@ -12,6 +12,8 @@ class UbahDataAkun extends Component
     public $dataAkun = [];
     public $userId;
 
+
+
     public function mount($id)
     {
         $this->userId = $id;
@@ -30,6 +32,7 @@ class UbahDataAkun extends Component
 
     public function update()
     {
+      
         $data = User::find($this->userId);
         $data->update($this->dataAkun);
 
