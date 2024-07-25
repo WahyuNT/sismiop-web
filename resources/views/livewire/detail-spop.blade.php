@@ -111,8 +111,8 @@
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.2_no_urut" name="2_no_urut" id="No.Urut"
-                                        type="text" placeholder="-" />
+                                        wire:model.defer="data.2_no_urut" name="2_no_urut" id="No.Urut" type="text"
+                                        placeholder="-" />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
                                     <label class="text-black mb-1" for="Kode">KODE</label>
@@ -577,32 +577,17 @@
                 <u>SKET / DENAH LOKASI OBJEK PAJAK</u>
             </h4>
             @if ($editsket == false)
-                <img class="image-ttd card " src="{{ asset('img/sket/' . $spop->{'sket_tanda_tangan'}) }}" width=1000
-                    height=500 alt="">
+                <img class="image-ttd card" src="{{ $spop->{'sket_tanda_tangan'} }}" width=1080 height=500
+                    alt="">
                 <div class="d-flex justify-content-center">
-
-                    <button type="button"wire:click="editsket" class="btn rounded-pill mt-3 btn-warning py-1"><i
-                            class="fa-solid fa-pencil me-2"></i>Edit Denah</button>
+                    <a target="_blank" href="{{ route('edit.sket', ['id' => $spop->id]) }}">
+                        <button type="button" class="btn rounded-pill mt-3 btn-warning py-1"><i
+                                class="fa-solid fa-pencil me-2"></i>Edit Denah</button>
+                    </a>
                 </div>
             @endif
 
-            <div class="card " style="{{ $editsket ? 'display: block' : 'display: none' }}">
-                <div class="wrapper-sign border-0 table-responsive  mt-lg-1" id="tempatTTD" style="display: block">
-                    <canvas id="signature-pad_sket" class="signature-pad_sket sket-denah" width=1080
-                        height=500></canvas>
-                </div>
-                <div class="d-flex justify-content-center flex-wrap gap-2">
-                    <button wire:click="cancelEditSket" type="button"
-                        class="btn rounded-pill btn-primary py-0 mb-2 mt-1" id="batal_sket">Batal</button>
-                    <button type="button" class="btn rounded-pill btn-warning py-0 mb-2 mt-1"
-                        id="undo_sket">Undo</button>
-                    <button type="button" class="btn rounded-pill btn-danger py-0 mb-2 mt-1"
-                        id="clear_sket">Clear</button>
-                    <button type="button" wire:click="simpanSket"
-                        class="btn rounded-pill btn-success py-0 mb-2 mt-1" id="">Simpan</button>
-                </div>
-                <textarea hidden wire:model="newsket" name="sket_tanda_tangan" id="tanda_tangan_sket"></textarea>
-            </div>
+
             <div class="d-flex flex-wrap mt-2">
                 <div class="col-lg-6 col-12">
                     <p class="mb-2 text-black text-lg-start text-center"><b><i><u>KETERANGAN</u></i></b></p>
@@ -764,68 +749,4 @@
             document.getElementById('tanda_tangan_30B').value = "";
         });
     }
-</script>
-
-<script>
-    var signaturePad_sket = new SignaturePad(document.getElementById('signature-pad_sket'), {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        penColor: 'rgb(0, 0, 0)'
-    });
-
-
-    loadSket()
-
-    var batalButton_sket = document.getElementById('batal_sket');
-    var undoButton_sket = document.getElementById('undo_sket');
-    var redoButton_sket = document.getElementById('redo_sket');
-    var clearButton_sket = document.getElementById('clear_sket');
-    var canvasPad_sket = document.getElementById('signature-pad_sket');
-
-    canvasPad_sket.addEventListener('click', function(event) {
-        if (signaturePad_sket.isEmpty()) {
-            alert("Silahkan petugas Tanda tangan terlebih dahulu.");
-        } else {
-            storeSket()
-        }
-    });
-
-
-    clearButton_sket.addEventListener('click', function(event) {
-        event.preventDefault();
-        signaturePad_sket.clear();
-        document.getElementById('tanda_tangan_sket').value = "";
-    });
-
-    undoButton_sket.addEventListener("click", function(event) {
-        var data = signaturePad_sket.toData();
-        if (data) {
-            data.pop(); // remove the last dot or line
-            signaturePad_sket.fromData(data);
-            storeSket()
-        }
-    });
-
-    function storeSket() {
-        var data_sket = signaturePad_sket.toDataURL('image/png');
-        var tandaTanganInput_sket = document.getElementById('tanda_tangan_sket');
-        tandaTanganInput_sket.value = data_sket;
-
-        @this.set('newsket', data_sket);
-    }
-
-    function loadSket() {
-        var sketbase64 = {!! json_encode($sket64) !!}
-        var image = new Image();
-        image.onload = function() {
-            signaturePad_sket.fromDataURL(sketbase64);
-        };
-        image.src = sketbase64;
-    }
-
-    batalButton_sket.addEventListener("click", function(event) {
-        event.preventDefault();
-        signaturePad_sket.clear();
-        document.getElementById('tanda_tangan_sket').value = "";
-        loadSket()
-    });
 </script>

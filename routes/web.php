@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,8 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/data-akun/{id}/update', fn ($id) => view('pages.ubah-data-akun', ['id' => $id]))->name('ubah-data-akun');
 
 
+    Route::get('/sket/{id}/edit', [SketController::class, 'show'])->name('edit.sket');
+    Route::post('/sket/store', [SketController::class, 'store'])->name('store.sket');
 
 
     // Route::get('/register', [UserController::class, 'register'])->name('register');

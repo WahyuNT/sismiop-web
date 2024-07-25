@@ -40,7 +40,7 @@ class DetailSpop extends Component
         $disabled = $this->disabled;
         $isEdit = $this->isEdit;
 
-        $sket64 = $spop->sket_base64;
+        $sket64 = $spop->sket_tanda_tangan;
 
         return view('livewire.detail-spop', compact('spopArray', 'spop', 'placeholder', 'disabled', 'isEdit', 'sket64'));
     }
@@ -191,7 +191,7 @@ class DetailSpop extends Component
 
 
         if ($this->newsket != null) {
-            $this->data['sket_base64'] = $this->newsket;
+            $this->data['sket_tanda_tangan'] = $this->newsket;
 
             $data = Spop::find($this->dataId);
             $data->update($this->data);

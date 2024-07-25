@@ -64,8 +64,7 @@ return new class extends Migration {
             $table->string('30_tanda_tangan_pejabat', 50)->nullable();
             $table->string('31_nama_jelas_pejabat', 50)->nullable();
             $table->string('32_nip_pejabat', 50)->nullable();
-            $table->string('sket_tanda_tangan', 255)->nullable();
-            $table->longText('sket_base64')->nullable();
+            $table->longText('sket_tanda_tangan')->nullable();
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
             $table->timestamps();
         });
