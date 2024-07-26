@@ -26,6 +26,14 @@
                     <p class="text m-0">Data LSPOP</p>
                 </a>
             </li>
+            <li class="nav-item d-flex align-items-center ">
+
+                <a href="{{ route('data.lspop') }}"
+                    class="{{ request()->routeIs('data.lspop') ? 'card-sidebar-active' : '' }}">
+                    <i class="fa-solid fa-newspaper me-2"></i>
+                    <p class="text m-0">Berita</p>
+                </a>
+            </li>
             {{-- <li class="nav-item d-flex align-items-center">
                 <a href="{{ route('tambah.spop') }}"
                     class="{{ request()->routeIs('tambah.spop') ? 'card-sidebar-active' : '' }}">

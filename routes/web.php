@@ -27,6 +27,8 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/data-spop', [AdminController::class, 'dataSpop'])->name('data.spop');
     Route::get('/data-spop/{id}/detail', [AdminController::class, 'detailSpop'])->name('detail.spop');
     Route::get('/tambah-spop', [AdminController::class, 'tambahSpop'])->name('tambah.spop');
+    
+    Route::get('/berita', [AdminController::class, 'berita'])->name('berita.index');
 
     Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
     Route::get('/data-lspop/{id}/detail', [AdminController::class, 'detailLspop'])->name('detail.lspop');
