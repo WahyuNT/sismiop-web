@@ -17,8 +17,8 @@
                     class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
                     <div class="col-lg-3 col-6 d-lg-block d-none">
                         <div class="px-lg-1 pe-1 ps-1 d-flex  justify-content-end">
-                            <a href="{{ route('tambah.spop') }}">
-                                <button class="btn btn-primary btn-sm rounded-pill">Tambah Data</button>
+                            <a href="{{ route('berita.tambah') }}">
+                                <button class="btn btn-primary btn-sm rounded-pill">Tambah Berita</button>
                             </a>
                         </div>
                     </div>
@@ -74,21 +74,24 @@
                                 <tr>
                                     <th>{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</th>
 
-                                    <td class="">{{ $item->gambar }}</td>
+                                    <td class=""><img height="50px"
+                                            src="{{ asset('img/berita/' . $item->nama_gambar) }}" alt=""></td>
                                     <td class="">{{ $item->judul }}</td>
                                     <td class="">
                                         @if ($item->status == 'tidak_aktif')
-                                            <span wire:click="aktifkan({{$item->id}})" class="btn badge rounded-pill btn-success">Aktifkan</span>
+                                            <span wire:click="aktifkan({{ $item->id }})"
+                                                class="btn badge rounded-pill btn-success">Aktifkan</span>
                                         @else
-                                            <span wire:click="nonaktifkan({{$item->id}})" class="btn badge rounded-pill bg-danger">Nonaktifkan</span>
+                                            <span wire:click="nonaktifkan({{ $item->id }})"
+                                                class="btn badge rounded-pill bg-danger">Nonaktifkan</span>
                                         @endif
                                     </td>
-                   
+
                                     <td
                                         class="text-center
                                         d-flex flex-wrap justify-content-center gap-lg-0 gap-1">
                                         @if ($confirmDelete != $item->id)
-                                            <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
+                                            <a href="#">
                                                 <button class="btn btn-sm btn-primary rounded-pill mx-1">Edit</button>
                                             </a>
                                             <div class="div">

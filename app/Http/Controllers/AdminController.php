@@ -67,7 +67,5 @@ class AdminController extends Controller
         Lspop::find($id)->first();
         return view('pages.data-terhapus');
     }
-    public function berita(){
-        return view('pages.berita');
-    }
+
 }
