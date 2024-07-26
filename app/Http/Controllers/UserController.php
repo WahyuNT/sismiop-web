@@ -93,11 +93,6 @@ class UserController extends Controller
         // Mengatur cookie dengan token JWT
         $cookie = $this->getCookieWithToken($token);
 
-        if ($cookie) {
-            $user = User::where('username', $request->username)->first();
-            session()->put('username', $user->username);
-            session()->put('role_id', $user->role_id);
-        }
         // Mengembalikan response dengan cookie
         return redirect()->route('index')->withCookie($cookie);
     }

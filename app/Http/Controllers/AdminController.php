@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Lspop;
 use App\Models\Spop;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
+        $user = JWTAuth::toUser(JWTAuth::getToken());
+        
+        return view('pages.index', compact('user'));
     }
 
     public function dataSpop()
