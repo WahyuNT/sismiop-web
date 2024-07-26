@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Dati2;
+use App\Models\Kecamatan;
 use App\Models\Lspop;
+use App\Models\Provinsi;
 use App\Models\Spop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -18,9 +21,21 @@ class TambahLspop extends Component
 
     public $data = [];
 
+
     public function render()
     {
-        return view('livewire.tambah-lspop');
+        $provinsi = Provinsi::all();
+        $kecamatan = Kecamatan::all();
+        $dati2 = Dati2::all();
+        $nourut = Lspop::latest()->first();
+        $nourut = intval($nourut->{'2_nop_no_urut'}) + 1;
+
+        $this->data = [
+            '2_nop_no_urut' => $nourut,
+            '2_nop_provinsi' => '83',
+        ];
+
+        return view('livewire.tambah-lspop', compact('provinsi', 'kecamatan', 'dati2', 'nourut'));
     }
 
     public function simpan()

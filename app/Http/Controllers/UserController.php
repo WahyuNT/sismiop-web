@@ -107,9 +107,6 @@ class UserController extends Controller
         // Menghapus token dari cookie
         $cookie = Cookie::forget('token');
 
-        // Logika tambahan untuk logout (misalnya, menghapus sesi)
-
-        // Mengembalikan respons dengan cookie yang dihapus
         return redirect('/login')->withCookie($cookie);
     }
 

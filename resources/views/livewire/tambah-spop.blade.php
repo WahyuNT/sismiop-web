@@ -18,8 +18,8 @@
                 <div class="col-lg-4 col-12 mb-2 px-1">
                     <label class="text-black text-black fw-bold mb-1" for="no_formulir">1. No Formulir<span
                             class="text-danger">*</span></label>
-                    <input required maxlength="9" wire:model="data.no_formulir" class="form-control" name="no_formulir"
-                        id="no_formulir" type="text" placeholder="..." />
+                    <input required maxlength="9" wire:model.defer="data.no_formulir" class="form-control"
+                        name="no_formulir" id="no_formulir" type="text" placeholder="..." />
                 </div>
                 {{-- <div class="div">
                     <h6 class="mb-2 fw-bold text-black">
@@ -56,45 +56,66 @@
                     <h6 class="mb-2 fw-bold text-black">2. NOP <span class="text-danger">*</span></h6>
                     <div class="col-12">
 
-                        <div class="d-flex flex-wrap px-lg-3 px-0">
-                            <div class="col-lg-1 col-6 mb-2 pe-1">
-                                <label class="text-black mb-1" for="provinsi">PROV.</label>
-                                <input maxlength="2" class="form-control" wire:model="data.2_nop_provinsi"
-                                    name="2_nop_provinsi" id="provinsi" type="text" placeholder=".." />
+                        <div class="d-flex flex-wrap">
+                            <div class="col-lg-1 col-6 mb-2  px-1">
+                                <label class="text-black  mb-1" for="provinsi">PROV.</label>
+
+                                <select required disabled wire:model.defer="data.2_nop_provinsi"
+                                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option value="" selected>Pilih Prov</option>
+                                    @foreach ($provinsi as $item)
+                                        <option value="{{ $item->id }}">{{ $item->id }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="col-lg-2 col-6 mb-2 px-1">
-                                <label class="text-black mb-1" for="Kabupaten">KAB.</label>
-                                <input maxlength="2" class="form-control" wire:model="data.2_nop_kabupaten"
-                                    name="2_nop_kabupaten" id="Kabupaten" type="text" placeholder="..." />
+                            <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                <label class="text-black  mb-1" for="2_nop_kabupaten">KAB.</label>
+                                <input required maxlength="2" class="form-control"
+                                    wire:model.defer="data.2_nop_kabupaten" name="2_nop_kabupaten" id="2_nop_kabupaten"
+                                    type="text" placeholder="..." />
                             </div>
-                            <div class="col-lg-2 col-6 mb-2 px-1">
-                                <label class="text-black mb-1" for="Kecamatan">KEC.</label>
-                                <input maxlength="3" class="form-control" wire:model="data.2_nop_kecamatan"
-                                    name="2_nop_kecamatan" id="Kecamatan" type="text" placeholder="." />
+                            <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                <label class="text-black  mb-1" for="2_nop_kecamatan">KEC.</label>
+                                <select required wire:model.defer="data.2_nop_kecamatan"
+                                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option value="" selected>Pilih Kec</option>
+                                    @foreach ($kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{ $item->NM_KECAMATAN }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="col-lg-2 col-6 mb-2 px-1">
-                                <label class="text-black mb-1" for="Gampong">GAMPONG</label>
-                                <input maxlength="3" class="form-control" wire:model="data.2_nop_gampong"
-                                    name="2_nop_gampong" id="Gampong" type="text" placeholder="..." />
+                            <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                <label class="text-black  mb-1" for="2_nop_gampong">GAMPONG</label>
+
+                                <select required wire:model.defer="data.2_nop_gampong"
+                                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option value="" selected>Silahkan Pilih</option>
+                                    @foreach ($dati2 as $item)
+                                        <option value="{{ $item->id }}">{{ $item->NM_DATI2 }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="col-lg-2 col-6 mb-2 px-1">
-                                <label class="text-black mb-1" for="Blok">BLOK</label>
-                                <input maxlength="4" class="form-control" wire:model="data.2_nop_blok"
-                                    name="2_nop_blok" id="Blok" type="text" placeholder="..." />
+                            <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                <label class="text-black  mb-1" for="2_nop_blok">BLOK</label>
+                                <input required maxlength="4" class="form-control" wire:model.defer="data.2_nop_blok"
+                                    name="2_nop_blok" class="form-control" id="2_nop_blok" type="text"
+                                    placeholder="..." />
                             </div>
-                            <div class="col-lg-2 col-6 mb-2 px-1">
-                                <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
-                                <input maxlength="4" class="form-control" wire:model="data.2_no_urut"
-                                    name="2_no_urut" id="No.Urut" type="text" placeholder="..." />
+                            <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                <label class="text-black  mb-1" for="2_nop_urut">NO.URUT</label>
+                                <input required disabled maxlength="4" class="form-control"
+                                    wire:model.defer="data.2_nop_urut" name="2_nop_urut" class="form-control"
+                                    id="2_nop_urut" type="text" placeholder="..." />
                             </div>
-                            <div class="col-lg-1 col-6 mb-2 ps-1">
-                                <label class="text-black mb-1" for="Kode">KODE</label>
-                                <input maxlength="1" class="form-control" wire:model="data.2_nop_kode"
-                                    name="2_nop_kode" id="Kode" type="text" placeholder="..." />
+                            <div class="col-lg-1 col-6 mb-2 px-lg-3 px-1">
+                                <label class="text-black  mb-1" for="2_nop_kode">KODE</label>
+                                <input required maxlength="1" class="form-control" wire:model.defer="data.2_nop_kode"
+                                    name="2_nop_kode" class="form-control" id="2_nop_kode" type="text"
+                                    placeholder="..." />
                             </div>
                         </div>
                     </div>
-                    <h6 class=" my-2">3. NOP BERSAMA</h6>
+                    {{-- <h6 class=" my-2">3. NOP BERSAMA</h6>
                     <div class="col-12">
                         <div class="d-flex flex-wrap px-lg-3 px-0">
 
@@ -136,7 +157,7 @@
                                     name="3_nop_bersama_kode" id="Kode" type="text" placeholder="..." />
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             {{-- <h4 class="fw-bold text-lg-center text-start my-3">

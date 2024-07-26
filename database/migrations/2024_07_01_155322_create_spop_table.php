@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->string('2_nop_kecamatan', 50)->nullable();
             $table->string('2_nop_gampong', 50)->nullable();
             $table->string('2_nop_blok', 50)->nullable();
-            $table->string('2_no_urut', 50)->nullable();
+            $table->string('2_nop_urut', 50)->nullable();
             $table->string('2_nop_kode', 50)->nullable();
             $table->string('3_nop_bersama_provinsi', 50)->nullable();
             $table->string('3_nop_bersama_kabupaten', 50)->nullable();

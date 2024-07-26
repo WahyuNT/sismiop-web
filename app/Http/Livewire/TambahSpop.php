@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Dati2;
+use App\Models\Kecamatan;
+use App\Models\Provinsi;
 use App\Models\Spop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -17,7 +20,19 @@ class TambahSpop extends Component
 
     public function render()
     {
-        return view('livewire.tambah-spop');
+        $provinsi = Provinsi::all();
+        $kecamatan = Kecamatan::all();
+        $dati2 = Dati2::all();
+        $nourut = Spop::latest()->first();
+        $nourut = intval($nourut->{'2_nop_urut'}) + 1;
+
+
+        $this->data = [
+            '2_nop_urut' => $nourut,
+            '2_nop_provinsi' => '83',
+        ];
+
+        return view('livewire.tambah-spop', compact('provinsi', 'kecamatan', 'dati2', 'nourut'));
     }
 
     public function simpan()
@@ -26,6 +41,7 @@ class TambahSpop extends Component
 
         $this->data['status'] = 'aktif';
         $this->data['user_id'] = $user->id;
+
         $data = Spop::create($this->data);
         if ($data) {
             $this->nullData();

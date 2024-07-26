@@ -111,7 +111,7 @@
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
                                     <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.2_no_urut" name="2_no_urut" id="No.Urut" type="text"
+                                        wire:model.defer="data.2_nop_urut" name="2_nop_urut" id="No.Urut" type="text"
                                         placeholder="-" />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
