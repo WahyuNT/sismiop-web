@@ -28,8 +28,8 @@
             </li>
             <li class="nav-item d-flex align-items-center ">
 
-                <a href="{{ route('data.lspop') }}"
-                    class="{{ request()->routeIs('data.lspop') ? 'card-sidebar-active' : '' }}">
+                <a href="{{ route('berita.index') }}"
+                    class="{{ request()->routeIs('berita.index') ? 'card-sidebar-active' : '' }}">
                     <i class="fa-solid fa-newspaper me-2"></i>
                     <p class="text m-0">Berita</p>
                 </a>
