@@ -97,7 +97,14 @@
 
             </div>
         </section>
-        
+        <section id="berita"  style="background-color: #e7eef3" class="py-5">
+            <div class="container">
+
+                <h2 class="text-center text-primary fw-bold mb-2">Berita</h2>
+                @livewire('berita-home')
+            </div>
+        </section>
+
     </div>
 
     @livewireScripts

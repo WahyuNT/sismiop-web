@@ -27,7 +27,10 @@
             </div>
         </div>
         <div class="div">
-            <button class="btn btn-primary">Dashboard</button>
+            <a href="{{ route('index') }}">
+
+                <button class="btn btn-primary">Dashboard</button>
+            </a>
         </div>
     </div>
 </nav>

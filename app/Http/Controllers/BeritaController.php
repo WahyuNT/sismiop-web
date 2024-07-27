@@ -48,4 +48,10 @@ class BeritaController extends Controller
             return redirect()->route('berita.index')->with('error', 'Data Gagal Diubah');
         }
     }
+    public function detail($id)
+    {
+       
+        $data = Berita::find($id);
+        return view('pages.berita.detail', compact('data'));
+    }
 }

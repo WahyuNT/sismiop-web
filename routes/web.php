@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
- Route::get('/', fn () => view('pages.home'))->name('home');
+Route::get('/', fn () => view('pages.home'))->name('home');
 Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/berita/{id}/detail', [BeritaController::class, 'detail'])->name('berita.detail');
+
 
 Route::post('/loginStore', [UserController::class, 'loginStore'])->name('login.proses');
 
@@ -34,6 +36,7 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::get('/berita/tambah', [BeritaController::class, 'tambah'])->name('berita.tambah');
     Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
     Route::post('/berita/update', [BeritaController::class, 'updateStore'])->name('berita.updateStore');
+
 
     Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
     Route::get('/data-lspop/{id}/detail', [AdminController::class, 'detailLspop'])->name('detail.lspop');
