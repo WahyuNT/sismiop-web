@@ -1,0 +1,108 @@
+<x-style />
+
+<body style="background-color: #f4f4f8!important">
+
+    <div class=" ">
+        <div class="" id="home">
+
+            <x-header-home />
+        </div>
+
+
+        <section class="tab-components container">
+            <img class="img-home" src="{{ asset('img/bg.png') }}" alt="">
+        </section>
+        <section id="visi" class="mt-4  py-5" style="background-color: #e7eef3">
+            <div class="d-flex justify-content-between align-items-center container">
+                <div class="col-6">
+                    <img height="340px" src="{{ asset('img/visi.webp') }}" alt="">
+                </div>
+                <div class="col-6">
+
+                    <h1 class="text-center text-primary">Visi</h1>
+                    <div class="card card-form border-0 w mt-3">
+                        <div class="card-body">
+
+                            <h4 class="text-center">Terwujudnya Peningkatan Pengelolaan Pendapatan Daerah di Kabupaten
+                                Kepulauan Sula melalui Pelayanan yang Berkualitas</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="misi" class="py-5  ">
+            <div class="d-flex justify-content-between align-items-center container">
+                <div class="col-6 ">
+
+                    <h1 class="text-center text-primary">Misi</h1>
+                    <div class="row flex-wrap justify-content-center d-flex">
+                        <div class="col-4 px-2 mb-3">
+
+                            <div class="card card-form h-100 border-0 w mt-3">
+                                <div class="">
+
+                                    <h5 class="text-center">Pendataan Objek Pajak dan Objek Retribusi secara optimal dan
+                                        akurat.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 px-2 mb-3">
+
+                            <div class="card card-form h-100 border-0 w mt-3">
+                                <div class="">
+
+                                    <h5 class="text-center">Pendataan Sumber - Sumber Potensi Pajak dan Retribusi yang
+                                        baru.
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 px-2 mb-3">
+
+                            <div class="card card-form h-100 border-0 w mt-3">
+                                <div class="">
+
+                                    <h5 class="text-center">Sosialisasi sadar pajak kepada Masyarakat.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 px-2 mb-3">
+
+                            <div class="card card-form h-100 border-0 w mt-3">
+                                <div class="">
+
+                                    <h5 class="text-center">Meningkatkan Pelayanan terhadap wajib Pajak dan wajib
+                                        Retribusi.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 px-2 mb-3">
+
+                            <div class="card card-form h-100 border-0 w mt-3">
+                                <div class="">
+
+                                    <h5 class="text-center">Meningkatkan sarana dan prasarana bagi wajib pajak dan wajib
+                                        Retribusi. </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <img height="340px" src="{{ asset('img/mission.webp') }}" alt="">
+                </div>
+
+
+            </div>
+        </section>
+        
+    </div>
+
+    @livewireScripts
+
+    <x-script />
+</body>
+
+</html>

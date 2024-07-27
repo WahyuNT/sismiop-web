@@ -114,3 +114,9 @@
 .item-profil{
     border-radius: 15px;
 }
+.img-home{
+    height: 450px;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
