@@ -1,7 +1,7 @@
 <div>
     <div class="row flex-wrap d-flex ">
         @forelse ($data as $item)
-            <div class="col-4">
+            <div class="col-12 col-lg-4 mt-lg-0 mt-3">
                 <div class="card card-form ">
                     <div class="card-body">
                         <img class="img-berita" src="{{ asset('img/berita/' . $item->nama_gambar) }}" alt="">
