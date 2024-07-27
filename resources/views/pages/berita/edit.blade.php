@@ -17,7 +17,7 @@
         </div>
         <div>
             <div class="card card-form mt-3">
-                <form action="{{ route('berita.updateStore') }}" method="POST">
+                <form action="{{ route('berita.updateStore') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <input hidden type="text" name="id" value="{{ $data->id }}">
@@ -40,13 +40,14 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                               
+
                             </div>
                             <div class="mb-3">
                                 <label for="Gambar" class="form-label  ">Gambar <small>(Max
                                         4MB)</small> </label><br>
-                                        <img class="rounded" height="200px" src="{{ asset('img/berita/' . $data->nama_gambar) }}" alt="">
-                                <input value="nama_gambar" type="file" class="form-control mt-3">
+                                <img class="rounded" height="200px" src="{{ asset('img/berita/' . $data->nama_gambar) }}"
+                                    alt="">
+                                <input value="nama_gambar" name="nama_gambar" type="file" class="form-control mt-3">
                                 @error('nama_gambar')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
