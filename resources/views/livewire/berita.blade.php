@@ -91,7 +91,7 @@
                                         class="text-center
                                         d-flex flex-wrap justify-content-center gap-lg-0 gap-1">
                                         @if ($confirmDelete != $item->id)
-                                            <a href="#">
+                                            <a href="{{ route('berita.edit', $item->id) }}">
                                                 <button class="btn btn-sm btn-primary rounded-pill mx-1">Edit</button>
                                             </a>
                                             <div class="div">

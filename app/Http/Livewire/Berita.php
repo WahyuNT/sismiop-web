@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Berita as ModelsBerita;
+use Illuminate\Support\Facades\Storage;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -49,8 +50,9 @@ class Berita extends Component
     public function delete($id)
     {
         $data = ModelsBerita::find($id);
-        $data->status = 'tidak_aktif';
+        $gambarLama = $data->nama_gambar;
         if ($data->delete()) {
+            Storage::disk('real_public')->delete('img/berita/' . $gambarLama);
             $this->alert('success', 'Data berhasil dihapus');
         } else {
             $this->alert('error', 'Data gagal dihapus');
