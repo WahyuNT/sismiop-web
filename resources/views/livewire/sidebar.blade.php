@@ -1,6 +1,8 @@
 <div>
     <div class="navbar-logo">
-        <h2 class="text-primary fw-bold text-center">SISIMIOP</h2>
+        <a href="/">
+            <h2 class="text-primary fw-bold text-center">SISIMIOP</h2>
+        </a>
     </div>
     <nav class="sidebar-nav">
         <ul>
