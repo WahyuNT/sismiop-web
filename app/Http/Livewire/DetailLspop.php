@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Dati2;
+use App\Models\Kecamatan;
 use App\Models\Lspop;
+use App\Models\Provinsi;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -36,10 +39,14 @@ class DetailLspop extends Component
         $lspopArray = $lspop->toArray();
         $this->data = $lspopArray;
 
+        $provinsi = Provinsi::all();
+        $kecamatan = Kecamatan::all();
+        $dati2 = Dati2::all();
+
         $dataTtd56 = $lspop->{"56_tanda_tangan"};
         $dataTtd60 = $lspop->{"60_tanda_tangan"};
 
-        return view('livewire.detail-lspop', compact('lspop', 'dataTtd56', 'dataTtd60'));
+        return view('livewire.detail-lspop', compact('lspop', 'dataTtd56', 'dataTtd60', 'provinsi', 'kecamatan', 'dati2'));
     }
 
     public function updateData()

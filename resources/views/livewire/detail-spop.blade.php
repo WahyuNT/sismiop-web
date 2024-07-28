@@ -81,7 +81,7 @@
                                 <div class="col-lg-1 col-6 mb-2  px-1">
                                     <label class="text-black  mb-1" for="provinsi">PROV.</label>
     
-                                    <select {{ $disabled }} required disabled wire:model.defer="data.2_nop_provinsi"
+                                    <select {{ $disabled }} required  wire:model.defer="data.2_nop_provinsi"
                                         class="form-select " aria-label=". example">
                                         <option value="" selected>Pilih Prov</option>
                                         @foreach ($provinsi as $item)
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                                     <label class="text-black  mb-1" for="2_nop_urut">NO.URUT</label>
-                                    <input  {{ $disabled }} required disabled maxlength="4" class="form-control"
+                                    <input  {{ $disabled }} required  maxlength="4" class="form-control"
                                         wire:model.defer="data.2_nop_urut" name="2_nop_urut" class="form-control"
                                         id="2_nop_urut" type="text" placeholder="..." />
                                 </div>

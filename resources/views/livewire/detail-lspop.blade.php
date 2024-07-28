@@ -84,43 +84,56 @@
                     <div class="d-flex flex-wrap">
                         <div class="col-lg-1 col-6 mb-2  px-1">
                             <label class="text-black  mb-1" for="provinsi">PROV.</label>
-                            <input {{ $disabled }} maxlength="2" class="form-control"
-                                wire:model.defer="data.2_nop_provinsi" name="2_nop_provinsi" id="provinsi"
-                                type="text" placeholder="..." />
+                            <select {{ $disabled }} required wire:model.defer="data.2_nop_provinsi"
+                                class="form-select " aria-label=". example">
+                                <option disabled selected>Pilih Prov</option>
+                                @foreach ($provinsi as $item)
+                                    <option value="{{ $item->id }}">{{ $item->id }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                             <label class="text-black  mb-1" for="2_nop_kabupaten">KAB.</label>
-                            <input {{ $disabled }} maxlength="2" class="form-control"
+                            <input {{ $disabled }} required maxlength="2" class="form-control"
                                 wire:model.defer="data.2_nop_kabupaten" name="2_nop_kabupaten" id="2_nop_kabupaten"
                                 type="text" placeholder="..." />
                         </div>
                         <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                             <label class="text-black  mb-1" for="2_nop_kecamatan">KEC.</label>
-                            <input {{ $disabled }} maxlength="3" class="form-control"
-                                wire:model.defer="data.2_nop_kecamatan" name="2_nop_kecamatan" id="2_nop_kecamatan"
-                                type="text" placeholder="..." />
+                            <select {{ $disabled }} required wire:model.defer="data.2_nop_kecamatan"
+                                class="form-select " aria-label=". example">
+                                <option value="" selected>Pilih Kec</option>
+                                @foreach ($kecamatan as $item)
+                                    <option value="{{ $item->id }}">{{ $item->NM_KECAMATAN }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                             <label class="text-black  mb-1" for="2_nop_gampong">GAMPONG</label>
-                            <input {{ $disabled }} maxlength="3" class="form-control"
-                                wire:model.defer="data.2_nop_gampong" name="2_nop_gampong" class="form-control"
-                                id="2_nop_gampong" type="text" placeholder="..." />
+
+                            <select {{ $disabled }} required wire:model.defer="data.2_nop_gampong"
+                                class="form-select " aria-label=". example">
+                                <option value="" selected>Silahkan Pilih</option>
+                                @foreach ($dati2 as $item)
+                                    <option value="{{ $item->id }}">{{ $item->NM_DATI2 }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                             <label class="text-black  mb-1" for="2_nop_blok">BLOK</label>
-                            <input {{ $disabled }} maxlength="4" class="form-control"
+                            <input {{ $disabled }} required maxlength="4" class="form-control"
                                 wire:model.defer="data.2_nop_blok" name="2_nop_blok" class="form-control"
                                 id="2_nop_blok" type="text" placeholder="..." />
                         </div>
                         <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                             <label class="text-black  mb-1" for="2_nop_no_urut">NO.URUT</label>
-                            <input {{ $disabled }} maxlength="4" class="form-control"
+                            <input {{ $disabled }} required maxlength="4" class="form-control"
                                 wire:model.defer="data.2_nop_no_urut" name="2_nop_no_urut" class="form-control"
                                 id="2_nop_no_urut" type="text" placeholder="..." />
                         </div>
                         <div class="col-lg-1 col-6 mb-2 px-lg-3 px-1">
                             <label class="text-black  mb-1" for="2_nop_kode">KODE</label>
-                            <input {{ $disabled }} maxlength="1" class="form-control"
+                            <input {{ $disabled }} required maxlength="1" class="form-control"
                                 wire:model.defer="data.2_nop_kode" name="2_nop_kode" class="form-control"
                                 id="2_nop_kode" type="text" placeholder="..." />
                         </div>
@@ -922,7 +935,7 @@
                         <div class="d-flex flex-wrap justify-content-start align-items-center">
                             @if ($edit56 == false)
                                 <div class="me-2">
-                                    <img class="image-ttd" src="{{ $lspop->{'56_tanda_tangan'} }}" width=246
+                                    <img alt="Belum ada tanda tangan" class="image-ttd" src="{{ $lspop->{'56_tanda_tangan'} }}" width=246
                                         height=164 alt="">
                                 </div>
                             @endif
@@ -966,9 +979,9 @@
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="59_tanggal_penelitian">59. TANGAL
                             PENELITIAN</label>
-                        <input {{ $disabled }} class="form-control"
-                            wire:model.defer="data.59_tanggal_penelitian" name="59_tanggal_penelitian"
-                            id="59_tanggal_penelitian" type="date" placeholder="-" />
+                        <input {{ $disabled }} class="form-control" wire:model.defer="data.59_tanggal_penelitian"
+                            name="59_tanggal_penelitian" id="59_tanggal_penelitian" type="date"
+                            placeholder="-" />
                     </div>
                     <div class="col-12">
                         <label class="text-black fw-bold mb-1 fw-bold" for="60_tanda_tangan">60. TANDA
@@ -976,7 +989,7 @@
                         <div class="d-flex flex-wrap justify-content-start align-items-center">
                             @if ($edit60 == false)
                                 <div class="me-2">
-                                    <img class="image-ttd" src="{{ $lspop->{'60_tanda_tangan'} }}" width=246
+                                    <img alt="Belum ada tanda tangan" class="image-ttd" src="{{ $lspop->{'60_tanda_tangan'} }}" width=246
                                         height=164 alt="">
                                 </div>
                             @endif
