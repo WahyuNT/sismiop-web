@@ -13,15 +13,15 @@
             <img class="img-home" src="{{ asset('img/bg.png') }}" alt="">
         </section>
         <section id="visi" class="mt-4  py-5" style="background-color: #e7eef3">
-            <div class="d-flex flex-wrap-reverse flex-wrap justify-content-between align-items-center container">
+            <div class="d-flex  flex-wrap justify-content-between align-items-center container">
                 <div class="col-lg-6 col-12">
-                    <h1 class="text-center text-primary d-lg-block d-none">Visi</h1>
+                    <h1 class="text-center text-primary d-lg-none d-block">Visi</h1>
                     <img height="340px" src="{{ asset('img/visi.webp') }}" alt="">
                 </div>
                 <div class="col-lg-6 col-12">
 
-              
-                    <h1 class="text-center text-primary d-lg-none d-block">Visi</h1>
+
+                    <h1 class="text-center text-primary d-lg-block d-none">Visi</h1>
                     <div class="card card-form border-0 w mt-3">
                         <div class="card-body">
 
@@ -107,7 +107,13 @@
                 @livewire('berita-home')
             </div>
         </section>
-
+        <footer class="bg-primary text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                SISMIOP
+            </div>
+            <!-- Copyright -->
+        </footer>
     </div>
 
     @livewireScripts
