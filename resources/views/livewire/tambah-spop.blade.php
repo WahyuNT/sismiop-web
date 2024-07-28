@@ -61,7 +61,7 @@
                                 <label class="text-black  mb-1" for="provinsi">PROV.</label>
 
                                 <select required disabled wire:model.defer="data.2_nop_provinsi"
-                                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    class="form-select " aria-label=". example">
                                     <option value="" selected>Pilih Prov</option>
                                     @foreach ($provinsi as $item)
                                         <option value="{{ $item->id }}">{{ $item->id }}</option>
@@ -77,7 +77,7 @@
                             <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
                                 <label class="text-black  mb-1" for="2_nop_kecamatan">KEC.</label>
                                 <select required wire:model.defer="data.2_nop_kecamatan"
-                                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    class="form-select " aria-label=". example">
                                     <option value="" selected>Pilih Kec</option>
                                     @foreach ($kecamatan as $item)
                                         <option value="{{ $item->id }}">{{ $item->NM_KECAMATAN }}</option>
@@ -88,7 +88,7 @@
                                 <label class="text-black  mb-1" for="2_nop_gampong">GAMPONG</label>
 
                                 <select required wire:model.defer="data.2_nop_gampong"
-                                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    class="form-select " aria-label=". example">
                                     <option value="" selected>Silahkan Pilih</option>
                                     @foreach ($dati2 as $item)
                                         <option value="{{ $item->id }}">{{ $item->NM_DATI2 }}</option>

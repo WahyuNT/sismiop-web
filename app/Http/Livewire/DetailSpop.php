@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Dati2;
+use App\Models\Kecamatan;
+use App\Models\Provinsi;
 use App\Models\Spop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -37,12 +40,16 @@ class DetailSpop extends Component
         $this->data = $spopArray;
         $placeholder = 'Masukkan Data';
 
+        $provinsi = Provinsi::all();
+        $kecamatan = Kecamatan::all();
+        $dati2 = Dati2::all();
+
         $disabled = $this->disabled;
         $isEdit = $this->isEdit;
 
         $sket64 = $spop->sket_tanda_tangan;
 
-        return view('livewire.detail-spop', compact('spopArray', 'spop', 'placeholder', 'disabled', 'isEdit', 'sket64'));
+        return view('livewire.detail-spop', compact('spopArray', 'spop', 'placeholder', 'disabled', 'isEdit', 'sket64', 'provinsi', 'kecamatan', 'dati2'));
     }
 
     public function updateData()
@@ -142,7 +149,7 @@ class DetailSpop extends Component
 
     public function simpan30A()
     {
-        
+
 
         if ($this->newTTD30A != null) {
             $this->emit('dataUpdated');
@@ -165,7 +172,7 @@ class DetailSpop extends Component
 
     public function simpan30B()
     {
-     
+
 
         if ($this->newTTD30B != null) {
             $this->emit('dataUpdated');
@@ -197,7 +204,7 @@ class DetailSpop extends Component
             $data->update($this->data);
 
             if ($data->save()) {
-    
+
                 $this->alert('success', 'Sket berhasil diperbarui');
                 $this->editsket = false;
                 $this->newsket = null;

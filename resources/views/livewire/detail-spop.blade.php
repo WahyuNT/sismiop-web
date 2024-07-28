@@ -76,100 +76,109 @@
                     <div class="div">
                         <h6 class="mb-2 fw-bold text-black">2. NOP <span class="text-danger">*</span></h6>
                         <div class="col-12">
-
-                            <div class="d-flex flex-wrap px-lg-3 px-0">
-                                <div class="col-lg-1 col-6 mb-2 pe-1">
-                                    <label class="text-black mb-1" for="provinsi">PROV.</label>
-                                    <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model.defer="data.2_nop_provinsi" name="2_nop_provinsi" id="provinsi"
-                                        type="text" placeholder=".." />
+    
+                            <div class="d-flex flex-wrap">
+                                <div class="col-lg-1 col-6 mb-2  px-1">
+                                    <label class="text-black  mb-1" for="provinsi">PROV.</label>
+    
+                                    <select {{ $disabled }} required disabled wire:model.defer="data.2_nop_provinsi"
+                                        class="form-select " aria-label=". example">
+                                        <option value="" selected>Pilih Prov</option>
+                                        @foreach ($provinsi as $item)
+                                            <option value="{{ $item->id }}">{{ $item->id }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Kabupaten">KAB.</label>
-                                    <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model.defer="data.2_nop_kabupaten" name="2_nop_kabupaten" id="Kabupaten"
-                                        type="text" placeholder="-" />
+                                <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                    <label class="text-black  mb-1" for="2_nop_kabupaten">KAB.</label>
+                                    <input {{ $disabled }} required maxlength="2" class="form-control"
+                                        wire:model.defer="data.2_nop_kabupaten" name="2_nop_kabupaten" id="2_nop_kabupaten"
+                                        type="text" placeholder="..." />
                                 </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Kecamatan">KEC.</label>
-                                    <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model.defer="data.2_nop_kecamatan" name="2_nop_kecamatan" id="Kecamatan"
-                                        type="text" placeholder="." />
+                                <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                    <label class="text-black  mb-1" for="2_nop_kecamatan">KEC.</label>
+                                    <select {{ $disabled }} required wire:model.defer="data.2_nop_kecamatan"
+                                        class="form-select " aria-label=". example">
+                                        <option value="" selected>Pilih Kec</option>
+                                        @foreach ($kecamatan as $item)
+                                            <option value="{{ $item->id }}">{{ $item->NM_KECAMATAN }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Gampong">GAMPONG</label>
-                                    <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model.defer="data.2_nop_gampong" name="2_nop_gampong" id="Gampong"
-                                        type="text" placeholder="-" />
+                                <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                    <label class="text-black  mb-1" for="2_nop_gampong">GAMPONG</label>
+    
+                                    <select {{ $disabled }} required wire:model.defer="data.2_nop_gampong"
+                                        class="form-select " aria-label=". example">
+                                        <option value="" selected>Silahkan Pilih</option>
+                                        @foreach ($dati2 as $item)
+                                            <option value="{{ $item->id }}">{{ $item->NM_DATI2 }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="Blok">BLOK</label>
-                                    <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.2_nop_blok" name="2_nop_blok" id="Blok"
-                                        type="text" placeholder="-" />
+                                <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                    <label class="text-black  mb-1" for="2_nop_blok">BLOK</label>
+                                    <input {{ $disabled }} required maxlength="4" class="form-control" wire:model.defer="data.2_nop_blok"
+                                        name="2_nop_blok" class="form-control" id="2_nop_blok" type="text"
+                                        placeholder="..." />
                                 </div>
-                                <div class="col-lg-2 col-6 mb-2 px-1">
-                                    <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
-                                    <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.2_nop_urut" name="2_nop_urut" id="No.Urut" type="text"
-                                        placeholder="-" />
+                                <div class="col-lg-2 col-6 mb-2 px-lg-3 px-1">
+                                    <label class="text-black  mb-1" for="2_nop_urut">NO.URUT</label>
+                                    <input  {{ $disabled }} required disabled maxlength="4" class="form-control"
+                                        wire:model.defer="data.2_nop_urut" name="2_nop_urut" class="form-control"
+                                        id="2_nop_urut" type="text" placeholder="..." />
                                 </div>
-                                <div class="col-lg-1 col-6 mb-2 ps-1">
-                                    <label class="text-black mb-1" for="Kode">KODE</label>
-                                    <input {{ $disabled }} maxlength="1" class="form-control"
-                                        wire:model.defer="data.2_nop_kode" name="2_nop_kode" id="Kode"
-                                        type="text" placeholder="-" />
+                                <div class="col-lg-1 col-6 mb-2 px-lg-3 px-1">
+                                    <label class="text-black  mb-1" for="2_nop_kode">KODE</label>
+                                    <input {{ $disabled }} required maxlength="1" class="form-control" wire:model.defer="data.2_nop_kode"
+                                        name="2_nop_kode" class="form-control" id="2_nop_kode" type="text"
+                                        placeholder="..." />
                                 </div>
                             </div>
                         </div>
-                        <h6 class=" my-2">3. NOP BERSAMA</h6>
+                        {{-- <h6 class=" my-2">3. NOP BERSAMA</h6>
                         <div class="col-12">
                             <div class="d-flex flex-wrap px-lg-3 px-0">
-
+    
                                 <div class="col-lg-1 col-6 mb-2 pe-1">
                                     <label class="text-black mb-1" for="provinsi">PROV.</label>
-                                    <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_provinsi" name="3_nop_bersama_provinsi"
-                                        id="provinsi" type="text" placeholder="-" />
+                                    <input maxlength="2" class="form-control" wire:model="data.3_nop_bersama_provinsi"
+                                        name="3_nop_bersama_provinsi" id="provinsi" type="text" placeholder="..." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Kabupaten">KAB.</label>
-                                    <input {{ $disabled }} maxlength="2" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_kabupaten" name="3_nop_bersama_kabupaten"
-                                        id="Kabupaten" type="text" placeholder="-" />
+                                    <input maxlength="2" class="form-control" wire:model="data.3_nop_bersama_kabupaten"
+                                        name="3_nop_bersama_kabupaten" id="Kabupaten" type="text"
+                                        placeholder="..." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Kecamatan">KEC.</label>
-                                    <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_kecamatan" name="3_nop_bersama_kecamatan"
-                                        id="Kecamatan" type="text" placeholder="-" />
+                                    <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_kecamatan"
+                                        name="3_nop_bersama_kecamatan" id="Kecamatan" type="text"
+                                        placeholder="..." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Gampong">GAMPONG</label>
-                                    <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_gampong" name="3_nop_bersama_gampong"
-                                        id="Gampong" type="text" placeholder="-" />
+                                    <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_gampong"
+                                        name="3_nop_bersama_gampong" id="Gampong" type="text" placeholder="..." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="Blok">BLOK</label>
-                                    <input {{ $disabled }} maxlength="3" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_blok" name="3_nop_bersama_blok"
-                                        id="Blok" type="text" placeholder="-" />
+                                    <input maxlength="3" class="form-control" wire:model="data.3_nop_bersama_blok"
+                                        name="3_nop_bersama_blok" id="Blok" type="text" placeholder="..." />
                                 </div>
                                 <div class="col-lg-2 col-6 mb-2 px-1">
                                     <label class="text-black mb-1" for="No.Urut">NO. URUT</label>
-                                    <input {{ $disabled }} maxlength="4" class="form-control"
-                                        wire:model.defer="data.3_no_urut" name="3_no_urut" id="No.Urut"
-                                        type="text" placeholder="-" />
+                                    <input maxlength="4" class="form-control" wire:model="data.3_no_urut"
+                                        name="3_no_urut" id="No.Urut" type="text" placeholder="..." />
                                 </div>
                                 <div class="col-lg-1 col-6 mb-2 ps-1">
                                     <label class="text-black mb-1" for="Kode">KODE</label>
-                                    <input {{ $disabled }} maxlength="1" class="form-control"
-                                        wire:model.defer="data.3_nop_bersama_kode" name="3_nop_bersama_kode"
-                                        id="Kode" type="text" placeholder="-" />
+                                    <input maxlength="1" class="form-control" wire:model="data.3_nop_bersama_kode"
+                                        name="3_nop_bersama_kode" id="Kode" type="text" placeholder="..." />
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <h4 class="fw-bold text-lg-center text-start my-3">
@@ -411,7 +420,7 @@
 
                                 @if ($edit28 == false)
                                     <div class="d-flex flex-wrap">
-                                        <img class="image-ttd" src="{{ $spop->{'28_tanda_tangan'} }}" width=246
+                                        <img alt="Belum ada tanda tangan" class="image-ttd" src="{{ $spop->{'28_tanda_tangan'} }}" width=246
                                             height=164 alt="">
                                         <div class="div d-flex align-items-center justify-content-center mt-2">
                                             <button type="button" wire:click="edit28"
@@ -472,7 +481,7 @@
                                 <label class="mb-1 mt-2 text-black" for="30_tanda_tangan_petugas">30. TANDA
                                     TANGAN</label><br>
                                 @if ($edit30A == false)
-                                    <img class="image-ttd" src="{{ $spop->{'30_tanda_tangan_petugas'} }}" width=246
+                                    <img alt="Belum ada tanda tangan" class="image-ttd" src="{{ $spop->{'30_tanda_tangan_petugas'} }}" width=246
                                         height=164 alt="">
                                 @endif
                                 @if ($edit30A == false)
@@ -526,7 +535,7 @@
                                 <label class="mb-1 text-black mt-2" for="30_tanda_tangan_pejabat">30. TANDA
                                     TANGAN</label><br>
                                 @if ($edit30B == false)
-                                    <img class="image-ttd" src="{{ $spop->{'30_tanda_tangan_pejabat'} }}" width=246
+                                    <img alt="Belum ada tanda tangan" class="image-ttd" src="{{ $spop->{'30_tanda_tangan_pejabat'} }}" width=246
                                         height=164 alt="">
                                 @endif
                                 @if ($edit30B == false)
@@ -577,7 +586,7 @@
                 <u>SKET / DENAH LOKASI OBJEK PAJAK</u>
             </h4>
             @if ($editsket == false)
-                <img class="image-ttd card" src="{{ $spop->{'sket_tanda_tangan'} }}" width=1080 height=500
+                <img alt="Belum ada sketsa" class="image-ttd card" src="{{ $spop->{'sket_tanda_tangan'} }}" width=1080 height=500
                     alt="">
                 <div class="d-flex justify-content-center">
                     <a target="_blank" href="{{ route('edit.sket', ['id' => $spop->id]) }}">
@@ -600,7 +609,7 @@
                 </div>
                 <div class="col-lg-6 col-12 text-center">
                     <p class="text-lg-center mt-lg-0 mt-2 text-black mb-2"><b><u>Contoh Penggambaran</u></b></p>
-                    <img class="w-lg-75 w-100 rounded" src="{{ asset('img/contoh_map.png') }}" alt="">
+                    <img  class="w-lg-75 w-100 rounded" src="{{ asset('img/contoh_map.png') }}" alt="">
                 </div>
             </div>
 
