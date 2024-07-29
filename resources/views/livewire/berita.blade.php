@@ -40,11 +40,7 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="div">
-
         <div class="card card-form ">
             <div class="table-responsive">
                 <div class="table-wrapper table-responsive">
