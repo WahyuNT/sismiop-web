@@ -31,7 +31,13 @@ class DataKecamatan extends Component
         $data = Kecamatan::orderby('NM_KECAMATAN', 'asc')
             ->when($this->search, function ($query) {
                 $query
-                    ->where('NM_KECAMATAN', 'like', '%' . $this->search . '%');
+                    ->where('NM_KECAMATAN', 'like', '%' . $this->search . '%')
+                    ->orWhereHas('provinsi', function ($query) {
+                        $query->where('NM_PROPINSI', 'like', '%' . $this->search . '%');
+                    })
+                    ->orWhereHas('dati2', function ($query) {
+                        $query->where('NM_DATI2', 'like', '%' . $this->search . '%');
+                    });
             })
             ->paginate($this->pagination);
 
@@ -77,8 +83,10 @@ class DataKecamatan extends Component
     }
     public function edit($id)
     {
+
         $this->idEdit = $id;
         $db = Kecamatan::find($id);
+
         $this->KD_PROPINSI = $db->KD_PROPINSI;
         $this->KD_DATI2 = $db->KD_DATI2;
         $this->NM_KECAMATAN = $db->NM_KECAMATAN;
@@ -118,7 +126,7 @@ class DataKecamatan extends Component
         $data->NM_KECAMATAN = $this->NM_KECAMATAN;
         $data->KD_DATI2 = $this->KD_DATI2;
         $data->KD_PROPINSI = $this->KD_PROPINSI;
-        
+
         if ($data->save()) {
             $this->alert('success', 'Data berhasil ditambahkan');
             $this->back();
