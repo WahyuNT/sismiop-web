@@ -11,8 +11,8 @@ class Dati2 extends Model
     protected $table = 'dati2';
     protected $guarded = ['id'];
 
-    public function kecamatan()
+    public function provinsi()
     {
-        return $this->hasMany(Kecamatan::class, 'KD_DATI2');
+        return $this->belongsTo(Provinsi::class, 'KD_PROPINSI');
     }
 }

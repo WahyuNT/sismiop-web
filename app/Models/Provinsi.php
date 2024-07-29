@@ -15,4 +15,8 @@ class Provinsi extends Model
     {
         return $this->hasMany(Kecamatan::class, 'KD_PROPINSI');
     }
+    public function dati2()
+    {
+        return $this->hasMany(Dati2::class, 'KD_PROPINSI');
+    }
 }
