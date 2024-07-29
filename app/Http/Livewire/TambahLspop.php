@@ -41,9 +41,11 @@ class TambahLspop extends Component
     public function simpan()
     {
         $user = JWTAuth::toUser(JWTAuth::getToken());
+        $date = date('Y-m-d');
 
         $this->data['status'] = 'aktif';
         $this->data['user_id'] = $user->id;
+        $this->data['55_tanggal_pendataan'] = $date;
         $data = Lspop::create($this->data);
 
         if ($data) {

@@ -16,7 +16,7 @@ class Profile extends Component
 
     public function mount()
     {
-        $this->user = User::where('username', session()->get('username'))->first();
+        $this->user = JWTAuth::toUser(JWTAuth::getToken());
 
         $this->dataAkun = [
             'username' => $this->user['username'],

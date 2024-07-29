@@ -1,4 +1,5 @@
 <div>
+    <h2 class="text-center mt-3 fw-bold">Ubah Profil</h2>
     <div class="card card-form border-0 mt-3">
         <div class="card-body ">
             <div class="row">
