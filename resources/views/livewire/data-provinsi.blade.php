@@ -1,7 +1,6 @@
 <div>
     @if ($add == false)
         @if ($idEdit == null)
-
             <h4 class="text-center">Data Povinsi</h4>
             <div class="title-wrapper pt-30">
                 <div class="row align-items-center">
@@ -13,7 +12,6 @@
                                     Provinsi</button>
                             </div>
                         </div>
-
                         <div
                             class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
 
@@ -114,23 +112,28 @@
                     <label class="text-black  mb-1" for="2_nop_kabupaten">NAMA PROVINSI</label>
                     <input required class="form-control" wire:model.defer="inputData" name="2_nop_kabupaten"
                         type="text" placeholder="Masukkan Nama Provinsi" />
+                    @error('inputData')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <button wire:click="update" class="btn btn-primary">Simpan</button>
             </div>
         @endif
     @else
-    <div class="div">
-        <div class="d-flex flex-wrap align-items-center">
-            <button wire:click="back" class="btn btn-primary me-2"><i
-                    class="fa-solid fa-arrow-left"></i></button>
-            <h4>Tambah Provinsi</h4>
+        <div class="div">
+            <div class="d-flex flex-wrap align-items-center">
+                <button wire:click="back" class="btn btn-primary me-2"><i class="fa-solid fa-arrow-left"></i></button>
+                <h4>Tambah Provinsi</h4>
+            </div>
+            <div class="col-lg-5 col-6 mb-2  mt-3">
+                <label class="text-black  mb-1" for="2_nop_kabupaten">NAMA PROVINSI</label>
+                <input required class="form-control" wire:model.defer="inputData" name="2_nop_kabupaten" type="text"
+                    placeholder="Masukkan Nama Provinsi" />
+                @error('inputData')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+            <button wire:click="Simpan" class="btn btn-primary">Simpan</button>
         </div>
-        <div class="col-lg-5 col-6 mb-2  mt-3">
-            <label class="text-black  mb-1" for="2_nop_kabupaten">NAMA PROVINSI</label>
-            <input required class="form-control" wire:model.defer="inputData" name="2_nop_kabupaten"
-                type="text" placeholder="Masukkan Nama Provinsi" />
-        </div>
-        <button wire:click="Simpan" class="btn btn-primary">Simpan</button>
-    </div>
     @endif
 </div>

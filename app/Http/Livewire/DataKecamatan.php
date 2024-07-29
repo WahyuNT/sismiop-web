@@ -28,7 +28,7 @@ class DataKecamatan extends Component
 
     public function render()
     {
-        $data = Kecamatan::orderby('NM_KECAMATAN', 'asc')
+        $data = Kecamatan::orderby('created_at', 'desc')
             ->when($this->search, function ($query) {
                 $query
                     ->where('NM_KECAMATAN', 'like', '%' . $this->search . '%')

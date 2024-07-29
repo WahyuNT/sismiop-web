@@ -23,7 +23,7 @@ class DataProvinsi extends Component
 
     public function render()
     {
-        $data = Provinsi::orderby('NM_PROPINSI', 'asc')
+        $data = Provinsi::orderby('created_at', 'desc')
             ->when($this->search, function ($query) {
                 $query
                     ->where('NM_PROPINSI', 'like', '%' . $this->search . '%');

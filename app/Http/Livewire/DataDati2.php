@@ -25,7 +25,7 @@ class DataDati2 extends Component
 
     public function render()
     {
-        $data = Dati2::orderby('NM_DATI2', 'asc')
+        $data = Dati2::orderby('created_at', 'desc')
             ->when($this->search, function ($query) {
                 $query
                     ->where('NM_DATI2', 'like', '%' . $this->search . '%')
