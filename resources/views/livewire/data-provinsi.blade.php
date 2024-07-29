@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-3">
-                        {{-- {{ $spop->links() }} --}}
+                        {{ $data->links() }}
                     </div>
                 </div>
 
