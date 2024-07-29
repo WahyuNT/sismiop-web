@@ -34,7 +34,7 @@
                         </select>
                     </div>
                     <div class="col-lg-5 col-6 ps-lg-1 ps-1 ">
-                        <input wire:model="search" type="text" class="form-control" placeholder="Cari Data SPOP">
+                        <input wire:model="search" type="text" class="form-control" placeholder="Cari Berita">
                     </div>
                 </div>
             </div>
@@ -89,14 +89,14 @@
 
                                     <td
                                         class="text-center
-                                        d-flex flex-wrap justify-content-center gap-lg-0 gap-1">
+                                        d-flex flex-wrap justify-content-center ">
                                         @if ($confirmDelete != $item->id)
                                             <a href="{{ route('berita.edit', $item->id) }}">
-                                                <button class="btn btn-sm btn-primary rounded-pill mx-1">Edit</button>
+                                                <button class="btn  btn-primary rounded-pill mx-1">Edit</button>
                                             </a>
                                             <div class="div">
                                                 <button type="button" wire:click="confirmDelete({{ $item->id }})"
-                                                    class="btn btn-sm btn-danger rounded-pill mx-1">Hapus</button>
+                                                    class="btn  btn-danger rounded-pill mx-1">Hapus</button>
                                             </div>
                                         @else
                                             <div class="d-flex flex-column">

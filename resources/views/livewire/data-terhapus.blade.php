@@ -86,7 +86,7 @@
                                         <td>{{ $item->{'57_nama_jelas'} }}</td>
                                         <td>{{ $item->{'59_tanggal_penelitian'} }}</td>
                                         <td class="text-center d-flex flex-wrap justify-content-center">
-                                            @if ($confirmDeleteLspop == null)
+                                            @if ($confirmDeleteLspop != $item->id)
                                                 <a href="{{ route('detail.lspop', ['id' => $item->id]) }}">
                                                     <button class="btn btn-primary rounded-pill mx-1">Detail</button>
                                                 </a>
@@ -182,7 +182,7 @@
                                         <td>{{ $item->{'31_nama_jelas_petugas'} }}</td>
                                         <td>{{ $item->{'29_tanggal_petugas'} }}</td>
                                         <td class="text-center d-flex flex-wrap justify-content-center">
-                                            @if ($confirmDeleteSpop == null)
+                                            @if ($confirmDeleteSpop != $item->id)
                                                 <a href="{{ route('detail.spop', ['id' => $item->id]) }}">
                                                     <button class="btn btn-primary rounded-pill mx-1">Detail</button>
                                                 </a>

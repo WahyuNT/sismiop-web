@@ -13,7 +13,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
+                <div
+                    class="col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center  justify-content-lg-end justify-content-between ">
                     <div class="col-lg-3 col-6 d-lg-block d-none">
                         <div class="px-lg-1 pe-1 ps-1 d-flex  justify-content-end">
                             <a href="{{ route('tambah.lspop') }}">
@@ -145,10 +146,18 @@
                                                         class="btn btn-sm btn-danger rounded-pill mx-1">Hapus</button>
                                                 </div>
                                             @else
-                                                <button type="button" wire:click="batalDelete"
-                                                    class="btn btn-sm btn-danger rounded-pill mx-1">Batal</button>
-                                                <button type="button" wire:click="delete({{ $item->id }})"
-                                                    class="btn btn-sm btn-success rounded-pill mx-1">Hapus</button>
+                                                <div class="d-flex flex-column">
+                                                    <small>Apa anda yakin ?</small>
+                                                    <div class="d-flex justify-content-center gap-2 mt-1">
+                                                        <div class="d-flex">
+                                                            <button type="button" wire:click="batalDelete"
+                                                                class="btn btn-sm btn-danger rounded-pill mx-1">Batal</button>
+                                                            <button type="button"
+                                                                wire:click="delete({{ $item->id }})"
+                                                                class="btn btn-sm btn-success rounded-pill mx-1">Hapus</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             @endif
                                         </td>
                                     </tr>
