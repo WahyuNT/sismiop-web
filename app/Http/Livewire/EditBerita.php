@@ -12,6 +12,21 @@ class EditBerita extends Component
     use LivewireAlert;
     use WithFileUploads;
 
+    protected $rules = [
+        'nama_gambar' => 'image|max:4096|required', 
+        'isi' => 'required',
+        'judul' => 'required',
+    ];
+    
+    protected $messages = [
+        'nama_gambar.image' => 'File harus berupa gambar',
+        'nama_gambar.max' => 'Ukuran gambar maksimal 4MB',
+        'nama_gambar.required' => 'Gambar harus diisi',
+        'isi.required' => 'Isi harus diisi',
+        'judul.required' => 'Judul harus diisi',
+    ];
+
+
     public $judul;
     public $isi;
     public $nama_gambar;
@@ -26,11 +41,7 @@ class EditBerita extends Component
     public function render()
     {
         $data = Berita::find($this->dataid);
-        // $judul = $data->judul;
-
-        // $nama_gambar = $data->nama_gambar;
         $this->judul = $data->judul;
-        // $this->isi = $data->isi;
         $this->nama_gambar = $data->nama_gambar;
        
         return view('livewire.edit-berita', with(['data' => $data]));

@@ -24,9 +24,18 @@ class BeritaController extends Controller
     }
     public function updateStore(Request $request)
     {
+        $validatedData = $request->validate([
+            'isi' => 'required',
+            'nama_gambar' => 'image|max:4086',
+        ], [
+            'isi.required' => 'Isi tidak boleh kosong.',
+            'nama_gambar.image' => 'Harus berupa gambar.',
+        ]);
+
         $data = Berita::find($request->id);
         $data->judul = $request->judul;
-        $data->isi = $request->isi;
+        $data->isi = $validatedData['isi'];
+
 
         if ($request->hasFile('nama_gambar')) {
             $gambarLama = $data->nama_gambar;
