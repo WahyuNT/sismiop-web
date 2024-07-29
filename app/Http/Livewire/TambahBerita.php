@@ -16,12 +16,28 @@ class TambahBerita extends Component
     public $isi;
     public $nama_gambar;
 
+    protected $rules = [
+        'nama_gambar' => 'image|max:4096|required', 
+        'isi' => 'required',
+        'judul' => 'required',
+    ];
+    
+    protected $messages = [
+        'nama_gambar.image' => 'File harus berupa gambar',
+        'nama_gambar.max' => 'Ukuran gambar maksimal 4MB',
+        'nama_gambar.required' => 'Gambar harus diisi',
+        'isi.required' => 'Isi harus diisi',
+        'judul.required' => 'Judul harus diisi',
+    ];
+
+
     public function render()
     {
         return view('livewire.tambah-berita');
     }
     public function tambah()
     {
+        $this->validate();
 
         $post = new Berita([
             'judul' => $this->judul,
@@ -30,10 +46,8 @@ class TambahBerita extends Component
 
         ]);
 
-        $this->validate([
-            'nama_gambar' => 'image|max:4096|required', // 4MB Max
-        ]);
 
+    
         $currentTimestamp = time();
         if ($this->nama_gambar != null) {
             $Gambar = 'berita' . '_' . $currentTimestamp . '.' . $this->nama_gambar->getClientOriginalExtension();

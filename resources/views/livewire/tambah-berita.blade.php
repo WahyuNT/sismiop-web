@@ -7,7 +7,7 @@
                     <label for="judul" class="form-label  ">Judul</label>
                     <input required wire:model.defer="judul" required type="text" class="form-control" name="judul">
                     @error('judul')
-                        <small class="text-danger">{{$message}}</small>
+                        <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -16,19 +16,23 @@
                         <textarea required wire:model.defer="isi" class="min-h-fit h-48 " name="isi" id="isi"></textarea>
                     </div>
                     @error('isi')
-                    <small class="text-danger">{{$message}}</small>
+                        <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="Gambar" class="form-label  ">Gambar <small>(Max
                             4MB)</small> </label>
                     <input wire:model.defer="nama_gambar" type="file" class="form-control">
+                    <div wire:loading wire:target="nama_gambar">Uploading...</div>
+                    @if ($nama_gambar)
+                        <img width="200" class="mt-2" src="{{ $nama_gambar->temporaryUrl() }}">
+                    @endif
                     @error('nama_gambar')
-                    <small class="text-danger">{{$message}}</small>
+                        <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
-
-                <button wire:click="tambah" class="btn btn-primary rounded-pill mt-3">Tambah Data</button>
+                <button type="button" wire:loading.class="disabled" wire:click="tambah" class="btn btn-primary rounded-pill mt-3">Tambah
+                    Data</button>
             </div>
         </div>
     </div>
