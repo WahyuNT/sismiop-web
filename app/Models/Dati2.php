@@ -10,4 +10,9 @@ class Dati2 extends Model
     use HasFactory;
     protected $table = 'dati2';
     protected $guarded = ['id'];
+
+    public function kecamatan()
+    {
+        return $this->hasMany(Kecamatan::class, 'KD_DATI2');
+    }
 }
