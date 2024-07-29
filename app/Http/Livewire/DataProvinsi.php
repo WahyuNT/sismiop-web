@@ -16,6 +16,9 @@ class DataProvinsi extends Component
     public $search;
     public $pagination = 10;
     public $confirmDelete;
+    public $idEdit;
+    public $inputData;
+    public $add = false;
 
 
     public function render()
@@ -27,7 +30,15 @@ class DataProvinsi extends Component
             })
             ->paginate($this->pagination);
 
-        return view('livewire.data-provinsi', compact('data'));
+        if ($this->idEdit != null) {
+            $inputData = Provinsi::find($this->idEdit);
+        } else {
+            $inputData = null;
+        }
+        $add = $this->add;
+
+
+        return view('livewire.data-provinsi', compact('data', 'inputData', 'add'));
     }
     public function updatingSearch()
     {
@@ -54,6 +65,52 @@ class DataProvinsi extends Component
             $this->alert('success', 'Data berhasil dihapus');
         } else {
             $this->alert('error', 'Data gagal dihapus');
+        }
+    }
+    public function back()
+    {
+        $this->idEdit = null;
+        $this->add = false;
+        $this->inputData = null;
+    }
+    public function edit($id)
+    {
+        $this->idEdit = $id;
+        $db = Provinsi::find($id);
+        $this->inputData = $db->NM_PROPINSI;
+    }
+    public function update()
+    {
+        $this->validate([
+            'inputData' => 'required'
+        ]);
+
+        $data = Provinsi::find($this->idEdit);
+        $data->NM_PROPINSI = $this->inputData;
+        if ($data->save()) {
+            $this->alert('success', 'Data berhasil diubah');
+            $this->idEdit = null;
+        } else {
+            $this->alert('error', 'Data gagal diubah');
+        }
+    }
+    public function addTrue()
+    {
+        $this->add = true;
+    }
+    public function Simpan()
+    {
+        $this->validate([
+            'inputData' => 'required'
+        ]);
+
+        $data = new Provinsi();
+        $data->NM_PROPINSI = $this->inputData;
+        if ($data->save()) {
+            $this->alert('success', 'Data berhasil ditambahkan');
+            $this->back();
+        } else {
+            $this->alert('error', 'Data gagal ditambahkan');
         }
     }
 }
