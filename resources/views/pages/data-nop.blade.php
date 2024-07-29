@@ -11,14 +11,15 @@
             </div>
             <div class="col-12 mb-3 ">
                 <div class="card card-form">
-
-                    @livewire('data-kecamatan')
+                    @livewire('data-dati2')
                 </div>
             </div>
             <div class="col-12 mb-3 ">
                 <div class="card card-form">
-                    @livewire('data-dati2')
+
+                    @livewire('data-kecamatan')
                 </div>
             </div>
+    
         </div>
     @endsection
