@@ -38,6 +38,8 @@ Route::prefix('/')->middleware(['auth'])->group(function () {
     Route::post('/berita/update', [BeritaController::class, 'updateStore'])->name('berita.updateStore');
 
 
+    Route::get('/data-nop', fn () => view('pages.data-nop'))->name('data.nop');
+
     Route::get('/data-lspop', [AdminController::class, 'dataLspop'])->name('data.lspop');
     Route::get('/data-lspop/{id}/detail', [AdminController::class, 'detailLspop'])->name('detail.lspop');
     Route::get('/tambah-lspop', [AdminController::class, 'tambahLspop'])->name('tambah.lspop');

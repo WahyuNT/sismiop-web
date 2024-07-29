@@ -74,7 +74,13 @@
                     </a>
                 </li>
             @endif
-
+            <li class="nav-item d-flex align-items-center ">
+                <a href="{{ route('data.nop') }}"
+                    class="{{ request()->routeIs('data.nop') ? 'card-sidebar-active' : '' }}">
+                    <i class="fa-solid fa-newspaper me-2"></i>
+                    <p class="text m-0">Data NOP</p>
+                </a>
+            </li>
         </ul>
     </nav>
 </div>
